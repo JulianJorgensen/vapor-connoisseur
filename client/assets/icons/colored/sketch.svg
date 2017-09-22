@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="117px" height="99px" viewBox="0 0 117 99" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>diamond</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Homepage---below-fold" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop" transform="translate(-545.000000, -1598.000000)">
+            <g id="Group-27" transform="translate(267.000000, 1484.000000)">
+                <g id="diamond" transform="translate(278.000000, 114.000000)">
+                    <g id="Layer_1">
+                        <path stroke="#8D8D8D" stroke-width="2px" stroke-miterlimit="10" id="Shape" fill="#FFE182" d="M82.2951035 30.274333 58.5 98.5229004 117 30.274333z"></path>
+                        <g id="Group" fill="#FFCD73">
+                            <path stroke="#8D8D8D" stroke-width="2px" stroke-miterlimit="10" id="Shape" d="M24.2068887 0.164630813 0 30.274333 34.7048965 30.274333z"></path>
+                            <path stroke="#8D8D8D" stroke-width="2px" stroke-miterlimit="10" id="Shape" d="M82.2951035 30.274333 117 30.274333 92.7931113 0.164630813z"></path>
+                            <path stroke="#8D8D8D" stroke-width="2px" stroke-miterlimit="10" id="Shape" d="M82.2951035 30.274333 58.5 0.164630813 34.7048965 30.274333z"></path>
+                        </g>
+                        <path stroke="#8D8D8D" stroke-width="2px" stroke-miterlimit="10" id="Shape" fill="#FFAA64" d="M58.5 0.164630813 24.2068887 0.164630813 34.7048965 30.274333z"></path>
+                        <path stroke="#8D8D8D" stroke-width="2px" stroke-miterlimit="10" id="Shape" fill="#FFE182" d="M92.7931113 0.164630813 58.5 0.164630813 82.2951035 30.274333z"></path>
+                        <path stroke="#8D8D8D" stroke-width="2px" stroke-miterlimit="10" id="Shape" fill="#FFAA64" d="M34.7048965 30.274333 58.5 98.5229004 82.2951035 30.274333z"></path>
+                        <path stroke="#8D8D8D" stroke-width="2px" stroke-miterlimit="10" id="Shape" fill="#FF8C5A" d="M0 30.274333 58.5 98.5229004 34.7048965 30.274333z"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

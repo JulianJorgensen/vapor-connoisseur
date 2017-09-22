@@ -1,0 +1,14 @@
+@import "variables.css";
+
+:global{
+  & body{
+    background-color: gray(10%);
+    color: white;
+  }
+}
+
+.globalContainer {
+  align-self: center;
+  width: rem(900);
+  max-width: 100%;
+}

@@ -1,0 +1,4 @@
+@import "globals.css";
+.container {
+  composes: globalContainer;
+}

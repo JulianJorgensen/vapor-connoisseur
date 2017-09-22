@@ -1,0 +1,74 @@
+@import 'variables.css';
+
+@custom-selector :--headings h1,h2,h3,h4,h5,h6;
+@custom-selector :--inputs input,textarea,radio,select,label;
+
+:root {
+  --h1: rem(50);
+  --h2: rem(30);
+  --h3: rem(22);
+  --h4: rem(18);
+  --h5: rem(16);
+  --h6: rem(14);
+  --lineHeight: 1.15;
+  /* fonts */
+  --primaryFont: 'Whitney SSm A', 'Whitney SSm B';
+  /* --secondaryFont: 'Scandia'; */
+  --secondaryFont: 'Gotham SSm A', 'Gotham SSm B';  
+}
+
+:global {
+  & body,
+  & button,
+  & li,
+  & p,
+  & :--inputs {
+    font-family: var(--secondaryFont);
+  }
+  & :--headings {
+    font-family: var(--primaryFont);
+    font-style: normal;
+    margin: 0;
+    font-weight: 800;
+  }
+  & body {
+    font-size: rem(16);
+    line-height: rem(20);
+  }
+  & a {
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+  }
+  & h1 {
+    font-size: var(--h1);
+    line-height: calc(var(--h1) * var(--lineHeight));
+    text-transform: uppercase;
+  }
+  & h2 {
+    font-size: var(--h2);
+    line-height: calc(var(--h2) * var(--lineHeight));
+  }
+  & h3 {
+    font-size: var(--h3);
+    line-height: calc(var(--h3) * var(--lineHeight));
+  }
+  & h4 {
+    font-size: var(--h4);
+    line-height: calc(var(--h4) * var(--lineHeight));
+  }
+  & h5 {
+    font-size: var(--h5);
+    line-height: calc(var(--h5) * var(--lineHeight));
+  }
+  & h6 {
+    font-size: var(--h6);
+    line-height: calc(var(--h6) * var(--lineHeight));
+    margin: 0;
+  }
+  & h5,
+  & h6 {
+    margin-top: 0;
+    margin-bottom: rem(15);
+  }
+}

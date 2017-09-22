@@ -1,0 +1,27 @@
+:root {
+  /* colors */
+  /* --purple: #451989; */
+}
+
+
+/* Media queries */
+
+/* Only */
+@custom-media --only-small (width < 768px);
+@custom-media --only-medium (width >=768px) and (width < 1000px);
+@custom-media --only-mediumLarge (width >=1000px) and (width < 1200px);
+@custom-media --only-large (width >=1200px) and (width < 1400px);
+@custom-media --only-xlarge (width >=1400px);
+
+/* And up */
+@custom-media --small-and-up (width > 0);
+@custom-media --medium-and-up (width >=768px);
+@custom-media --mediumLarge-and-up (width >=1000px);
+@custom-media --large-and-up (width >=1200px);
+@custom-media --xlarge-and-up (width >=1400px);
+
+/* And down */
+@custom-media --small-and-down (width < 768);
+@custom-media --medium-and-down (width < 1000px);
+@custom-media --mediumLarge-and-down (width < 1200px);
+@custom-media --large-and-down (width < 1400px);
