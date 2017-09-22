@@ -23,10 +23,6 @@ import Footer from 'layout/Footer';
 import Homepage from 'containers/Homepage';
 
 import {
-  Layout
-} from 'react-toolbox/lib/layout';
-
-import {
   TransitionGroup,
   CSSTransition
 } from 'react-transition-group';
@@ -115,19 +111,17 @@ export default class Routes extends React.Component {
         <DocumentMeta {...meta} />
         <Header />
 
-        <Layout>
-          <TransitionGroup component="main" className={styles.animatedRoutes} style={{height: this.state.contentHeight}}>
-            <CSSTransition timeout={timeout}>
-              <div id='routesContainer'>
-                <Switch location={location}>
-                  <Route path='/' exact render={(props)=><Homepage {...props} onLoaded={this.updateRoutesContainer} />} />                  
-                  <Route path='/shop' render={(props)=><Shop {...props} onLoaded={this.updateRoutesContainer} />} />                  
-                </Switch>
-                <Footer />
-              </div>
-            </CSSTransition>
-          </TransitionGroup>
-        </Layout>
+        <TransitionGroup component="main" className={styles.animatedRoutes} style={{height: this.state.contentHeight}}>
+          <CSSTransition timeout={timeout}>
+            <div id='routesContainer'>
+              <Switch location={location}>
+                <Route path='/' exact render={(props)=><Homepage {...props} onLoaded={this.updateRoutesContainer} />} />                  
+                <Route path='/shop' render={(props)=><Shop {...props} onLoaded={this.updateRoutesContainer} />} />                  
+              </Switch>
+              <Footer />
+            </div>
+          </CSSTransition>
+        </TransitionGroup>
       </div>
     )
   }
