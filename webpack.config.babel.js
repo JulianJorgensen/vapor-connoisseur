@@ -160,14 +160,13 @@ const BASE_CONFIG = {
       client: path.resolve(__dirname, 'client/'),
       components: path.resolve(__dirname, 'client/components/'),
       containers: path.resolve(__dirname, 'client/containers/'),
-      layout: path.resolve(__dirname, 'client/layout/'),
-      routes: path.resolve(__dirname, 'client/routes/'),
+      layout: path.resolve(__dirname, 'client/main/layout/'),
+      routes: path.resolve(__dirname, 'client/main/routes/'),
       store: path.resolve(__dirname, 'client/store/'),
-      reducers: path.resolve(__dirname, 'client/store/reducers'),
-      actions: path.resolve(__dirname, 'client/store/actions'),
       styles: path.resolve(__dirname, 'client/styles/'),
       utils: path.resolve(__dirname, 'client/utils/'),
-      lib: path.resolve(__dirname, 'client/lib/')
+      lib: path.resolve(__dirname, 'client/lib/'),
+      shop: path.resolve(__dirname, 'client/containers/shop/')
     },
     extensions: ['.js', '.jsx', '.css']
   }

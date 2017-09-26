@@ -1,0 +1,31 @@
+@import "globals.css";
+.wrapper {
+  width: calc(25% - rem(20));
+  margin-bottom: rem(30);
+}
+
+.title {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+  opacity: 0.7;
+}
+
+.price {
+  display: block;
+  font-size: 1.1rem;
+  opacity: 0.5;
+  margin-bottom: 0.4rem;
+}
+
+.option {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.quantity {
+  display: block;
+  width: 15%;
+  margin-bottom: 10px;
+}

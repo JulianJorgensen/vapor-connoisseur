@@ -1,15 +1,20 @@
 import * as redux from 'redux';
 import thunk from 'redux-thunk';
 
-import { siteReducer } from './reducers';
+import { createClientMiddleware } from './utils';
+import { siteReducer } from './site/reducer';
+
+import { shopReducer } from './shop/reducer';
+import { shopifyClient } from './shop/clients';
 
 export const store = (initialState = {}) => {
   let reducer = redux.combineReducers({
-    site: siteReducer
+    site: siteReducer,
+    shop: shopReducer
   });
 
   let createStore = redux.createStore(reducer, initialState, redux.compose(
-    redux.applyMiddleware(thunk),
+    redux.applyMiddleware(createClientMiddleware(shopifyClient)),
     window.devToolsExtension ? window.devToolsExtension() : f => f
   ));
 

@@ -1,26 +1,18 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
   Route,
-  matchPath,
-  HashRouter,
-  Link,
   Switch,
   withRouter
 } from 'react-router-dom';
 import {
   connect
 } from 'react-redux';
-import cn from 'classnames';
-
-import DocumentMeta from 'react-document-meta';
-
-// layout
-import Header from 'layout/Header';
-import Footer from 'layout/Footer';
 
 // containers
 import Homepage from 'containers/Homepage';
+import Shop from 'containers/Shop';
+
+import Footer from 'layout/Footer';
 
 import {
   TransitionGroup,
@@ -43,17 +35,6 @@ function logPageView(location) {
 //   window.scrollTo(0, 0);
 // });
 
-// site meta data
-const meta = {
-  title: 'Vapor Connoisseur',
-  description: 'Slogan',
-  meta: {
-    charset: 'utf-8'
-  },
-  auto: {
-    ograph: true
-  }
-};
 
 @withRouter
 @connect()
@@ -87,7 +68,9 @@ export default class Routes extends React.Component {
     window.scrollTo(0, 0);
 
     // update routes container
-    this.updateRoutesContainer();
+    setTimeout(() => {
+      this.updateRoutesContainer();      
+    }, 20);
   }
 
   componentDidUpdate(prevProps) {
@@ -102,27 +85,24 @@ export default class Routes extends React.Component {
 
   render() {
     const timeout = {
-      enter: 400,
-      exit: 400
+      enter: 1,
+      exit: 1
     };
 
     return (
-      <div className={styles.container}>
-        <DocumentMeta {...meta} />
-        <Header />
-
-        <TransitionGroup component="main" className={styles.animatedRoutes} style={{height: this.state.contentHeight}}>
-          <CSSTransition timeout={timeout}>
-            <div id='routesContainer'>
-              <Switch location={location}>
-                <Route path='/' exact render={(props)=><Homepage {...props} onLoaded={this.updateRoutesContainer} />} />                  
-                <Route path='/shop' render={(props)=><Shop {...props} onLoaded={this.updateRoutesContainer} />} />                  
-              </Switch>
-              <Footer />
-            </div>
-          </CSSTransition>
-        </TransitionGroup>
-      </div>
+      <TransitionGroup component="main" className={styles.animatedRoutes} style={{height: this.state.contentHeight}}>
+        <CSSTransition timeout={timeout}>
+          <div id='routesContainer'>
+            <Switch location={location}>
+              <Route path='/' exact render={(props)=><Homepage {...props} onLoaded={this.updateRoutesContainer} />} />
+              <Route path='/shop' exact render={(props)=><Shop {...props} onLoaded={this.updateRoutesContainer} />} />
+              <Route path='/shop/:filter' exact render={(props)=><Shop {...props} onLoaded={this.updateRoutesContainer} />} />
+              <Route path='/shop/:category/:productHandle' render={(props)=><Shop showSingle={true} {...props} onLoaded={this.updateRoutesContainer} />} />
+            </Switch>
+            <Footer />
+          </div>
+        </CSSTransition>
+      </TransitionGroup>
     )
   }
 };

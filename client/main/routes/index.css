@@ -1,8 +1,4 @@
 @import "globals.css";
-.container {
-  position: relative;
-}
-
 .animatedRoutes {
   position: relative;
   width: 100%;

@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 
 import styles from './styles/app.css';
-import Main from './routes';
+import Main from './main';
 
 import store from 'store';
 
