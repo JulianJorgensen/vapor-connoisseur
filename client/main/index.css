@@ -1,3 +1,6 @@
+@import "globals.css";
 .container {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

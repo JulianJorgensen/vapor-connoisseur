@@ -6,55 +6,12 @@
   padding-right: rem(30);
   height: rem(50);
   font-size: rem(18);
-  border-radius: rem(8);
   text-decoration: none;
   font-family: var(--primaryFont);
   transition: all 0.2s;
-  &:hover{
-   transform: translateY(rem(-3));
-  }
-  &.hollow:not([disabled]) {
-    border: 1px solid currentColor;
-    background-color: transparent;
-    color: gray(60%);
-    &:hover {
-      background-color: color(gray(60%) alpha(-80%));
-    }
-  }
-  &.primary:not([disabled]) {
-    color: black;
-    box-shadow: rem(0) rem(2) rem(2) rem(0) gray(50%);
-    background: linear-gradient(to bottom right, var(--gamboge), var(--brightSun));
-    &:hover {
-      background: linear-gradient(to bottom right, color(var(--gamboge) shade(10%)), color(var(--brightSun) shade(10%)));
-    }
-  }
-  &.confirm:not([disabled]) {
-    /* @apply --success-theme; */
-  }
-  &.white:not([disabled]) {
-    background-color: white;
-  }
-  /* Button: Tiny */
-  &.tiny {
-    border-radius: rem(10);
-    padding: rem(5) rem(5);
-    height: auto;
-    font-size: rem(14);
-    line-height: rem(14);
-    text-transform: capitalize;
-  }
-  /* Button: Small */
-  &.small {
-    border-radius: rem(10);
-    padding: rem(10) rem(14);
-    height: auto;
-    font-size: rem(16);
-    line-height: rem(16);
-  }
-  /* Button: hollow blue */
-  &.blue.hollow:not([disabled]) {
-    color: var(--curious-blue);
-    border-color: var(--curious-blue);
+  border: 0;
+  background-color: gray(80%);
+  &:hover {
+    background-color: gray(70%);
   }
 }

@@ -1,4 +1,4 @@
-export var shopReducer = (state = {}, action) => {
+export let shopReducer = (state = {}, action) => {
   switch (action.type) {
     case 'ADD_PRODUCTS':
       return {

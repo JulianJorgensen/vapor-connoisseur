@@ -1,1 +1,116 @@
 @import "globals.css";
+.container {
+  display: flex;
+  margin-bottom: rem(20);
+  overflow: hidden;
+  backface-visibility: visible;
+  min-height: rem(65);
+  position: relative;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.image {
+  min-width: rem(65);
+  min-height: rem(65);
+  border-radius: rem(3);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #e5e5e5;
+}
+
+.content {
+  width: 100%;
+  margin-left: rem(20);
+}
+
+.contentRow {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: rem(5);
+  position: relative;
+}
+
+.variantTitle {
+  font-weight: bold;
+  font-size: rem(11);
+  line-height: rem(17);
+  color: #767676;
+}
+
+.title {
+  color: #4E5665;
+  font-size: rem(15);
+  font-weight: 400;
+}
+
+.price {
+  line-height: rem(23);
+  float: right;
+  font-weight: bold;
+  font-size: rem(15);
+  margin-right: rem(40);
+}
+
+.quantityContainer {
+  border: rem(1) solid #767676;
+  float: left;
+  border-radius: rem( 3);
+}
+
+.quantityUpdate {
+  color: #767676;
+  display: block;
+  float: left;
+  height: rem(21);
+  line-height: rem(16);
+  font-family: monospace;
+  width: rem(25);
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  font-size: rem(18);
+  text-align: center;
+}
+
+.quantityUpdateForm {
+  display: inline;
+}
+
+.quantity {
+  color: black;
+  width: rem(38);
+  height: rem(21);
+  line-height: rem(23);
+  font-size: rem(15);
+  border: none;
+  text-align: center;
+  -moz-appearance: textfield;
+  background: transparent;
+  border-left: rem(1) solid #767676;
+  border-right: rem(1) solid #767676;
+  display: block;
+  float: left;
+  padding: 0;
+  border-radius: 0;
+}
+
+.remove {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: 0;
+  background: 0;
+  font-size: rem(20);
+  top: rem(-4);
+  opacity: 0.5;
+}
+
+.remove:hover {
+  opacity: 1;
+  cursor: pointer;
+}

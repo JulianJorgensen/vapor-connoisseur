@@ -1,13 +1,7 @@
-import React, {
-  Component
-} from 'react';
-import {
-  withRouter
-} from 'react-router-dom';
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import _ from 'lodash';
-import {
-  connect
-} from 'react-redux';
+import { connect } from 'react-redux';
 import * as shopActions from 'store/shop/actions';
 import Product from './Product';
 import Products from './Products';
@@ -15,13 +9,9 @@ import Cart from './components/Cart';
 import styles from './index.css';
 
 @withRouter
-@connect(
-  ({
-    shop
-  }) => ({
-    shop
-  })
-)
+@connect(({ shop }) => ({
+  shop
+}))
 class Shop extends Component {
   constructor() {
     super();
@@ -39,13 +29,16 @@ class Shop extends Component {
 
   componentWillUpdate(newProps) {
     if (this.props.match.url !== newProps.match.url) {
-      let { showSingle, dispatch } = newProps;
+      let {
+        showSingle,
+        dispatch
+      } = newProps;
       console.log('props', newProps);
       if (showSingle) {
         console.log('show active prod');
         // set active product
         dispatch(shopActions.setActiveProduct());
-      }else{
+      } else {
         // clear active product
         dispatch(shopActions.clearActiveProduct());
       }
@@ -59,14 +52,16 @@ class Shop extends Component {
   }
 
   filterProducts() {
-    let { products } = this.props.shop;
-    
+    let {
+      products
+    } = this.props.shop;
+
     if (!products) {
       return false;
     }
 
     let filter = this.props.match.params.filter || null
-    if (filter && filter !== 'all') {
+    if (filter) {
       let productsFiltered = products.filter((product) => {
         if (product.productType.toLowerCase() !== filter) {
           return false;
@@ -78,7 +73,7 @@ class Shop extends Component {
       this.setState({
         productsFiltered
       });
-    }else{
+    } else {
       this.setState({
         productsFiltered: null
       })
@@ -125,7 +120,9 @@ class Shop extends Component {
     let {
       shop
     } = this.props;
-    let { productsFiltered } = this.state;
+    let {
+      productsFiltered
+    } = this.state;
 
     let renderPage = () => {
       if (shop.product) {
@@ -147,9 +144,7 @@ class Shop extends Component {
       <div className={styles.wrapper}>
 
         {!shop.showCart &&
-          <div className="App__view-cart-wrapper">
-            <button className="App__view-cart" onClick={()=>this.props.dispatch(shopActions.toggleCart())}>Cart</button>
-          </div>
+          <div className={styles.cart} onClick={()=>this.props.dispatch(shopActions.toggleCart())}>Cart</div>
         }
 
         {renderPage()}

@@ -1,23 +1,22 @@
 import React from 'react';
-import {
-  Route,
-  Switch,
-  withRouter
-} from 'react-router-dom';
-import {
-  connect
-} from 'react-redux';
+import { Route, Switch, withRouter }
+from 'react-router-dom';
+import { connect }
+from 'react-redux';
 
 // containers
 import Homepage from 'containers/Homepage';
+import Services from 'containers/Services';
+import How from 'containers/How';
+import About from 'containers/About';
+import Samples from 'containers/Samples';
+import Contact from 'containers/Contact';
 import Shop from 'containers/Shop';
 
 import Footer from 'layout/Footer';
 
-import {
-  TransitionGroup,
-  CSSTransition
-} from 'react-transition-group';
+import { TransitionGroup, CSSTransition }
+from 'react-transition-group';
 import styles from './index.css';
 
 import ReactGA from 'react-ga';
@@ -69,7 +68,7 @@ export default class Routes extends React.Component {
 
     // update routes container
     setTimeout(() => {
-      this.updateRoutesContainer();      
+      this.updateRoutesContainer();
     }, 20);
   }
 
@@ -90,19 +89,27 @@ export default class Routes extends React.Component {
     };
 
     return (
-      <TransitionGroup component="main" className={styles.animatedRoutes} style={{height: this.state.contentHeight}}>
-        <CSSTransition timeout={timeout}>
-          <div id='routesContainer'>
-            <Switch location={location}>
-              <Route path='/' exact render={(props)=><Homepage {...props} onLoaded={this.updateRoutesContainer} />} />
-              <Route path='/shop' exact render={(props)=><Shop {...props} onLoaded={this.updateRoutesContainer} />} />
-              <Route path='/shop/:filter' exact render={(props)=><Shop {...props} onLoaded={this.updateRoutesContainer} />} />
-              <Route path='/shop/:category/:productHandle' render={(props)=><Shop showSingle={true} {...props} onLoaded={this.updateRoutesContainer} />} />
-            </Switch>
-            <Footer />
-          </div>
-        </CSSTransition>
-      </TransitionGroup>
+      <div className={styles.container}>
+        <TransitionGroup component="main" className={styles.animatedRoutes} style={{height: this.state.contentHeight}}>
+          <CSSTransition timeout={timeout}>
+            <div id='routesContainer'>
+              <Switch location={location}>
+                <Route path='/' exact render={(props)=><Homepage {...props} onLoaded={this.updateRoutesContainer} />} />
+                <Route path='/services' render={(props)=><Services {...props} onLoaded={this.updateRoutesContainer} />} />
+                <Route path='/how' render={(props)=><How {...props} onLoaded={this.updateRoutesContainer} />} />
+                <Route path='/about' render={(props)=><About {...props} onLoaded={this.updateRoutesContainer} />} />
+                <Route path='/sample-kits' render={(props)=><Samples {...props} onLoaded={this.updateRoutesContainer} />} />
+                <Route path='/contact' render={(props)=><Contact {...props} onLoaded={this.updateRoutesContainer} />} />
+                
+                <Route path='/shop' exact render={(props)=><Shop {...props} onLoaded={this.updateRoutesContainer} />} />
+                <Route path='/shop/:filter' exact render={(props)=><Shop {...props} onLoaded={this.updateRoutesContainer} />} />
+                <Route path='/shop/:category/:productHandle' render={(props)=><Shop showSingle={true} {...props} onLoaded={this.updateRoutesContainer} />} />
+              </Switch>
+              <Footer />
+            </div>
+          </CSSTransition>
+        </TransitionGroup>
+      </div>
     )
   }
 };

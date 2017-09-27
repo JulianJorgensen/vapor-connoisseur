@@ -1,5 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import LineItem from './components/LineItem';
+import Button from 'components/Button';
 import LoadingSpinner from 'components/LoadingSpinner';
 import styles from './index.css';
 
@@ -68,7 +69,7 @@ class Cart extends Component {
               <span className={styles.pricing}>$ {checkout.totalPrice}</span>
             </div>
           </div>
-          <button className={styles.cartCheckout} onClick={this.openCheckout}>Checkout</button>
+          <Button className={styles.cartCheckout} onClick={this.openCheckout}>Checkout</Button>
         </footer>
       </div>
     )

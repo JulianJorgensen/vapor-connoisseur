@@ -1,24 +1,12 @@
 import React from 'react';
-
 import DocumentMeta from 'react-document-meta';
-import styles from './index.css';
-
-import {
-  connect
-} from 'react-redux';
-
-import {
-  withRouter
-} from 'react-router-dom';
-
-// actions
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import * as shopActions from 'store/shop/actions';
-
-// layout
 import Header from './layout/Header';
-
-// routes
 import Routes from './routes';
+
+import styles from './index.css';
 
 // site meta data
 const meta = {
@@ -41,6 +29,7 @@ export default class Main extends React.Component {
   }
 
   render() {
+    console.log('styles', styles);
     return (
       <div className={styles.container}>
         <DocumentMeta {...meta} />

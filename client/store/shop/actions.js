@@ -1,8 +1,6 @@
 import store from 'store';
 import _ from 'lodash';
-import Client, {
-  Config
-} from 'shopify-buy';
+import Client, { Config } from 'shopify-buy';
 
 // action: init shop
 export let initShop = () => {
@@ -28,7 +26,6 @@ export let initShop = () => {
 export let setActiveProduct = (product) => {
   return (dispatch, getState, shopifyClient) => {
     let productHandle = window.location.pathname.split('/')[3];
-    console.log('productHandle', productHandle);
     let shop = getState().shop;
     if (productHandle) {
       // find product in products

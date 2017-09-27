@@ -1,4 +1,8 @@
 @import "globals.css";
-.wrapper {
+.cart {
+  position: fixed;
+  top: rem(15);
+  right: rem(15);
+  color: white;
+  cursor: pointer;
 }
-

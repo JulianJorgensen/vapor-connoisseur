@@ -6,11 +6,11 @@ import Button from 'components/Button';
 
 import styles from './index.css';
 
-export default class Homepage extends React.Component {
+export default class Samples extends React.Component {
   render() {
     return (
       <div className={styles.wrapper}>
-        <img src='http://placehold.it/900x900/181818' />
+        <img src='http://placehold.it/900x750/181818' />
       </div>
     )
   }

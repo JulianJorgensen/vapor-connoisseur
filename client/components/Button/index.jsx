@@ -8,14 +8,11 @@ const Button = ({ className, white, hollow, primary, blue, small, tiny, theme, t
   const _className = cn(className, styles.default, {
     [styles.white]: white,
     [styles.hollow]: hollow,
-    [styles.primary]: primary,
-    [styles.tiny]: tiny,
-    [styles.small]: small,
-    [styles.blue]: blue
+    [styles.primary]: primary
   });
 
   if (href === undefined) {
-    return <button className={_className} theme={styles} {...others}/>;
+    return <button className={_className} {...others}/>;
   }
 
   return (

@@ -29,8 +29,8 @@
 }
 
 .cartHeader {
-  padding: 20px;
-  border-bottom: 1px solid #e5e5e5;
+  padding: rem(20);
+  border-bottom: rem(1) solid #e5e5e5;
   flex: 0 0 auto;
   display: inline-block;
 }
@@ -38,23 +38,23 @@
 .cartLineItems {
   flex: 1 0 auto;
   margin: 0;
-  padding: 20px;
+  padding: rem(20);
 }
 
 .cartFooter {
-  padding: 20px;
-  border-top: 1px solid #e5e5e5;
+  padding: rem(20);
+  border-top: rem(1) solid #e5e5e5;
   flex: 0 0 auto;
 }
 
 .cartCheckout {
-  margin-top: 20px;
+  margin-top: rem(20);
   display: block;
   width: 100%;
 }
 
 .cartInfo {
-  padding: 15px 20px 10px;
+  padding: rem(15) rem(20) rem(10);
 }
 
 .cartInfoTotal {
@@ -63,7 +63,7 @@
 }
 
 .cartInfoSmall {
-  font-size: 11px;
+  font-size: rem(11);
 }
 
 .cartInfoPricing {
@@ -71,7 +71,7 @@
 }
 
 .pricing {
-  margin-left: 5px;
-  font-size: 16px;
+  margin-left: rem(5);
+  font-size: rem(16);
   color: black;
 }

@@ -4,6 +4,14 @@
   margin-bottom: rem(30);
 }
 
+.image {
+  width: 100%;
+  height: rem(200);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 .title {
   font-size: 1.3rem;
   margin-top: 1rem;

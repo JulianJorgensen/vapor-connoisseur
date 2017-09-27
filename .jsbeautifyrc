@@ -1,4 +1,5 @@
 {
   "e4x": true,
-  "indent_size": 2
+  "indent_size": 2,
+  "brace_style": "collapse,preserve-inline"
 }

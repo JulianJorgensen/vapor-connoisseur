@@ -1,1 +1,18 @@
 @import "globals.css";
+.container {
+  composes: globalContainer;
+  display: flex;
+  justify-content: center;
+}
+
+.nav {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  & li {
+    margin-right: rem(30);
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

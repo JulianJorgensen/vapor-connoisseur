@@ -39,13 +39,15 @@ class Products extends Component {
     });
 
     return (
-      <div className={styles.wrapper}>
-        <ul>
-          <li><Link to='/shop/all'>all</Link></li>
+      <div className={styles.container}>
+        <ul className={styles.nav}>
+          <li><Link to='/shop'>all</Link></li>
           <li><Link to='/shop/cartridge'>cartridges</Link></li>
-          <li><Link to='/shop/batteries'>batteries</Link></li>
+          <li><Link to='/shop/battery'>batteries</Link></li>
         </ul>
-        {renderProducts}
+        <div className={styles.products}>
+          {renderProducts}
+        </div>
       </div>
     );
   }
