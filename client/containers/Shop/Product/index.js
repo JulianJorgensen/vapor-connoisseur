@@ -5,7 +5,7 @@ import {
   connect
 } from 'react-redux';
 import Client from 'shopify-buy';
-import VariantSelector from 'shop/components/VariantSelector';
+import VariantSelector from '../components/VariantSelector';
 import styles from './index.css';
 
 class Product extends Component {
