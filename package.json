@@ -87,7 +87,7 @@
     "redux-auth-wrapper": "^2.0.2",
     "redux-thunk": "^2.2.0",
     "rimraf": "^2.6.2",
-    "shopify-buy": "^0.7.1",
+    "shopify-buy": "beta",
     "smoothscroll-polyfill": "^0.3.6",
     "stats-webpack-plugin": "^0.4.3",
     "style-loader": "^0.13.1",
