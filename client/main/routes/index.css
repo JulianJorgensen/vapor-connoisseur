@@ -1,22 +1,17 @@
 @import "globals.css";
-.container {
-  composes: globalContainer;
+.wrapper {
+  min-height: 100%;
 }
 
 .animatedRoutes {
   position: relative;
   width: 100%;
-  overflow: hidden;
 }
 
 .routesContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  min-height: 100vh; 
 }

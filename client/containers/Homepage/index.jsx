@@ -2,15 +2,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import Button from 'components/Button';
-
+import Landing from './components/Landing';
+import About from './components/About';
+import Technology from './components/Technology';
+import Samples from './components/Samples';
 import styles from './index.css';
 
+@connect(({ site }) => ({
+  content: site.content.homepage
+}))
 export default class Homepage extends React.Component {
   render() {
     return (
       <div className={styles.wrapper}>
-        <img src='http://placehold.it/900x900/181818' />
+        <Landing />
+        <About />
+        <Technology />
+        <Samples />
       </div>
     )
   }

@@ -1,10 +1,11 @@
 import React from 'react';
-import { Route, Switch, withRouter }
-from 'react-router-dom';
-import { connect }
-from 'react-redux';
+import { Route, Switch, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { siteActions } from 'store/actions';
+import { userIsAuthenticated, userIsNotAuthenticated } from './utils';
 
 // containers
+import AgeVerification from 'containers/AgeVerification';
 import Homepage from 'containers/Homepage';
 import Services from 'containers/Services';
 import How from 'containers/How';
@@ -34,9 +35,10 @@ function logPageView(location) {
 //   window.scrollTo(0, 0);
 // });
 
-
 @withRouter
-@connect()
+@connect(({ site }) => ({
+  site
+}))
 export default class Routes extends React.Component {
   constructor(props) {
     super(props);
@@ -51,7 +53,6 @@ export default class Routes extends React.Component {
 
   updateRoutesContainer = () => {
     const routesContainerHeight = document.getElementById('routesContainer').clientHeight;
-    console.log('updating content height based on routescontainer height', routesContainerHeight);
     if (routesContainerHeight) {
       this.setState({
         contentHeight: routesContainerHeight
@@ -66,6 +67,9 @@ export default class Routes extends React.Component {
     // scroll to top when changing page
     window.scrollTo(0, 0);
 
+    // close nav
+    this.props.dispatch(siteActions.closeNav());
+        
     // update routes container
     setTimeout(() => {
       this.updateRoutesContainer();
@@ -88,22 +92,41 @@ export default class Routes extends React.Component {
       exit: 1
     };
 
+    const globalProps = {
+      onLoaded: this.updateRoutesContainer
+    }
+
+    const renderMergedProps = (component, ...rest) => {
+      const finalProps = Object.assign({}, ...rest);
+      return (
+        React.createElement(component, finalProps)
+      );
+    }
+    
+    const PropsRoute = ({ component, ...rest }) => {
+      return (
+        <Route {...rest} onLoaded={this.updateRoutesContainer} render={routeProps => {
+          return renderMergedProps(component, routeProps, globalProps, rest);
+        }}/>
+      );
+    }
+
     return (
-      <div className={styles.container}>
+      <div className={styles.wrapper}>
         <TransitionGroup component="main" className={styles.animatedRoutes} style={{height: this.state.contentHeight}}>
           <CSSTransition timeout={timeout}>
-            <div id='routesContainer'>
+            <div id='routesContainer' className={styles.routesContainer}>
               <Switch location={location}>
-                <Route path='/' exact render={(props)=><Homepage {...props} onLoaded={this.updateRoutesContainer} />} />
-                <Route path='/services' render={(props)=><Services {...props} onLoaded={this.updateRoutesContainer} />} />
-                <Route path='/how' render={(props)=><How {...props} onLoaded={this.updateRoutesContainer} />} />
-                <Route path='/about' render={(props)=><About {...props} onLoaded={this.updateRoutesContainer} />} />
-                <Route path='/sample-kits' render={(props)=><Samples {...props} onLoaded={this.updateRoutesContainer} />} />
-                <Route path='/contact' render={(props)=><Contact {...props} onLoaded={this.updateRoutesContainer} />} />
-                
-                <Route path='/shop' exact render={(props)=><Shop {...props} onLoaded={this.updateRoutesContainer} />} />
-                <Route path='/shop/:filter' exact render={(props)=><Shop {...props} onLoaded={this.updateRoutesContainer} />} />
-                <Route path='/shop/:category/:productHandle' render={(props)=><Shop showSingle={true} {...props} onLoaded={this.updateRoutesContainer} />} />
+                <PropsRoute path='/age-verification' component={userIsNotAuthenticated(AgeVerification)} />
+                <PropsRoute path='/' exact component={userIsAuthenticated(Homepage)} />
+                <PropsRoute path='/services' component={userIsAuthenticated(Services)} />
+                <PropsRoute path='/how' component={userIsAuthenticated(How)} />
+                <PropsRoute path='/about' component={userIsAuthenticated(About)} />
+                <PropsRoute path='/sample-kits' component={userIsAuthenticated(Samples)} />
+                <PropsRoute path='/contact' component={userIsAuthenticated(Contact)} />                
+                <PropsRoute path='/shop' exact component={userIsAuthenticated(Shop)} />
+                <PropsRoute path='/shop/:filter' exact component={userIsAuthenticated(Shop)} />
+                <PropsRoute path='/shop/:category/:productHandle' exact component={userIsAuthenticated(Shop)} showSingle={true} />                
               </Switch>
               <Footer />
             </div>

@@ -1,0 +1,46 @@
+@import "globals.css";
+.wrapper {
+  /* background-image: url(assets/images/Intro_Smoke-Web.png); */
+  background-position: right 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta{
+  margin-top: rem(30);
+  position: relative;
+  padding: 0;
+  color: white;
+  transition: all 0.2s;
+  padding: rem(5) 0;
+  text-transform: uppercase;
+  & span{
+    position: relative;
+    z-index: 1;
+  }
+  &:before{
+    content: '';
+    width: 100%;
+    height: rem(2);
+    background-color: var(--golden);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.2s;
+  }
+  &:hover{
+    color: black;
+    &:before{
+      height: 100%;
+      width: 120%;  
+    }
+  }
+}

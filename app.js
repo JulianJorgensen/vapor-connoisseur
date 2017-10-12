@@ -18,6 +18,9 @@ app.set('port', (process.env.PORT || 3000));
 // Setting up basic middleware for all Express requests
 app.use(logger('dev')); // Log requests to API using morgan
 
+// Content routes
+app.use('/contentful', contentful);
+
 // Email routes
 app.use('/email', email);
 

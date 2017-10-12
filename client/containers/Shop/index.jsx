@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import _ from 'lodash';
 import { connect } from 'react-redux';
-import * as shopActions from 'store/shop/actions';
+import { shopActions } from 'store/actions';
 import Product from './Product';
 import Products from './Products';
 import Cart from './components/Cart';
@@ -24,59 +24,26 @@ class Shop extends Component {
     this.addVariantToCart = this.addVariantToCart.bind(this);
     this.updateQuantityInCart = this.updateQuantityInCart.bind(this);
     this.removeLineItemInCart = this.removeLineItemInCart.bind(this);
-    this.filterProducts = this.filterProducts.bind(this);
   }
 
-  componentWillUpdate(newProps) {
-    if (this.props.match.url !== newProps.match.url) {
-      let {
-        showSingle,
-        dispatch
-      } = newProps;
-      console.log('props', newProps);
-      if (showSingle) {
-        console.log('show active prod');
-        // set active product
-        dispatch(shopActions.setActiveProduct());
-      } else {
-        // clear active product
-        dispatch(shopActions.clearActiveProduct());
-      }
+  componentDidReceiveProps(oldProps) {
+    if (oldProps.match.url !== this.props.match.url) {
+      this.setActiveProduct();
     }
   }
 
-  componentDidUpdate(oldProps) {
-    if ((!oldProps.shop.products && this.props.shop.products) || (oldProps.match.url !== this.props.match.url)) {
-      this.filterProducts();
-    }
+  componentWillMount() {
+    this.setActiveProduct();
   }
 
-  filterProducts() {
-    let {
-      products
-    } = this.props.shop;
-
-    if (!products) {
-      return false;
-    }
-
-    let filter = this.props.match.params.filter || null
-    if (filter) {
-      let productsFiltered = products.filter((product) => {
-        if (product.productType.toLowerCase() !== filter) {
-          return false;
-        }
-
-        return true;
-      });
-
-      this.setState({
-        productsFiltered
-      });
+  setActiveProduct() {
+    let { showSingle, dispatch } = this.props;
+    if (showSingle) {
+      // set active product
+      dispatch(shopActions.setActiveProduct());
     } else {
-      this.setState({
-        productsFiltered: null
-      })
+      // clear active product
+      dispatch(shopActions.clearActiveProduct());
     }
   }
 
@@ -117,12 +84,7 @@ class Shop extends Component {
   }
 
   render() {
-    let {
-      shop
-    } = this.props;
-    let {
-      productsFiltered
-    } = this.state;
+    let {shop} = this.props;
 
     let renderPage = () => {
       if (shop.product) {
@@ -133,7 +95,7 @@ class Shop extends Component {
         />
       } else {
         return <Products
-          products={productsFiltered ? productsFiltered : shop.products}
+          products={shop.products}
           addVariantToCart={this.addVariantToCart}
           onLoaded={this.props.onLoaded}
         />
@@ -147,7 +109,9 @@ class Shop extends Component {
           <div className={styles.cart} onClick={()=>this.props.dispatch(shopActions.toggleCart())}>Cart</div>
         }
 
-        {renderPage()}
+        <div className={styles.container}>
+          {renderPage()}
+        </div>
 
         <Cart
           checkout={shop.checkout}

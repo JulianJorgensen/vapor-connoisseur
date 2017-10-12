@@ -1,19 +1,48 @@
 @import "globals.css";
-.container {
-  composes: globalContainer;
+.wrapper{
   margin-top: rem(60);
   display: flex;
+  flex-direction: column;
   justify-content: center;
+}
+
+.container {
+  composes: globalContainer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.details{
+  display: flex;
+  & .logo{
+    margin-right: rem(30);
+  }
 }
 
 .nav {
   display: flex;
-  list-style-type: none;
-  padding: 0;
-  & li {
-    margin-right: rem(30);
-    &:last-child {
-      margin-right: 0;
+  & ul {
+    margin-left: rem(50);
+    &:first-child{
+      margin-left: 0;
     }
+  }
+}
+
+.copyright{
+  margin: rem(100) 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  color: gray(20%);
+  font-size: rem(14);
+}
+
+.bgImage{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  & img{
+    width: 100%;
   }
 }

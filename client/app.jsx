@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {
-  Provider
-} from 'react-redux';
-import {
-  BrowserRouter as Router
-} from 'react-router-dom';
+import {Provider} from 'react-redux';
+import {BrowserRouter as Router} from 'react-router-dom';
+import { CookiesProvider } from 'react-cookie';
 
 import styles from './styles/app.css';
 import Main from './main';
@@ -20,9 +17,11 @@ store.subscribe(() => {
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
-      <Main />
-    </Router>
+    <CookiesProvider>
+      <Router>
+        <Main />
+      </Router>
+    </CookiesProvider>
   </Provider>,
   document.getElementById('app')
 );

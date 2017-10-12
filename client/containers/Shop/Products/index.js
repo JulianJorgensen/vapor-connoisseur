@@ -1,14 +1,13 @@
-import React, {
-  Component
-} from 'react';
-import {
-  Link
-} from 'react-router-dom';
+import React, { Component } from 'react';
+import { Link, withRouter } from 'react-router-dom';
 import LoadingSpinner from 'components/LoadingSpinner';
 import Product from './components/Product';
 import styles from './index.css';
 
+@withRouter
 class Products extends Component {
+  state = {}
+
   componentDidUpdate(prevProps) {
     if (prevProps.products !== this.props.products) {
       // trigger parent onLoaded
@@ -16,10 +15,43 @@ class Products extends Component {
     }
   }
 
+  componentDidMount() {
+    this.setProducts();
+  }
+
+  setProducts() {
+    let { products } = this.props;
+    
+    if (!products) {
+      return false;
+    }
+    
+    let { filter } = this.props.match.params || null;
+
+    if (filter) {
+      this.filterProducts(filter, products);
+    }else{
+      this.setState({
+        products: this.props.products        
+      });
+    }
+  }
+
+  filterProducts(filter, products) {    
+    let productsFiltered = products.filter((product) => {
+      if (product.productType.toLowerCase() !== filter) {
+        return false;
+      }
+      return true;
+    });
+
+    this.setState({
+      products: productsFiltered
+    });
+  }
+
   render() {
-    let {
-      products
-    } = this.props;
+    let { products } = this.state;
 
     if (!products) {
       return (

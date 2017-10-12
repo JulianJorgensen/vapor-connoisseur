@@ -1,5 +1,6 @@
 /* App styles */
-
+@import "normalize.css";
 @import "fonts.css";
 @import "animations.css";
+@import "elements.css";
 @import "globals.css";

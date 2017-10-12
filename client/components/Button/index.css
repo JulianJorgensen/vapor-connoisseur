@@ -6,12 +6,10 @@
   padding-right: rem(30);
   height: rem(50);
   font-size: rem(18);
+  color: white;
   text-decoration: none;
   font-family: var(--primaryFont);
   transition: all 0.2s;
   border: 0;
-  background-color: gray(80%);
-  &:hover {
-    background-color: gray(70%);
-  }
+  background-color: transparent;
 }

@@ -2,7 +2,8 @@ import React from 'react';
 import DocumentMeta from 'react-document-meta';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import * as shopActions from 'store/shop/actions';
+import { withCookies, Cookies } from 'react-cookie';
+import { shopActions, siteActions } from 'store/actions';
 import Header from './layout/Header';
 import Routes from './routes';
 
@@ -20,12 +21,21 @@ const meta = {
   }
 };
 
+@withCookies
 @withRouter
 @connect()
 export default class Main extends React.Component {
   componentWillMount() {
+    // fetch content
+    this.props.dispatch(siteActions.fetchContent());    
+
     // init shop
     this.props.dispatch(shopActions.initShop());
+
+    // check if age already verified using cookies
+    if (this.props.cookies.get('verified')) {
+      this.props.dispatch(siteActions.verifyAge());
+    }
   }
 
   render() {

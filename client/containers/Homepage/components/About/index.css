@@ -1,0 +1,50 @@
+@import "globals.css";
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: rem(300);
+}
+
+.container{
+  composes: globalContainer;
+}
+
+.row{
+  display: flex;
+  justify-content: space-between;
+}
+
+.content{
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  & .col{
+    width: calc(50% - rem(20));
+  }
+}
+
+.head{
+  &,
+  & .content{
+    align-items: flex-end;  
+  }
+}
+
+.body{
+  margin: rem(30) 0;  
+}
+
+.services{
+  width: 15%;
+  text-align: left;
+}
+
+.bgImage{
+  width: 100%;
+  position: absolute;
+  transform: translateY(-30%);
+  & img{
+    width: 100%;
+  }  
+}

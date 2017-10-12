@@ -1,0 +1,13 @@
+@import "variables.css";
+
+:global{
+  & button{
+    background-color: transparent;
+    border: 0;
+  }
+  & .noBullets{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+}

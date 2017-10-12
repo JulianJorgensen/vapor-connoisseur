@@ -2,8 +2,9 @@
 
 :global{
   & body{
-    background-color: gray(10%);
+    background-color: var(--background);
     color: white;
+    min-height: 100vh;
   }
 }
 
@@ -11,4 +12,6 @@
   align-self: center;
   width: rem(900);
   max-width: 100%;
+  position: relative;
+  z-index: 2;
 }

@@ -157,6 +157,7 @@ const BASE_CONFIG = {
   resolve: {
     alias: {
       assets: path.resolve(__dirname, 'client/assets/'),
+      images: path.resolve(__dirname, 'client/images/'),
       client: path.resolve(__dirname, 'client/'),
       components: path.resolve(__dirname, 'client/components/'),
       containers: path.resolve(__dirname, 'client/containers/'),
