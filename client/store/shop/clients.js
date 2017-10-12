@@ -1,7 +1,9 @@
 import Client, { Config } from 'shopify-buy';
 
+console.log('config', Config);
+
 const shopifyConfig = new Config({
-  domain: 'vapor-connoisseur.myshopify.com',
-  storefrontAccessToken: 'd16e6aa0ee8ac23734c065c9379f2692'
+  domain: ENV_CONFIG.SHOPIFY.DOMAIN,
+  storefrontAccessToken: ENV_CONFIG.SHOPIFY.STORE_FRONT_ACCESS_TOKEN
 });
 export const shopifyClient = new Client(shopifyConfig);

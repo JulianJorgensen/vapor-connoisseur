@@ -1,9 +1,5 @@
-import React, {
-  Component
-} from 'react';
-import {
-  connect
-} from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Client from 'shopify-buy';
 import VariantSelector from '../components/VariantSelector';
 import styles from './index.css';

@@ -1,6 +1,5 @@
 import store from 'store';
 import _ from 'lodash';
-import Client, { Config } from 'shopify-buy';
 
 // action: init shop
 export let initShop = () => {
