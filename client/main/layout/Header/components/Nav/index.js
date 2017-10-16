@@ -5,6 +5,12 @@ import { Link, withRouter } from 'react-router-dom';
 import { userIsAuthenticated } from 'routes/utils';
 import { siteActions } from 'store/actions';
 
+import FacebookIcon from '-!svg-react-loader?name=Icon!assets/icons/FontAwesome/brands/facebook.svg';
+import InstagramIcon from '-!svg-react-loader?name=Icon!assets/icons/FontAwesome/brands/instagram.svg';
+import TwitterIcon from '-!svg-react-loader?name=Icon!assets/icons/FontAwesome/brands/twitter.svg';
+
+import Bars from './components/Bars';
+
 import styles from './index.css';
 
 @withRouter
@@ -26,30 +32,34 @@ export default class Nav extends React.Component {
       [styles.open]: navOpen
     });
 
-    let _barsStyles = cn(styles.bars, {
-      [styles.open]: navOpen
-    });
-
     return (
       <div className={styles.wrapper}>
-        <div className={_barsStyles} onClick={this.handleToggleNav}>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        <Bars />
         <div className={_navStyles}>
+          <div className={styles.socialMedia}>
+            <FacebookIcon />
+            <InstagramIcon />
+            <TwitterIcon />
+          </div>
           <ul className={styles.navItems}>
-            <li><Link to='/'>Home</Link></li>
-            <li><Link to='/services'>Services</Link></li>
-            <li><Link to='/how'>How it works</Link></li>
-            <li><Link to='/shop'>Products</Link></li>
-            <li><Link to='/about'>About VC</Link></li>
-            <li><Link to='/sample-kits'>Sample kits</Link></li>
-            <li><Link to='/contact'>Contact</Link></li>
+            <li className={styles.navItem}><Link to='/'>Home</Link></li>
+            <li className={styles.navItem}><Link to='/about'>About</Link></li>
+            <li className={styles.navItem}><Link to='/services'>Services</Link></li>
+            <li className={styles.navItem}><Link to='/customer-pathway'>Process</Link></li>
+            <li className={styles.navItem}><Link to='/shop'>Products</Link></li>
+            <li className={styles.navItem}><Link to='/sample-kits'>Sample Kits</Link></li>
+            <li className={styles.navItem}><Link to='/contact'>Contact</Link></li>
           </ul>
+          <div className={styles.navFooter}>
+            <div>
+              <p><a href="mailto:hi@vaporconnoisseur.com">hi@vaporconnoisseur.com</a></p>
+              <p><phone>877 330 0370</phone></p>
+            </div>
+            <address>
+              <p>2020 E Main St, Ventura</p>
+              <p>CA 93001, USA</p>
+            </address>
+          </div>
         </div>
       </div>
     )

@@ -8,6 +8,14 @@
   }
 }
 
+.globalWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .globalContainer {
   align-self: center;
   width: rem(900);

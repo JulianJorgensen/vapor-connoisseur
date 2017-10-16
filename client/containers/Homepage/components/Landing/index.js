@@ -16,12 +16,12 @@ export default class HomepageLanding extends React.Component {
           <div className={styles.hero}>
             <div className={styles.company}>Vapor Connoisseur</div>
             <h1 className={styles.headline}>{content.headline}</h1>
-            <p>Vapor Connoisseur leads by design, building the industry's finest vaporizers.</p>
+            <p>{content.intro}</p>
           </div>
-          <div className={styles.cta}>Scroll to discover</div>
+          <div className={styles.cta}>{content.ctaText}Scroll to discover</div>
         </div>
         <div className={styles.productImage}>
-          <img src='http://placehold.it/700x900/393F46' />
+          <img src={content.productImage.fields.file.url || 'http://placehold.it/900x900'} />
           <div className={styles.meta}>XY-05</div>
         </div>
       </div>

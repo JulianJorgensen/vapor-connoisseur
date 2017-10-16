@@ -1,4 +1,6 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
+import { connect } from 'react-redux';
 import ImageDiff from 'react-image-diff';
 import Slider from 'react-rangeslider'
 
@@ -6,18 +8,21 @@ import productExploded from 'assets/images/XY05_EXPLO1-24.png';
 import productExploded2 from 'assets/images/XY05_EXPLO1-24copy.png';
 import styles from './index.css';
 
+@connect(({ site }) => ({
+  content: site.content.homepage
+}))
 export default class HomepageTechnology extends React.Component {
   state = {
     slidePosition: 50
   }
 
   handleSlidePositionChange = (value) => {
-    console.log('value', value);
     this.setState({slidePosition: value});
   }
 
   render() {
     let { slidePosition } = this.state;
+    let { content } = this.props;
     return (
       <div className={styles.wrapper}>
         <div className={styles.container}>
@@ -35,8 +40,8 @@ export default class HomepageTechnology extends React.Component {
           </div>
 
           <div className={styles.process}>
-            <h2>The VC process</h2>
-            <p>Every oil formulation...</p>
+            <h2>{content.customerPathwayHeadline}</h2>
+            <ReactMarkdown source={content.customerPathwayBody} />            
             <div className={styles.cta}>Learn more</div>
           </div>
         </div>

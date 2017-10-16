@@ -3,6 +3,7 @@ import { find } from 'lodash';
 
 // action: fetch content from contentful
 export let fetchContent = () => {
+  console.log('fetching content');
   return (dispatch, getState) => {
     axios.get(`${ENV_CONFIG.SITE_URL}/contentful/getAllContent`).then((response) => {
       // set content
@@ -16,12 +17,12 @@ export let fetchContent = () => {
 // action: set content
 export let setContent = (data) => {
   let content = {};
-  let contentModels = ['homepage', 'about'];
+  let contentModels = ['homepage', 'about', 'customerPathway', 'services'];
   contentModels.map((contentModel) => {
-    let foundContent = find(data, { 'sys': {'contentType': { 'sys': {'id': contentModel} } } });
+    let foundContent = find(data, { 'sys': { 'contentType': { 'sys': { 'id': contentModel } } } });
     content[contentModel] = foundContent ? foundContent.fields : {};
   });
-  
+
   return {
     type: 'SET_CONTENT',
     content

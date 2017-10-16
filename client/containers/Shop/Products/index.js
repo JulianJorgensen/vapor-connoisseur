@@ -55,7 +55,9 @@ class Products extends Component {
 
     if (!products) {
       return (
-        <LoadingSpinner />
+        <div className={styles.container}>
+          <LoadingSpinner className={styles.loadingSpinner} />
+        </div>
       )
     }
 

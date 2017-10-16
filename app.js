@@ -10,7 +10,6 @@ let email = require('./server/routes/email');
 
 let util = require('./server/util/util');
 let ENV_CONFIG = util.getEnvConfig();
-console.log('Site url: ', ENV_CONFIG.SITE_URL);
 
 // Set port
 app.set('port', (process.env.PORT || 3000));

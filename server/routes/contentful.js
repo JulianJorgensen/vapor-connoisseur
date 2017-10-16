@@ -12,7 +12,6 @@ const client = createClient({
 router.route('/getAllContent')
   .get((req, res) => {
     client.getEntries().then((response) => {
-      console.log('response', response);
       res.status(200).send(response.items);
     })
     .catch(console.error);

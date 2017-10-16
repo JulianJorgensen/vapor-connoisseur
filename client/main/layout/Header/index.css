@@ -3,8 +3,7 @@
   composes: globalContainer;
   display: flex;
   justify-content: space-between;
-  margin-top: rem(30);
+  top: rem(60);
   z-index: 3;
   position: fixed;
-  top: 0;
 }

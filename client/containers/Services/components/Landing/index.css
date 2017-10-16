@@ -1,0 +1,51 @@
+@import "globals.css";
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.container{
+  composes: globalContainer;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero{
+  & .company{
+    position: relative;
+    padding-left: rem(100);
+    &:before{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      height: rem(2);
+      width: rem(80);
+      background-color: var(--golden);
+    }
+  }
+  
+  & .headline{
+    margin: rem(80) 0;
+  }
+}
+
+.productImage{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 50vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  & .meta{
+    position: absolute;
+    left: rem(60);
+    bottom: rem(60);
+  }
+}

@@ -1,0 +1,66 @@
+@import "globals.css";
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.container{
+  composes: globalContainer;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.features{
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  
+  & .featuresBody{
+    width: 60%;
+    background-color: gray(40%);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: calc(100% - rem(100));
+    transform: translateY(-50%);
+    padding: rem(60);
+    & .miniNav{
+      position: absolute;
+      bottom: rem(-20);
+      background-color: gray(30%);
+      width: rem(200);
+      display: flex;
+      justify-content: space-between;
+      padding: rem(15);
+      & .miniNavItem{
+        cursor: pointer;
+      }
+    }
+  }
+  & .featuresNav{
+    width: 50%;
+    background-color: gray(20%);
+    padding: rem(60);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & .featureNavItem{
+      margin-bottom: rem(15);
+      font-size: rem(12);
+      text-transform: uppercase;
+      cursor: pointer;
+      letter-spacing: rem(1.4);
+    }
+  }
+}
+
+
+.feature{
+  display: none;
+  &.active{
+    display: block;
+  }
+}

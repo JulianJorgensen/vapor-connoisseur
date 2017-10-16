@@ -19,9 +19,7 @@ class Cart extends Component {
     let { checkout, updateQuantityInCart, removeLineItemInCart, isCartOpen, handleCartClose } = this.props;
 
     if (!checkout) {
-      return (
-        <LoadingSpinner />
-      )
+      return false;
     }
 
     let { lineItems } = checkout;

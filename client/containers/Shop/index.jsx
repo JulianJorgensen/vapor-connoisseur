@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { shopActions } from 'store/actions';
+import Footer from 'layout/Footer';
 import Product from './Product';
 import Products from './Products';
 import Cart from './components/Cart';
@@ -83,7 +84,7 @@ class Shop extends Component {
   }
 
   render() {
-    let {shop} = this.props;
+    let { shop } = this.props;
 
     let renderPage = () => {
       if (shop.product) {
@@ -119,6 +120,8 @@ class Shop extends Component {
           updateQuantityInCart={this.updateQuantityInCart}
           removeLineItemInCart={this.removeLineItemInCart}
         />
+
+        <Footer />
       </div>
     );
   }

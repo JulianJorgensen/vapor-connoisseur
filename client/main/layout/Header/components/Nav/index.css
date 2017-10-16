@@ -13,17 +13,33 @@
   }
 }
 
+.socialMedia{
+  & svg{
+    height: rem(15);
+    width: rem(15);
+    margin-right: rem(8);
+    & path{
+      fill: white;
+    }
+  }
+}
+
 .nav{
   position: fixed;
   top: 0;
   right: 0;
   opacity: 0;
-  transform: translateX(rem(100));
+  transform: translateX(rem(200));
   pointer-events: none;
-  width: rem(400);
+  width: rem(800);
+  padding: rem(60);
   height: 100vh;
-  background-color: gray(20%);
+  background-color: color(gray(20%) alpha(80%));
   transition: all 0.2s;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   &.open{
     opacity: 1;
     pointer-events: auto;
@@ -31,65 +47,26 @@
   }
 }
 
-:root {
-  --barHeight: rem(4)
+.navItems{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  & .navItem{
+    font-size: rem(30);
+    margin-bottom: rem(25);
+    text-transform: uppercase;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
 }
 
-.bars {
-  position: relative;
-  z-index: 2;
-  width: rem(30);
+.navFooter{
   display: flex;
-  flex-wrap: wrap;
-  cursor: pointer;
-  & span {
-    display: block;
-    height: var(--barHeight);
-    width: 50%;
-    background: white;
-    opacity: 1;
-    transform: rotate(0deg);
-    transition: .3s ease-in-out;
-    margin-bottom: rem(5);
-  }
-  & span:nth-child(5),
-  & span:nth-child(6) {
-    margin-bottom: 0;
-  }
-  & span:nth-child(even) {
-    border-radius: 0 var(--barHeight) var(--barHeight) 0;
-  }
-  & span:nth-child(odd) {
-    border-radius: var(--barHeight) 0 0 var(--barHeight);
-  }
-  &.open {
-    & span:nth-child(1),
-    & span:nth-child(2) {
-      margin-bottom: rem(7);
-    }
-    & span:nth-child(1) {
-      transform: rotate(45deg) translateX(rem(3));
-    }
-    & span:nth-child(2) {
-      transform: rotate(-45deg) translateX(rem(-3));
-    }
-    & span:nth-child(3) {
-      transform: translateX(-50%);
-      opacity: 0;
-    }
-    & span:nth-child(4) {
-      transform: translateX(50%);
-      opacity: 0;
-    }
-    & span:nth-child(3),
-    & span:nth-child(4) {
-      margin-bottom: rem(0);
-    }
-    & span:nth-child(5) {
-      transform: rotate(-45deg) translateX(rem(3));
-    }
-    & span:nth-child(6) {
-      transform: rotate(45deg) translateX(rem(-3));
-    }
+  justify-content: space-between;
+  width: rem(440);
+  font-size: rem(16);
+  & a{
+    color: white;
   }
 }

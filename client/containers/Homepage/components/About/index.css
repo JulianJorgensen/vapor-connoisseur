@@ -16,12 +16,10 @@
 }
 
 .content{
-  display: flex;
-  justify-content: space-between;
-  width: 60%;
-  & .col{
-    width: calc(50% - rem(20));
-  }
+  width: 70%;
+  column-count: 2;  
+  column-gap: rem(60);
+  column-width: 50%;
 }
 
 .head{
@@ -38,6 +36,11 @@
 .services{
   width: 15%;
   text-align: left;
+  & ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .bgImage{

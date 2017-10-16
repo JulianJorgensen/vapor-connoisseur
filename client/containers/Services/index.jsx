@@ -2,15 +2,31 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import Button from 'components/Button';
-
+import LoadingSpinner from 'components/LoadingSpinner';
+import Footer from 'layout/Footer';
+import Landing from './components/Landing';
+import Design from './components/Design';
+import Manufacturing from './components/Manufacturing';
+import Logistics from './components/Logistics';
+import AutomatedFilling from './components/AutomatedFilling';
 import styles from './index.css';
 
+@connect(({ site }) => ({
+  content: site.content.services
+}))
 export default class Services extends React.Component {
   render() {
+    if (!this.props.content) {
+      return <LoadingSpinner />
+    }
     return (
       <div className={styles.wrapper}>
-        <img src='http://placehold.it/900x720/181818' />
+        <Landing />
+        <Design />
+        <Manufacturing />
+        <Logistics />
+        <AutomatedFilling />
+        <Footer />
       </div>
     )
   }

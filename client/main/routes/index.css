@@ -1,17 +1,16 @@
 @import "globals.css";
 .wrapper {
   min-height: 100%;
+  &.navOpen {
+    filter: blur(4px);
+  }
 }
 
-.animatedRoutes {
+.switch {
   position: relative;
-  width: 100%;
-}
-
-.routesContainer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-height: 100vh; 
+  &>div {
+    transition: all 0.1s;
+    position: absolute;
+    width: 100%;
+  }
 }

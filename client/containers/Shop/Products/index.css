@@ -1,5 +1,10 @@
 @import "globals.css";
-.container {}
+.container {
+  min-height: rem(600);
+  & .loadingSpinner{
+    min-height: inherit;
+  }
+}
 
 .nav {
   display: flex;
