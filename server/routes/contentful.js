@@ -10,10 +10,8 @@ const client = createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
 });
 
-router.use(cors());
-
 router.route('/getAllContent')
-  .get((req, res) => {
+  .get(cors(), (req, res) => {
     client.getEntries().then((response) => {
         res.status(200).send(response.items);
       })
