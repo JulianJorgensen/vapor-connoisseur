@@ -13,7 +13,7 @@ const client = createClient({
 router.use(cors());
 
 router.route('/getAllContent')
-  .get(cors(), (req, res) => {
+  .get((req, res) => {
     client.getEntries().then((response) => {
         res.status(200).send(response.items);
       })
