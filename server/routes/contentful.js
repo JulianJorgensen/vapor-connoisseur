@@ -2,12 +2,15 @@ let express = require('express');
 let router = express.Router();
 let app = require('../../app');
 let util = require('../util/util');
+let cors = require("cors");
 
 import { createClient } from 'contentful';
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
 });
+
+router.use(cors());
 
 router.route('/getAllContent')
   .get(cors(), (req, res) => {
