@@ -21,6 +21,16 @@ app.use(logger('dev')); // Log requests to API using morgan
 // cors
 app.use(cors());
 
+//CORS middleware
+var allowCrossDomain = function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', 'https://vapor-connoisseur.herokuapp.com/');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+
+  next();
+}
+app.use(allowCrossDomain);
+
 // Content routes
 app.use('/contentful', contentful);
 
