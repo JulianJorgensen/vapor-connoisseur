@@ -19,10 +19,8 @@ app.set('port', (process.env.PORT || 3000));
 app.use(logger('dev')); // Log requests to API using morgan
 
 // cors
-app.use(function(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-});
+app.use(cors());
+app.options('*', cors());
 
 // Content routes
 app.use('/contentful', contentful);
