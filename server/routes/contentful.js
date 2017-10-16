@@ -10,11 +10,11 @@ const client = createClient({
 });
 
 router.route('/getAllContent')
-  .get((req, res) => {
+  .get(cors(), (req, res) => {
     client.getEntries().then((response) => {
-      res.status(200).send(response.items);
-    })
-    .catch(console.error);
+        res.status(200).send(response.items);
+      })
+      .catch(console.error);
   });
 
 module.exports = router;

@@ -19,8 +19,9 @@ app.set('port', (process.env.PORT || 3000));
 app.use(logger('dev')); // Log requests to API using morgan
 
 // cors
-app.use(cors());
-app.options('*', cors());
+app.use(cors({
+  origin: true
+}));
 
 // Content routes
 app.use('/contentful', contentful);
