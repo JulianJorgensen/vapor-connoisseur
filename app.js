@@ -4,6 +4,10 @@ let app = module.exports = express();
 let logger = require('morgan');
 let expressStaticGzip = require("express-static-gzip");
 
+// cors
+let cors = require("cors");
+app.use(cors());
+
 // routes
 let contentful = require('./server/routes/contentful');
 let email = require('./server/routes/email');
