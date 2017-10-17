@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ReactMarkdown from 'react-markdown';
 
-import Hero from 'components/Herol';
+import Hero from 'components/Hero';
 import styles from './index.css';
 
 @connect(({ site }) => ({

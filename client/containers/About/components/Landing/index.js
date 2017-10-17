@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Hero from 'components/herol';
+import Hero from 'components/hero';
 
 import productImage from 'assets/images/Vapor65130.jpg';
 import styles from './index.css';
