@@ -1,0 +1,17 @@
+.wrapper {
+  position: absolute;
+  top: rem(60);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  z-index: 10;
+  & li {
+    margin-left: rem(15);
+    text-transform: uppercase;
+    & a{
+      color: white;
+    }
+  }
+}

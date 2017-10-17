@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-
+import Hero from 'components/Herol';
+import productImage from 'assets/images/homeplaceholder.png';
 import styles from './index.css';
 
 @connect(({ site }) => ({
@@ -13,15 +14,9 @@ export default class HomepageLanding extends React.Component {
     return (
       <div className={styles.wrapper}>
         <div className={styles.container}>
-          <div className={styles.hero}>
-            <div className={styles.company}>Vapor Connoisseur</div>
-            <h1 className={styles.headline}>{content.headline}</h1>
-            <p>{content.intro}</p>
-          </div>
-          <div className={styles.cta}>{content.ctaText}Scroll to discover</div>
+          <Hero className={styles.hero} preTitle='Vapor Connoisseur' headline={content.headline} intro={content.intro} seeMore={true} />
         </div>
-        <div className={styles.productImage}>
-          <img src={content.productImage.fields.file.url || 'http://placehold.it/900x900'} />
+        <div className={styles.productImage} style={{backgroundImage: `url(${productImage})`}}>
           <div className={styles.meta}>XY-05</div>
         </div>
       </div>

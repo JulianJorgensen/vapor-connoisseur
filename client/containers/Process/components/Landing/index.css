@@ -1,0 +1,49 @@
+@import "globals.css";
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.container{
+  composes: globalContainer;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.productImage{
+  composes: defaultBgImage;
+  background-size: contain;
+  position: absolute;
+  z-index: 2;
+  top: rem(160);
+  right: rem(30);
+  width: rem(500);
+  height: rem(500);
+  filter: drop-shadow(rem(20) rem(20) rem(40) black); 
+}
+
+.introWrapper{
+  position: absolute;
+  top: rem(450);
+  background: linear-gradient(to bottom right, var(--mirage), var(--blackRussion));
+  padding: rem(40);
+  height: rem(500);
+  width: 100vw;
+  left: rem(-30);
+  & .intro{
+    width: rem(400);
+  }
+}
+
+.aside{
+  position: relative;
+  right: 0;
+  top: rem(-50);
+  padding: rem(40);
+  width: rem(500);
+  background-color: var(--bokara);
+  z-index: 2;
+  align-self: flex-end;
+}

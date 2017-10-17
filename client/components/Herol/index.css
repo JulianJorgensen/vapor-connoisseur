@@ -1,0 +1,46 @@
+@import "globals.css";
+.wrapper{
+  position: absolute;
+  top: rem(220);
+  height: calc(100vh - rem(180));
+}
+
+.headline {
+  margin: 0 0 rem(40);
+  white-space: pre-wrap;
+}
+
+.intro{
+  width: rem(600);
+  white-space: pre-wrap;
+}
+
+.seeMore{
+  position: absolute;
+  bottom: rem(60);
+}
+
+.cta{
+  composes: fontSmall upperCase;
+  position: absolute;
+  bottom: rem(60);
+}
+
+.preTitle {
+  position: relative;
+  padding-left: rem(120);
+  text-transform: uppercase;
+  font-size: rem(11);
+  letter-spacing: rem(2);
+  margin-bottom: rem(50);
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(rem(-1));
+    height: rem(2);
+    width: rem(70);
+    background-color: var(--muddyWaters);
+  }
+}

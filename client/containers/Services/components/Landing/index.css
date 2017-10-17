@@ -25,7 +25,7 @@
       transform: translateY(-50%);
       height: rem(2);
       width: rem(80);
-      background-color: var(--golden);
+      background-color: var(--muddyWaters);
     }
   }
   

@@ -3,10 +3,10 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /* margin-bottom: rem(150); */
+  margin-bottom: rem(150);
 }
 
-.container{
+.container {
   composes: globalContainer;
   min-height: 100vh;
   display: flex;
@@ -15,31 +15,21 @@
 }
 
 .hero{
-  & .company{
-    position: relative;
-    padding-left: rem(100);
-    &:before{
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      height: rem(2);
-      width: rem(80);
-      background-color: var(--golden);
-    }
-  }
-  
-  & .headline{
-    margin: rem(80) 0;
-  }
+  top: auto;
+  position: static;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.productImage{
+.productImage {
+  composes: defaultBgImage;
   position: absolute;
   top: 0;
   right: 0;
-  & .meta{
+  width: 50%;
+  height: 100vh;
+  & .meta {
     position: absolute;
     left: rem(60);
     bottom: rem(60);

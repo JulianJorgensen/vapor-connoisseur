@@ -1,3 +1,4 @@
+@import "globals.css";
 .wrapper {
   display: flex;
   list-style-type: none;
@@ -31,8 +32,8 @@
   opacity: 0;
   transform: translateX(rem(200));
   pointer-events: none;
-  width: rem(800);
-  padding: rem(60);
+  width: rem(700);
+  padding: rem(60) rem(60) rem(60) rem(120);
   height: 100vh;
   background-color: color(gray(20%) alpha(80%));
   transition: all 0.2s;
@@ -52,9 +53,17 @@
   margin: 0;
   padding: 0;
   & .navItem{
-    font-size: rem(30);
-    margin-bottom: rem(25);
+    font-size: rem(38);
+    line-height: rem(60);
     text-transform: uppercase;
+    font-family: var(--primaryFont);
+    & a{
+      color: var(--muddyWaters);  
+      transition: color 0.2s;
+      &:hover{
+        color: white;
+      }
+    }
     &:last-child{
       margin-bottom: 0;
     }

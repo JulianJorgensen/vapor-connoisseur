@@ -1,0 +1,17 @@
+@import "globals.css";
+.wrapper{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.box{
+  width: calc(33% - rem(20));
+  margin-bottom: rem(50);
+  & .title{
+    font-size: rem(16);
+    height: rem(50);
+    letter-spacing: normal;
+    word-spacing: normal;
+  }
+}

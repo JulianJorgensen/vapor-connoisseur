@@ -75,6 +75,7 @@
     "react-document-meta": "^2.1.1",
     "react-dom": "^15.4.2",
     "react-ga": "^2.1.2",
+    "react-headroom": "^2.2.1",
     "react-image-diff": "https://github.com/JulianJorgensen/react-image-diff",
     "react-markdown": "^2.5.0",
     "react-rangeslider": "^2.2.0",

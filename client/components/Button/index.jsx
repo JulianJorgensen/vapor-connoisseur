@@ -11,13 +11,19 @@ const Button = ({ className, label, white, hollow, primary, blue, small, tiny, t
     [styles.primary]: primary
   });
 
+  let renderButton = () => {
+    return (
+      <button className={_className} {...others}><span className={styles.label}>{label}</span></button>      
+    )
+  }
+
   if (href === undefined) {
-    return <button className={_className} {...others}>{label}</button>;
+    return renderButton();
   }
 
   return (
     <HashLink to={href} target={target}>
-      <button className={_className} theme={styles} {...others}>asd{label}</button>
+      {renderButton()}
     </HashLink>
   )
 };

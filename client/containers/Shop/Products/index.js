@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import LoadingSpinner from 'components/LoadingSpinner';
 import Product from './components/Product';
+import Nav from './components/Nav';
 import styles from './index.css';
 
 @withRouter
@@ -74,11 +75,7 @@ class Products extends Component {
 
     return (
       <div className={styles.container}>
-        <ul className={styles.nav}>
-          <li><Link to='/shop'>all</Link></li>
-          <li><Link to='/shop/cartridge'>cartridges</Link></li>
-          <li><Link to='/shop/battery'>batteries</Link></li>
-        </ul>
+        <Nav />
         <div className={styles.products}>
           {renderProducts}
         </div>

@@ -1,19 +1,20 @@
 @import 'variables.css';
 
-@custom-selector :--headings h1,h2,h3,h4,h5,h6;
+@custom-selector :--headings h1,h2,h3,h4,h5,h6,h1 *,h2 *,h3 *,h4 *,h5 *,h6 *;
 @custom-selector :--inputs input,textarea,radio,select,label;
 
 :root {
-  --h1: rem(50);
-  --h2: rem(30);
+  --h1: rem(80);
+  --h2: rem(40);
   --h3: rem(22);
   --h4: rem(18);
   --h5: rem(16);
   --h6: rem(14);
   --lineHeight: 1.15;
-  --color: var(--golden);
+  --color: var(--muddyWaters);
   /* fonts */
   --primaryFont: 'Chap';
+  --secondaryFont: 'Scandia';
 }
 
 :global {
@@ -22,13 +23,14 @@
   & li,
   & p,
   & :--inputs {
-    font-family: var(--primaryFont);
+    font-family: var(--secondaryFont);
+    line-height: 200%;
   }
   & :--headings {
     font-family: var(--primaryFont);
     font-style: normal;
     margin: 0;
-    font-weight: 800;
+    font-weight: 400;
     color: var(--color);
   }
   & body {
@@ -43,28 +45,45 @@
   & p {
     margin-top: 0;
   }
-  & h1 {
+  & h1,
+  & h1 * {
     font-size: var(--h1);
     line-height: calc(var(--h1) * var(--lineHeight));
     text-transform: uppercase;
+    letter-spacing: rem(10);
+    word-spacing: rem(15);
   }
-  & h2 {
+  & h2,
+  & h2 * {
     font-size: var(--h2);
     line-height: calc(var(--h2) * var(--lineHeight));
+    text-transform: uppercase;
+    letter-spacing: rem(6);
+    word-spacing: rem(10);
   }
-  & h3 {
+  & h3,
+  & h3 * {
     font-size: var(--h3);
     line-height: calc(var(--h3) * var(--lineHeight));
+    text-transform: uppercase;
+    letter-spacing: rem(4);
+    word-spacing: rem(6);
   }
-  & h4 {
+  & h4,
+  & h4 * {
     font-size: var(--h4);
     line-height: calc(var(--h4) * var(--lineHeight));
+    text-transform: uppercase;
+    letter-spacing: rem(4);
+    word-spacing: rem(6);
   }
-  & h5 {
+  & h5,
+  & h5 * {
     font-size: var(--h5);
     line-height: calc(var(--h5) * var(--lineHeight));
   }
-  & h6 {
+  & h6,
+  & h6 * {
     font-size: var(--h6);
     line-height: calc(var(--h6) * var(--lineHeight));
     margin: 0;

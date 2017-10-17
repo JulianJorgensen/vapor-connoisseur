@@ -1,15 +1,48 @@
 @import "globals.css";
 .default {
+  composes: cta;
+  position: relative;
+  align-self: flex-start;
   display: inline-block;
   text-align: center;
-  padding-left: rem(30);
-  padding-right: rem(30);
-  height: rem(50);
-  font-size: rem(18);
+  padding-left: rem(50);
+  padding-right: rem(10);
+  height: rem(30);
   color: white;
   text-decoration: none;
-  font-family: var(--primaryFont);
   transition: all 0.2s;
   border: 0;
   background-color: transparent;
+  user-select: none;
+  & .label{
+    position: relative;
+    z-index: 2;
+    user-select: none;
+  }
+  &:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(rem(-1));
+    height: rem(2);
+    width: rem(30);
+    background-color: var(--muddyWaters);
+    transition: all 0.2s;
+  }
+  &:hover{
+    padding-left: rem(30);
+    padding-right: rem(30);
+    &:before{
+      width: 100%;
+      height: 100%;
+      top: 0;
+    }
+  }
+  &,
+  &:hover,
+  &:active,
+  &:focus{
+    outline: none;
+  }
 }

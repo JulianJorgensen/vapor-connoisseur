@@ -50,11 +50,11 @@ class Product extends Component {
           <div className={_imageClasses} style={imageStyles}>
             <LoadingSpinner className={styles.loadingSpinner} />
           </div>
-          <h5 className={styles.title}>{product.title}</h5>
         </Link>
-        <span className={styles.price}>${defaultVariant.price}</span>
-
-        <button className={styles.buyButton} onClick={() => this.props.addVariantToCart(defaultVariant.id, defaultQuantity)}>Add to Cart</button>
+        <div className={styles.productInfo}>
+          <h5 className={styles.title}>{product.title}</h5>
+          <span className={styles.price}>${defaultVariant.price}</span>
+        </div>
       </div>
     );
   }

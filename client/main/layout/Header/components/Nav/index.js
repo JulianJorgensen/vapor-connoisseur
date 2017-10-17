@@ -9,8 +9,6 @@ import FacebookIcon from '-!svg-react-loader?name=Icon!assets/icons/FontAwesome/
 import InstagramIcon from '-!svg-react-loader?name=Icon!assets/icons/FontAwesome/brands/instagram.svg';
 import TwitterIcon from '-!svg-react-loader?name=Icon!assets/icons/FontAwesome/brands/twitter.svg';
 
-import Bars from './components/Bars';
-
 import styles from './index.css';
 
 @withRouter
@@ -34,7 +32,6 @@ export default class Nav extends React.Component {
 
     return (
       <div className={styles.wrapper}>
-        <Bars />
         <div className={_navStyles}>
           <div className={styles.socialMedia}>
             <FacebookIcon />
@@ -45,7 +42,7 @@ export default class Nav extends React.Component {
             <li className={styles.navItem}><Link to='/'>Home</Link></li>
             <li className={styles.navItem}><Link to='/about'>About</Link></li>
             <li className={styles.navItem}><Link to='/services'>Services</Link></li>
-            <li className={styles.navItem}><Link to='/customer-pathway'>Process</Link></li>
+            <li className={styles.navItem}><Link to='/process'>Process</Link></li>
             <li className={styles.navItem}><Link to='/shop'>Products</Link></li>
             <li className={styles.navItem}><Link to='/sample-kits'>Sample Kits</Link></li>
             <li className={styles.navItem}><Link to='/contact'>Contact</Link></li>

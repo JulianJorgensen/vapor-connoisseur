@@ -10,7 +10,7 @@ import cn from 'classnames';
 import AgeVerification from 'containers/AgeVerification';
 import Homepage from 'containers/Homepage';
 import Services from 'containers/Services';
-import CustomerPathway from 'containers/CustomerPathway';
+import Process from 'containers/Process';
 import About from 'containers/About';
 import Samples from 'containers/Samples';
 import Contact from 'containers/Contact';
@@ -81,8 +81,13 @@ export default class Routes extends React.Component {
     // scroll to top when changing page
     window.scrollTo(0, 0);
 
-    // close nav
-    this.props.dispatch(siteActions.closeNav());
+    this.closeNav();
+  }
+
+  closeNav = () => {
+    if (this.props.site.navOpen) {
+      this.props.dispatch(siteActions.closeNav());
+    }
   }
 
   componentDidUpdate(prevProps) {
@@ -99,10 +104,14 @@ export default class Routes extends React.Component {
       );
     }
 
+    let globalProps = {
+      onLoaded: () => console.log('trigger update')
+    }
+
     const PropsRoute = ({ component, ...rest }) => {
       return (
         <Route {...rest} onLoaded={this.updateRoutesContainer} render={routeProps => {
-          return renderMergedProps(component, routeProps, rest);
+          return renderMergedProps(component, routeProps, globalProps, rest);
         }}/>
       );
     };
@@ -112,7 +121,7 @@ export default class Routes extends React.Component {
     });
 
     return (
-      <div className={_wrapperStyles}>
+      <div className={_wrapperStyles} onClick={this.closeNav}>
         <AnimatedSwitch
           atEnter={transition.atEnter}
           atLeave={transition.atLeave}
@@ -123,7 +132,7 @@ export default class Routes extends React.Component {
           <PropsRoute path='/age-verification' component={userIsNotAuthenticated(AgeVerification)} />
           <PropsRoute path='/' exact component={userIsAuthenticated(Homepage)} />
           <PropsRoute path='/services' component={userIsAuthenticated(Services)} />
-          <PropsRoute path='/customer-pathway' component={userIsAuthenticated(CustomerPathway)} />
+          <PropsRoute path='/process' component={userIsAuthenticated(Process)} />
           <PropsRoute path='/about' component={userIsAuthenticated(About)} />
           <PropsRoute path='/sample-kits' component={userIsAuthenticated(Samples)} />
           <PropsRoute path='/contact' component={userIsAuthenticated(Contact)} />                

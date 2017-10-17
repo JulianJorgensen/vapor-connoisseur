@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ReactMarkdown from 'react-markdown';
 
+import Hero from 'components/Herol';
 import styles from './index.css';
 
 @connect(({ site }) => ({
@@ -14,10 +15,7 @@ export default class ServicesLanding extends React.Component {
     return (
       <div className={styles.wrapper}>
         <div className={styles.container}>
-          <div className={styles.hero}>
-            <h1 className={styles.headline}>{content.headline}</h1>
-            <div><ReactMarkdown source={content.intro} /></div>
-          </div>
+          <Hero headline={content.headline} intro={content.intro} />
         </div>
         <div className={styles.productImage} style={{backgroundImage: `url(${content.productImage.fields.file.url})`}}></div>
       </div>

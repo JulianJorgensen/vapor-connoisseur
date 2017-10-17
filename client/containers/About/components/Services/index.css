@@ -30,7 +30,7 @@
     & .miniNav{
       position: absolute;
       bottom: rem(-20);
-      background-color: gray(30%);
+      background-color: var(--muddyWaters);
       width: rem(200);
       display: flex;
       justify-content: space-between;

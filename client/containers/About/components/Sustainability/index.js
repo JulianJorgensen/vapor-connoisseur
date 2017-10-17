@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ReactMarkdown from 'react-markdown';
+import FeatureBoxes from 'components/FeatureBoxes';
 
 import styles from './index.css';
 
@@ -20,16 +21,7 @@ export default class AboutSustainability extends Component {
             <div><ReactMarkdown source={content.sustainabilityIntro} /></div>
           </header>
 
-          <div className={styles.boxes}>
-            {content.sustainabilityFeatures.map((feature) => {
-              return (
-                <div className={styles.box}>
-                  <h3>{feature.fields.title}</h3>
-                  <div>{feature.fields.body}</div>
-                </div>
-              )
-            })}
-          </div>
+          <FeatureBoxes features={content.sustainabilityFeatures} />
 
           <div className={styles.middleImage} style={{backgroundImage: `url(${content.middleImage.fields.file.url})`}}></div>
         </div>

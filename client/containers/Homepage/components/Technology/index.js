@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import ImageDiff from 'react-image-diff';
 import Slider from 'react-rangeslider'
 
+import Button from 'components/Button';
+
 import productExploded from 'assets/images/XY05_EXPLO1-24.png';
 import productExploded2 from 'assets/images/XY05_EXPLO1-24copy.png';
 import styles from './index.css';
@@ -27,7 +29,7 @@ export default class HomepageTechnology extends React.Component {
       <div className={styles.wrapper}>
         <div className={styles.container}>
           <div className={styles.graphic}>
-            <ImageDiff before={productExploded} after={productExploded2} type='swipe' value={(slidePosition/100)} height={400} width={400} />
+            <ImageDiff before={productExploded} after={productExploded2} type='swipe' value={(slidePosition/100)} height={600} width={600} />
             <Slider
               min={0}
               max={100}
@@ -42,7 +44,7 @@ export default class HomepageTechnology extends React.Component {
           <div className={styles.process}>
             <h2>{content.customerPathwayHeadline}</h2>
             <ReactMarkdown source={content.customerPathwayBody} />            
-            <div className={styles.cta}>Learn more</div>
+            <Button href='/process' label='Learn more' />
           </div>
         </div>
       </div>

@@ -1,17 +1,24 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import Headroom from 'react-headroom';
 
 import Nav from './components/Nav';
+import Bars from './components/Bars';
 import styles from './index.css';
 
 @withRouter
 export default class Header extends React.Component {
   render() {
     return (
-      <header className={styles.container}>
-        <div onClick={() => this.props.history.push('/')}>logo</div>
+      <div className={styles.wrapper}>
+        <Headroom className={styles.headroom} pinStart={0} disableInlineStyles>
+          <header className={styles.container}>
+            <Link to='/'>logo</Link>
+            <Bars />
+          </header>
+        </Headroom>
         <Nav />
-      </header>
+      </div>
     )
   }
 }

@@ -1,9 +1,47 @@
 @import "globals.css";
+.wrapper {
+  position: fixed;
+  z-index: 9;
+  width: 100%;
+  top: rem(60);
+}
+
+.headroom {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 9;
+}
+
+:global {
+  /* deactive */
+  & .headroom--unpinned {
+    transition: all 200ms;
+    position: fixed;
+    transform: translateY(rem(-40));
+    opacity: 0;
+  }
+  & .headroom--scrolled {
+    transition: all 200ms;
+  }
+  & .headroom--unfixed {
+    position: relative;
+  }
+  & .headroom--pinned {
+    position: fixed;
+  }
+  & .headroom--unfixed,
+  & .headroom--pinned {
+    transform: translateY(rem(0));
+    opacity: 1;
+  }
+}
+
 .container {
   composes: globalContainer;
   display: flex;
   justify-content: space-between;
-  top: rem(60);
+  /* top: rem(60); */
   z-index: 3;
-  position: fixed;
+  /* position: fixed; */
 }

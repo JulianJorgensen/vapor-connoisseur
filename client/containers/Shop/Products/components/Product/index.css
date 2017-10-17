@@ -6,7 +6,7 @@
 
 .image {
   width: 100%;
-  height: rem(200);
+  height: rem(400);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -28,28 +28,20 @@
   }
 }
 
-.title {
-  font-size: 1.3rem;
-  margin-top: 1rem;
-  margin-bottom: 0.4rem;
-  opacity: 0.7;
-}
-
-.price {
-  display: block;
-  font-size: 1.1rem;
-  opacity: 0.5;
-  margin-bottom: 0.4rem;
-}
-
-.option {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.quantity {
-  display: block;
-  width: 15%;
-  margin-bottom: 10px;
+.productInfo{
+  background-color: var(--bokara);
+  padding: rem(20);
+  & .title {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    margin-bottom: 0.4rem;
+    opacity: 0.7;
+  }
+  
+  & .price {
+    display: block;
+    font-size: 1.1rem;
+    opacity: 0.5;
+    margin-bottom: 0.4rem;
+  }
 }

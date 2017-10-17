@@ -3,6 +3,8 @@ import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import Button from 'components/Button';
+
 import bgSmoke from 'assets/images/Homepage_SmokeDARK-Web.png';
 import styles from './index.css';
 
@@ -19,10 +21,7 @@ export default class HomepageAbout extends React.Component {
         <div className={`${styles.row} ${styles.head}`}>
           <div className={styles.content}>
             <div className={styles.col}>
-              <h2>{content.aboutHeadline}</h2>
-            </div>
-            <div className={styles.col}>
-              <span>-</span>
+              <h2 className={styles.headline}>{content.aboutHeadline}</h2>
             </div>
           </div>
           <div className={styles.services}>
@@ -44,11 +43,11 @@ export default class HomepageAbout extends React.Component {
         <div className={styles.row}>
         <div className={styles.content}>
           <div className={styles.col}>
-            Learn more
+            <Button href='/services' label='Learn more' />
           </div>
         </div>
         <div className={styles.services}>
-          Learn more
+          <Button href='/services' label='Learn more' />
         </div>
       </div>
 

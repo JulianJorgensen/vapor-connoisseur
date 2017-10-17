@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ReactMarkdown from 'react-markdown';
 
+import FeatureBoxes from 'components/FeatureBoxes';
 import styles from './index.css';
 
 @connect(({ site }) => ({
@@ -19,16 +20,7 @@ export default class ServicesLogistics extends Component {
             <ReactMarkdown source={content.logisticsBody} />
           </div>
 
-          <div className={styles.features}>
-            {content.logisticsFeatures.map((feature) => {
-              return (
-                <div className={styles.feature}>
-                  <h3>{feature.fields.title}</h3>
-                  <ReactMarkdown source={feature.fields.body} />
-                </div>
-              )
-            })}
-          </div>
+          <FeatureBoxes features={content.logisticsFeatures} />          
         </div>
       </div>
     )

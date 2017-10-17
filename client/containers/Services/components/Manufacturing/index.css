@@ -7,16 +7,4 @@
 
 .container{
   composes: globalContainer;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.middleImage{
-  width: 100%;
-  height: rem(300);
-  background-repeat: none;
-  background-size: cover;
-  background-position: center center;
 }

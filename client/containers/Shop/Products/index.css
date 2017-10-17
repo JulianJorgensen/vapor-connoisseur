@@ -6,16 +6,9 @@
   }
 }
 
-.nav {
-  display: flex;
-  list-style-type: none;
-  & li {
-    margin-left: rem(15);
-  }
-}
-
 .products {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top: rem(160);
 }

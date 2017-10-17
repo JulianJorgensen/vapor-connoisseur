@@ -1,10 +1,10 @@
 @import "variables.css";
-
-:global{
-  & body{
+:global {
+  & body {
     background-color: var(--background);
     color: white;
     min-height: 100vh;
+    overflow-x: hidden;
   }
 }
 
@@ -18,7 +18,7 @@
 
 .globalContainer {
   align-self: center;
-  width: rem(900);
+  width: rem(1300);
   max-width: 100%;
   position: relative;
   z-index: 2;

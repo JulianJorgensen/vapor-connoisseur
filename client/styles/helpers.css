@@ -1,0 +1,20 @@
+.fontSmall{
+  font-size: rem(11);
+}
+
+.upperCase{
+  text-transform: uppercase;
+}
+
+.defaultBgImage{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.cta{
+  font-size: rem(11);
+  text-transform: uppercase;
+  letter-spacing: rem(2);
+  word-spacing: rem(4);
+}

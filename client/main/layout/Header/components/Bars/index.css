@@ -1,0 +1,86 @@
+@import "globals.css";
+:root {
+  --barHeight: rem(4)
+}
+
+.bars {
+  position: relative;
+  z-index: 9;
+  width: rem(30);
+  display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
+  align-items: center;
+  &:before,
+  &:after{
+    color: white;
+    position: absolute;
+    margin-left: rem(-60);
+    font-size: rem(11);
+    letter-spacing: rem(2);
+    transition: transform 0.2s;
+    text-align: right;
+  }
+  &:before{
+    content: 'MENU';   
+  }
+  &:after{
+    opacity: 0;
+    transform: translateX(rem(10));
+    content: 'CLOSE';
+  }
+  & span {
+    display: block;
+    height: var(--barHeight);
+    width: 50%;
+    background: var(--muddyWaters);
+    opacity: 1;
+    transform: rotate(0deg);
+    transition: .3s ease-in-out;
+    margin-bottom: rem(5);
+  }
+  & span:nth-child(5),
+  & span:nth-child(6) {
+    margin-bottom: 0;
+  }
+  & span:nth-child(even) {
+    border-radius: 0 var(--barHeight) var(--barHeight) 0;
+  }
+  & span:nth-child(odd) {
+    border-radius: var(--barHeight) 0 0 var(--barHeight);
+  }
+  &.open {
+    &:before{
+      transform: translateX(rem(10));
+      opacity: 0;
+    }
+    &:after{
+      transform: translateX(0%);
+      opacity: 1;
+    }    
+    & span:nth-child(1),
+    & span:nth-child(2) {
+      /* margin-bottom: rem(7); */
+    }
+    & span:nth-child(1) {
+      transform: rotate(45deg) translateX(rem(4)) translateY(rem(1));
+    }
+    & span:nth-child(2) {
+      transform: rotate(-45deg) translateX(rem(-4)) translateY(rem(1));
+    }
+    & span:nth-child(3) {
+      transform: translateX(-50%);
+      opacity: 0;
+    }
+    & span:nth-child(4) {
+      transform: translateX(50%);
+      opacity: 0;
+    }
+    & span:nth-child(5) {
+      transform: rotate(-45deg) translateX(rem(4)) translateY(rem(-1));
+    }
+    & span:nth-child(6) {
+      transform: rotate(45deg) translateX(rem(-4)) translateY(rem(-1));
+    }
+  }
+}

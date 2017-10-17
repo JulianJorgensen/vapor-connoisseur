@@ -15,24 +15,27 @@
 
 .graphic{
   width: 60%;
+  position: relative;
   & img{
     width: 100%;
   }
 
+  & .rangeSlider{
+    position: absolute;
+    bottom: 0;
+    left: rem(140);
+  }  
 }
 
 .process{
-  width: 30%;
-}
-
-.rangeSlider{
-  width: rem(200);
+  width: 40%;
 }
 
 :global{
   & .rangeslider {
     position: relative;
-    border-bottom: 1px dashed gray(50%);
+    width: rem(300);
+    border-bottom: rem(2) dashed gray(30%);
   }
   & .rangeslider__fill{
   }    
@@ -40,12 +43,12 @@
     display: inline-block;
     position: absolute;
     top: 50%;
-    transform: translate3d(-50%,-50%,0);
+    transform: translate3d(-50%,rem(-10),0);
     background-color: white;
     border-radius: 50%;
     cursor: pointer;
-    width: rem(20);
-    height: rem(20);
+    width: rem(40);
+    height: rem(40);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,22 +56,22 @@
       content: '';
       width: 0;
       height: 0;
-      border-top: rem(3) solid transparent;
-      border-bottom: rem(3) solid transparent;      
-      border-right: rem(3) solid black;
-      margin-right: rem(3);
+      border-top: rem(5) solid transparent;
+      border-bottom: rem(5) solid transparent;      
+      border-right: rem(5) solid black;
+      margin-right: rem(4);
     }
     &:after{
       content: '';
       width: 0; 
       height: 0; 
-      border-top: rem(3) solid transparent;
-      border-bottom: rem(3) solid transparent;      
-      border-left: rem(3) solid black;
+      border-top: rem(5) solid transparent;
+      border-bottom: rem(5) solid transparent;      
+      border-left: rem(5) solid black;
     }
     & .rangeslider__handle-label{
       position: absolute;
-      top: rem(-20);
+      top: rem(-30);
       transform: translateX(-50%) scale(0.8);
       color: gray(60%);
       left: 50%;
