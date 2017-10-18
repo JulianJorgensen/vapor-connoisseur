@@ -5,7 +5,7 @@ import { find } from 'lodash';
 export let fetchContent = () => {
   console.log('fetching content');
   return (dispatch, getState) => {
-    axios.get(`${ENV_CONFIG.SITE_URL}/contentful/getAllContent`).then((response) => {
+    axios.get(`${ENV_CONFIG.SITE_URL}/getAllContent`).then((response) => {
       // set content
       dispatch(setContent(response.data));
     }).catch((error) => {

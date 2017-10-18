@@ -22,9 +22,8 @@ app.use(cors());
 // Serve Gzip
 app.use("/", expressStaticGzip(__dirname + '/public'));
 
-
 // Contentful routes
-app.get('/contentful/getAllContent', contentful.getAllContent);
+app.get('/getAllContent', , cors(), contentful.getAllContent);
 
 // Catch all other paths and serve the index file
 app.all('*', function(request, response) {
