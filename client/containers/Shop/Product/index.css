@@ -1,3 +1,62 @@
+@import "globals.css";
 .wrapper{
-  
+  margin-top: rem(200);
+  display: flex;
+  justify-content: space-between;
+  & .leftCol{
+    width: calc(40% - rem(80));
+  }
+  & .rightCol{
+    width: calc(60% - rem(80));
+  }
+}
+
+.details{
+  margin-top: rem(120);
+  & .specifications{
+    margin-bottom: rem(60);
+    padding-bottom: rem(30);
+    border-bottom: 1px solid gray(20%);
+    & .specification{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.cta{
+  margin-top: rem(30);
+  & .buyButton{
+    display: block;
+    width: 100%;
+    background-color: var(--muddyWaters);
+    padding: rem(10);
+  }  
+}
+
+.image{
+  composes: defaultBgImage;
+  width: 100%;
+  height: rem(700);
+  position: relative;
+}
+
+.images{
+  position: absolute;
+  top: rem(10);
+  right: rem(10);
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  & li{
+    display: block;
+    width: rem(40);
+    height: rem(40);
+    & img{
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
 }

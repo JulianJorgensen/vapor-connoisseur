@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Client from 'shopify-buy';
-import VariantSelector from '../components/VariantSelector';
+import VariantSelector from './components/VariantSelector';
+import ReactHtmlParser from 'react-html-parser';
 import styles from './index.css';
 
 class Product extends Component {
@@ -43,10 +44,9 @@ class Product extends Component {
     return (image || primary).src;
   }
 
-  handleOptionChange(event) {
-    const target = event.target
+  handleOptionChange({ variant, value }) {
     let selectedOptions = this.state.selectedOptions;
-    selectedOptions[target.name] = target.value;
+    selectedOptions[variant] = value;
 
     const selectedVariant = Client.Product.Helpers.variantForOptions(this.props.product, selectedOptions);
 
@@ -63,27 +63,60 @@ class Product extends Component {
   }
 
   render() {
-    let {
-      product
-    } = this.props;
-    let variantImage = this.state.selectedVariantImage || product.images[0]
-    let variant = this.state.selectedVariant || product.variants[0]
-    let variantQuantity = this.state.selectedVariantQuantity || 1
-    console.log('variantImage', variantImage);
+    let { product } = this.props;
+    let { selectedVariant, selectedVariantQuantity, selectedVariantImage } = this.state;
+    let variantImage = selectedVariantImage || product.images[0]
+    let variant = selectedVariant || product.variants[0]
+    let variantQuantity = selectedVariantQuantity || 1
+
+    console.log('product', product);
+    console.log('selectedVariant', selectedVariant);
+    
     return (
       <div className={styles.wrapper}>
-        product title {variant.title}
-        {variant.price}
-        <VariantSelector
-          handleOptionChange={this.handleOptionChange}
-          product={product}
-        />
-        <img src={variantImage.src} alt={variantImage.altText || variant.title} />
-        <label className={styles.option}>
-          Quantity
-          <input min="1" type="number" defaultValue={variantQuantity} onChange={this.handleQuantityChange}></input>
-        </label>
-        <button className={styles.buyButton} onClick={() => this.props.addVariantToCart(variant.id, variantQuantity)}>Add to Cart</button>
+        <div className={styles.leftCol}>
+          <h2 className={styles.title}>{product.title}</h2>
+          <div className={styles.details}>
+            <div className={styles.specifications}>
+              <div className={styles.specification}>
+                <div className={styles.specificationName}>Weight</div>
+                <div className={styles.specificationValue}>{selectedVariant ? selectedVariant.weight : product.variants[0].weight}</div>
+              </div>
+              <div className={styles.specification}>
+                <div className={styles.specificationName}>Dimensions</div>
+                <div className={styles.specificationValue}></div>
+              </div>
+              <div className={styles.specification}>
+                <div className={styles.specificationName}>Colors</div>
+                <div className={styles.specificationValue}>40g</div>
+              </div>
+            </div>
+            <div className={styles.description}>
+            { ReactHtmlParser(product.descriptionHtml) }
+            </div>
+          </div>
+          <div className={styles.options}>
+            <VariantSelector
+              handleOptionChange={this.handleOptionChange}
+              selectedVariant={variant}
+              product={product}
+            />
+          </div>
+          <div className={styles.cta}>
+            <button
+              className={styles.buyButton}
+              onClick={() => this.props.addVariantToCart(variant.id, variantQuantity)}            
+            >Add to cart</button>
+          </div>
+        </div>
+        <div className={styles.rightCol}>
+          <div className={styles.image} style={{backgroundImage: `url(${variantImage.src})`}}>
+            <ul className={styles.images}>
+              <li><img src={variantImage.src} alt={variantImage.title} /></li>
+              <li><img src={variantImage.src} alt={variantImage.title} /></li>
+            </ul>
+          </div>
+        </div>
       </div>
     );
   }
