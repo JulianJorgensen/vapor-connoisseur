@@ -23,7 +23,7 @@ app.use(cors());
 app.use("/", expressStaticGzip(__dirname + '/public'));
 
 // Contentful routes
-app.get('/getAllContent', , cors(), contentful.getAllContent);
+app.get('/getAllContent', cors(), contentful.getAllContent);
 
 // Catch all other paths and serve the index file
 app.all('*', function(request, response) {
