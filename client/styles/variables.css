@@ -1,12 +1,23 @@
+/* colors */
 :root {
-  /* colors */
   --background: #191919;
   --bokara: #282828;
   --muddyWaters: #AB854E;
   --mirage: #393F46;
   --blackRussion: #222528;
+  --rangoon: #1A1A1A;
 }
 
+/* fonts */
+:root {
+    --primaryFont: 'Chap';
+    --secondaryFont: 'Scandia';  
+}
+
+/* defaults */
+:root {
+  --defaultGradient: linear-gradient(to bottom right, var(--mirage), var(--blackRussion));    
+}
 
 /* Media queries */
 

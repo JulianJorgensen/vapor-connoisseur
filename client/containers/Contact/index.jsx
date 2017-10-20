@@ -1,16 +1,30 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import LoadingSpinner from 'components/LoadingSpinner';
 
-import Button from 'components/Button';
+import GetInTouch from './components/GetInTouch';
+import Questionnaire from './components/Questionnaire';
+import ContactForm from './components/ContactForm';
 import Footer from 'layout/Footer';
 import styles from './index.css';
 
+@connect(({ site }) => ({
+  content: site.content.contact
+}))
 export default class Contact extends React.Component {
   render() {
+    if (!this.props.content) {
+      return (
+        <div className={styles.wrapper}>
+          <LoadingSpinner />
+        </div>
+      )
+    }
     return (
       <div className={styles.wrapper}>
-        <img src='http://placehold.it/900x800/181818' />
+        <GetInTouch />
+        <ContactForm />
+        <Questionnaire />
         <Footer />
       </div>
     )

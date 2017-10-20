@@ -7,4 +7,44 @@
 
 .container{
   composes: globalContainer;
+  z-index: 1;
+}
+
+.header{
+  @apply --defaultHeader;
+}
+
+.manufacturing{
+  position: relative;
+  padding-top: rem(90);
+  padding-left: calc(33% + rem(20));
+  margin-bottom: rem(120);
+  & div,
+  & header {
+    position: relative;
+    z-index: 2;
+  }
+  &:after{
+    content: '';
+    height: 100%;
+    width: 100vw;
+    background-color: var(--bokara);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+  }
+  & .productImage{
+    @apply --defaultBgImage;
+    position: absolute;
+    top: rem(60);
+    left: 0;
+    transform: translateX(-50%);
+    width: rem(600);
+    height: 100%;
+  }
+}
+
+.originalDesign{
+  padding: rem(60) 0;
 }

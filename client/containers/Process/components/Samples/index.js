@@ -9,13 +9,15 @@ import styles from './index.css';
 @connect(({ site }) => ({
   content: site.content.customerPathway || {}
 }))
-export default class CustomerPathwaySamples extends Component {
+export default class ProcessSamples extends Component {
   render() {
     let { content } = this.props;
     return (
       <div className={styles.wrapper}>
         <div className={styles.container}>
-          <h2>{content.samplesHeadline}</h2>
+          <header className={styles.header}>
+            <h2 className={styles.headline}>{content.samplesHeadline}</h2>
+          </header>
 
           <FeatureBoxes features={content.samplesFeatures} />
         </div>

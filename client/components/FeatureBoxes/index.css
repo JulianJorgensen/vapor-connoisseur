@@ -14,4 +14,26 @@
     letter-spacing: normal;
     word-spacing: normal;
   }
+  & .body{
+    & p{
+      margin-bottom: 0;
+    }
+  }
+  & ol,
+  & ul{
+    margin: 0;
+    padding-left: rem(20);
+  }
+}
+
+.oneCol{
+  & .box{
+    width: 100%;
+  }
+}
+
+.twoCol{
+  & .box{
+    width: calc(50% - rem(20));
+  }
 }

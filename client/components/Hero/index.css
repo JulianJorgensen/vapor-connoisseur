@@ -2,7 +2,7 @@
 .wrapper{
   position: absolute;
   top: rem(220);
-  height: calc(100vh - rem(180));
+  height: calc(100vh - rem(220));
 }
 
 .headline {
@@ -11,17 +11,12 @@
 }
 
 .intro{
-  width: rem(600);
+  width: rem(550);
   white-space: pre-wrap;
 }
 
 .seeMore{
-  position: absolute;
-  bottom: rem(60);
-}
-
-.cta{
-  composes: fontSmall upperCase;
+  @apply --smallText;
   position: absolute;
   bottom: rem(60);
 }

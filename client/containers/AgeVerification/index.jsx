@@ -23,7 +23,7 @@ export default class AgeVerification extends React.Component {
   render() {
     return (
       <div className={styles.wrapper}>
-        <h1>Please verify your age</h1>
+        <h2>Please verify your age</h2>
         <button className={styles.cta} onClick={this.verifyAge}><span>I am over 21</span></button>
       </div>
     )

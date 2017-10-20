@@ -8,3 +8,7 @@
 .container{
   composes: globalContainer;
 }
+
+.header{
+  @apply --defaultHeader;
+}

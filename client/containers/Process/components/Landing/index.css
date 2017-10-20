@@ -13,7 +13,7 @@
 }
 
 .productImage{
-  composes: defaultBgImage;
+  @apply --defaultBgImage;  
   background-size: contain;
   position: absolute;
   z-index: 2;
@@ -32,6 +32,9 @@
   height: rem(500);
   width: 100vw;
   left: rem(-30);
+  & .introHeadline{
+    margin-bottom: rem(30);
+  }
   & .intro{
     width: rem(400);
   }
@@ -41,9 +44,17 @@
   position: relative;
   right: 0;
   top: rem(-50);
-  padding: rem(40);
-  width: rem(500);
+  padding: rem(80);
+  width: rem(700);
   background-color: var(--bokara);
   z-index: 2;
   align-self: flex-end;
+  & .asideTitle{
+    @apply --smallText;
+    font-size: rem(16);
+  }
+  & .asideBody{
+    width: rem(400);
+    margin-bottom: rem(30);
+  }
 }

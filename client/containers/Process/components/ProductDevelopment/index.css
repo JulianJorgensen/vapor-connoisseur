@@ -3,8 +3,31 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding: rem(120) 0 rem(90);
+  background-image: var(--defaultGradient);
+  position: relative;
 }
 
 .container{
   composes: globalContainer;
+}
+
+.header{
+  @apply --defaultHeader;
+}
+
+.productDevelopment{
+  width: calc(66% - rem(10));
+}
+
+.productImage{
+  background-position: left bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: rem(1400);
+  height: rem(1400);
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(40%) translateY(-40%);
 }

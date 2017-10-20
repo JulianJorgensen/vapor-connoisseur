@@ -17,7 +17,9 @@ app.set('port', (process.env.PORT || 3000));
 app.use(logger('dev')); // Log requests to API using morgan
 
 // cors
-app.use(cors());
+app.use(cors({
+  origin: true
+}));
 
 // Serve Gzip
 app.use("/", expressStaticGzip(__dirname + '/public'));

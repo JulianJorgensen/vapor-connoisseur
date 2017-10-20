@@ -3,64 +3,144 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  position: relative;
+  &:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: rem(-500);
+    width: 100%;
+    height: 200vh;
+    background-color: var(--bokara);
+  }
 }
 
 .container{
   composes: globalContainer;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+}
+
+.header{
+  @apply --defaultHeader;
 }
 
 .features{
   display: flex;
   justify-content: flex-end;
   position: relative;
+  margin-bottom: rem(100);
   
   & .featuresBody{
     width: 60%;
-    background-color: gray(40%);
+    background: var(--defaultGradient);
     position: absolute;
     left: 0;
     top: 50%;
-    height: calc(100% - rem(100));
+    height: calc(100% - rem(150));
     transform: translateY(-50%);
-    padding: rem(60);
-    & .miniNav{
-      position: absolute;
-      bottom: rem(-20);
-      background-color: var(--muddyWaters);
-      width: rem(200);
+    padding: rem(120);
+    @apply --boxShadowRight;
+  }
+
+  & .miniNav{
+    position: absolute;
+    bottom: rem(-20);
+    background-color: var(--muddyWaters);
+    width: rem(230);
+    display: flex;
+    justify-content: space-between;
+    padding: rem(15) rem(25);
+    & .miniNavItem{
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      padding: rem(15);
-      & .miniNavItem{
-        cursor: pointer;
+      cursor: pointer;
+      user-select: none;
+      width: rem(60);
+      @apply --smallText;
+      line-height: rem(11);
+      & svg{
+        width: rem(13);
+        height: rem(13);
+        & path{
+          fill: white;
+        }
       }
     }
+    &:after{
+      content: '|';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateY(-50%) translateX(-50%);
+    }
   }
+
+  & .featuresContent{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    & .featureTitle{
+      margin-bottom: rem(30);
+      color: white;
+    }
+  }
+
   & .featuresNav{
     width: 50%;
-    background-color: gray(20%);
-    padding: rem(60);
+    background-color: var(--rangoon);
+    padding: rem(120) rem(60);
     display: flex;
     justify-content: center;
     align-items: center;
     & .featureNavItem{
+      @apply --smallText;
+      user-select: none;
       margin-bottom: rem(15);
-      font-size: rem(12);
-      text-transform: uppercase;
       cursor: pointer;
-      letter-spacing: rem(1.4);
+      &.active{
+        color: var(--muddyWaters);
+      }
     }
   }
 }
-
 
 .feature{
   display: none;
   &.active{
     display: block;
+  }
+}
+
+.position{
+  display: flex;
+  align-items: center;
+
+  & .positionBar{
+    position: relative;
+    width: rem(60);
+    background-color: gray(80%);
+    height: rem(2);
+    margin-right: rem(15);
+    & .timeoutBar{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0%;
+      height: inherit;
+      background-color: var(--muddyWaters);
+      &.active {
+        width: 100%;
+        transition: width 5s linear;
+      }
+      &.reset {
+        /* width: 0; */
+        /* transition: width 0ms; */
+      }
+    }
+  }  
+
+  & .slideNumber {
+    @apply --smallText;
   }
 }

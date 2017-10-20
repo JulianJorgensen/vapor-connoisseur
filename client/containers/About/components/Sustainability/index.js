@@ -18,12 +18,14 @@ export default class AboutSustainability extends Component {
         <div className={styles.container}>
           <header className={styles.header}>
             <h2 className={styles.headline}>{content.sustainabilityHeadline}</h2>
-            <div><ReactMarkdown source={content.sustainabilityIntro} /></div>
+            <div className={styles.intro}><ReactMarkdown source={content.sustainabilityIntro} /></div>
           </header>
 
           <FeatureBoxes features={content.sustainabilityFeatures} />
 
-          <div className={styles.middleImage} style={{backgroundImage: `url(${content.middleImage.fields.file.url})`}}></div>
+          <div className={styles.middleImage} style={{backgroundImage: `url(${content.middleImage.fields.file.url})`}}>
+            <div className={styles.meta}>XY-05</div>
+          </div>
         </div>
       </div>
     )

@@ -14,10 +14,32 @@
   justify-content: center;
 }
 
+.header{
+  @apply --defaultHeader;
+}
+
 .middleImage{
   width: 100%;
-  height: rem(300);
+  height: rem(500);
   background-repeat: none;
   background-size: cover;
   background-position: center center;
+  margin: rem(60) 0 rem(140);
+  position: relative;
+  & .meta{
+    position: absolute;
+    bottom: rem(60);
+    right: rem(120);
+    @apply --smallFont;
+    &:after{
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: rem(-120);
+      transform: translateX(50%) translateY(-50%);
+      width: rem(50);
+      height: rem(1);
+      background-color: var(--muddyWaters);
+    }
+  }
 }

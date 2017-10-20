@@ -1,6 +1,6 @@
 @import "globals.css";
 .default {
-  composes: cta;
+  @apply --smallText;
   position: relative;
   align-self: flex-start;
   display: inline-block;

@@ -15,7 +15,9 @@ export default class CustomerPathwayProductDelivery extends Component {
     return (
       <div className={styles.wrapper}>
         <div className={styles.container}>
-          <h2>{content.productDeliveryHeadline}</h2>
+          <header className={styles.header}>
+            <h2 className={styles.headline}>{content.productDeliveryHeadline}</h2>
+          </header>
 
           <FeatureBoxes features={content.productDeliveryFeatures} />          
         </div>

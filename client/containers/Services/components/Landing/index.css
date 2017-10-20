@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-bottom: rem(100);
 }
 
 .container{
@@ -34,16 +35,36 @@
   }
 }
 
+.nav{
+  position: absolute;
+  bottom: rem(60);
+  @apply --smallText;
+  width: rem(600);
+  & .navTitle{
+    color: var(--muddyWaters);    
+  }
+  & .navItems{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+    & .navItem{
+      width: 50%;
+      margin-top: rem(10);
+    }
+  }
+}
+
 .productImage{
   position: absolute;
   top: 0;
   right: 0;
   height: 100vh;
   width: 50vw;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  @apply --defaultBgImage;
   & .meta{
+    @apply --smallText;
     position: absolute;
     left: rem(60);
     bottom: rem(60);

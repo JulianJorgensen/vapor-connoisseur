@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ReactMarkdown from 'react-markdown';
 
+import Button from 'components/Button';
 import productImage from 'assets/images/GENIECL-Angle2-24.png';
 import Hero from 'components/Hero';
 import styles from './index.css';
@@ -30,7 +31,8 @@ export default class CustomerPathwayLanding extends Component {
         </div>
         <div className={styles.aside}>
           <h2 className={styles.asideTitle}>{content.introAsideTitle}</h2>
-          <div><ReactMarkdown source={content.introAsideBody} /></div>
+          <div className={styles.asideBody}><ReactMarkdown source={content.introAsideBody} /></div>
+          <Button href='/contact' label='Request a catalogue' />
         </div>
       </div>
     )

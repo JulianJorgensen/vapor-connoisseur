@@ -12,9 +12,6 @@
   --h6: rem(14);
   --lineHeight: 1.15;
   --color: var(--muddyWaters);
-  /* fonts */
-  --primaryFont: 'Chap';
-  --secondaryFont: 'Scandia';
 }
 
 :global {

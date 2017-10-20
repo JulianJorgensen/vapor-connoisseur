@@ -15,10 +15,10 @@ export default class ServicesLogistics extends Component {
     return (
       <div className={styles.wrapper}>
         <div className={styles.container}>
-          <div className={styles.section2}>
-            <h2>{content.logisticsHeadline}</h2>
-            <ReactMarkdown source={content.logisticsBody} />
-          </div>
+          <header className={styles.header}>
+            <h2 className={styles.headline}>{content.logisticsHeadline}</h2>
+            <div className={styles.intro}><ReactMarkdown source={content.logisticsBody} /></div>
+          </header>
 
           <FeatureBoxes features={content.logisticsFeatures} />          
         </div>

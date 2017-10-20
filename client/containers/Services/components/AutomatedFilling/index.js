@@ -14,10 +14,10 @@ export default class ServicesAutomatedFilling extends Component {
     return (
       <div className={styles.wrapper}>
         <div className={styles.container}>
-          <div className={styles.section}>
-            <h2>{content.automatedFillingHeadline}</h2>
-            <div>{content.automatedFillingBody}</div>          
-          </div>
+          <header className={styles.header}>
+            <h2 className={styles.headline}>{content.automatedFillingHeadline}</h2>
+            <div className={styles.intro}><ReactMarkdown source={content.automatedFillingBody} /></div>
+          </header>
         </div>
       </div>
     )

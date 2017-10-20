@@ -1,0 +1,31 @@
+@import "globals.css";
+.wrapper{
+  composes: globalWrapper;
+  position: absolute;
+  width: 100%;
+  top: rem(160);
+  &:before{
+    content: '';
+    background-color: var(--bokara);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(50% + rem(90));
+    height: 100%;
+  }
+}
+.container {
+  composes: globalContainer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  & .inner{
+    width: rem(650);
+    height: rem(800);
+    padding-top: rem(90);
+  }
+}
+
+.headline{
+  margin-bottom: rem(30);
+}

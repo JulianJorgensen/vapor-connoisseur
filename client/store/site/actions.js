@@ -17,7 +17,7 @@ export let fetchContent = () => {
 // action: set content
 export let setContent = (data) => {
   let content = {};
-  let contentModels = ['homepage', 'about', 'customerPathway', 'services'];
+  let contentModels = ['homepage', 'about', 'customerPathway', 'services', 'contact'];
   contentModels.map((contentModel) => {
     let foundContent = find(data, { 'sys': { 'contentType': { 'sys': { 'id': contentModel } } } });
     content[contentModel] = foundContent ? foundContent.fields : {};

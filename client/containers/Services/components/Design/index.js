@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ReactMarkdown from 'react-markdown';
 
+import smokeBg from 'assets/images/Services_Smoke-Web.png';
 import FeatureBoxes from 'components/FeatureBoxes';
 import styles from './index.css';
 
@@ -15,12 +16,15 @@ export default class ServicesDesign extends Component {
     return (
       <div className={styles.wrapper}>
         <div className={styles.container}>
-          <div className={styles.section2}>
-            <h2>{content.designHeadline}</h2>
-            <ReactMarkdown source={content.designBody} />
-          </div>
-
+          <header className={styles.header}>
+            <h2 className={styles.headline}>{content.designHeadline}</h2>
+            <div className={styles.intro}><ReactMarkdown source={content.designBody} /></div>
+          </header>
+ 
           <FeatureBoxes features={content.designFeatures} />
+        </div>
+        <div className={styles.bgImage}>
+          <img src={smokeBg} title='Background smoke' />
         </div>
       </div>
     )

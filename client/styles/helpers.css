@@ -1,20 +1,45 @@
-.fontSmall{
-  font-size: rem(11);
-}
+@import "variables.css";
+:root {
+  --smallText: {
+    font-size: rem(11);
+    text-transform: uppercase;
+    letter-spacing: rem(2);
+    word-spacing: rem(4);
+  }
 
-.upperCase{
-  text-transform: uppercase;
-}
+  --defaultHeader: {
+    margin-bottom: rem(30);
+    & .headline{
+      color: white;
+      padding-bottom: rem(20);
+      margin-bottom: rem(30);
+      position: relative;
+      &:after{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: rem(2);
+        width: rem(30);
+        background-color: var(--muddyWaters);
+      }
+    }
+    & .intro{
+      width: 40%;      
+    }
+  }
 
-.defaultBgImage{
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-}
+  --defaultBgImage: {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
 
-.cta{
-  font-size: rem(11);
-  text-transform: uppercase;
-  letter-spacing: rem(2);
-  word-spacing: rem(4);
+  --boxShadowRight: {
+    box-shadow: rem(22) rem(0) rem(40) rem(30) color(black alpha(10%));
+  }
+
+  --boxShadowLeft: {
+    box-shadow: rem(-22) rem(0) rem(40) rem(30) color(black alpha(10%));
+  }
 }

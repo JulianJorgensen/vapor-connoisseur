@@ -1,9 +1,13 @@
 @import "globals.css";
 .wrapper{
+  padding-top: rem(120);
   margin-top: rem(60);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: var(--background);
+  position: relative;
+  width: 100%;
   & a{
     color: white;
   }
@@ -13,7 +17,7 @@
   composes: globalContainer;
   display: flex;
   justify-content: space-between;
-  composes: cta;
+  @apply --smallText;  
 }
 
 .details{
@@ -37,7 +41,7 @@
 }
 
 .copyright{
-  composes: cta;
+  @apply --smallText;  
   margin: rem(100) 0;
   display: flex;
   width: 100%;

@@ -35,7 +35,7 @@
 }
 
 .image{
-  composes: defaultBgImage;
+  @apply --defaultBgImage;  
   width: 100%;
   height: rem(700);
   position: relative;
