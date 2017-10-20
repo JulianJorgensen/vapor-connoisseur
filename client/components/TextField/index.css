@@ -1,0 +1,28 @@
+@import "globals.css";
+.default{
+  font-family: 'Scandia';
+  padding: rem(10) 0;
+}
+
+.bar:before, .bar:after{
+  background-color: var(--muddyWaters);
+}
+
+.inputElement {
+  color: white;
+  & ~ .label{
+    @apply --smallText;
+    text-transform: uppercase;  
+  }
+  &:not([disabled]):not([readonly]) ~ .label{
+    color: white;
+  }
+  &:focus:not([disabled]):not([readonly]) ~ .label{
+    font-size: rem(9) !important;
+    color: var(--muddyWaters) !important;
+  }
+}
+
+.hint{
+  color: gray(60%);
+}

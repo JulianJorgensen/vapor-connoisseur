@@ -4,16 +4,22 @@ import { HashLink } from 'lib/react-router-hash-link';
 import cn from 'classnames';
 import styles from './index.css';
 
-const Button = ({ className, label, white, hollow, primary, blue, small, tiny, theme, target, href, ...others }) => {
+const Button = ({ className, label, target, href, ...others }) => {
   const _className = cn(className, styles.default, {
-    [styles.white]: white,
-    [styles.hollow]: hollow,
-    [styles.primary]: primary
+    [styles.white]: others.white,
+    [styles.hollow]: others.hollow,
+    [styles.primary]: others.primary,
+    [styles.disabled]: others.disabled
   });
 
   let renderButton = () => {
     return (
-      <button className={_className} {...others}><span className={styles.label}>{label}</span></button>      
+      <button 
+        className={_className}
+        {...others}
+      >
+        <span className={styles.label}>{label}</span>
+      </button>
     )
   }
 

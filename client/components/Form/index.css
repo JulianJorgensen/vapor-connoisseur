@@ -1,0 +1,10 @@
+@import "globals.css";
+.cta{
+  margin-top: rem(30);
+}
+.response{
+  margin-top: rem(30);
+  &.success{
+    color: var(--success);
+  }  
+}

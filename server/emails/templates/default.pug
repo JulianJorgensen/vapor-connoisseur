@@ -1,0 +1,15 @@
+extends layout.pug
+
+block content
+  tr
+    td.alert(class='alert-primary')
+  tr
+    td.content-wrap
+      table(width='100%', cellpadding='0', cellspacing='0')
+        tr
+          td.content-block Hi there,
+        tr
+          td.content-block
+            | Full name: #{name}
+            | Email: #{email}
+            | Business name: #{business}

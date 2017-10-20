@@ -4,6 +4,7 @@
   position: absolute;
   width: 100%;
   top: rem(160);
+  pointer-events: none;
   &:before{
     content: '';
     background-color: var(--bokara);
@@ -20,8 +21,8 @@
   flex-direction: column;
   align-items: flex-end;
   & .inner{
+    pointer-events: all;
     width: rem(650);
-    height: rem(800);
     padding-top: rem(90);
   }
 }

@@ -2,6 +2,7 @@
 .wrapper{
   position: relative;
   z-index: 3;
+  pointer-events: none;
 }
 .container {
   composes: globalContainer;
@@ -22,6 +23,7 @@
 }
 
 .contactInfo{
+  pointer-events: all;
   display: flex;
   justify-content: space-between;
   & .col{
