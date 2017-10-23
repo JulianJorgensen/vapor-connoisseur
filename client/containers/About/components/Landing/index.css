@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /* margin-bottom: rem(150); */
   &:after{
     content: '';
     width: 60%;
@@ -13,6 +12,13 @@
     background-color: var(--bokara);
     position: absolute;
     z-index: 1;
+  }
+  @media (--only-small) {
+    flex-direction: column;
+    &:after{
+      top: rem(270);
+      width: 100%;
+    }
   }
 }
 
@@ -37,5 +43,9 @@
     position: absolute;
     left: rem(60);
     bottom: rem(60);
+  }
+  @media (--only-small) {
+    position: relative;
+    top: auto;
   }
 }

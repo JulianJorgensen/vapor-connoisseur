@@ -81,6 +81,7 @@
     "react-markdown": "^2.5.0",
     "react-rangeslider": "^2.2.0",
     "react-redux": "^5.0.2",
+    "react-responsive": "^3.0.0",
     "react-router-dom": "^4.1.1",
     "react-router-hash-link": "^1.1.0",
     "react-router-redux": "next",

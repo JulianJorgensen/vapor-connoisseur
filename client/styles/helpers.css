@@ -30,7 +30,9 @@
       }
     }
     & .intro{
-      width: 40%;      
+      @media (--medium-and-up) {
+        width: 40%;      
+      }
     }
   }
 
