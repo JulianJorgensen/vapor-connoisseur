@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import { userIsAuthenticated } from 'routes/utils';
+import Logo from 'components/Logo';
 
 import bgImage from 'assets/images/Footer_SmokeDARK-Web.png';
 import styles from './index.css';
@@ -14,7 +15,7 @@ export default class Footer extends React.Component {
       <footer className={styles.wrapper}>
         <div className={styles.container}>
           <div className={styles.details}>
-            <div className={styles.logo}>Logo</div>
+            <Logo className={styles.logo} />
             <address>877 330 0370<br />
             <a href='mailto:INFO@VAPORCONNOISSEUR.COM'>INFO@VAPORCONNOISSEUR.COM</a><br />
             VENTURA, CALIFORNIA

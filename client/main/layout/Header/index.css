@@ -3,7 +3,18 @@
   position: fixed;
   z-index: 9;
   width: 100%;
-  top: rem(60);
+  top: 0;
+  @media (--large-and-up) {
+    top: rem(60);
+  }
+}
+
+.container {
+  composes: globalContainer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
 }
 
 .headroom {
@@ -13,11 +24,24 @@
   z-index: 9;
 }
 
+.logo{
+  width: rem(30);
+  height: rem(30);
+  @media (--large-and-up) {
+    width: rem(50);
+    height: rem(50);      
+  }
+}
+
 :global {
+  & .headroom{
+    display: flex;
+    justify-content: center;  
+    width: 100%;
+  }
   /* deactive */
   & .headroom--unpinned {
     transition: all 200ms;
-    position: fixed;
     transform: translateY(rem(-40));
     opacity: 0;
   }
@@ -27,9 +51,6 @@
   & .headroom--unfixed {
     position: relative;
   }
-  & .headroom--pinned {
-    position: fixed;
-  }
   & .headroom--unfixed,
   & .headroom--pinned {
     transform: translateY(rem(0));
@@ -37,11 +58,3 @@
   }
 }
 
-.container {
-  composes: globalContainer;
-  display: flex;
-  justify-content: space-between;
-  /* top: rem(60); */
-  z-index: 3;
-  /* position: fixed; */
-}

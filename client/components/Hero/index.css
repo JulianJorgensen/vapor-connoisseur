@@ -6,13 +6,19 @@
 }
 
 .headline {
-  margin: 0 0 rem(40);
+  margin: 0 0 rem(20);
   white-space: pre-wrap;
+  @media (--large-and-up) {
+    margin: 0 0 rem(40);
+  }
 }
 
 .intro{
-  width: rem(550);
+  width: 100%;
   white-space: pre-wrap;
+  @media (--large-and-up) {
+    width: rem(550);    
+  }
 }
 
 .seeMore{
@@ -22,20 +28,26 @@
 }
 
 .preTitle {
+  @apply --smallText;
   position: relative;
-  padding-left: rem(120);
-  text-transform: uppercase;
-  font-size: rem(11);
-  letter-spacing: rem(2);
-  margin-bottom: rem(50);
+  padding-left: rem(50);
+  margin-bottom: rem(30);
   &:before {
     content: '';
     position: absolute;
     top: 50%;
     left: 0;
     transform: translateY(rem(-1));
-    height: rem(2);
-    width: rem(70);
+    height: rem(1);
+    width: rem(30);
     background-color: var(--muddyWaters);
   }
+  @media (--large-and-up) {
+    padding-left: rem(120);
+    margin-bottom: rem(50);
+    &:before {
+      width: rem(70);
+      height: rem(2);
+    }      
+  }    
 }

@@ -1,17 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import cn from 'classnames';
 
-import LogoSVG from '-!svg-react-loader?name=Icon!assets/icons/julian-jorgensen-logo.svg';
+import LogoSVG from '-!svg-react-loader?name=Icon!assets/icons/logo.svg';
 import styles from './index.css';
 
-const Logo = ({ className, color, size, ...others }) => {
+const Logo = ({ className, ...others }) => {
   const _className = cn(className);
 
   return (
-    <LogoSVG
-      className={_className}
-      {...others}
-    />
+    <Link to='/'>
+      <LogoSVG
+        className={_className}
+        {...others}
+      />
+    </Link>
   )
 };
 

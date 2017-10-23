@@ -1,44 +1,61 @@
 @import "globals.css";
 .wrapper {
-  display: flex;
+  composes: globalWrapper;
   flex-direction: row;
-  justify-content: center;
-  margin-top: rem(100);
-  margin-bottom: rem(300);
+  @media (--large-and-up) {
+    margin-top: rem(100);
+    margin-bottom: rem(30);
+  }
 }
 
 .container {
   composes: globalContainer;
-}
-
-.row {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  @media (--large-and-up) {
+    flex-direction: row;
+    justify-content: space-between;
+  }    
 }
 
-.content {
-  width: 70%;
-  column-count: 2;
-  column-gap: rem(60);
-  column-width: 50%;
-}
+.primaryCol {
+  margin-bottom: rem(60);
 
-.head {
-  &,
-  & .content {
-    align-items: flex-end;
+  @media (--large-and-up) {
+    width: 70%;
+    margin-bottom: 0;
   }
   & .headline{
-    display: inline-block;
     position: relative;
+    @media (--large-and-up) {
+      width: 50%;
+    }
     &:after{
       content: '';
       position: absolute;
-      bottom: 0;
-      right: rem(-120);
-      height: rem(1);
-      width: rem(60);
-      background-color: white;  
+      height: rem(2);
+      width: rem(50);
+      top: rem(-30);
+      left: 0;
+      background-color: var(--muddyWaters);      
+    }
+    @media (--large-and-up) {      
+      &:after{
+        right: rem(-30);
+        bottom: 0;
+        left: auto;
+        top: auto;
+        transform: translateX(100%);
+        width: rem(100);
+        background-color: gray(90%);
+      }
+    }
+  }
+  & .body{
+    @media (--large-and-up) {
+      column-count: 2;
+      column-gap: rem(60);
+      column-width: 50%;
     }
   }
 }
@@ -48,7 +65,20 @@
 }
 
 .services {
-  width: 15%;
+  @media (--medium-and-down) {    
+    & .body{
+      column-count: 2;
+      column-gap: rem(30);
+      column-width: 50%;
+    }
+  }
+  @media (--large-and-up) {
+    margin-top: rem(30);
+    width: 15%;
+    & .headline{
+      font-size: rem(18);
+    }
+  }
   text-align: left;
   & ul {
     list-style-type: none;
@@ -61,6 +91,7 @@
   width: 100%;
   position: absolute;
   transform: translateY(-30%);
+  left: 0;
   & img {
     width: 100%;
   }

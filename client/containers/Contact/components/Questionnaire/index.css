@@ -23,7 +23,7 @@
   & .inner{
     pointer-events: all;
     width: rem(650);
-    padding-top: rem(90);
+    padding: rem(90) 0;
   }
 }
 

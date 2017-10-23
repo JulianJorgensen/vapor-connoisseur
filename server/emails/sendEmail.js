@@ -2,14 +2,14 @@ import Mailer from './Mailer';
 
 export const send = function(req, res) {
   console.log(req.body);
-  let { fromName, fromEmail, subject, ...context } = req.body;
+  let { template, fromName, fromEmail, subject, ...context } = req.body;
 
   let mailOptions = {
     from: {name: fromName, address: fromEmail},
     to: {name: 'Julian Jorgensen', address: 'me@julianjorgensen.com'},
     subject,
     template: {
-      name: `./server/emails/templates/default.pug`,
+      name: `./server/emails/templates/${template}.pug`,
       engine: 'pug',
       context: {
         name: fromName,

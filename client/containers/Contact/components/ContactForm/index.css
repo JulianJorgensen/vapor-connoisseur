@@ -3,7 +3,6 @@
 .wrapper{
   composes: globalWrapper;
   width: 100%;
-  padding: rem(90) 0;
   position: relative;
   &:before{
     content: '';
@@ -22,6 +21,7 @@
   flex-direction: column;
   & .inner{
     width: calc(50% - rem(90));
+    padding: rem(90) rem(60) rem(90) 0;
   }
 }
 

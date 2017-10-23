@@ -3,13 +3,19 @@
 @custom-selector :--headings h1,h2,h3,h4,h5,h6,h1 *,h2 *,h3 *,h4 *,h5 *,h6 *;
 @custom-selector :--inputs input,textarea,radio,select,label;
 
-:root {
+:root {   
   --h1: rem(80);
+  --h1Mobile: rem(30);
   --h2: rem(40);
+  --h2Mobile: rem(24);
   --h3: rem(22);
+  --h3Mobile: rem(20);
   --h4: rem(18);
+  --h4Mobile: rem(18);
   --h5: rem(16);
+  --h5Mobile: rem(16);
   --h6: rem(14);
+  --h6Mobile: rem(14);
   --lineHeight: 1.15;
   --color: var(--muddyWaters);
 }
@@ -31,8 +37,12 @@
     color: var(--color);
   }
   & body {
-    font-size: rem(16);
-    line-height: rem(20);
+    font-size: rem(12);
+    line-height: rem(16);
+    @media (--large-and-up) {
+      font-size: rem(16);
+      line-height: rem(20);
+    }
   }
   & a {
     text-decoration: none;
@@ -44,46 +54,78 @@
   }
   & h1,
   & h1 * {
-    font-size: var(--h1);
-    line-height: calc(var(--h1) * var(--lineHeight));
+    font-size: var(--h1Mobile);
+    line-height: calc(var(--h1Mobile) * var(--lineHeight));
     text-transform: uppercase;
-    letter-spacing: rem(10);
-    word-spacing: rem(15);
+    letter-spacing: rem(4);
+    word-spacing: rem(10);
+    @media (--large-and-up) {
+      font-size: var(--h1);
+      line-height: calc(var(--h1) * var(--lineHeight));
+      letter-spacing: rem(10);
+      word-spacing: rem(15);
+    }
   }
   & h2,
   & h2 * {
-    font-size: var(--h2);
-    line-height: calc(var(--h2) * var(--lineHeight));
+    font-size: var(--h2Mobile);
+    line-height: calc(var(--h2Mobile) * var(--lineHeight));
     text-transform: uppercase;
     letter-spacing: rem(6);
     word-spacing: rem(10);
+    @media (--large-and-up) {
+      font-size: var(--h2);
+      line-height: calc(var(--h2) * var(--lineHeight));
+      letter-spacing: rem(6);
+      word-spacing: rem(10);
+    }
   }
   & h3,
   & h3 * {
-    font-size: var(--h3);
-    line-height: calc(var(--h3) * var(--lineHeight));
+    font-size: var(--h3Mobile);
+    line-height: calc(var(--h3Mobile) * var(--lineHeight));
     text-transform: uppercase;
     letter-spacing: rem(4);
     word-spacing: rem(6);
+    @media (--large-and-up) {
+      font-size: var(--h3);
+      line-height: calc(var(--h3) * var(--lineHeight));
+      letter-spacing: rem(4);
+      word-spacing: rem(6);
+    }
   }
   & h4,
   & h4 * {
-    font-size: var(--h4);
-    line-height: calc(var(--h4) * var(--lineHeight));
+    font-size: var(--h4Mobile);
+    line-height: calc(var(--h4Mobile) * var(--lineHeight));
     text-transform: uppercase;
     letter-spacing: rem(4);
     word-spacing: rem(6);
+    @media (--large-and-up) {
+      font-size: var(--h4);
+      line-height: calc(var(--h4) * var(--lineHeight));
+      letter-spacing: rem(4);
+      word-spacing: rem(6);
+    }
   }
   & h5,
   & h5 * {
-    font-size: var(--h5);
-    line-height: calc(var(--h5) * var(--lineHeight));
+    font-size: var(--h5Mobile);
+    line-height: calc(var(--h5Mobile) * var(--lineHeight));
+    @media (--large-and-up) {
+      font-size: var(--h5);
+      line-height: calc(var(--h5) * var(--lineHeight));
+    }
   }
   & h6,
   & h6 * {
-    font-size: var(--h6);
-    line-height: calc(var(--h6) * var(--lineHeight));
+    font-size: var(--h6Mobile);
+    line-height: calc(var(--h6Mobile) * var(--lineHeight));
     margin: 0;
+    @media (--large-and-up) {
+      font-size: var(--h6);
+      line-height: calc(var(--h6) * var(--lineHeight));
+    }
   }
   & h5,
   & h6 {

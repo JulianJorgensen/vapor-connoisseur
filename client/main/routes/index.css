@@ -1,6 +1,7 @@
 @import "globals.css";
 .wrapper {
   min-height: 100%;
+  max-width: 100%;
   &.navOpen {
     filter: blur(4px);
   }

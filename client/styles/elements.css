@@ -1,7 +1,9 @@
 @import "variables.css";
 
 :global{
-  & div{
+  & div,
+  & header,
+  & footer{
     box-sizing: border-box;
   }
   & button{

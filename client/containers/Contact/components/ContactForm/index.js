@@ -6,7 +6,7 @@ import styles from './index.css';
 
 let formFields = [
   {
-    label: 'Full name',
+    label: 'Your name',
     name: 'name',
     required: true
   },
@@ -22,7 +22,7 @@ let formFields = [
     type: 'phone'
   },
   {
-    label: 'Message',
+    label: 'Your message',
     name: 'message',
     multiline: true,
     rows: 3

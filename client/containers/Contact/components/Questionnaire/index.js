@@ -9,7 +9,7 @@ import styles from './index.css';
 
 let formFields = [
   {
-    label: 'Full name',
+    label: 'Your name',
     name: 'name',
     required: true
   },
@@ -22,6 +22,23 @@ let formFields = [
   {
     label: 'Business name',
     name: 'business'
+  },
+  {
+    label: 'City & State',
+    name: 'cityAndState'
+  },
+  {
+    label: 'Phone Number',
+    name: 'phone',
+    type: 'phone'
+  },
+  {
+    label: 'Extraction Process',
+    name: 'extractionProcess'
+  },
+  {
+    label: 'Post Processing',
+    name: 'postProcessing'
   }
 ];
 

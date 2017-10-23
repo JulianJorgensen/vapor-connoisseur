@@ -11,6 +11,7 @@ export default class FormContainer extends Component {
   onSubmit = ({ name, email, ...others }) => {
     return new Promise((resolve, reject) => {
       axios.post('/sendEmail', {
+        template: this.props.form,
         fromName: name,
         fromEmail: email,
         subject: `${this.props.subject} from ${name}`,

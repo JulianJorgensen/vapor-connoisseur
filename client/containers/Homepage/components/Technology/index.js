@@ -28,8 +28,27 @@ export default class HomepageTechnology extends React.Component {
     return (
       <div className={styles.wrapper}>
         <div className={styles.container}>
-          <div className={styles.graphic}>
-            <ImageDiff before={productExploded} after={productExploded2} type='swipe' value={(slidePosition/100)} height={600} width={600} />
+          <div className={styles.graphicCol}>
+            <div className={styles.graphicMobile}>
+              <ImageDiff 
+                before={productExploded} 
+                after={productExploded2} 
+                type='swipe' 
+                value={(slidePosition/100)}
+                width={200}
+                height={200} 
+              />
+            </div>
+            <div className={styles.graphicDesktop}>
+              <ImageDiff 
+                before={productExploded} 
+                after={productExploded2} 
+                type='swipe' 
+                value={(slidePosition/100)}
+                width={600}
+                height={600} 
+              />
+            </div>
             <Slider
               min={0}
               max={100}

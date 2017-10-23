@@ -4,6 +4,7 @@ import Headroom from 'react-headroom';
 
 import Nav from './components/Nav';
 import Bars from './components/Bars';
+import Logo from 'components/Logo';
 import styles from './index.css';
 
 @withRouter
@@ -13,7 +14,7 @@ export default class Header extends React.Component {
       <div className={styles.wrapper}>
         <Headroom className={styles.headroom} pinStart={0} disableInlineStyles>
           <header className={styles.container}>
-            <Link to='/'>logo</Link>
+            <Logo className={styles.logo} />
             <Bars />
           </header>
         </Headroom>

@@ -19,7 +19,7 @@ export default class ProcessDuties extends Component {
             <h2 className={styles.headline}>{content.dutiesHeadline}</h2>
           </header>
 
-          <FeatureBoxes features={content.dutiesFeatures} />          
+          <FeatureBoxes features={content.dutiesFeatures} />
         </div>
       </div>
     )

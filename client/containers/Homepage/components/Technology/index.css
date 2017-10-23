@@ -1,41 +1,71 @@
 @import "globals.css";
 .wrapper {
-  display: flex;
+  composes: globalWrapper;
   flex-direction: row;
-  justify-content: center;
-  margin-bottom: rem(70);
+  margin-bottom: rem(30);
+  @media (--large-and-up) {
+    margin-bottom: rem(70);
+  }
 }
 
 .container{
   composes: globalContainer;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  @media (--large-and-up) {
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
 }
 
-.graphic{
-  width: 60%;
+.graphicCol{
+  width: 100%;
   position: relative;
-  & img{
-    width: 100%;
+  margin-bottom: rem(60);
+  -webkit-user-select: none !important;
+  & .graphicDesktop{
+    display: none;
+  }
+  @media (--large-and-up) {
+    margin-bottom: 0;
+    width: 60%;
+  }
+
+  @media (--medium-and-up) {    
+    & .graphicMobile{
+      display: none;
+    }
+    & .graphicDesktop{
+      display: block;
+    }
   }
 
   & .rangeSlider{
     position: absolute;
     bottom: 0;
-    left: rem(140);
+    left: 0;
+    @media (--large-and-up) {
+      left: rem(140);
+    }      
   }  
 }
 
 .process{
-  width: 40%;
+  @media (--large-and-up) {
+    width: 40%;
+  }
 }
 
 :global{
   & .rangeslider {
     position: relative;
-    width: rem(300);
+    width: 100%;
     border-bottom: rem(2) dashed gray(30%);
+    @media (--large-and-up) {
+      width: rem(300);
+    }      
   }
   & .rangeslider__fill{
   }    

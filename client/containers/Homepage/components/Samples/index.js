@@ -19,7 +19,7 @@ export default class HomepageSamples extends React.Component {
             <div className={styles.content}>
               <h2>{content.sampleKitsHeadline}</h2>
               <ReactMarkdown source={content.sampleKitsBody} />
-              <Button href='/sample-kits' label='Learn more' />
+              <Button className={styles.cta} href='/sample-kits' label='Learn more' />
             </div>
           </div>
           <div className={styles.rightBox} style={{backgroundImage: `url(${productImage}`}}></div>

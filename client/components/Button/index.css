@@ -7,7 +7,7 @@
   text-align: center;
   padding-left: rem(50);
   padding-right: rem(10);
-  height: rem(30);
+  height: rem(36);
   color: white;
   text-decoration: none;
   transition: all 0.2s;
@@ -27,7 +27,7 @@
     transform: translateY(rem(-1));
     height: rem(2);
     width: rem(30);
-    background-color: var(--muddyWaters);
+    background-color: var(--robRoy);
     transition: all 0.2s;
   }
   &:hover{
@@ -39,6 +39,15 @@
       top: 0;
     }
   }
+  @media (--medium-and-down) {
+    padding-left: rem(30);
+    padding-right: rem(30);
+    &:before{
+      width: 100%;
+      height: 100%;
+      top: 0;
+    }
+  }    
   &,
   &:hover,
   &:active,

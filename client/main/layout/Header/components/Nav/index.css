@@ -32,15 +32,19 @@
   opacity: 0;
   transform: translateX(rem(200));
   pointer-events: none;
-  width: rem(700);
-  padding: rem(60) rem(60) rem(60) rem(120);
+  padding: rem(30);
   height: 100vh;
+  width: 100%;
   background-color: color(gray(20%) alpha(80%));
   transition: all 0.2s;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media (--large-and-up) {
+    width: rem(700);
+    padding: rem(60) rem(60) rem(60) rem(120);
+  }    
   &.open{
     opacity: 1;
     pointer-events: auto;
@@ -53,10 +57,14 @@
   margin: 0;
   padding: 0;
   & .navItem{
-    font-size: rem(38);
-    line-height: rem(60);
+    font-size: rem(26);
+    line-height: rem(40);
     text-transform: uppercase;
     font-family: var(--primaryFont);
+    @media (--large-and-up) {
+      font-size: rem(38);
+      line-height: rem(60);  
+    }
     & a{
       color: var(--muddyWaters);  
       transition: color 0.2s;
@@ -72,10 +80,16 @@
 
 .navFooter{
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  width: rem(440);
+  width: 100%;
   font-size: rem(16);
   & a{
     color: white;
   }
+  @media (--large-and-up) {
+    flex-direction: row;
+    width: rem(440);
+    font-size: rem(16);  
+  }      
 }

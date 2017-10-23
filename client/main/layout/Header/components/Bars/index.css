@@ -7,6 +7,7 @@
   position: relative;
   z-index: 9;
   width: rem(30);
+  height: rem(20);
   display: flex;
   flex-wrap: wrap;
   cursor: pointer;

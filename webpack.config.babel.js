@@ -71,13 +71,14 @@ const BASE_CONFIG = {
         use: 'file-loader?name=/docs/[name].[ext]'
       },
       {
-        test: /\.(gif|png|jpe?g)$/i,
-        include: path.resolve(__dirname, 'client/assets/images'),
+        test: /\.(gif|png|jpg|jpe?g)$/i,
+        include: path.resolve(__dirname, 'client/assets/images'),        
         loaders: [
           'file-loader',
           {
             loader: 'image-webpack-loader',
             options: {
+              bypassOnDebug: true,
               gifsicle: {
                 interlaced: false,
               },

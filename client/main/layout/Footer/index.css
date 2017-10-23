@@ -1,7 +1,7 @@
 @import "globals.css";
 .wrapper{
-  padding-top: rem(120);
-  margin-top: rem(60);
+  padding-top: rem(30);
+  margin-top: rem(30);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,26 +11,61 @@
   & a{
     color: white;
   }
+  @media (--medium-and-up) {
+    padding-top: rem(120);
+    margin-top: rem(60);
+  }
 }
 
 .container {
   composes: globalContainer;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  padding-top: 0;
+  padding-bottom: 0;
   @apply --smallText;  
+  @media (--medium-and-up) {
+    flex-direction: row;
+  }    
 }
 
 .details{
   display: flex;
+  margin-bottom: rem(30);
+  @media (--medium-and-up) {
+    margin-bottom: 0;
+  }    
   & .logo{
-    margin-right: rem(30);
+    margin-right: rem(20);
+    width: rem(40);
+    height: rem(40);
+    @media (--medium-and-up) {
+      width: rem(60);
+      height: rem(60);
+      margin-right: rem(30);
+    }      
+    & path,
+    & polyline,
+    & circle{
+      fill: var(--muddyWaters);
+    }
   }
 }
 
 .nav {
   display: flex;
+  margin-bottom: rem(20);
+  width: calc(100% - rem(60));
+  align-self: flex-end;
+  @media (--medium-and-up) {
+    width: auto;
+  }
   & ul {
-    margin-left: rem(120);
+    margin-left: rem(60);
+    @media (--medium-and-up) {
+      margin-left: rem(120);
+    }
     &:first-child{
       margin-left: 0;
     }
@@ -41,12 +76,24 @@
 }
 
 .copyright{
-  @apply --smallText;  
-  margin: rem(100) 0;
+  @apply --smallText;
+  margin: rem(10) 0;
   display: flex;
-  width: 100%;
+  flex-direction: column;
   justify-content: space-between;
   color: gray(60%);
+  width: calc(100% - rem(60));
+  align-self: flex-end;
+  & div{
+    margin-bottom: rem(20);
+  }
+  @media (--medium-and-up) {
+    flex-direction: row;
+    margin: rem(100) 0;
+    & div{
+      margin-bottom: 0;
+    }
+  }
 }
 
 .bgImage{
