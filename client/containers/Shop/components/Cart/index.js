@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import LineItem from './components/LineItem';
 import Button from 'components/Button';
-import LoadingSpinner from 'components/LoadingSpinner';
+import LineItem from './components/LineItem';
 import styles from './index.css';
 
-class Cart extends Component {
+export default class Cart extends Component {
   constructor(props) {
     super(props);
 
@@ -16,24 +15,28 @@ class Cart extends Component {
   }
 
   render() {
-    let { checkout, updateQuantityInCart, removeLineItemInCart, isCartOpen, handleCartClose } = this.props;
+    const {
+      checkout,
+      updateQuantityInCart,
+      removeLineItemInCart,
+      isCartOpen,
+      handleCartClose,
+    } = this.props;
 
     if (!checkout) {
       return false;
     }
 
-    let { lineItems } = checkout;
+    const { lineItems } = checkout;
 
-    let line_items = lineItems.map((line_item) => {
-      return (
-        <LineItem
-          updateQuantityInCart={updateQuantityInCart}
-          removeLineItemInCart={removeLineItemInCart}
-          key={line_item.id.toString()}
-          line_item={line_item}
-        />
-      );
-    });
+    const renderLineItems = lineItems.map(lineItem => (
+      <LineItem
+        updateQuantityInCart={updateQuantityInCart}
+        removeLineItemInCart={removeLineItemInCart}
+        key={lineItem.id.toString()}
+        lineItem={lineItem}
+      />
+    ));
 
     return (
       <div className={`${styles.cart} ${isCartOpen ? styles.cartOpen : ''}`}>
@@ -41,12 +44,13 @@ class Cart extends Component {
           <h2>Your cart</h2>
           <button
             onClick={handleCartClose}
-            className={styles.cartClose}>
+            className={styles.cartClose}
+          >
             ×
           </button>
         </header>
         <ul className={styles.cartLineItems}>
-          {line_items}
+          {renderLineItems}
         </ul>
         <footer className={styles.cartFooter}>
           <div className={styles.cartInfo}>
@@ -70,8 +74,6 @@ class Cart extends Component {
           <Button className={styles.cartCheckout} onClick={this.openCheckout}>Checkout</Button>
         </footer>
       </div>
-    )
+    );
   }
 }
-
-export default Cart;

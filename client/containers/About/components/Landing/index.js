@@ -1,24 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Hero from 'components/Hero';
-
 import productImage from 'assets/images/Vapor65130.jpg';
 import styles from './index.css';
 
 @connect(({ site }) => ({
-  content: site.content.about || {}
+  content: site.content.about || {},
 }))
 export default class AboutLanding extends React.Component {
   render() {
-    let { content } = this.props;
+    const { content } = this.props;
     return (
       <div className={styles.wrapper}>
         <div className={styles.container}>
-          <Hero headline={content.headline} intro={content.intro} seeMoreText={true} />
+          <Hero headline={content.headline} intro={content.intro} seeMoreText />
         </div>
-        <div className={styles.productImage} style={{backgroundImage: `url(${productImage}`}}></div>
+        <div className={styles.productImage} style={{ backgroundImage: `url(${productImage}` }} />
       </div>
-    )
+    );
   }
 }

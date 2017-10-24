@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import cn from 'classnames';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ReactMarkdown from 'react-markdown';
 import { Desktop, MobileTablet } from 'utils/responsive';
@@ -10,11 +8,11 @@ import FeaturesMobile from './components/FeaturesMobile';
 import styles from './index.css';
 
 @connect(({ site }) => ({
-  content: site.content.about || {}
+  content: site.content.about || {},
 }))
 export default class AboutServices extends Component {
   render() {
-    let { content } = this.props;    
+    const { content } = this.props;
     return (
       <div className={styles.wrapper}>
         <div className={styles.container}>
@@ -27,6 +25,6 @@ export default class AboutServices extends Component {
           <MobileTablet component={<FeaturesMobile />} />
         </div>
       </div>
-    )
+    );
   }
 }

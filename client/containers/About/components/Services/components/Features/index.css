@@ -1,12 +1,10 @@
 @import "globals.css";
-
-.features{
+.features {
   display: flex;
   justify-content: flex-end;
   position: relative;
   margin-bottom: rem(100);
-  
-  & .featuresBody{
+  & .featuresBody {
     width: 60%;
     background: var(--defaultGradient);
     position: absolute;
@@ -17,8 +15,7 @@
     padding: rem(120);
     @apply --boxShadowRight;
   }
-
-  & .miniNav{
+  & .miniNav {
     position: absolute;
     bottom: rem(-20);
     background-color: var(--muddyWaters);
@@ -26,7 +23,7 @@
     display: flex;
     justify-content: space-between;
     padding: rem(15) rem(25);
-    & .miniNavItem{
+    & .miniNavItem {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -35,15 +32,15 @@
       width: rem(60);
       @apply --smallText;
       line-height: rem(11);
-      & svg{
+      & svg {
         width: rem(13);
         height: rem(13);
-        & path{
+        & path {
           fill: white;
         }
       }
     }
-    &:after{
+    &:after {
       content: '|';
       position: absolute;
       left: 50%;
@@ -51,55 +48,58 @@
       transform: translateY(-50%) translateX(-50%);
     }
   }
-
-  & .featuresContent{
+  & .featuresContent {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    & .featureTitle{
+    & .featureTitle {
       margin-bottom: rem(30);
       color: white;
     }
   }
-
-  & .featuresNav{
+  & .featuresNav {
     width: 50%;
     background-color: var(--rangoon);
     padding: rem(120) rem(60);
     display: flex;
     justify-content: center;
     align-items: center;
-    & .featureNavItem{
-      @apply --smallText;
-      user-select: none;
+    & li {
       margin-bottom: rem(15);
-      cursor: pointer;
-      &.active{
+    }
+    & .featureNavItem {
+      color: white;
+      user-select: none;
+      &,
+      & button {
+        @apply --smallText;
+        cursor: pointer;
+      }
+      &.active {
         color: var(--muddyWaters);
       }
     }
   }
 }
 
-.feature{
+.feature {
   display: none;
-  &.active{
+  &.active {
     display: block;
   }
 }
 
-.position{
+.position {
   display: flex;
   align-items: center;
-
-  & .positionBar{
+  & .positionBar {
     position: relative;
     width: rem(60);
     background-color: gray(80%);
     height: rem(2);
     margin-right: rem(15);
-    & .timeoutBar{
+    & .timeoutBar {
       position: absolute;
       left: 0;
       top: 0;
@@ -115,8 +115,7 @@
         /* transition: width 0ms; */
       }
     }
-  }  
-
+  }
   & .slideNumber {
     @apply --smallText;
   }

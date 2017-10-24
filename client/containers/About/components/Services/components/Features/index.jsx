@@ -1,26 +1,24 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
-import AngleLeftIcon from '-!svg-react-loader?name=Icon!assets/icons/FontAwesome/regular/angle-left.svg';
-import AngleRightIcon from '-!svg-react-loader?name=Icon!assets/icons/FontAwesome/regular/angle-right.svg';
+import AngleLeftIcon from 'assets/icons/FontAwesome/regular/angle-left.svg';
+import AngleRightIcon from 'assets/icons/FontAwesome/regular/angle-right.svg';
 import { connect } from 'react-redux';
 import styles from './index.css';
 
-let AUTO_SLIDE_INTERVAL = 5000;
+const AUTO_SLIDE_INTERVAL = 5000;
 
 @connect(({ site }) => ({
-  content: site.content.about || {}
+  content: site.content.about || {},
 }))
 export default class AboutServicesFeatures extends Component {
   state = {
-    activeFeature: 0
+    activeFeature: 0,
   }
 
   componentWillMount() {
-    let features = [];
-    this.props.content.serviceFeatures.map((feature, i) => {
-      features.push(feature);
-    });
-    this.setState({features});
+    const features = [];
+    this.props.content.serviceFeatures.map(feature => features.push(feature));
+    this.setState({ features });
   }
 
   componentDidMount() {
@@ -28,7 +26,7 @@ export default class AboutServicesFeatures extends Component {
   }
 
   initAutoSlideTimer() {
-    this.resetTimeoutBar();    
+    this.resetTimeoutBar();
 
     this.autoSlideInterval = setInterval(() => {
       this.handleTriggerNext();
@@ -38,18 +36,18 @@ export default class AboutServicesFeatures extends Component {
 
   resetTimeoutBar() {
     this.setState({
-      timeoutBarActive: false
+      timeoutBarActive: false,
     });
     setTimeout(() => {
       this.setState({
-        timeoutBarActive: true
+        timeoutBarActive: true,
       });
     }, 50);
   }
 
   stopAutoSlider() {
     this.setState({
-      timeoutBarActive: false
+      timeoutBarActive: false,
     });
     clearInterval(this.autoSlideInterval);
   }
@@ -57,26 +55,26 @@ export default class AboutServicesFeatures extends Component {
   handleTriggerPrev = () => {
     let prevActiveFeature;
     if (this.state.activeFeature === 0) {
-      prevActiveFeature = this.state.features.length - 1
-    }else{
+      prevActiveFeature = this.state.features.length - 1;
+    } else {
       prevActiveFeature = this.state.activeFeature - 1;
     }
 
     this.setState({
-      activeFeature: prevActiveFeature
+      activeFeature: prevActiveFeature,
     });
   }
 
   handleTriggerNext = () => {
     let nextActiveFeature;
-    if (this.state.activeFeature === (this.state.features.length-1)) {
-      nextActiveFeature = 0
-    }else{
+    if (this.state.activeFeature === (this.state.features.length - 1)) {
+      nextActiveFeature = 0;
+    } else {
       nextActiveFeature = this.state.activeFeature + 1;
     }
 
     this.setState({
-      activeFeature: nextActiveFeature
+      activeFeature: nextActiveFeature,
     });
   }
 
@@ -91,23 +89,22 @@ export default class AboutServicesFeatures extends Component {
   }
 
   handleFeatureClick = (index) => {
-    this.setState({activeFeature: index});
-    this.stopAutoSlider();    
+    this.setState({ activeFeature: index });
+    this.stopAutoSlider();
   }
 
   render() {
-    let { content } = this.props;
-    let { features, activeFeature, timeoutBarActive } = this.state;
+    const { features, activeFeature, timeoutBarActive } = this.state;
 
-    let _timeoutBarStyles = cn(styles.timeoutBar, {
-      [styles.active]: timeoutBarActive
-    })
+    const timeoutBarStyles = cn(styles.timeoutBar, {
+      [styles.active]: timeoutBarActive,
+    });
     return (
       <div className={styles.features}>
         <div className={styles.featuresBody}>
           <div className={styles.position}>
             <div className={styles.positionBar}>
-              <div className={_timeoutBarStyles}></div>
+              <div className={timeoutBarStyles} />
             </div>
             <div className={styles.slideNumber}>
               {this.state.activeFeature + 1} / {features.length}
@@ -116,11 +113,11 @@ export default class AboutServicesFeatures extends Component {
 
           <div className={styles.featuresContent}>
             {features.map((feature, index) => {
-              let _featureStyles = cn(styles.feature, {
-                [styles.active]: activeFeature === index
-              })
+              const featureStyles = cn(styles.feature, {
+                [styles.active]: activeFeature === index,
+              });
               return (
-                <div key={index} className={_featureStyles}>
+                <div key={feature.sys.id} className={featureStyles}>
                   <h3 className={styles.featureTitle}>{feature.fields.title}</h3>
                   <p>{feature.fields.body}</p>
                 </div>
@@ -129,24 +126,34 @@ export default class AboutServicesFeatures extends Component {
           </div>
 
           <div className={styles.miniNav}>
-            <div className={styles.miniNavItem} onClick={this.handlePrevClick}><AngleLeftIcon /> Prev</div>
-            <div className={styles.miniNavItem} onClick={this.handleNextClick}>Next <AngleRightIcon /></div>
+            <button className={styles.miniNavItem} onClick={this.handlePrevClick}><AngleLeftIcon /> Prev</button>
+            <button className={styles.miniNavItem} onClick={this.handleNextClick}>Next <AngleRightIcon /></button>
           </div>
         </div>
 
         <div className={styles.featuresNav}>
           <ol>
             {features.map((feature, index) => {
-                let _featureNavItemStyles = cn(styles.featureNavItem, {
-                  [styles.active]: activeFeature === index
-                })
+                const featureNavItemStyles = cn(styles.featureNavItem, {
+                  [styles.active]: activeFeature === index,
+                });
                 return (
-                  <li key={index} className={_featureNavItemStyles} onClick={() => this.handleFeatureClick(index)}>{feature.fields.title}</li>
-                )
+                  <li
+                    key={feature.sys.id}
+                    className={featureNavItemStyles}
+                  >
+                    <button
+                      onClick={() => this.handleFeatureClick(index)}
+                      onKeyDown={() => this.handleFeatureClick(index)}
+                    >
+                      {feature.fields.title}
+                    </button>
+                  </li>
+                );
             })}
           </ol>
         </div>
       </div>
-    )
+    );
   }
 }

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ReactMarkdown from 'react-markdown';
-
 import FeatureBoxes from 'components/FeatureBoxes';
 import styles from './index.css';
 
@@ -11,7 +9,7 @@ import styles from './index.css';
 }))
 export default class ServicesLogistics extends Component {
   render() {
-    let { content } = this.props;
+    const { content } = this.props;
     return (
       <div className={styles.wrapper}>
         <div className={styles.container}>
@@ -19,10 +17,9 @@ export default class ServicesLogistics extends Component {
             <h2 className={styles.headline}>{content.logisticsHeadline}</h2>
             <div className={styles.intro}><ReactMarkdown source={content.logisticsBody} /></div>
           </header>
-
-          <FeatureBoxes features={content.logisticsFeatures} />          
+          <FeatureBoxes features={content.logisticsFeatures} />
         </div>
       </div>
-    )
+    );
   }
 }

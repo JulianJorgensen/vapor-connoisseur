@@ -1,15 +1,13 @@
-import React from 'react'
+import React from 'react';
 import cn from 'classnames';
 import { CubeGrid } from 'better-react-spinkit';
-import styles from './index.css'
+import styles from './index.css';
 
-export const LoadingSpinner = ({ className }) => {
-  let _containerStyles = cn(styles.container, className);
+export default ({ className }) => {
+  const containerStyles = cn(styles.container, className);
   return (
-    <div className={_containerStyles}>
+    <div className={containerStyles}>
       <CubeGrid size={50} />
     </div>
-  )
-}
-
-export default LoadingSpinner
+  );
+};

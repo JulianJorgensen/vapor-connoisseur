@@ -1,0 +1,31 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "rules": {
+    "strict": 0,
+    "comma-dangle": "warn",
+    "no-unused-vars": [
+      "error",
+      {
+        "vars": "local",
+        "args": "none"
+      }
+    ],
+    "react/jsx-filename-extension": 0,
+    "react/prop-types": 0,
+    "jsx-a11y/anchor-is-valid": ["error", {
+      "specialLink": ["to"],
+    }],
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+  },
+  "env": {
+    "node": true,
+    "browser": true,
+    "es6": true
+  },
+  "settings": {
+    "import/resolver": "webpack"
+  }
+}

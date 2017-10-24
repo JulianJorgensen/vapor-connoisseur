@@ -10,15 +10,11 @@ import styles from './index.css';
 
 @withRouter
 @connect(({ shop }) => ({
-  shop
+  shop,
 }))
-class Shop extends Component {
+export default class Shop extends Component {
   constructor() {
     super();
-
-    this.state = {
-      productHandle: null
-    }
 
     this.handleCartClose = this.handleCartClose.bind(this);
     this.addVariantToCart = this.addVariantToCart.bind(this);
@@ -26,18 +22,12 @@ class Shop extends Component {
     this.removeLineItemInCart = this.removeLineItemInCart.bind(this);
   }
 
-  componentDidReceiveProps(oldProps) {
-    if (oldProps.match.url !== this.props.match.url) {
-      this.setActiveProduct();
-    }
-  }
-
   componentWillMount() {
     this.setActiveProduct();
   }
 
   setActiveProduct() {
-    let { showSingle, dispatch } = this.props;
+    const { showSingle, dispatch } = this.props;
     if (showSingle) {
       // set active product
       dispatch(shopActions.setActiveProduct());
@@ -47,10 +37,14 @@ class Shop extends Component {
     }
   }
 
+  componentDidReceiveProps(oldProps) {
+    if (oldProps.match.url !== this.props.match.url) {
+      this.setActiveProduct();
+    }
+  }
+
   addVariantToCart(variantId, quantity) {
-    let {
-      dispatch
-    } = this.props;
+    const { dispatch } = this.props;
 
     // open cart
     dispatch(shopActions.openCart());
@@ -84,29 +78,38 @@ class Shop extends Component {
   }
 
   render() {
-    let { shop } = this.props;
+    const { shop } = this.props;
 
-    let renderPage = () => {
+    const renderPage = () => {
       if (shop.product) {
-        return <Product
-          product={shop.product}
-          addVariantToCart={this.addVariantToCart}
-          onLoaded={this.props.onLoaded}
-        />
-      } else {
-        return <Products
+        return (
+          <Product
+            product={shop.product}
+            addVariantToCart={this.addVariantToCart}
+            onLoaded={this.props.onLoaded}
+          />
+        );
+      }
+
+      return (
+        <Products
           products={shop.products}
           addVariantToCart={this.addVariantToCart}
           onLoaded={this.props.onLoaded}
         />
-      }
-    }
+      );
+    };
 
     return (
       <div className={styles.wrapper}>
 
         {!shop.showCart &&
-          <div className={styles.cart} onClick={()=>this.props.dispatch(shopActions.toggleCart())}>Cart</div>
+          <button
+            className={styles.cart}
+            onClick={() => this.props.dispatch(shopActions.toggleCart())}
+          >
+            Cart
+          </button>
         }
 
         <div className={styles.container}>
@@ -126,5 +129,3 @@ class Shop extends Component {
     );
   }
 }
-
-export default Shop;

@@ -1,21 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import cn from 'classnames';
-
-import LogoSVG from '-!svg-react-loader?name=Icon!assets/icons/logo.svg';
+import LogoSVG from 'assets/icons/logo.svg';
 import styles from './index.css';
 
-const Logo = ({ className, ...others }) => {
-  const _className = cn(className);
-
+export default ({ className, ...others }) => {
+  const containerStyles = cn(className, styles.logo);
   return (
-    <Link to='/'>
+    <Link to="/">
       <LogoSVG
-        className={_className}
+        className={containerStyles}
         {...others}
       />
     </Link>
-  )
+  );
 };
-
-export default Logo;

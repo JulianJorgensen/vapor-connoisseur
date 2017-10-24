@@ -4,6 +4,7 @@
   z-index: 9;
   width: 100%;
   top: 0;
+  pointer-events: none;
   @media (--large-and-up) {
     top: rem(60);
   }
@@ -24,19 +25,20 @@
   z-index: 9;
 }
 
-.logo{
+.logo {
+  pointer-events: auto;
   width: rem(30);
   height: rem(30);
   @media (--large-and-up) {
     width: rem(50);
-    height: rem(50);      
+    height: rem(50);
   }
 }
 
 :global {
-  & .headroom{
+  & .headroom {
     display: flex;
-    justify-content: center;  
+    justify-content: center;
     width: 100%;
   }
   /* deactive */
@@ -57,4 +59,3 @@
     opacity: 1;
   }
 }
-

@@ -1,16 +1,16 @@
-require('dotenv').config();
-let express = require('express');
-let app = module.exports = express();
-let logger = require('morgan');
-let expressStaticGzip = require("express-static-gzip");
-let cors = require("cors");
-let util = require('./server/util/util');
-let ENV_CONFIG = util.getEnvConfig();
-let bodyParser = require('body-parser');
+import path from 'path';
+import express from 'express';
+import logger from 'morgan';
+import expressStaticGzip from 'express-static-gzip';
+import cors from 'cors';
+import bodyParser from 'body-parser';
+import {} from 'dotenv/config';
+
+const app = express();
 
 // routes
-let contentful = require('./server/routes/contentful');
-let sendEmail = require('./server/emails/sendEmail');
+const contentful = require('./server/routes/contentful');
+const sendEmail = require('./server/emails/sendEmail');
 
 // Set port
 app.set('port', (process.env.PORT || 3000));
@@ -30,7 +30,7 @@ app.use(cors({
 }));
 
 // Serve Gzip
-app.use("/", expressStaticGzip(__dirname + '/public'));
+app.use('/', expressStaticGzip(path.resolve(__dirname, 'public')));
 
 // Contentful route
 app.get('/getAllContent', contentful.getAllContent);

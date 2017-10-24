@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from './index.css';
 
-class LineItem extends Component {
+export default class LineItem extends Component {
   constructor(props) {
     super(props);
 
@@ -10,49 +10,60 @@ class LineItem extends Component {
   }
 
   decrementQuantity(lineItemId) {
-    const updatedQuantity = this.props.line_item.quantity - 1
+    const updatedQuantity = this.props.lineItem.quantity - 1
     this.props.updateQuantityInCart(lineItemId, updatedQuantity);
   }
 
   incrementQuantity(lineItemId) {
-    const updatedQuantity = this.props.line_item.quantity + 1
+    const updatedQuantity = this.props.lineItem.quantity + 1
     this.props.updateQuantityInCart(lineItemId, updatedQuantity);
   }
 
   render() {
-    console.log('line_item', this.props.line_item);
-    let imageStyles = {};
-    if (this.props.line_item.variant.image) {
-      imageStyles.backgroundImage = `url(${this.props.line_item.variant.image.src})`
+    const imageStyles = {};
+    if (this.props.lineItem.variant.image) {
+      imageStyles.backgroundImage = `url(${this.props.lineItem.variant.image.src})`;
     }
-    console.log('image styles', imageStyles);
     return (
       <li className={styles.container}>
-        <div className={styles.image} style={imageStyles}></div>
+        <div className={styles.image} style={imageStyles} />
         <div className={styles.content}>
           <div className={styles.contentRow}>
             <span className={styles.title}>
-              {this.props.line_item.title}
+              {this.props.lineItem.title}
             </span>
             <div className={styles.variantTitle}>
-              {this.props.line_item.variant.title}
+              {this.props.lineItem.variant.title}
             </div>
-            </div>
+          </div>
           <div className={styles.contentRow}>
             <div className={styles.quantityContainer}>
-              <button className={styles.quantityUpdate} onClick={() => this.decrementQuantity(this.props.line_item.id)}>-</button>
-              <span className={styles.quantity}>{this.props.line_item.quantity}</span>
-              <button className={styles.quantityUpdate} onClick={() => this.incrementQuantity(this.props.line_item.id)}>+</button>
+              <button 
+                className={styles.quantityUpdate}
+                onClick={() => this.decrementQuantity(this.props.lineItem.id)}
+              >
+                -
+              </button>
+              <span className={styles.quantity}>{this.props.lineItem.quantity}</span>
+              <button
+                className={styles.quantityUpdate}
+                onClick={() => this.incrementQuantity(this.props.lineItem.id)}
+              >
+                +
+              </button>
             </div>
             <span className={styles.price}>
-              $ { (this.props.line_item.quantity * this.props.line_item.variant.price).toFixed(2) }
+              $ { (this.props.lineItem.quantity * this.props.lineItem.variant.price).toFixed(2) }
             </span>
-            <button className={styles.remove} onClick={()=> this.props.removeLineItemInCart(this.props.line_item.id)}>×</button>
+            <button
+              className={styles.remove}
+              onClick={() => this.props.removeLineItemInCart(this.props.lineItem.id)}
+            >
+              ×
+            </button>
           </div>
         </div>
       </li>
     );
   }
 }
-
-export default LineItem;

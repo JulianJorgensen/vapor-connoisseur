@@ -5,47 +5,45 @@ import { Link, withRouter } from 'react-router-dom';
 import { userIsAuthenticated } from 'routes/utils';
 import { siteActions } from 'store/actions';
 
-import FacebookIcon from '-!svg-react-loader?name=Icon!assets/icons/FontAwesome/brands/facebook.svg';
-import InstagramIcon from '-!svg-react-loader?name=Icon!assets/icons/FontAwesome/brands/instagram.svg';
-import TwitterIcon from '-!svg-react-loader?name=Icon!assets/icons/FontAwesome/brands/twitter.svg';
+import FacebookIcon from 'assets/icons/FontAwesome/brands/facebook.svg';
+import InstagramIcon from 'assets/icons/FontAwesome/brands/instagram.svg';
+import TwitterIcon from 'assets/icons/FontAwesome/brands/twitter.svg';
 
 import styles from './index.css';
 
 @withRouter
 @userIsAuthenticated
-@connect(
-  ({ site }) => ({
-    navOpen: site.navOpen
-  })
-)
+@connect(({ site }) => ({
+  navOpen: site.navOpen,
+}))
 export default class Nav extends React.Component {
   handleToggleNav = () => {
     this.props.dispatch(siteActions.toggleNav());
   }
 
   render() {
-    let { navOpen } = this.props;
+    const { navOpen } = this.props;
 
-    let _navStyles = cn(styles.nav, {
-      [styles.open]: navOpen
+    const navStyles = cn(styles.nav, {
+      [styles.open]: navOpen,
     });
 
     return (
       <div className={styles.wrapper}>
-        <div className={_navStyles}>
+        <div className={navStyles}>
           <div className={styles.socialMedia}>
             <FacebookIcon />
             <InstagramIcon />
             <TwitterIcon />
           </div>
           <ul className={styles.navItems}>
-            <li className={styles.navItem}><Link to='/'>Home</Link></li>
-            <li className={styles.navItem}><Link to='/about'>About</Link></li>
-            <li className={styles.navItem}><Link to='/services'>Services</Link></li>
-            <li className={styles.navItem}><Link to='/process'>Process</Link></li>
-            <li className={styles.navItem}><Link to='/shop'>Products</Link></li>
-            <li className={styles.navItem}><Link to='/sample-kits'>Sample Kits</Link></li>
-            <li className={styles.navItem}><Link to='/contact'>Contact</Link></li>
+            <li className={styles.navItem}><Link to="/">Home</Link></li>
+            <li className={styles.navItem}><Link to="/about">About</Link></li>
+            <li className={styles.navItem}><Link to="/services">Services</Link></li>
+            <li className={styles.navItem}><Link to="/process">Process</Link></li>
+            <li className={styles.navItem}><Link to="/shop">Products</Link></li>
+            <li className={styles.navItem}><Link to="/sample-kits">Sample Kits</Link></li>
+            <li className={styles.navItem}><Link to="/contact">Contact</Link></li>
           </ul>
           <div className={styles.navFooter}>
             <div>
@@ -59,6 +57,6 @@ export default class Nav extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }

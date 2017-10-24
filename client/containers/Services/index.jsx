@@ -1,7 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
 import LoadingSpinner from 'components/LoadingSpinner';
 import Footer from 'layout/Footer';
 import Landing from './components/Landing';
@@ -12,12 +10,12 @@ import AutomatedFilling from './components/AutomatedFilling';
 import styles from './index.css';
 
 @connect(({ site }) => ({
-  content: site.content.services
+  content: site.content.services,
 }))
-export default class Services extends React.Component {
+export default class Services extends Component {
   render() {
     if (!this.props.content) {
-      return <LoadingSpinner />
+      return <LoadingSpinner />;
     }
     return (
       <div className={styles.wrapper}>
@@ -28,6 +26,6 @@ export default class Services extends React.Component {
         <AutomatedFilling />
         <Footer />
       </div>
-    )
+    );
   }
 }

@@ -12,8 +12,9 @@
   flex-wrap: wrap;
   cursor: pointer;
   align-items: center;
+  pointer-events: auto;
   &:before,
-  &:after{
+  &:after {
     color: white;
     position: absolute;
     margin-left: rem(-60);
@@ -22,10 +23,10 @@
     transition: transform 0.2s;
     text-align: right;
   }
-  &:before{
-    content: 'MENU';   
+  &:before {
+    content: 'MENU';
   }
-  &:after{
+  &:after {
     opacity: 0;
     transform: translateX(rem(10));
     content: 'CLOSE';
@@ -51,14 +52,14 @@
     border-radius: var(--barHeight) 0 0 var(--barHeight);
   }
   &.open {
-    &:before{
+    &:before {
       transform: translateX(rem(10));
       opacity: 0;
     }
-    &:after{
+    &:after {
       transform: translateX(0%);
       opacity: 1;
-    }    
+    }
     & span:nth-child(1),
     & span:nth-child(2) {
       /* margin-bottom: rem(7); */

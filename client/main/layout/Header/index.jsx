@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import Headroom from 'react-headroom';
 
+import Logo from 'components/Logo';
 import Nav from './components/Nav';
 import Bars from './components/Bars';
-import Logo from 'components/Logo';
 import styles from './index.css';
 
 @withRouter

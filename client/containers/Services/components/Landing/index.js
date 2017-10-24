@@ -1,17 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import ReactMarkdown from 'react-markdown';
-
 import Hero from 'components/Hero';
 import styles from './index.css';
 
 @connect(({ site }) => ({
-  content: site.content.services || {}
+  content: site.content.services || {},
 }))
 export default class ServicesLanding extends React.Component {
   render() {
-    let { content } = this.props;
+    const { content } = this.props;
     return (
       <div className={styles.wrapper}>
         <div className={styles.container}>
@@ -26,10 +23,10 @@ export default class ServicesLanding extends React.Component {
             </ol>
           </div>
         </div>
-        <div className={styles.productImage} style={{backgroundImage: `url(${content.productImage.fields.file.url})`}}>
+        <div className={styles.productImage} style={{ backgroundImage: `url(${content.productImage.fields.file.url})` }}>
           <div className={styles.meta}>Scroll to discover</div>
         </div>
       </div>
-    )
+    );
   }
 }

@@ -8,27 +8,23 @@ import Form from './Form';
   form: props.formName
 }))
 export default class FormContainer extends Component {
-  onSubmit = ({ name, email, ...others }) => {
-    return new Promise((resolve, reject) => {
+  onSubmit = ({ name, email, ...others }) =>
+    new Promise((resolve, reject) =>
       axios.post('/sendEmail', {
         template: this.props.form,
         fromName: name,
         fromEmail: email,
         subject: `${this.props.subject} from ${name}`,
         ...others
-      })
-      .then(() => {
+      }).then(() => {
         resolve();
         this.props.dispatch(reset(this.props.form));
-      })
-      .catch((err) => {
+      }).catch((err) => {
         console.error('error sending email', err);
         resolve();
-      });
-    });
-  }
-  
+      }));
+
   render() {
-    return <Form {...this.props} onSubmit={this.onSubmit} />
+    return <Form {...this.props} onSubmit={this.onSubmit} />;
   }
 }

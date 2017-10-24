@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import Client from 'shopify-buy';
-import VariantSelector from './components/VariantSelector';
 import ReactHtmlParser from 'react-html-parser';
+import VariantSelector from './components/VariantSelector';
 import styles from './index.css';
 
-class Product extends Component {
+export default class Product extends Component {
   constructor() {
     super();
 
@@ -13,18 +12,15 @@ class Product extends Component {
 
     this.handleOptionChange = this.handleOptionChange.bind(this);
     this.handleQuantityChange = this.handleQuantityChange.bind(this);
-    this.findImage = this.findImage.bind(this);
   }
 
   componentWillMount() {
-    let selectedOptions = {};
+    const selectedOptions = {};
     this.props.product.options.forEach((selector) => {
       selectedOptions[selector.name] = selector.values[0].value;
     });
 
-    this.setState({
-      selectedOptions: selectedOptions
-    });
+    this.setState({ selectedOptions });
   }
 
   componentDidUpdate(prevProps) {
@@ -34,25 +30,15 @@ class Product extends Component {
     }
   }
 
-  findImage(images, variantId) {
-    const primary = images[0];
-
-    const image = images.filter((image) => {
-      return image.variant_ids.includes(variantId);
-    })[0];
-
-    return (image || primary).src;
-  }
-
   handleOptionChange({ variant, value }) {
-    let selectedOptions = this.state.selectedOptions;
+    const { selectedOptions } = this.state;
     selectedOptions[variant] = value;
 
     const selectedVariant = Client.Product.Helpers.variantForOptions(this.props.product, selectedOptions);
 
     this.setState({
-      selectedVariant: selectedVariant,
-      selectedVariantImage: selectedVariant.attrs.image
+      selectedVariant,
+      selectedVariantImage: selectedVariant.attrs.image,
     });
   }
 
@@ -63,15 +49,12 @@ class Product extends Component {
   }
 
   render() {
-    let { product } = this.props;
-    let { selectedVariant, selectedVariantQuantity, selectedVariantImage } = this.state;
-    let variantImage = selectedVariantImage || product.images[0]
-    let variant = selectedVariant || product.variants[0]
-    let variantQuantity = selectedVariantQuantity || 1
+    const { product } = this.props;
+    const { selectedVariant, selectedVariantQuantity, selectedVariantImage } = this.state;
+    const variantImage = selectedVariantImage || product.images[0];
+    const variant = selectedVariant || product.variants[0];
+    const variantQuantity = selectedVariantQuantity || 1;
 
-    console.log('product', product);
-    console.log('selectedVariant', selectedVariant);
-    
     return (
       <div className={styles.wrapper}>
         <div className={styles.leftCol}>
@@ -84,7 +67,7 @@ class Product extends Component {
               </div>
               <div className={styles.specification}>
                 <div className={styles.specificationName}>Dimensions</div>
-                <div className={styles.specificationValue}></div>
+                <div className={styles.specificationValue} />
               </div>
               <div className={styles.specification}>
                 <div className={styles.specificationName}>Colors</div>
@@ -92,7 +75,7 @@ class Product extends Component {
               </div>
             </div>
             <div className={styles.description}>
-            { ReactHtmlParser(product.descriptionHtml) }
+              { ReactHtmlParser(product.descriptionHtml) }
             </div>
           </div>
           <div className={styles.options}>
@@ -106,11 +89,13 @@ class Product extends Component {
             <button
               className={styles.buyButton}
               onClick={() => this.props.addVariantToCart(variant.id, variantQuantity)}            
-            >Add to cart</button>
+            >
+              Add to cart
+            </button>
           </div>
         </div>
         <div className={styles.rightCol}>
-          <div className={styles.image} style={{backgroundImage: `url(${variantImage.src})`}}>
+          <div className={styles.image} style={{ backgroundImage: `url(${variantImage.src})` }}>
             <ul className={styles.images}>
               <li><img src={variantImage.src} alt={variantImage.title} /></li>
               <li><img src={variantImage.src} alt={variantImage.title} /></li>
@@ -121,5 +106,3 @@ class Product extends Component {
     );
   }
 }
-
-export default Product;
