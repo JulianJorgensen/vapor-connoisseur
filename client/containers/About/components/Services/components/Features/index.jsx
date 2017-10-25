@@ -101,7 +101,11 @@ export default class AboutServicesFeatures extends Component {
     });
     return (
       <div className={styles.features}>
-        <div className={styles.featuresBody}>
+        <div
+          className={styles.featuresBody}
+          onMouseEnter={() => this.stopAutoSlider()}
+          onMouseLeave={() => this.initAutoSlideTimer()}
+        >
           <div className={styles.position}>
             <div className={styles.positionBar}>
               <div className={timeoutBarStyles} />
