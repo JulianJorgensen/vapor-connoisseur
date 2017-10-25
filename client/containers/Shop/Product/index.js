@@ -69,6 +69,8 @@ export default class Product extends Component {
         return option.name === 'Color';
       });
 
+      if (!colorOptions) return false;
+
       const colors = colorOptions.values.map(color => color.value);
       return colors.join(', ');
     }

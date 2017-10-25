@@ -88,6 +88,7 @@
     "react-router-redux": "next",
     "react-router-transition": "^1.1.1",
     "react-select": "^1.0.0-rc.10",
+    "react-svg-inline-loader": "^0.2.2",
     "react-toolbox": "^2.0.0-beta.12",
     "react-transition-group": "^2.2.0",
     "react-visibility-sensor": "^3.10.1",

@@ -8,7 +8,7 @@
   }
 }
 
-.container{
+.container {
   composes: globalContainer;
   display: flex;
   flex-direction: column;
@@ -20,95 +20,38 @@
   }
 }
 
-.graphicCol{
+.headline {
+  margin-bottom: rem(40);
+}
+
+.intro {
+  margin-bottom: rem(40);
+}
+
+.graphicCol {
   width: 100%;
   position: relative;
   margin-bottom: rem(60);
   -webkit-user-select: none !important;
-  & .graphicDesktop{
+  & .graphicDesktop {
     display: none;
   }
   @media (--large-and-up) {
     margin-bottom: 0;
     width: 60%;
   }
-
-  @media (--medium-and-up) {    
-    & .graphicMobile{
+  @media (--medium-and-up) {
+    & .graphicMobile {
       display: none;
     }
-    & .graphicDesktop{
+    & .graphicDesktop {
       display: block;
     }
   }
-
-  & .rangeSlider{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    @media (--large-and-up) {
-      left: rem(140);
-    }      
-  }  
 }
 
-.process{
+.process {
   @media (--large-and-up) {
     width: 40%;
   }
 }
-
-:global{
-  & .rangeslider {
-    position: relative;
-    width: 100%;
-    border-bottom: rem(2) dashed gray(30%);
-    @media (--large-and-up) {
-      width: rem(300);
-    }      
-  }
-  & .rangeslider__fill{
-  }    
-  & .rangeslider__handle{
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    transform: translate3d(-50%,rem(-10),0);
-    background-color: white;
-    border-radius: 50%;
-    cursor: pointer;
-    width: rem(40);
-    height: rem(40);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    &:before{
-      content: '';
-      width: 0;
-      height: 0;
-      border-top: rem(5) solid transparent;
-      border-bottom: rem(5) solid transparent;      
-      border-right: rem(5) solid black;
-      margin-right: rem(4);
-    }
-    &:after{
-      content: '';
-      width: 0; 
-      height: 0; 
-      border-top: rem(5) solid transparent;
-      border-bottom: rem(5) solid transparent;      
-      border-left: rem(5) solid black;
-    }
-    & .rangeslider__handle-label{
-      position: absolute;
-      top: rem(-30);
-      transform: translateX(-50%) scale(0.8);
-      color: gray(60%);
-      left: 50%;
-      font-size: rem(10);
-      letter-spacing: rem(1.4);
-      user-select: none;
-    }
-    &:focus {outline:0;}
-  }
-} 

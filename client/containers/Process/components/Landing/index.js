@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ReactMarkdown from 'react-markdown';
-
 import Button from 'components/Button';
 import productImage from 'assets/images/GENIECL-Angle2-24.png';
 import Hero from 'components/Hero';
@@ -13,13 +11,13 @@ import styles from './index.css';
 }))
 export default class CustomerPathwayLanding extends Component {
   render() {
-    let { content } = this.props;
+    const { content } = this.props;
     return (
       <div className={styles.wrapper}>
         <div className={styles.container}>
           <Hero headline={content.headline} />
 
-          <div className={styles.productImage} style={{backgroundImage: `url(${productImage})`}}></div>
+          <div className={styles.productImage} style={{ backgroundImage: `url(${productImage})` }} />
 
           <div className={styles.introWrapper}>
             <div className={styles.intro}>
@@ -27,14 +25,14 @@ export default class CustomerPathwayLanding extends Component {
               <div><ReactMarkdown source={content.introBody} /></div>
             </div>
           </div>
-        
         </div>
+
         <div className={styles.aside}>
           <h2 className={styles.asideTitle}>{content.introAsideTitle}</h2>
           <div className={styles.asideBody}><ReactMarkdown source={content.introAsideBody} /></div>
-          <Button href='/contact' label='Request a catalogue' />
+          <Button href="/contact" label="Request a catalogue" />
         </div>
       </div>
-    )
+    );
   }
 }

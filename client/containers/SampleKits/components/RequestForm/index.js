@@ -48,9 +48,9 @@ export default class SampleKitsRequestForm extends React.Component {
       <div className={styles.wrapper}>
         <div className={styles.container}>
           <div className={styles.inner}>
-            <h2 className={styles.headline}>
+            <h3 className={styles.headline}>
               <ReactMarkdown source={content.requestFormHeadline} />
-            </h2>
+            </h3>
             <div className={styles.intro}>
               <ReactMarkdown source={content.requestFormIntro} />
             </div>

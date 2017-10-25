@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactMarkdown from 'react-markdown';
-
-import productImage from 'assets/images/servicesPlaceholder.png';
+import productImage from 'assets/images/servicesMiddleImage.jpg';
 import FeatureBoxes from 'components/FeatureBoxes';
 import styles from './index.css';
 

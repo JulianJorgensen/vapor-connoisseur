@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Button from 'components/Button';
 import ReactMarkdown from 'react-markdown';
 
 import styles from './index.css';
@@ -18,6 +19,7 @@ export default class ServicesAutomatedFilling extends Component {
             <div className={styles.intro}>
               <ReactMarkdown source={content.automatedFillingBody} />
             </div>
+            <Button label="Request a catalogue" href="/contact" />
           </header>
         </div>
       </div>

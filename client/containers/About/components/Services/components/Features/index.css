@@ -5,7 +5,7 @@
   position: relative;
   margin-bottom: rem(100);
   & .featuresBody {
-    width: 60%;
+    width: 65%;
     background: var(--defaultGradient);
     position: absolute;
     left: 0;
@@ -59,12 +59,15 @@
     }
   }
   & .featuresNav {
-    width: 50%;
+    width: 45%;
     background-color: var(--rangoon);
-    padding: rem(120) rem(60);
+    padding: rem(120) rem(20) rem(120) rem(120);
     display: flex;
     justify-content: center;
     align-items: center;
+    & ol {
+      list-style-type: decimal-leading-zero;
+    }
     & li {
       margin-bottom: rem(15);
     }
@@ -74,6 +77,7 @@
       &,
       & button {
         @apply --smallText;
+        letter-spacing: rem(2.4);
         cursor: pointer;
       }
       &.active {
@@ -118,5 +122,6 @@
   }
   & .slideNumber {
     @apply --smallText;
+    color: var(--muddyWaters);
   }
 }

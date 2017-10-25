@@ -5,6 +5,7 @@
   justify-content: center;
   padding: rem(120) 0 rem(70);
   background-color: var(--bokara);
+  width: 100%;
 }
 
 .container{

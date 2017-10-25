@@ -11,6 +11,10 @@
   }
 }
 
+.title{
+  color: white;
+}
+
 .details {
   margin-top: rem(120);
   & .specifications {

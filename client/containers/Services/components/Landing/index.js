@@ -2,6 +2,7 @@ import React from 'react';
 import { HashLink } from 'lib/react-router-hash-link';
 import { connect } from 'react-redux';
 import Hero from 'components/Hero';
+import productImage from 'assets/images/servicesBg.jpg';
 import styles from './index.css';
 
 @connect(({ site }) => ({
@@ -24,7 +25,7 @@ export default class ServicesLanding extends React.Component {
             </ol>
           </div>
         </div>
-        <div className={styles.productImage} style={{ backgroundImage: `url(${content.productImage.fields.file.url})` }}>
+        <div className={styles.productImage} style={{ backgroundImage: `url(${productImage})` }}>
           <div className={styles.meta}>Scroll to discover</div>
         </div>
       </div>

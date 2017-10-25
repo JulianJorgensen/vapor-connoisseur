@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactMarkdown from 'react-markdown';
 import FeatureBoxes from 'components/FeatureBoxes';
+import productImage from 'assets/images/XY05_CLOSEUP-Web.jpg';
 import styles from './index.css';
 
 @connect(({ site }) => ({
@@ -22,7 +23,7 @@ export default class AboutSustainability extends Component {
 
           <FeatureBoxes features={content.sustainabilityFeatures} />
 
-          <div className={styles.middleImage} style={{ backgroundImage: `url(${content.middleImage.fields.file.url})` }}>
+          <div className={styles.middleImage} style={{ backgroundImage: `url(${productImage})` }}>
             <div className={styles.meta}>XY-05</div>
           </div>
         </div>

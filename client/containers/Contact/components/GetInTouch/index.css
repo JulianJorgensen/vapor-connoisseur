@@ -29,4 +29,7 @@
   & .col{
     width: calc(50% - rem(20));
   }
+  & a{
+    color: white;
+  }
 }

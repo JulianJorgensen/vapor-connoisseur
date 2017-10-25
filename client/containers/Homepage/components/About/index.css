@@ -4,7 +4,7 @@
   flex-direction: row;
   @media (--large-and-up) {
     margin-top: rem(100);
-    margin-bottom: rem(30);
+    margin-bottom: rem(140);
   }
 }
 
@@ -60,7 +60,7 @@
 }
 
 .body {
-  margin: rem(30) 0;
+  margin: rem(40) 0;
 }
 
 .services {
@@ -89,8 +89,8 @@
 .bgImage {
   width: 100%;
   position: absolute;
-  transform: translateY(0%);
   left: 0;
+  opacity: var(--defaultSmokeOpacity);
   & img {
     width: 100%;
   }

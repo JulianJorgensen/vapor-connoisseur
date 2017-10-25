@@ -6,20 +6,19 @@
     letter-spacing: rem(1.8);
     word-spacing: rem(3.5);
     @media (--large-and-up) {
-      font-size: rem(11);  
+      font-size: rem(11);
       letter-spacing: rem(2);
-      word-spacing: rem(4);  
+      word-spacing: rem(4);
     }
   }
-
   --defaultHeader: {
     margin-bottom: rem(30);
-    & .headline{
+    & .headline {
       color: white;
-      padding-bottom: rem(20);
+      padding-bottom: rem(30);
       margin-bottom: rem(30);
       position: relative;
-      &:after{
+      &:after {
         content: '';
         position: absolute;
         left: 0;
@@ -29,24 +28,21 @@
         background-color: var(--muddyWaters);
       }
     }
-    & .intro{
+    & .intro {
       @media (--medium-and-up) {
-        width: 40%;      
+        width: 60%;
       }
     }
   }
-
   --defaultBgImage: {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
   }
-
   --boxShadowRight: {
-    box-shadow: rem(22) rem(0) rem(40) rem(30) color(black alpha(10%));
+    box-shadow: rem(22) rem(0) rem(15) rem(20) color(black alpha(5%));
   }
-
   --boxShadowLeft: {
-    box-shadow: rem(-22) rem(0) rem(40) rem(30) color(black alpha(10%));
+    box-shadow: rem(-22) rem(0) rem(15) rem(20) color(black alpha(5%));
   }
 }

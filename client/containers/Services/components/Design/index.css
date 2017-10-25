@@ -4,6 +4,7 @@
   flex-direction: row;
   justify-content: center;
   position: relative;
+  width: 100%;
 }
 
 .container{
@@ -20,6 +21,7 @@
   position: absolute;
   z-index: 2;
   transform: translateY(-30%);
+  opacity: var(--defaultSmokeOpacity);
   & img {
     width: 100%;
   }

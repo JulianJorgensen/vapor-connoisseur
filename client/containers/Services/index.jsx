@@ -16,7 +16,11 @@ import styles from './index.css';
 export default class Services extends Component {
   render() {
     if (!this.props.content) {
-      return <LoadingSpinner />;
+      return (
+        <div className={styles.wrapper}>
+          <LoadingSpinner />
+        </div>
+      );
     }
     return (
       <div className={styles.wrapper}>

@@ -3,7 +3,7 @@
 
 :global {
   & .Select-control {
-    background-color: var(--muddyWaters);
+    background-color: var(--husk);
     border-radius: 0;
     border: 0;
     height: rem(50);

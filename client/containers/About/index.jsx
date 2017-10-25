@@ -13,7 +13,11 @@ import styles from './index.css';
 export default class About extends React.Component {
   render() {
     if (!this.props.content) {
-      return <LoadingSpinner />;
+      return (
+        <div className={styles.wrapper}>
+          <LoadingSpinner />
+        </div>
+      );
     }
     return (
       <div className={styles.wrapper}>

@@ -6,7 +6,7 @@
   margin-top: rem(100);
 }
 
-.container{
+.container {
   composes: globalContainer;
   min-height: 100vh;
   display: flex;
@@ -14,24 +14,24 @@
   justify-content: center;
 }
 
-.header{
+.header {
   @apply --defaultHeader;
 }
 
-.middleImage{
+.middleImage {
   width: 100%;
   height: rem(500);
   background-repeat: none;
   background-size: cover;
   background-position: center center;
-  margin: rem(60) 0 rem(140);
+  margin: rem(60) 0 rem(120);
   position: relative;
-  & .meta{
+  & .meta {
+    @apply --smallText;
     position: absolute;
     bottom: rem(60);
     right: rem(120);
-    @apply --smallFont;
-    &:after{
+    &:after {
       content: '';
       position: absolute;
       top: 50%;

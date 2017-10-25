@@ -11,8 +11,9 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: calc(50% + rem(90));
+    width: 50%;
     height: 100%;
+    @apply --boxShadowLeft;
   }
 }
 .container {
@@ -22,8 +23,8 @@
   align-items: flex-end;
   & .inner{
     pointer-events: all;
-    width: rem(650);
-    padding: rem(90) 0;
+    width: rem(550);
+    padding: rem(90) rem(40) rem(60);
   }
 }
 

@@ -49,12 +49,12 @@ export default class Nav extends React.Component {
           </ul>
           <div className={styles.navFooter}>
             <div>
-              <p><a href="mailto:hi@vaporconnoisseur.com">hi@vaporconnoisseur.com</a></p>
-              <p><phone>877 330 0370</phone></p>
+              <a href="mailto:hi@vaporconnoisseur.com">hi@vaporconnoisseur.com</a><br />
+              <phone>877 330 0370</phone>
             </div>
             <address>
-              <p>2020 E Main St, Ventura</p>
-              <p>CA 93001, USA</p>
+              2020 E Main St, Ventura<br />
+              CA 93001, USA
             </address>
           </div>
         </div>

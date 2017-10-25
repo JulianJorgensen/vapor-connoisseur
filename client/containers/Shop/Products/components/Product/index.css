@@ -1,12 +1,12 @@
 @import "globals.css";
 .wrapper {
-  width: calc(25% - rem(20));
-  margin-bottom: rem(30);
+  width: calc(25% - rem(30));
+  margin-bottom: rem(40);
 }
 
 .image {
   width: 100%;
-  height: rem(400);
+  height: rem(360);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -32,16 +32,12 @@
   background-color: var(--bokara);
   padding: rem(20);
   & .title {
-    font-size: 1.3rem;
-    margin-top: 1rem;
-    margin-bottom: 0.4rem;
-    opacity: 0.7;
+    color: white;
+    margin-bottom: rem(10);
+    text-transform: uppercase;
   }
   
   & .price {
-    display: block;
-    font-size: 1.1rem;
-    opacity: 0.5;
-    margin-bottom: 0.4rem;
+    color: var(--muddyWaters);
   }
 }

@@ -4,7 +4,8 @@
   flex-direction: row;
   justify-content: center;
   position: relative;
-  &:after{
+  width: 100%;
+  &:after {
     content: '';
     position: absolute;
     left: 0;
@@ -15,11 +16,10 @@
   }
 }
 
-.container{
+.container {
   composes: globalContainer;
 }
 
-.header{
+.header {
   @apply --defaultHeader;
 }
-

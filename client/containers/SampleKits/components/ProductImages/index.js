@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import productImage from 'assets/images/placeholder2.png';
+import productImage from 'assets/images/homeProductBox.jpg';
 import styles from './index.css';
 
 export default class SampleKitsProductImages extends Component {

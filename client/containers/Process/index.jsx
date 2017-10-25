@@ -14,12 +14,16 @@ import ProductDelivery from './components/ProductDelivery';
 import styles from './index.css';
 
 @connect(({ site }) => ({
-  content: site.content.customerPathway
+  content: site.content.customerPathway,
 }))
 export default class Process extends React.Component {
   render() {
     if (!this.props.content) {
-      return <LoadingSpinner />;
+      return (
+        <div className={styles.wrapper}>
+          <LoadingSpinner />
+        </div>
+      );
     }
     return (
       <div className={styles.wrapper}>

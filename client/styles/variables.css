@@ -1,29 +1,41 @@
 /* colors */
+
 :root {
   --background: #191919;
   --bokara: #282828;
   --muddyWaters: #AB854E;
   --mirage: #393F46;
   --blackRussion: #222528;
+  --tuna: #33383F;
+  --blueCharcoal: #272A2F;
   --rangoon: #1A1A1A;
   --robRoy: #DCA753;
   --success: #9DC180;
+  --husk: #B7924C;
 }
+
 
 /* fonts */
+
 :root {
-    --primaryFont: 'Chap';
-    --secondaryFont: 'Scandia';  
+  --primaryFont: 'Chap';
+  --secondaryFont: 'Scandia';
 }
 
+
 /* defaults */
+
 :root {
-  --defaultGradient: linear-gradient(to bottom right, var(--mirage), var(--blackRussion));    
+  --defaultGradient: linear-gradient(to bottom right, var(--mirage), var(--blackRussion));
+  --defaultSmokeOpacity: 0.4;
 }
+
 
 /* Media queries */
 
+
 /* Only */
+
 @custom-media --only-small (width < 768px);
 @custom-media --only-medium (width >=768px) and (width < 1000px);
 @custom-media --only-mediumLarge (width >=1000px) and (width < 1200px);
@@ -31,6 +43,7 @@
 @custom-media --only-xlarge (width >=1400px);
 
 /* And up */
+
 @custom-media --small-and-up (width > 0);
 @custom-media --medium-and-up (width >=768px);
 @custom-media --mediumLarge-and-up (width >=1000px);
@@ -38,6 +51,7 @@
 @custom-media --xlarge-and-up (width >=1400px);
 
 /* And down */
+
 @custom-media --small-and-down (width < 768);
 @custom-media --medium-and-down (width < 1000px);
 @custom-media --mediumLarge-and-down (width < 1200px);

@@ -10,5 +10,5 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: rem(160);
+  margin-top: rem(200);
 }

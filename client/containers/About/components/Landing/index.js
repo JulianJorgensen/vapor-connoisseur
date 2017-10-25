@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Hero from 'components/Hero';
-import productImage from 'assets/images/Vapor65130.jpg';
+import productImage from 'assets/images/Vapor65149.jpg';
 import styles from './index.css';
 
 @connect(({ site }) => ({
@@ -13,7 +13,7 @@ export default class AboutLanding extends React.Component {
     return (
       <div className={styles.wrapper}>
         <div className={styles.container}>
-          <Hero headline={content.headline} intro={content.intro} seeMoreText />
+          <Hero headline={content.headline} intro={content.intro} seeMore />
         </div>
         <div className={styles.productImage} style={{ backgroundImage: `url(${productImage}` }} />
       </div>

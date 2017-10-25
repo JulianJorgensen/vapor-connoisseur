@@ -1,0 +1,246 @@
+@import "globals.css";
+.wrapper {}
+
+.images {
+  width: rem(700);
+  height: rem(700);
+  position: relative;
+  & .image {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    overflow: hidden;
+    & .inner {
+      width: rem(700);
+      height: inherit;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: 50%;
+      & img,
+      & svg {
+        height: 100%;
+      }
+    }
+  }
+  & .before {
+    z-index: 2;
+  }
+  & .after {
+    width: 100%;
+  }
+}
+
+.rangeSlider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  @media (--large-and-up) {
+    left: rem(140);
+  }
+}
+
+:global {
+  & .feature {
+    @apply --smallText;
+    position: absolute;
+    z-index: 3;
+    opacity: 0.4;
+    width: rem(100);
+    transition: all 0.2s;
+    cursor: default;
+    &:before {
+      content: '';
+      position: absolute;
+      font-family: var(--primaryFont);
+      font-size: rem(60);
+      font-weight: bold;
+      color: gray(4%);
+      transform: translateX(-40%) translateY(-70%);
+      z-index: -1;
+      transition: all 0.2s;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      background-color: var(--muddyWaters);
+      opacity: 0;
+      transition: all 0.2s;
+    }
+    &:hover {
+      opacity: 1;
+      &:before {
+        color: black;
+      }
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+  & .feature1 {
+    left: 30%;
+    top: 10%;
+    &:before {
+      content: '01';
+    }
+    &:after {
+      width: rem(190);
+      height: rem(1);
+      right: rem(-40);
+      transform: translate(rem(110), rem(30)) rotate(18deg);
+    }
+    &:hover~.image .section1 {
+      & .st3 {
+        stroke: var(--muddyWaters);
+      }
+      & .st4 {
+        fill: var(--muddyWaters);
+      }
+    }
+  }
+  & .feature2 {
+    right: 0;
+    top: 40%;
+    &:before {
+      content: '02';
+    }
+    &:after {
+      width: rem(160);
+      height: rem(1);
+      left: rem(-40);
+      transform: translateX(-100%);
+    }
+    &:hover~.image .section2 .st2 {
+      stroke: var(--muddyWaters);
+    }
+  }
+  & .feature3 {
+    right: 30%;
+    bottom: 20%;
+    &:before {
+      content: '03';
+    }
+    &:after {
+      width: rem(130);
+      height: rem(1);
+      left: rem(-40);
+      transform: translate(rem(-100), rem(-100)) rotate(45deg);
+    }
+    &:hover~.image .section3 .st2 {
+      stroke: var(--muddyWaters);
+    }
+  }
+  & .feature4 {
+    left: 0;
+    bottom: 40%;
+    &:before {
+      content: '04';
+    }
+    &:after {
+      width: rem(130);
+      height: rem(1);
+      right: 0;
+      transform: translate(rem(20), rem(80)) rotate(45deg);
+    }
+    &:hover~.image .section4 .st2 {
+      stroke: var(--muddyWaters);
+    }
+  }
+  & svg.productExploded {
+    fill: none;
+    pointer-events: all;
+    & .st2 {
+      fill: none;
+      stroke: #4D4D4D;
+      stroke-width: 0.75;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10;
+      transition: all 0.2s;
+    }
+    & .st3 {
+      fill: none;
+      stroke: #4D4D4D;
+      stroke-width: 0.75;
+      stroke-miterlimit: 10;
+      transition: all 0.2s;
+    }
+    & .section1:hover {
+      & .st3 {
+        stroke: var(--muddyWaters);
+      }
+      & .st4 {
+        fill: var(--muddyWaters);
+      }
+    }
+    & .section2:hover {
+      & .st2 {
+        stroke: var(--muddyWaters);
+      }
+    }
+    & .section3:hover {
+      & .st2 {
+        stroke: var(--muddyWaters);
+      }
+    }
+    & .section4:hover {
+      & .st2 {
+        stroke: var(--muddyWaters);
+      }
+    }
+  }
+}
+
+:global {
+  & .rangeslider {
+    position: relative;
+    width: 100%;
+    border-bottom: rem(1.5) dashed var(--muddyWaters);
+    @media (--large-and-up) {
+      width: rem(300);
+    }
+  }
+  & .rangeslider__fill {}
+  & .rangeslider__handle {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(-50%, rem(-18), 0);
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    width: rem(40);
+    height: rem(40);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-top: rem(5) solid transparent;
+      border-bottom: rem(5) solid transparent;
+      border-right: rem(5) solid black;
+      margin-right: rem(4);
+    }
+    &:after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-top: rem(5) solid transparent;
+      border-bottom: rem(5) solid transparent;
+      border-left: rem(5) solid black;
+    }
+    & .rangeslider__handle-label {
+      @apply --smallText;
+      letter-spacing: rem(5);
+      position: absolute;
+      top: rem(-30);
+      transform: translateX(-50%) scale(0.8);
+      color: gray(60%);
+      left: 50%;
+      user-select: none;
+    }
+    &:focus {
+      outline: 0;
+    }
+  }
+}

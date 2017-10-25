@@ -1,13 +1,10 @@
-import React from 'react';
-import {reset} from 'redux-form';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactMarkdown from 'react-markdown';
-import axios from 'axios';
-
 import Form from 'components/Form';
 import styles from './index.css';
 
-let formFields = [
+const formFields = [
   {
     label: 'Your name',
     name: 'name',
@@ -45,24 +42,24 @@ let formFields = [
 @connect(({ site }) => ({
   content: site.content.contact || {}
 }))
-export default class ContactQuestionnaire extends React.Component {
+export default class ContactQuestionnaire extends Component {
   render() {
-    let { content } = this.props;
+    const { content } = this.props;
     return (
       <div className={styles.wrapper}>
         <div className={styles.container}>
           <div className={styles.inner}>
-            <h2 className={styles.headline}><ReactMarkdown source={content.questionnaireHeadline} /></h2>
+            <h3 className={styles.headline}><ReactMarkdown source={content.questionnaireHeadline} /></h3>
             <div className={styles.intro}><ReactMarkdown source={content.questionnaireIntro} /></div>
-            <Form 
+            <Form
               formFields={formFields}
-              submitLabel='Send message'
-              formName='questionnaire'
-              subject='Client questionaire'
+              submitLabel="Send message"
+              formName="questionnaire"
+              subject="Client questionaire"
             />
           </div>
         </div>
       </div>
-    )
+    );
   }
 }

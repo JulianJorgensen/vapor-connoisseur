@@ -1,10 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
-
 import Form from 'components/Form';
 import styles from './index.css';
 
-let formFields = [
+const formFields = [
   {
     label: 'Your name',
     name: 'name',
@@ -29,22 +27,18 @@ let formFields = [
   }
 ];
 
-export default class ContactContactForm extends React.Component {
-  render() {
-    return (
-      <div className={styles.wrapper}>
-        <div className={styles.container}>
-          <div className={styles.inner}>
-            <h2 className={styles.headline}>Send us a note.</h2>
-            <Form 
-              formFields={formFields}
-              submitLabel='Send message'
-              formName='contactForm'
-              subject='Message'
-            />
-          </div>
-        </div>      
+export default () => (
+  <div className={styles.wrapper}>
+    <div className={styles.container}>
+      <div className={styles.inner}>
+        <h3 className={styles.headline}>Send us a note.</h3>
+        <Form
+          formFields={formFields}
+          submitLabel="Send message"
+          formName="contactForm"
+          subject="Message"
+        />
       </div>
-    )
-  }
-}
+    </div>
+  </div>
+);

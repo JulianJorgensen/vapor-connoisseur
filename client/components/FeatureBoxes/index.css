@@ -1,5 +1,5 @@
 @import "globals.css";
-.wrapper{
+.wrapper {
   display: flex;
   flex-direction: column;
   @media (--large-and-up) {
@@ -9,40 +9,39 @@
   }
 }
 
-.box{
+.box {
   width: 100%;
   margin-bottom: rem(30);
   @media (--large-and-up) {
-    width: calc(33% - rem(20));
-    margin-bottom: rem(50);
+    width: calc(33% - rem(40));
+    margin-bottom: rem(70);
   }
-
-  & .title{
+  & .title {
     font-size: rem(16);
     height: rem(50);
-    letter-spacing: normal;
+    letter-spacing: rem(2);
     word-spacing: normal;
   }
-  & .body{
-    & p{
+  & .body {
+    & p {
       margin-bottom: 0;
     }
   }
   & ol,
-  & ul{
+  & ul {
     margin: 0;
     padding-left: rem(20);
   }
 }
 
-.oneCol{
-  & .box{
+.oneCol {
+  & .box {
     width: 100%;
   }
 }
 
-.twoCol{
-  & .box{
+.twoCol {
+  & .box {
     width: calc(50% - rem(20));
   }
 }

@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: rem(120) 0 rem(90);
+  padding: rem(120) 0 rem(80);
 }
 
 .container{
@@ -19,7 +19,8 @@
   width: 100%;
   position: absolute;
   z-index: 2;
-  transform: translateY(15%);
+  transform: translateY(40%);
+  opacity: var(--defaultSmokeOpacity);
   & img {
     width: 100%;
   }

@@ -13,15 +13,17 @@
   justify-content: center;
 }
 
+.headline{
+}
+
 .cta{
   margin-top: rem(30);
   position: relative;
-  padding: 0;
   color: white;
   transition: all 0.2s;
-  padding: rem(5) 0;
   text-transform: uppercase;
   & span{
+    @apply --smallText;
     position: relative;
     z-index: 1;
   }
@@ -42,5 +44,16 @@
       height: 100%;
       width: 120%;  
     }
+  }
+}
+
+.bgImage {
+  width: 100%;
+  position: absolute;
+  right: 0;
+  transform: translateX(30%) translateY(30%);
+  opacity: var(--defaultSmokeOpacity);
+  & img {
+    width: 100%;
   }
 }

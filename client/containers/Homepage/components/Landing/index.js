@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Hero from 'components/Hero';
-import productImage from 'assets/images/XY05_EXPLO1-Web.jpg';
+import productImage from 'assets/images/homeProduct.jpg';
 import styles from './index.css';
 
 @connect(({ site }) => ({
   content: site.content.homepage || {}
 }))
-export default class HomepageLanding extends React.Component {
+export default class HomepageLanding extends Component {
   render() {
     const { content } = this.props;
     return (

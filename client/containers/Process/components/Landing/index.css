@@ -2,9 +2,10 @@
 .wrapper {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
-.container{
+.container {
   composes: globalContainer;
   min-height: 100vh;
   display: flex;
@@ -12,48 +13,54 @@
   justify-content: center;
 }
 
-.productImage{
-  @apply --defaultBgImage;  
+.productImage {
+  @apply --defaultBgImage;
   background-size: contain;
   position: absolute;
   z-index: 2;
-  top: rem(160);
-  right: rem(30);
+  top: rem(180);
+  right: rem(70);
   width: rem(500);
   height: rem(500);
-  filter: drop-shadow(rem(20) rem(20) rem(40) black); 
+  filter: drop-shadow(rem(15) rem(20) rem(30) black);
 }
 
-.introWrapper{
+.introWrapper {
+  display: flex;
+  align-items: center;
   position: absolute;
   top: rem(450);
-  background: linear-gradient(to bottom right, var(--mirage), var(--blackRussion));
-  padding: rem(40);
+  background: linear-gradient(to right, var(--blueCharcoal), var(--tuna));
+  padding: rem(60) rem(80);
   height: rem(500);
   width: 100vw;
-  left: rem(-30);
-  & .introHeadline{
+  left: rem(-40);
+  & .introHeadline {
     margin-bottom: rem(30);
   }
-  & .intro{
+  & .intro {
     width: rem(400);
+    & p {
+      margin-bottom: 0;
+    }
   }
 }
 
-.aside{
+.aside {
   position: relative;
   right: 0;
-  top: rem(-50);
+  margin-top: rem(-50);
   padding: rem(80);
-  width: rem(700);
+  width: rem(600);
   background-color: var(--bokara);
   z-index: 2;
   align-self: flex-end;
-  & .asideTitle{
+  & .asideTitle {
     @apply --smallText;
     font-size: rem(16);
+    margin-bottom: rem(18);
   }
-  & .asideBody{
+  & .asideBody {
     width: rem(400);
     margin-bottom: rem(30);
   }

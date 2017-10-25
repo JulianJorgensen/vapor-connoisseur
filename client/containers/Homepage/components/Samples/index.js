@@ -2,7 +2,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { connect } from 'react-redux';
 import Button from 'components/Button';
-import productImage from 'assets/images/placeholder2.png';
+import productImage from 'assets/images/homeProductBox.jpg';
 import styles from './index.css';
 
 @connect(({ site }) => ({
@@ -16,8 +16,8 @@ export default class HomepageSamples extends React.Component {
         <div className={styles.container}>
           <div className={styles.leftBox}>
             <div className={styles.content}>
-              <h2>{content.sampleKitsHeadline}</h2>
-              <ReactMarkdown source={content.sampleKitsBody} />
+              <h2 className={styles.headline}>{content.sampleKitsHeadline}</h2>
+              <div className={styles.intro}><ReactMarkdown source={content.sampleKitsBody} /></div>
               <Button className={styles.cta} href="/sample-kits" label="Learn more" />
             </div>
           </div>

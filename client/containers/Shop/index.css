@@ -10,7 +10,7 @@
     left: 0;
     top: 0;
     width: 100%;
-    height: rem(300);
+    height: rem(340);
     background-color: var(--bokara);
   }
 }
@@ -20,8 +20,9 @@
 }
 
 .cart {
+  @apply --smallText;
   position: fixed;
-  top: rem(60);
+  top: rem(107);
   right: rem(240);
   color: white;
   cursor: pointer;

@@ -6,6 +6,7 @@
   padding: rem(120) 0 rem(90);
   background-color: var(--bokara);
   position: relative;
+  width: 100%;
 }
 
 .container{
@@ -19,13 +20,13 @@
 }
 
 .production{
-  width: calc(33% - rem(20));
+  width: calc(33% - rem(40));
 }
 
 .productImage{
   @apply --defaultBgImage;
   width: 50%;
-  height: calc(100% + rem(200));
+  height: calc(100% + rem(170));
   position: absolute;
   top: 0;
   left: 0;  

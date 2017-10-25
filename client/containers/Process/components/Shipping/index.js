@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import ReactMarkdown from 'react-markdown';
-
 import bgSmoke from 'assets/images/VC_BGSmoke1.png';
 import FeatureBoxes from 'components/FeatureBoxes';
 import styles from './index.css';
 
 @connect(({ site }) => ({
-  content: site.content.customerPathway || {}
+  content: site.content.customerPathway || {},
 }))
 export default class ProcessShipping extends Component {
   render() {
-    let { content } = this.props;
+    const { content } = this.props;
     return (
       <div className={styles.wrapper}>
         <div className={styles.container}>
@@ -23,9 +20,9 @@ export default class ProcessShipping extends Component {
           <FeatureBoxes features={content.shippingFeatures} />
         </div>
         <div className={styles.bgImage}>
-          <img src={bgSmoke} alt='Background smoke' />
+          <img src={bgSmoke} alt="" />
         </div>
       </div>
-    )
+    );
   }
 }
