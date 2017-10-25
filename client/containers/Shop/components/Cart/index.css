@@ -1,3 +1,4 @@
+@import "globals.css";
 .cart {
   position: fixed;
   z-index: 9;
@@ -17,23 +18,22 @@
   transform: translateX(0);
 }
 
-.cartClose {
-  position: absolute;
-  right: 9px;
-  top: 8px;
-  font-size: 35px;
-  color: #999;
-  border: none;
-  background: transparent;
-  transition: transform 100ms ease;
-  cursor: pointer;
-}
-
 .cartHeader {
   padding: rem(20);
   border-bottom: rem(1) solid #e5e5e5;
-  flex: 0 0 auto;
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & .headline {}
+  & .cartClose {
+    line-height: 100%;
+    font-size: rem(35);
+    color: #999;
+    border: none;
+    background: transparent;
+    transition: transform 100ms ease;
+    cursor: pointer;
+  }
 }
 
 .cartLineItems {
@@ -49,7 +49,11 @@
 }
 
 .cartCheckout {
-  margin-top: rem(20);
+  @apply --smallText;
+  background-color: var(--muddyWaters);
+  cursor: pointer;
+  margin-top: rem(30);
+  padding: rem(10);
   display: block;
   width: 100%;
 }

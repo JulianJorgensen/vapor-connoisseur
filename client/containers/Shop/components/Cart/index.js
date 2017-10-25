@@ -41,7 +41,7 @@ export default class Cart extends Component {
     return (
       <div className={`${styles.cart} ${isCartOpen ? styles.cartOpen : ''}`}>
         <header className={styles.cartHeader}>
-          <h2>Your cart</h2>
+          <h3 className={styles.headline}>Your cart</h3>
           <button
             onClick={handleCartClose}
             className={styles.cartClose}
@@ -71,7 +71,7 @@ export default class Cart extends Component {
               <span className={styles.pricing}>$ {checkout.totalPrice}</span>
             </div>
           </div>
-          <Button className={styles.cartCheckout} onClick={this.openCheckout}>Checkout</Button>
+          <button className={styles.cartCheckout} onClick={this.openCheckout}>Checkout</button>
         </footer>
       </div>
     );

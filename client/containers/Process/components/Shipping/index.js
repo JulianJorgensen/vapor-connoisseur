@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ReactMarkdown from 'react-markdown';
 
-import bgSmoke from 'assets/images/Process_SmokeDARK-Web.png';
+import bgSmoke from 'assets/images/VC_BGSmoke1.png';
 import FeatureBoxes from 'components/FeatureBoxes';
 import styles from './index.css';
 

@@ -13,7 +13,7 @@ export default class ServicesManufacturing extends Component {
   render() {
     const { content } = this.props;
     return (
-      <div className={styles.wrapper}>
+      <div className={styles.wrapper} id="manufacturing">
         <div className={styles.container}>
           <div className={styles.manufacturing}>
             <header className={styles.header}>

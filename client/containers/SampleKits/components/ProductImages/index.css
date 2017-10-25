@@ -1,0 +1,13 @@
+@import "globals.css";
+.wrapper {
+  composes: globalWrapper;
+  width: 100%;
+  align-items: flex-start;
+  margin-bottom: rem(100);
+}
+
+.productImage {
+  @apply --defaultBgImage;
+  width: 70vw;
+  min-height: rem(400);
+}

@@ -1,58 +1,48 @@
 import axios from 'axios';
 import { find } from 'lodash';
 
-// action: fetch content from contentful
-export let fetchContent = () => {
-  console.log('fetching content');
-  return (dispatch, getState) => {
-    axios.get(`${ENV_CONFIG.SITE_URL}/getAllContent`).then((response) => {
-      // set content
-      dispatch(setContent(response.data));
-    }).catch((error) => {
-      console.error('Error getting content from contentful...', error);
-    });
-  };
-};
-
 // action: set content
-export let setContent = (data) => {
-  let content = {};
-  let contentModels = ['homepage', 'about', 'customerPathway', 'services', 'contact'];
+export const setContent = (data) => {
+  const content = {};
+  const contentModels = ['homepage', 'about', 'customerPathway', 'services', 'contact', 'sampleKits'];
   contentModels.map((contentModel) => {
-    let foundContent = find(data, { 'sys': { 'contentType': { 'sys': { 'id': contentModel } } } });
+    const foundContent = find(data, { sys: { contentType: { sys: { id: contentModel } } } });
     content[contentModel] = foundContent ? foundContent.fields : {};
+    return true;
   });
 
   return {
     type: 'SET_CONTENT',
-    content
-  }
+    content,
+  };
+};
+
+// action: fetch content from contentful
+export const fetchContent = () => {
+  return (dispatch, getState) => {
+    axios.get(`${ENV_CONFIG.SITE_URL}/getAllContent`).then((response) => {
+      // set content
+      dispatch(setContent(response.data));
+    });
+  };
 };
 
 // action: verify age
-export let verifyAge = () => {
-  return {
-    type: 'VERIFY_AGE'
-  }
-};
+export const verifyAge = () => ({
+  type: 'VERIFY_AGE',
+});
 
 // action: open nav
-export let openNav = () => {
-  return {
-    type: 'OPEN_NAV'
-  }
-};
+export const openNav = () => ({
+  type: 'OPEN_NAV',
+});
 
 // action: close nav
-export let closeNav = () => {
-  return {
-    type: 'CLOSE_NAV'
-  }
-};
+export const closeNav = () => ({
+  type: 'CLOSE_NAV',
+});
 
 // action: toggle nav
-export let toggleNav = () => {
-  return {
-    type: 'TOGGLE_NAV'
-  }
-};
+export const toggleNav = () => ({
+  type: 'TOGGLE_NAV',
+});

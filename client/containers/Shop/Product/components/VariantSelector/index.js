@@ -3,7 +3,11 @@ import Select from 'components/ReactSelect';
 import styles from './index.css';
 
 export default class VariantSelector extends Component {
-  state = {}
+  constructor() {
+    super();
+
+    this.handleOptionChange = this.handleOptionChange.bind(this);
+  }
 
   componentWillMount() {
     this.setVariants();
@@ -42,6 +46,15 @@ export default class VariantSelector extends Component {
 
     // trigger parent handler
     this.props.handleOptionChange(newOption);
+
+    // detect if all options have been selected
+    const selectedVariantsCount = variants.filter((variant) => {
+      if (!variant.selected) return false;
+      return true;
+    }).length;
+    if (selectedVariantsCount === variants.length) {
+      this.props.handleAllOptionsSelected();
+    }
   }
 
   render() {
@@ -53,18 +66,18 @@ export default class VariantSelector extends Component {
     }
 
     return (
-      <div className={styles.container}>
+      <div className={styles.wrapper}>
         {variants.map((variant, i) => (
           <div
-            key={variant.id}
-            className={styles.wrapper}
+            key={variant.name}
+            className={styles.select}
           >
-            {variant.name}
             <Select
               className={styles.option}
               name={variant.name}
               value={variant.selected ? selectedVariant.selectedOptions[i].value : null}
               options={variant.options}
+              placeholder={variant.name}
               clearable={false}
               onChange={this.handleOptionChange}
             />

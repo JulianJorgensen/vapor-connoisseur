@@ -1,4 +1,5 @@
 import React from 'react';
+import { HashLink } from 'lib/react-router-hash-link';
 import { connect } from 'react-redux';
 import Hero from 'components/Hero';
 import styles from './index.css';
@@ -16,10 +17,10 @@ export default class ServicesLanding extends React.Component {
           <div className={styles.nav}>
             <div className={styles.navTitle}>Jump to a section</div>
             <ol className={styles.navItems}>
-              <li className={styles.navItem}>Design</li>
-              <li className={styles.navItem}>Logistics</li>
-              <li className={styles.navItem}>Manufacturing</li>
-              <li className={styles.navItem}>Automated Filling</li>
+              <li className={styles.navItem}><HashLink to="#design">Design</HashLink></li>
+              <li className={styles.navItem}><HashLink to="#logistics">Logistics</HashLink></li>
+              <li className={styles.navItem}><HashLink to="#manufacturing">Manufacturing</HashLink></li>
+              <li className={styles.navItem}><HashLink to="#automated-filling">Automated Filling</HashLink></li>
             </ol>
           </div>
         </div>

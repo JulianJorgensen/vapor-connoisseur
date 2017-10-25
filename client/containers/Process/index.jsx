@@ -1,9 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
 import LoadingSpinner from 'components/LoadingSpinner';
-
 import Footer from 'layout/Footer';
+import PageCTAs from 'components/PageCTAs';
 import Landing from './components/Landing';
 import Samples from './components/Samples';
 import ProductDevelopment from './components/ProductDevelopment';
@@ -20,7 +19,7 @@ import styles from './index.css';
 export default class Process extends React.Component {
   render() {
     if (!this.props.content) {
-      return <LoadingSpinner />
+      return <LoadingSpinner />;
     }
     return (
       <div className={styles.wrapper}>
@@ -32,6 +31,7 @@ export default class Process extends React.Component {
         <Shipping />
         <Duties />
         <ProductDelivery />
+        <PageCTAs />
         <Footer />
       </div>
     )

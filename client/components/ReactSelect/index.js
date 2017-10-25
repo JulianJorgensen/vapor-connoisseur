@@ -1,6 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
 import cn from 'classnames';
+import './vendor.css';
 import styles from './index.css';
 
 export default ({ className, ...others }) => {

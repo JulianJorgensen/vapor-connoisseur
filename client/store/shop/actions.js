@@ -1,15 +1,14 @@
-import store from 'store';
 import _ from 'lodash';
 
 // action: init shop
-export let initShop = () => {
+export const initShop = () => {
   return (dispatch, getState, shopifyClient) => {
     return shopifyClient.fetchAllProducts().then((res) => {
       // set products
-      let products = res || {};
+      const products = res || {};
       dispatch({
         type: 'ADD_PRODUCTS',
-        products
+        products,
       });
 
       // create checkout
@@ -22,21 +21,21 @@ export let initShop = () => {
 };
 
 // action: set active product
-export let setActiveProduct = (product) => {
+export const setActiveProduct = () => {
   return (dispatch, getState, shopifyClient) => {
-    let productHandle = window.location.pathname.split('/')[3];
-    let shop = getState().shop;
+    const productHandle = window.location.pathname.split('/')[3];
+    const { shop } = getState();
     if (productHandle) {
       // find product in products
-      let product = _.find(shop.products, {
-        'handle': productHandle
+      const product = _.find(shop.products, {
+        handle: productHandle,
       });
 
       // set product
       if (product) {
         dispatch({
           type: 'SET_PRODUCT',
-          product
+          product,
         });
       }
     }
@@ -44,14 +43,14 @@ export let setActiveProduct = (product) => {
 };
 
 // action: clear active product
-export let clearActiveProduct = () => {
+export const clearActiveProduct = () => {
   return {
     type: 'CLEAR_PRODUCT'
   }
 };
 
 // create checkout
-export let createCheckout = () => {
+export const createCheckout = () => {
   return (dispatch, getState, shopifyClient) => {
     return shopifyClient.createCheckout({}).then((res) => {
       let checkout = res || {};
@@ -64,7 +63,7 @@ export let createCheckout = () => {
 };
 
 // add line items to cart
-export let addLineItems = (lineItemsToAdd) => {
+export const addLineItems = (lineItemsToAdd) => {
   return (dispatch, getState, shopifyClient) => {
     let checkoutId = getState().shop.checkout.id;
     return shopifyClient.addLineItems(checkoutId, lineItemsToAdd).then((res) => {
@@ -78,7 +77,7 @@ export let addLineItems = (lineItemsToAdd) => {
 };
 
 // update line items in cart
-export let updateLineItems = (lineItemsToUpdate) => {
+export const updateLineItems = (lineItemsToUpdate) => {
   return (dispatch, getState, shopifyClient) => {
     let checkoutId = getState().shop.checkout.id;
     return shopifyClient.updateLineItems(checkoutId, lineItemsToUpdate).then(res => {
@@ -92,36 +91,30 @@ export let updateLineItems = (lineItemsToUpdate) => {
 };
 
 // remove line item from cart
-export let removeLineItem = (lineItemId) => {
+export const removeLineItem = (lineItemId) => {
   return (dispatch, getState, shopifyClient) => {
-    let checkoutId = getState().shop.checkout.id;
-    return shopifyClient.removeLineItems(checkoutId, [lineItemId]).then(res => {
-      let checkout = res || {};
+    const checkoutId = getState().shop.checkout.id;
+    return shopifyClient.removeLineItems(checkoutId, [lineItemId]).then((res) => {
+      const checkout = res || {};
       dispatch({
         type: 'UPDATE_CHECKOUT',
-        checkout
+        checkout,
       });
     });
   };
 };
 
 // toggle cart
-export let toggleCart = () => {
-  return {
-    type: 'TOGGLE_CART'
-  }
-};
+export const toggleCart = () => ({
+  type: 'TOGGLE_CART',
+});
 
 // open cart
-export let openCart = () => {
-  return {
-    type: 'OPEN_CART'
-  }
-};
+export const openCart = () => ({
+  type: 'OPEN_CART',
+});
 
 // close cart
-export let closeCart = () => {
-  return {
-    type: 'CLOSE_CART'
-  }
-};
+export const closeCart = () => ({
+  type: 'CLOSE_CART',
+});

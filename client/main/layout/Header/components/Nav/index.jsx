@@ -6,8 +6,9 @@ import { userIsAuthenticated } from 'routes/utils';
 import { siteActions } from 'store/actions';
 
 import FacebookIcon from 'assets/icons/FontAwesome/brands/facebook.svg';
-import InstagramIcon from 'assets/icons/FontAwesome/brands/instagram.svg';
 import TwitterIcon from 'assets/icons/FontAwesome/brands/twitter.svg';
+import PinterestIcon from 'assets/icons/FontAwesome/brands/pinterest.svg';
+import InstagramIcon from 'assets/icons/FontAwesome/brands/instagram.svg';
 
 import styles from './index.css';
 
@@ -32,9 +33,10 @@ export default class Nav extends React.Component {
       <div className={styles.wrapper}>
         <div className={navStyles}>
           <div className={styles.socialMedia}>
-            <FacebookIcon />
-            <InstagramIcon />
-            <TwitterIcon />
+            <a href="https://www.facebook.com/VaporConnoisseur/" target="new"><FacebookIcon /></a>
+            <a href="https://twitter.com/VapeConnoisseur" target="new"><TwitterIcon /></a>
+            <a href="https://www.pinterest.com/vapeconnoisseur/" target="new"><PinterestIcon /></a>
+            <a href="https://www.instagram.com/vaporconnoisseurig/" target="new"><InstagramIcon /></a>
           </div>
           <ul className={styles.navItems}>
             <li className={styles.navItem}><Link to="/">Home</Link></li>

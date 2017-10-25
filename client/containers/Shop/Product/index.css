@@ -1,61 +1,73 @@
 @import "globals.css";
-.wrapper{
+.wrapper {
   margin-top: rem(200);
   display: flex;
   justify-content: space-between;
-  & .leftCol{
-    width: calc(40% - rem(80));
+  & .leftCol {
+    width: calc(45% - rem(80));
   }
-  & .rightCol{
-    width: calc(60% - rem(80));
+  & .rightCol {
+    width: calc(55% - rem(80));
   }
 }
 
-.details{
+.details {
   margin-top: rem(120);
-  & .specifications{
-    margin-bottom: rem(60);
+  & .specifications {
+    margin-bottom: rem(30);
     padding-bottom: rem(30);
     border-bottom: 1px solid gray(20%);
-    & .specification{
+    & .specification {
       display: flex;
-      justify-content: space-between;
+      text-transform: uppercase;
+      margin-bottom: rem(10);
+      & .specificationName {
+        color: var(--muddyWaters);
+        width: 40%;
+      }
     }
   }
 }
 
-.cta{
-  margin-top: rem(30);
-  & .buyButton{
+.description {
+  margin-bottom: rem(60);
+}
+
+.cta {
+  & .buyButton {
+    @apply --smallText;
+    cursor: pointer;
     display: block;
     width: 100%;
     background-color: var(--muddyWaters);
-    padding: rem(10);
-  }  
+    padding: rem(15) rem(10);
+    &[disabled] {
+      opacity: 0.6;
+    }
+  }
 }
 
-.image{
-  @apply --defaultBgImage;  
+.image {
+  @apply --defaultBgImage;
   width: 100%;
   height: rem(700);
   position: relative;
 }
 
-.images{
+.images {
   position: absolute;
   top: rem(10);
   right: rem(10);
   display: flex;
   flex-direction: column;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  & li{
+  & .image {
     display: block;
     width: rem(40);
     height: rem(40);
-    & img{
-      max-width: 100%;
+    margin-bottom: rem(5);
+    cursor: pointer;
+    & img {
+      width: 100%;
       max-height: 100%;
     }
   }

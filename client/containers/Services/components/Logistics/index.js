@@ -11,7 +11,7 @@ export default class ServicesLogistics extends Component {
   render() {
     const { content } = this.props;
     return (
-      <div className={styles.wrapper}>
+      <div className={styles.wrapper} id="logistics">
         <div className={styles.container}>
           <header className={styles.header}>
             <h2 className={styles.headline}>{content.logisticsHeadline}</h2>

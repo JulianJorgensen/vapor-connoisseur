@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactMarkdown from 'react-markdown';
-import smokeBg from 'assets/images/Services_Smoke-Web.png';
+import smokeBg from 'assets/images/VC_BGSmoke2.png';
 import FeatureBoxes from 'components/FeatureBoxes';
 import styles from './index.css';
 
@@ -12,7 +12,7 @@ export default class ServicesDesign extends Component {
   render() {
     const { content } = this.props;
     return (
-      <div className={styles.wrapper}>
+      <div className={styles.wrapper} id="design">
         <div className={styles.container}>
           <header className={styles.header}>
             <h2 className={styles.headline}>{content.designHeadline}</h2>

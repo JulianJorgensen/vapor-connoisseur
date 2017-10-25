@@ -1,11 +1,9 @@
 import React from 'react';
-import {
-  HashLink,
-} from 'lib/react-router-hash-link';
+import { HashLink } from 'lib/react-router-hash-link';
 import cn from 'classnames';
 import styles from './index.css';
 
-const Button = ({
+export default ({
   label,
   href,
   target,
@@ -38,5 +36,3 @@ const Button = ({
     </HashLink>
   );
 };
-
-export default Button;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Hero from 'components/Hero';
-import productImage from 'assets/images/homeplaceholder.png';
+import productImage from 'assets/images/XY05_EXPLO1-Web.jpg';
 import styles from './index.css';
 
 @connect(({ site }) => ({

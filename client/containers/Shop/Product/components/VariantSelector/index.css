@@ -1,1 +1,11 @@
 @import "globals.css";
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.select {
+  width: calc(50% - rem(10));
+  margin-bottom: rem(20);
+}

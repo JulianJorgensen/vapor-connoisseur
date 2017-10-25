@@ -1,23 +1,20 @@
 import React from 'react';
 import { Route, withRouter } from 'react-router-dom';
-import { spring, AnimatedSwitch } from 'react-router-transition';
+import { AnimatedSwitch } from 'react-router-transition';
 import { connect } from 'react-redux';
 import { siteActions } from 'store/actions';
-import { userIsAuthenticated, userIsNotAuthenticated } from './utils';
 import cn from 'classnames';
 
-// containers
 import AgeVerification from 'containers/AgeVerification';
 import Homepage from 'containers/Homepage';
 import Services from 'containers/Services';
 import Process from 'containers/Process';
 import About from 'containers/About';
-import Samples from 'containers/Samples';
+import SampleKits from 'containers/SampleKits';
 import Contact from 'containers/Contact';
 import Shop from 'containers/Shop';
 
-import { TransitionGroup, CSSTransition }
-from 'react-transition-group';
+import { userIsAuthenticated, userIsNotAuthenticated } from './utils';
 import styles from './index.css';
 
 import ReactGA from 'react-ga';
@@ -37,9 +34,9 @@ function logPageView(location) {
 
 // we need to map the `scale` prop we define below
 // to the transform style property
-function mapStyles(styles) {
+function mapStyles(value) {
   return {
-    opacity: styles.opacity,
+    opacity: value.opacity,
     // transform: `scale(${styles.scale})`,
   };
 }
@@ -63,14 +60,12 @@ const transition = {
 
 @withRouter
 @connect(({ site }) => ({
-  site
+  site,
 }))
 export default class Routes extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      contentHeight: 0
+  componentDidUpdate(prevProps) {
+    if (this.props.location !== prevProps.location) {
+      this.onRouteChanged();
     }
   }
 
@@ -90,12 +85,6 @@ export default class Routes extends React.Component {
     }
   }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.location !== prevProps.location) {
-      this.onRouteChanged();
-    }
-  }
-
   render() {
     const renderMergedProps = (component, ...rest) => {
       const finalProps = Object.assign({}, ...rest);
@@ -104,24 +93,24 @@ export default class Routes extends React.Component {
       );
     }
 
-    let globalProps = {
+    const globalProps = {
       onLoaded: () => console.log('trigger update')
     }
 
-    const PropsRoute = ({ component, ...rest }) => {
-      return (
-        <Route {...rest} onLoaded={this.updateRoutesContainer} render={routeProps => {
-          return renderMergedProps(component, routeProps, globalProps, rest);
-        }}/>
-      );
-    };
+    const PropsRoute = ({ component, ...rest }) => (
+      <Route
+        {...rest}
+        onLoaded={this.updateRoutesContainer}
+        render={routeProps => renderMergedProps(component, routeProps, globalProps, rest)}
+      />
+    );
 
-    let _wrapperStyles = cn(styles.wrapper, {
-      [styles.navOpen]: this.props.site.navOpen
+    const wrapperStyles = cn(styles.wrapper, {
+      [styles.navOpen]: this.props.site.navOpen,
     });
 
     return (
-      <div className={_wrapperStyles} onClick={this.closeNav}>
+      <div className={wrapperStyles} onClick={this.closeNav}>
         <AnimatedSwitch
           atEnter={transition.atEnter}
           atLeave={transition.atLeave}
@@ -129,18 +118,18 @@ export default class Routes extends React.Component {
           mapStyles={mapStyles}
           className={styles.switch}
         >
-          <PropsRoute path='/age-verification' component={userIsNotAuthenticated(AgeVerification)} />
-          <PropsRoute path='/' exact component={userIsAuthenticated(Homepage)} />
-          <PropsRoute path='/services' component={userIsAuthenticated(Services)} />
-          <PropsRoute path='/process' component={userIsAuthenticated(Process)} />
-          <PropsRoute path='/about' component={userIsAuthenticated(About)} />
-          <PropsRoute path='/sample-kits' component={userIsAuthenticated(Samples)} />
-          <PropsRoute path='/contact' component={userIsAuthenticated(Contact)} />                
-          <PropsRoute path='/shop' exact component={userIsAuthenticated(Shop)} />
-          <PropsRoute path='/shop/:filter' exact component={userIsAuthenticated(Shop)} />
-          <PropsRoute path='/shop/:category/:productHandle' exact component={userIsAuthenticated(Shop)} showSingle={true} />                
+          <PropsRoute path="/age-verification" component={userIsNotAuthenticated(AgeVerification)} />
+          <PropsRoute path="/" exact component={userIsAuthenticated(Homepage)} />
+          <PropsRoute path="/services" component={userIsAuthenticated(Services)} />
+          <PropsRoute path="/process" component={userIsAuthenticated(Process)} />
+          <PropsRoute path="/about" component={userIsAuthenticated(About)} />
+          <PropsRoute path="/sample-kits" component={userIsAuthenticated(SampleKits)} />
+          <PropsRoute path="/contact" component={userIsAuthenticated(Contact)} />
+          <PropsRoute path="/shop" exact component={userIsAuthenticated(Shop)} />
+          <PropsRoute path="/shop/:filter" exact component={userIsAuthenticated(Shop)} />
+          <PropsRoute path="/shop/:category/:productHandle" exact component={userIsAuthenticated(Shop)} showSingle />
         </AnimatedSwitch>
       </div>
-    )
+    );
   }
-};
+}

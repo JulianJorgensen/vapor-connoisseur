@@ -2,7 +2,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { connect } from 'react-redux';
 import Button from 'components/Button';
-import bgSmoke from 'assets/images/Homepage_SmokeDARK-Web.png';
+import bgSmoke from 'assets/images/VC_BGSmoke4.png';
 import styles from './index.css';
 
 @connect(({ site }) => ({

@@ -1,0 +1,32 @@
+@import "globals.css";
+.wrapper{
+  position: relative;
+  z-index: 3;
+  pointer-events: none;
+}
+.container {
+  composes: globalContainer;
+  height: rem(500);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero{
+  position: absolute;
+  top: rem(220);
+  width: rem(500);
+  & .headline{
+    font-size: rem(50);
+    margin-bottom: rem(30);
+  }
+}
+
+.contactInfo{
+  pointer-events: all;
+  display: flex;
+  justify-content: space-between;
+  & .col{
+    width: calc(50% - rem(20));
+  }
+}

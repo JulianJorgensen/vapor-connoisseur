@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { userIsAuthenticated } from 'routes/utils';
 import Logo from 'components/Logo';
 
-import bgImage from 'assets/images/Footer_SmokeDARK-Web.png';
+import bgImage from 'assets/images/VC_BGSmoke3.png';
 import styles from './index.css';
 
 @withRouter
