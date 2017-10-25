@@ -13,6 +13,7 @@ import About from 'containers/About';
 import SampleKits from 'containers/SampleKits';
 import Contact from 'containers/Contact';
 import Shop from 'containers/Shop';
+import Cart from 'containers/Cart';
 
 import { userIsAuthenticated, userIsNotAuthenticated } from './utils';
 import styles from './index.css';
@@ -129,6 +130,7 @@ export default class Routes extends React.Component {
           <PropsRoute path="/shop/:filter" exact component={userIsAuthenticated(Shop)} />
           <PropsRoute path="/shop/:category/:productHandle" exact component={userIsAuthenticated(Shop)} showSingle />
         </AnimatedSwitch>
+        <Cart />
       </div>
     );
   }

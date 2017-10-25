@@ -18,6 +18,10 @@
   z-index: 3;
 }
 
+.rightCol{
+  display: flex;
+}
+
 .headroom {
   display: flex;
   justify-content: center;
@@ -33,6 +37,16 @@
     width: rem(50);
     height: rem(50);
   }
+}
+
+.cart {
+  @apply --smallText;
+  position: relative;
+  z-index: 9;
+  pointer-events: auto;
+  color: white;
+  cursor: pointer;
+  margin-right: rem(100);
 }
 
 :global {

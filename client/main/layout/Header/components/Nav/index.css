@@ -42,7 +42,7 @@
   flex-direction: column;
   justify-content: space-between;
   @media (--large-and-up) {
-    width: rem(700);
+    width: 50%;
     padding: rem(60) rem(60) rem(60) rem(120);
   }
   &.open {

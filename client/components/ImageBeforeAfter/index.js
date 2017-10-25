@@ -14,7 +14,7 @@ export default class ImageBeforeAfter extends React.Component {
   render() {
     const { slidePosition } = this.state;
     const { before } = this.props;
-    const After = this.props.after;
+    const ExplodedSVG = this.props.after;
     return (
       <div className={styles.wrapper}>
         <div className={styles.images}>
@@ -24,15 +24,18 @@ export default class ImageBeforeAfter extends React.Component {
           <div className="feature feature4">Stainless steel body</div>
           
           <div
-            className={`${styles.image} ${styles.before}`}
+            className={`before ${styles.image} ${styles.before}`}
             style={{ width: `${slidePosition}%` }}
           >
-            <div className={styles.inner}><img src={before} alt="" /></div>
+            <div className={styles.inner}>
+              <img src={before} alt="" />
+              <ExplodedSVG />
+            </div>
           </div>
           <div
             className={`image ${styles.image} ${styles.after}`}
           >
-            <div className={styles.inner}><After className={styles.svg} /></div>
+            <div className={styles.inner}><ExplodedSVG className={styles.svg} /></div>
           </div>
         </div>
         <Slider

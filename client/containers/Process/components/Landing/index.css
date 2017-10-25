@@ -22,7 +22,7 @@
   right: rem(70);
   width: rem(500);
   height: rem(500);
-  filter: drop-shadow(rem(15) rem(20) rem(30) black);
+  filter: drop-shadow(rem(15) rem(20) rem(30) color(black alpha(50%)));
 }
 
 .introWrapper {

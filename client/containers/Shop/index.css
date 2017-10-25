@@ -18,13 +18,3 @@
 .container{
   composes: globalContainer;
 }
-
-.cart {
-  @apply --smallText;
-  position: fixed;
-  top: rem(107);
-  right: rem(240);
-  color: white;
-  cursor: pointer;
-  z-index: 10;
-}

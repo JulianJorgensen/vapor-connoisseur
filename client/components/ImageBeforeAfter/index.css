@@ -40,6 +40,16 @@
 }
 
 :global {
+  & .before{
+    & svg{
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+}  
+
+:global {
   & .feature {
     @apply --smallText;
     position: absolute;
@@ -88,6 +98,15 @@
       right: rem(-40);
       transform: translate(rem(110), rem(30)) rotate(18deg);
     }
+    &:hover~.before .section1 {
+      & .st3 {
+        stroke: black;
+        stroke-width: rem(3);
+      }
+      & .st4 {
+        fill: black;
+      }
+    }
     &:hover~.image .section1 {
       & .st3 {
         stroke: var(--muddyWaters);
@@ -109,6 +128,10 @@
       left: rem(-40);
       transform: translateX(-100%);
     }
+    &:hover~.before .section2 .st2 {
+      stroke: black;
+      stroke-width: rem(3);
+    }
     &:hover~.image .section2 .st2 {
       stroke: var(--muddyWaters);
     }
@@ -125,6 +148,10 @@
       left: rem(-40);
       transform: translate(rem(-100), rem(-100)) rotate(45deg);
     }
+    &:hover~.before .section3 .st2 {
+      stroke: black;
+      stroke-width: rem(3);
+    }
     &:hover~.image .section3 .st2 {
       stroke: var(--muddyWaters);
     }
@@ -140,6 +167,10 @@
       height: rem(1);
       right: 0;
       transform: translate(rem(20), rem(80)) rotate(45deg);
+    }
+    &:hover~.before .section4 .st2 {
+      stroke: black;
+      stroke-width: rem(3);
     }
     &:hover~.image .section4 .st2 {
       stroke: var(--muddyWaters);
