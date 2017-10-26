@@ -2,9 +2,9 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { connect } from 'react-redux';
 import Button from 'components/Button';
-import ImageBeforeAfter from 'components/ImageBeforeAfter';
 import productExploded from 'assets/images/XY05_EXPLO1-24.png';
 import productExploded2 from 'assets/icons/VC_XY05_Outline-02.svg';
+import ImageBeforeAfter from './components/ImageBeforeAfter';
 import styles from './index.css';
 
 @connect(({ site }) => ({

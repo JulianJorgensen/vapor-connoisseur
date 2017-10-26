@@ -1,9 +1,13 @@
 @import "globals.css";
 .wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-bottom: rem(120);
+  margin-bottom: rem(60);
+  width: 100%;
+  @media (--medium-and-up) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;  
+    margin-bottom: rem(120);
+  }
 }
 
 .container {
@@ -36,10 +40,12 @@
 }
 
 .nav {
-  position: absolute;
-  bottom: rem(60);
   @apply --smallText;
-  width: rem(600);
+  @media (--medium-and-up) {
+    position: absolute;
+    bottom: rem(60);  
+    width: rem(600);
+  }    
   & .navTitle {
     color: var(--muddyWaters);
   }
@@ -60,16 +66,20 @@
 }
 
 .productImage {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: 50vw;
+  height: rem(200);
+  width: 100%;
   @apply --defaultBgImage;
   & .meta {
     @apply --smallText;
     position: absolute;
     left: rem(60);
     bottom: rem(60);
+  }
+  @media (--medium-and-up) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 50vw;  
   }
 }

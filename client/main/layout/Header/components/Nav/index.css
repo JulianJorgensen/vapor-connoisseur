@@ -57,8 +57,8 @@
   margin: 0;
   padding: 0;
   & .navItem {
-    font-size: rem(26);
-    line-height: rem(40);
+    font-size: rem(20);
+    line-height: rem(30);
     letter-spacing: rem(2);
     text-transform: uppercase;
     font-family: var(--primaryFont);
@@ -81,11 +81,12 @@
 
 .navFooter {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  flex-direction: column;
   width: 100%;
-  font-size: rem(16);
+  font-size: rem(11);
   line-height: 200%;
+  margin-bottom: rem(60);
   & a {
     color: white;
   }
@@ -93,5 +94,6 @@
     flex-direction: row;
     width: rem(480);
     font-size: rem(16);
+    margin-bottom: 0;
   }
 }

@@ -7,10 +7,12 @@
 
 .container {
   composes: globalContainer;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media (--medium-and-up) {
+    min-height: 100vh;
+  }
 }
 
 .productImage {
@@ -18,50 +20,77 @@
   background-size: contain;
   position: absolute;
   z-index: 2;
-  top: rem(180);
-  right: rem(70);
-  width: rem(500);
-  height: rem(500);
+  top: rem(80);
+  right: rem(-65);
+  width: rem(260);
+  height: rem(260);
   filter: drop-shadow(rem(15) rem(20) rem(30) color(black alpha(50%)));
+  @media (--medium-and-up) {
+    top: rem(180);
+    right: rem(70);
+    width: rem(500);
+    height: rem(500);  
+  }
 }
 
 .introWrapper {
   display: flex;
   align-items: center;
-  position: absolute;
-  top: rem(450);
   background: linear-gradient(to right, var(--blueCharcoal), var(--tuna));
-  padding: rem(60) rem(80);
-  height: rem(500);
+  padding: rem(30);
+  margin: 0 rem(-30);
+  height: rem(300);
   width: 100vw;
-  left: rem(-40);
   & .introHeadline {
     margin-bottom: rem(30);
   }
   & .intro {
-    width: rem(400);
     & p {
       margin-bottom: 0;
     }
+  }
+  @media (--medium-and-up) {
+    position: absolute;
+    top: rem(450);
+    padding: rem(60) rem(80);
+    height: rem(500);
+    left: rem(-40);  
+    margin: 0;
+    & .intro {
+      width: rem(400);
+    }      
   }
 }
 
 .aside {
   position: relative;
   right: 0;
-  margin-top: rem(-50);
-  padding: rem(80);
-  width: rem(600);
+  margin-top: 0;
+  padding: rem(30);
+  width: calc(100% - rem(30));
   background-color: var(--bokara);
   z-index: 2;
-  align-self: flex-end;
   & .asideTitle {
     @apply --smallText;
     font-size: rem(16);
     margin-bottom: rem(18);
   }
   & .asideBody {
-    width: rem(400);
+    width: 100%;
     margin-bottom: rem(30);
+  }
+  @media (--medium-and-up) {
+    margin-top: rem(-50);
+    padding: rem(80);
+    width: rem(600);
+    align-self: flex-end;
+    & .asideTitle {
+      font-size: rem(16);
+      margin-bottom: rem(18);
+    }
+    & .asideBody {
+      width: rem(400);
+      margin-bottom: rem(30);
+    }  
   }
 }

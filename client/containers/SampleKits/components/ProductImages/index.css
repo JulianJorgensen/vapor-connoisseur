@@ -3,11 +3,17 @@
   composes: globalWrapper;
   width: 100%;
   align-items: flex-start;
-  margin-bottom: rem(100);
+  @media (--medium-and-up) {
+    margin-bottom: rem(100);
+  }
 }
 
 .productImage {
   @apply --defaultBgImage;
-  width: 70vw;
-  min-height: rem(400);
+  width: calc(100% - rem(30));
+  min-height: rem(250);
+  @media (--medium-and-up) {
+    width: 70vw;
+    min-height: rem(400);      
+  }    
 }

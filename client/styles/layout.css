@@ -19,9 +19,13 @@
 
 .globalContainer {
   align-self: center;
-  width: rem(1300);
-  max-width: 100%;
+  width: 100%;
   padding: rem(30);
   position: relative;
   z-index: 2;
+  flex-direction: row;
+  @media (--large-and-up) {
+    width: rem(1300);
+    max-width: 100%;
+  }      
 }

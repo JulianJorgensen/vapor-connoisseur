@@ -42,6 +42,8 @@
 
 .twoCol {
   & .box {
-    width: calc(50% - rem(20));
+    @media (--medium-and-up) {
+      width: calc(50% - rem(20));      
+    }  
   }
 }

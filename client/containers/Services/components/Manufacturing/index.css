@@ -16,9 +16,13 @@
 
 .manufacturing{
   position: relative;
-  padding-top: rem(90);
-  padding-left: calc(33% + rem(20));
-  margin-bottom: rem(120);
+  padding-top: rem(60);
+  margin-bottom: rem(60);
+  @media (--medium-and-up) {
+    padding-top: rem(90);
+    margin-bottom: rem(120);
+    padding-left: calc(33% + rem(20));
+  }
   & div,
   & header {
     position: relative;
@@ -36,12 +40,16 @@
   }
   & .productImage{
     @apply --defaultBgImage;
-    position: absolute;
-    top: rem(60);
-    left: 0;
-    transform: translateX(-50%);
-    width: rem(600);
-    height: 100%;
+    height: rem(200);
+    width: 100%;
+    @media (--medium-and-up) {
+      position: absolute;
+      top: rem(60);
+      left: 0;
+      transform: translateX(-50%);
+      width: rem(600);
+      height: 100%;  
+    }
   }
 }
 

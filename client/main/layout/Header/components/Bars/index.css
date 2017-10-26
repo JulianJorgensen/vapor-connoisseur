@@ -1,37 +1,51 @@
 @import "globals.css";
 :root {
-  --barHeight: rem(4)
+  --barHeight: rem(2);
+  --barHeightLarge: rem(4);
 }
 
 .bars {
   position: relative;
   z-index: 9;
-  width: rem(30);
-  height: rem(20);
+  width: rem(24);
+  height: rem(16);
   display: flex;
   flex-wrap: wrap;
   cursor: pointer;
   align-items: center;
   pointer-events: auto;
+  @media (--medium-and-up) {
+    width: rem(30);
+    height: rem(22);
+  }    
   &:before,
   &:after {
     color: white;
     position: absolute;
-    margin-left: rem(-60);
-    font-size: rem(11);
+    z-index: 1;
+    top: 50%;
+    left: 0;
+    transform: translate(rem(-50), -50%);
+    font-size: rem(9);
     letter-spacing: rem(2);
     transition: transform 0.2s;
     text-align: right;
+    @media (--medium-and-up) {
+      transform: translate(rem(-60), -50%);
+      font-size: rem(11);
+    }
   }
   &:before {
     content: 'MENU';
   }
   &:after {
     opacity: 0;
-    transform: translateX(rem(10));
+    transform: translate(0, -50%);
     content: 'CLOSE';
   }
   & span {
+    position: relative;
+    z-index: 2;
     display: block;
     height: var(--barHeight);
     width: 50%;
@@ -40,6 +54,9 @@
     transform: rotate(0deg);
     transition: .3s ease-in-out;
     margin-bottom: rem(5);
+    @media (--medium-and-up) {
+      height: var(--barHeightLarge);
+    }
   }
   & span:nth-child(5),
   & span:nth-child(6) {
@@ -53,12 +70,15 @@
   }
   &.open {
     &:before {
-      transform: translateX(rem(10));
+      transform: translate(0, -50%);
       opacity: 0;
     }
     &:after {
-      transform: translateX(0%);
+      transform: translate(rem(-50), -50%);
       opacity: 1;
+      @media (--medium-and-up) {
+        transform: translate(rem(-60), -50%);
+      }        
     }
     & span:nth-child(1),
     & span:nth-child(2) {

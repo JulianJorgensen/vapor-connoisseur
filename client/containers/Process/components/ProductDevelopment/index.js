@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import ReactMarkdown from 'react-markdown';
-
 import productImage from 'assets/images/XY05_LOGO-24.png';
 import FeatureBoxes from 'components/FeatureBoxes';
+import { Desktop, MobileTablet } from 'utils/responsive';
 import styles from './index.css';
 
 @connect(({ site }) => ({
@@ -12,7 +10,7 @@ import styles from './index.css';
 }))
 export default class ProcessProductDevelopment extends Component {
   render() {
-    let { content } = this.props;
+    const { content } = this.props;
     return (
       <div className={styles.wrapper}>
         <div className={styles.container}>
@@ -23,8 +21,14 @@ export default class ProcessProductDevelopment extends Component {
             <FeatureBoxes features={content.productDevelopmentFeatures} twoCol />
           </div>
         </div>
-        <div className={styles.productImage} style={{backgroundImage: `url(${productImage})`}}></div>        
+
+        <Desktop>
+          <div className={styles.productImage} style={{ backgroundImage: `url(${productImage})` }} />
+        </Desktop>
+
+        <MobileTablet>
+        </MobileTablet>
       </div>
-    )
+    );
   }
 }

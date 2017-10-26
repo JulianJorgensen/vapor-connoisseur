@@ -5,14 +5,21 @@
   justify-content: center;
   position: relative;
   width: 100%;
+  @media (--medium-and-up) {
+    margin-top: rem(120);
+  }
   &:after {
     content: '';
     position: absolute;
     left: 0;
-    top: rem(-500);
+    top: rem(-130);
     width: 100%;
-    height: 200vh;
+    height: 100vh;
     background-color: var(--bokara);
+    @media (--medium-and-up) {
+      top: rem(-500);
+      height: 200vh;
+    }
   }
 }
 

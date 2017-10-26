@@ -1,8 +1,10 @@
 @import "globals.css";
 .wrapper{
-  position: absolute;
-  top: rem(220);
-  height: calc(100vh - rem(220));
+  @media (--medium-and-up) {
+    position: absolute;
+    top: rem(220);
+    height: calc(100vh - rem(220));
+  }
 }
 
 .headline {
@@ -25,6 +27,9 @@
   @apply --smallText;
   position: absolute;
   bottom: rem(60);
+  @media (--only-small) {
+    display: none;
+  }
 }
 
 .preTitle {

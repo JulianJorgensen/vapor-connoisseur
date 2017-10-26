@@ -3,22 +3,31 @@
   position: relative;
   z-index: 3;
   pointer-events: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .container {
   composes: globalContainer;
-  height: rem(500);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media (--medium-and-up) {
+    height: rem(500);
+  }
 }
 
 .hero{
-  position: absolute;
-  top: rem(220);
-  width: rem(500);
+  @media (--medium-and-up) {
+    position: absolute;
+    top: rem(220);
+    width: rem(500);
+  }
   & .headline{
-    font-size: rem(50);
-    margin-bottom: rem(30);
+    @media (--medium-and-up) {      
+      font-size: rem(50);
+      margin-bottom: rem(30);
+    }
   }
 }
 
@@ -27,6 +36,8 @@
   display: flex;
   justify-content: space-between;
   & .col{
-    width: calc(50% - rem(20));
+    @media (--medium-and-up) {
+      width: calc(50% - rem(20));
+    }
   }
 }

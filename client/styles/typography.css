@@ -7,15 +7,15 @@
   --h1: rem(80);
   --h1Mobile: rem(30);
   --h2: rem(38);
-  --h2Mobile: rem(24);
+  --h2Mobile: rem(20);
   --h3: rem(22);
-  --h3Mobile: rem(20);
+  --h3Mobile: rem(16);
   --h4: rem(18);
-  --h4Mobile: rem(18);
+  --h4Mobile: rem(14);
   --h5: rem(16);
-  --h5Mobile: rem(16);
+  --h5Mobile: rem(11);
   --h6: rem(14);
-  --h6Mobile: rem(14);
+  --h6Mobile: rem(11);
   --lineHeight: 1.15;
   --color: var(--muddyWaters);
 }

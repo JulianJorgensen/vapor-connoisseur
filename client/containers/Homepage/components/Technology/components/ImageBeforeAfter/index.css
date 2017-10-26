@@ -2,8 +2,8 @@
 .wrapper {}
 
 .images {
-  width: rem(700);
-  height: rem(700);
+  width: 100%;
+  height: 50vh;
   position: relative;
   & .image {
     width: inherit;
@@ -11,7 +11,7 @@
     position: absolute;
     overflow: hidden;
     & .inner {
-      width: rem(700);
+      width: 100vw;
       height: inherit;
       background-repeat: no-repeat;
       background-size: contain;
@@ -27,6 +27,13 @@
   }
   & .after {
     width: 100%;
+  }
+  @media (--medium-and-up) {
+    width: rem(700);
+    height: rem(700);
+    & .image .inner {
+      width: rem(700);
+    }
   }
 }
 
@@ -62,12 +69,15 @@
       content: '';
       position: absolute;
       font-family: var(--primaryFont);
-      font-size: rem(60);
+      font-size: rem(30);
       font-weight: bold;
       color: gray(4%);
       transform: translateX(-40%) translateY(-70%);
       z-index: -1;
       transition: all 0.2s;
+      @media (--medium-and-up) {
+        font-size: rem(60);        
+      }
     }
     &:after {
       content: '';

@@ -1,16 +1,23 @@
 @import "globals.css";
 .wrapper {
-  width: calc(25% - rem(30));
-  margin-bottom: rem(40);
+  width: calc(50% - rem(5));
+  margin-bottom: rem(10);
+  @media (--medium-and-up) {
+    width: calc(25% - rem(30));
+    margin-bottom: rem(40);
+  }
 }
 
 .image {
   width: 100%;
-  height: rem(360);
+  height: rem(150);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   position: relative;
+  @media (--medium-and-up) {
+    height: rem(360);
+  }
   & .loadingSpinner {
     opacity: 0;
     transition: all 0.2s;
@@ -30,14 +37,27 @@
 
 .productInfo{
   background-color: var(--bokara);
-  padding: rem(20);
+  padding: rem(10);
+  @media (--medium-and-up) {
+    padding: rem(20);
+  }
   & .title {
     color: white;
     margin-bottom: rem(10);
     text-transform: uppercase;
+    @media (--only-small) {
+      margin-bottom: rem(3);
+      font-size: rem(9);
+      line-height: rem(9);
+    }
   }
   
   & .price {
+    display: block;
     color: var(--muddyWaters);
+    @media (--only-small) {
+      font-size: rem(8);
+      line-height: rem(8);
+    }
   }
 }

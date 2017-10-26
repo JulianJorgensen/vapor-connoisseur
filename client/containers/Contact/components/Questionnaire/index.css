@@ -1,19 +1,21 @@
 @import "globals.css";
 .wrapper{
   composes: globalWrapper;
-  position: absolute;
   width: 100%;
-  top: rem(160);
   pointer-events: none;
-  &:before{
-    content: '';
-    background-color: var(--bokara);
+  @media (--medium-and-up) {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: 100%;
-    @apply --boxShadowLeft;
+    top: rem(160);
+    &:before{
+      content: '';
+      background-color: var(--bokara);
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      @apply --boxShadowLeft;
+    }
   }
 }
 .container {
@@ -23,8 +25,12 @@
   align-items: flex-end;
   & .inner{
     pointer-events: all;
-    width: rem(550);
-    padding: rem(90) rem(40) rem(60);
+    width: 100%;
+    padding: rem(30);
+    @media (--medium-and-up) {
+      width: rem(550);
+      padding: rem(90) rem(40) rem(60);
+    }
   }
 }
 

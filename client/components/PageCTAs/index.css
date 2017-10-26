@@ -5,13 +5,22 @@
 
 .container {
   composes: globalContainer;
-  display: flex;
-  justify-content: space-between;
+  @media (--medium-and-up) {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .contactCol,
 .sampleKitCol {
-  width: rem(500);
+  width: 100%;
+  @media (--medium-and-up) {
+    width: rem(500);
+  }
+}
+
+.contactCol{
+  margin-bottom: rem(60);
 }
 
 .headline {

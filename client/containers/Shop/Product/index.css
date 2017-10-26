@@ -1,13 +1,18 @@
 @import "globals.css";
 .wrapper {
-  margin-top: rem(200);
+  margin-top: rem(120);
   display: flex;
   justify-content: space-between;
-  & .leftCol {
-    width: calc(45% - rem(80));
-  }
-  & .rightCol {
-    width: calc(55% - rem(80));
+  flex-direction: column-reverse;
+  @media (--medium-and-up) {
+    margin-top: rem(200);
+    flex-direction: row;
+    & .leftCol {
+      width: calc(45% - rem(80));
+    }
+    & .rightCol {
+      width: calc(55% - rem(80));
+    }  
   }
 }
 
@@ -16,7 +21,10 @@
 }
 
 .details {
-  margin-top: rem(120);
+  margin-top: rem(30);
+  @media (--medium-and-up) {
+    margin-top: rem(120);
+  }
   & .specifications {
     margin-bottom: rem(30);
     padding-bottom: rem(30);
@@ -54,8 +62,11 @@
 .image {
   @apply --defaultBgImage;
   width: 100%;
-  height: rem(700);
+  height: rem(300);
   position: relative;
+  @media (--medium-and-up) {
+    height: rem(700);
+  }
 }
 
 .images {

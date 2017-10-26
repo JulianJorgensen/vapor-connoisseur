@@ -4,14 +4,16 @@
   composes: globalWrapper;
   width: 100%;
   position: relative;
-  &:before{
-    content: '';
-    background-image: var(--defaultGradient);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 70vw;
-    height: 100%;
+  @media (--medium-and-up) {
+    &:before{
+      content: '';
+      background-image: var(--defaultGradient);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 70vw;
+      height: 100%;
+    }
   }
 }
 
@@ -19,9 +21,11 @@
   composes: globalContainer;
   display: flex;
   flex-direction: column;
-  & .inner{
-    width: calc(50% - rem(90));
-    padding: rem(90) rem(60) rem(90) 0;
+  @media (--medium-and-up) {
+    & .inner{
+      width: calc(50% - rem(90));
+      padding: rem(90) rem(60) rem(90) 0;
+    }
   }
 }
 
