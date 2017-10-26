@@ -1,12 +1,13 @@
 import path from 'path';
+import compression from 'compression';
 import express from 'express';
 import logger from 'morgan';
-import expressStaticGzip from 'express-static-gzip';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import {} from 'dotenv/config';
 
 const app = express();
+app.use(compression());
 
 // routes
 const contentful = require('./server/routes/contentful');
@@ -21,16 +22,15 @@ app.use(logger('dev')); // Log requests to API using morgan
 // create application/x-www-form-urlencoded parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-  extended: true
+  extended: true,
 }));
 
 // cors
 app.use(cors({
-  origin: true
+  origin: true,
 }));
 
-// Serve Gzip
-app.use('/', expressStaticGzip(path.resolve(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Contentful route
 app.get('/getAllContent', contentful.getAllContent);
@@ -40,7 +40,7 @@ app.post('/sendEmail', sendEmail.send);
 
 // Catch all other paths and serve the index file
 app.all('*', function(request, response) {
-  response.sendFile(__dirname + '/public/index.html');
+  response.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
 // Listen to port
