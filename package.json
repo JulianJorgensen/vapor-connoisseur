@@ -38,6 +38,7 @@
     "better-react-spinkit": "^2.0.2",
     "body-parser": "^1.17.1",
     "classnames": "^2.2.5",
+    "compression": "^1.7.1",
     "compression-webpack-plugin": "^0.4.0",
     "contentful": "^4.6.2",
     "copy-webpack-plugin": "^4.0.1",
