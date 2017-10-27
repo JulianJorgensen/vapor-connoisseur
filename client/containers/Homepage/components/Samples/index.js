@@ -16,7 +16,9 @@ export default class HomepageSamples extends React.Component {
         <div className={styles.container}>
           <div className={styles.leftBox}>
             <div className={styles.content}>
-              <h2 className={styles.headline}>{content.sampleKitsHeadline}</h2>
+              <header className={styles.header}>
+                <h2 className={styles.headline}>{content.sampleKitsHeadline}</h2>
+              </header>
               <div className={styles.intro}><ReactMarkdown source={content.sampleKitsBody} /></div>
               <Button className={styles.cta} href="/sample-kits" label="Learn more" />
             </div>

@@ -1,12 +1,18 @@
 import Mailer from './Mailer';
 
-export const send = function(req, res) {
+export default (req, res) => {
   console.log(req.body);
-  let { template, fromName, fromEmail, subject, ...context } = req.body;
+  const {
+    template, fromName, fromEmail, subject, ...context
+  } = req.body;
 
-  let mailOptions = {
-    from: {name: fromName, address: fromEmail},
-    to: {name: 'Julian Jorgensen', address: 'me@julianjorgensen.com'},
+  const mailOptions = {
+    from: {
+      name: fromName, address: fromEmail,
+    },
+    to: {
+      name: 'Julian Jorgensen', address: 'me@julianjorgensen.com',
+    },
     subject,
     template: {
       name: `./server/emails/templates/${template}.pug`,
@@ -14,19 +20,21 @@ export const send = function(req, res) {
       context: {
         name: fromName,
         email: fromEmail,
-        ...context
-      }
-    }
+        ...context,
+      },
+    },
   };
 
   console.log('mailOptions', mailOptions);
 
-  return new Promise(function(resolve, reject) {
+  return new Promise((resolve, reject) => {
+    console.log('mailing');
     Mailer(mailOptions).then(() => {
+      console.log('mailed!');
       resolve();
-      res.status(200).send('success');      
+      res.status(200).send('success');
     }).catch((err) => {
       console.error('Error sending email ', err);
-    })
+    });
   });
 };

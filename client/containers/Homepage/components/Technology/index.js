@@ -24,7 +24,9 @@ export default class HomepageTechnology extends React.Component {
           </div>
 
           <div className={styles.process}>
-            <h2 className={styles.headline}>{content.customerPathwayHeadline}</h2>
+            <header className={styles.header}>
+              <h2 className={styles.headline}>{content.customerPathwayHeadline}</h2>
+            </header>
             <div className={styles.intro}><ReactMarkdown source={content.customerPathwayBody} /></div>
             <Button href="/process" label="Learn more" />
           </div>

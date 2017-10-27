@@ -23,9 +23,9 @@ export default class AgeVerification extends React.Component {
       <div className={styles.wrapper}>
         <h2 className={styles.headline}>Please verify your age</h2>
         <button className={styles.cta} onClick={this.verifyAge}><span>I am over 21</span></button>
-        <div className={styles.bgImage}>
+        {/* <div className={styles.bgImage}>
           <img src={bgSmoke} alt="" />
-        </div>
+        </div> */}
       </div>
     );
   }

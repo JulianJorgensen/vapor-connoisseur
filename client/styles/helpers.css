@@ -15,15 +15,19 @@
     margin-bottom: rem(30);
     & .headline {
       color: white;
-      padding-bottom: rem(30);
-      margin-bottom: rem(30);
+      padding-bottom: rem(15);
+      margin-bottom: rem(15);
       position: relative;
+      @media (--medium-and-up) {
+        padding-bottom: rem(30);
+        margin-bottom: rem(30);
+      }
       &:after {
         content: '';
         position: absolute;
         left: 0;
         bottom: 0;
-        height: rem(2);
+        height: rem(1);
         width: rem(30);
         background-color: var(--muddyWaters);
       }
@@ -32,6 +36,22 @@
       @media (--medium-and-up) {
         width: 60%;
       }
+    }
+  }
+  --homeHeader: {
+    @apply --defaultHeader;
+    @media (--only-small) {
+      margin-bottom: rem(15);
+    }
+    & .headline{
+      color: var(--muddyWaters);
+      @media (--only-small) {
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+      &:after {
+        top: rem(-30);
+      }  
     }
   }
   --defaultBgImage: {

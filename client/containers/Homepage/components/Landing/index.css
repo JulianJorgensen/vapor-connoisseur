@@ -1,8 +1,21 @@
 @import "globals.css";
 .wrapper {
   composes: globalWrapper;
+  position: relative;
   flex-direction: row;
   margin-bottom: rem(50);
+  width: 100%;
+  @media (--only-small) {
+    &:after{
+      content: 'SCROLL';
+      @apply --smallText;
+      transform: rotate(90deg) translateY(-50%);
+      color: white;
+      position: absolute;
+      left: 0;
+      bottom: 20%;
+    }
+  }
   @media (--large-and-up) {
     margin-bottom: rem(150);
   }
@@ -32,8 +45,20 @@
   width: 50%;
   height: 100vh;
   & .meta {
+    @apply --smallText;
     position: absolute;
     left: rem(60);
     bottom: rem(60);
+  }
+  @media (--only-small) {
+    width: 100%;
+    height: rem(200);
+    top: auto;
+    bottom: 0;
+    & .meta {
+      left: auto;
+      right: rem(30);
+      bottom: rem(30);
+    }  
   }
 }

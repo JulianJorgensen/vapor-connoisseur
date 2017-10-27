@@ -18,9 +18,13 @@
   }
   & .title {
     font-size: rem(16);
-    height: rem(50);
     letter-spacing: rem(2);
     word-spacing: normal;
+    margin-bottom: rem(15);
+    @media (--medium-and-up) {
+      height: rem(50);
+      margin-bottom: 0;
+    }
   }
   & .body {
     & p {

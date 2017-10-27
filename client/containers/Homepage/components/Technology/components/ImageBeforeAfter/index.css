@@ -69,7 +69,7 @@
       content: '';
       position: absolute;
       font-family: var(--primaryFont);
-      font-size: rem(30);
+      font-size: rem(26);
       font-weight: bold;
       color: gray(4%);
       transform: translateX(-40%) translateY(-70%);
@@ -108,6 +108,13 @@
       right: rem(-40);
       transform: translate(rem(110), rem(30)) rotate(18deg);
     }
+    @media (--medium-and-down) {
+      left: 10%;
+      top: 0;
+      &:after {
+        width: rem(100);
+      }
+    }
     &:hover~.before .section1 {
       & .st3 {
         stroke: black;
@@ -138,6 +145,12 @@
       left: rem(-40);
       transform: translateX(-100%);
     }
+    @media (--medium-and-down) {
+      top: 60%;
+      &:after {
+        width: rem(80);
+      }
+    }
     &:hover~.before .section2 .st2 {
       stroke: black;
       stroke-width: rem(3);
@@ -157,6 +170,13 @@
       height: rem(1);
       left: rem(-40);
       transform: translate(rem(-100), rem(-100)) rotate(45deg);
+    }
+    @media (--medium-and-down) {
+      right: 0;
+      bottom: 0;
+      &:after {
+        width: rem(80);
+      }
     }
     &:hover~.before .section3 .st2 {
       stroke: black;

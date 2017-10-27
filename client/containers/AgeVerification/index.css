@@ -27,10 +27,11 @@
     @apply --smallText;
     position: relative;
     z-index: 1;
+    padding: rem(5) rem(15);
   }
   &:before{
     content: '';
-    width: 100%;
+    width: calc(100% - rem(30));
     height: rem(2);
     background-color: var(--muddyWaters);
     position: absolute;
@@ -42,13 +43,13 @@
   &:hover{
     &:before{
       height: 100%;
-      width: 120%;  
+      width: 100%;
     }
   }
   @media (--only-small) {
     &:before{
       height: 100%;
-      width: 150%;  
+      width: 100%;
     }    
   }
 }

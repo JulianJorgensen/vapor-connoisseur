@@ -6,7 +6,7 @@ import bgSmoke from 'assets/images/VC_BGSmoke4.png';
 import styles from './index.css';
 
 @connect(({ site }) => ({
-  content: site.content.homepage
+  content: site.content.homepage,
 }))
 export default class HomepageAbout extends React.Component {
   render() {
@@ -15,7 +15,9 @@ export default class HomepageAbout extends React.Component {
       <div className={styles.wrapper}>
         <div className={styles.container}>
           <div className={styles.primaryCol}>
-            <h2 className={styles.headline}>{content.aboutHeadline}</h2>
+            <header className={styles.header}>
+              <h2 className={styles.headline}>{content.aboutHeadline}</h2>
+            </header>
             <div className={styles.body}>
               <ReactMarkdown source={content.aboutBody} />
             </div>
@@ -23,7 +25,9 @@ export default class HomepageAbout extends React.Component {
           </div>
 
           <div className={styles.services}>
-            <h2 className={styles.headline}>{content.servicesHeadline}</h2>
+            <header className={styles.header}>
+              <h2 className={styles.headline}>{content.servicesHeadline}</h2>
+            </header>
             <div className={styles.body}>
               <ReactMarkdown source={content.servicesBody} />
             </div>

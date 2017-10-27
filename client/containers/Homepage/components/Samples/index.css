@@ -22,12 +22,8 @@
   }
 }
 
-.headline {
-  margin-bottom: rem(40);
-}
-
-.intro {
-  margin-bottom: rem(40);
+.header{ 
+  @apply --homeHeader;
 }
 
 .leftBox {

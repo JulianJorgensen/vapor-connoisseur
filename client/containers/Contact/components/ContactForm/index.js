@@ -6,25 +6,25 @@ const formFields = [
   {
     label: 'Your name',
     name: 'name',
-    required: true
+    required: true,
   },
   {
     label: 'Your email',
     name: 'email',
     type: 'email',
-    required: true
+    required: true,
   },
   {
     label: 'Phone number',
     name: 'phone',
-    type: 'phone'
+    type: 'phone',
   },
   {
     label: 'Your message',
     name: 'message',
     multiline: true,
-    rows: 3
-  }
+    rows: 3,
+  },
 ];
 
 export default () => (

@@ -28,10 +28,14 @@
   margin-bottom: rem(40);
 }
 
+.header{
+  @apply --homeHeader;
+}
+
 .graphicCol {
   width: 100%;
   position: relative;
-  margin-bottom: rem(60);
+  margin-bottom: rem(120);
   -webkit-user-select: none !important;
   & .graphicDesktop {
     display: none;
