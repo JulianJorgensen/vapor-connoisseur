@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import productImage from 'assets/images/XY05_LOGO-24.png';
+import productImageMobile from 'assets/images/XY05_LOGO-24-small.png';
 import FeatureBoxes from 'components/FeatureBoxes';
 import { Desktop, MobileTablet } from 'utils/responsive';
 import styles from './index.css';
@@ -27,6 +28,7 @@ export default class ProcessProductDevelopment extends Component {
         </Desktop>
 
         <MobileTablet>
+          <div className={styles.productImage} style={{ backgroundImage: `url(${productImageMobile})` }} />
         </MobileTablet>
       </div>
     );

@@ -19,7 +19,7 @@ export default class ProcessSamples extends Component {
             <h2 className={styles.headline}>{content.samplesHeadline}</h2>
           </header>
 
-          <FeatureBoxes features={content.samplesFeatures} />
+          <FeatureBoxes className={styles.featureBoxes} boxClassName={styles.box} features={content.samplesFeatures} />
         </div>
       </div>
     )

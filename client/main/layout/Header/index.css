@@ -46,7 +46,11 @@
   pointer-events: auto;
   color: white;
   cursor: pointer;
-  margin-right: rem(100);
+  margin-right: rem(70);
+  word-spacing: 0;
+  @media (--medium-and-up) {
+    margin-right: rem(100);
+  }    
 }
 
 :global {

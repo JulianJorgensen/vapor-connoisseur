@@ -6,6 +6,7 @@
   right: 0;
   height: 100%;
   width: 350px;
+  max-width: 100%;
   background-color: white;
   display: flex;
   flex-direction: column;

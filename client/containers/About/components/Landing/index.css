@@ -18,7 +18,7 @@
   @media (--only-small) {
     flex-direction: column;
     &:after{
-      top: rem(270);
+      top: rem(230);
       width: 100%;
       height: rem(400);
     }
@@ -53,6 +53,6 @@
     left: rem(30);
     height: rem(200);
     width: calc(100% - rem(30));
-    margin-top: rem(30);
+    margin-top: rem(0);
   }
 }

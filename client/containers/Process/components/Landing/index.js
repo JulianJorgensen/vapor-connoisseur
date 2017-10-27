@@ -15,7 +15,7 @@ export default class CustomerPathwayLanding extends Component {
     return (
       <div className={styles.wrapper}>
         <div className={styles.container}>
-          <Hero headline={content.headline} />
+          <Hero headline={content.headline} className={styles.hero} />
 
           <div className={styles.productImage} style={{ backgroundImage: `url(${productImage})` }} />
 

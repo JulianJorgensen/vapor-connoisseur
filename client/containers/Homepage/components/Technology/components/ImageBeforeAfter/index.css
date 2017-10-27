@@ -5,6 +5,7 @@
   width: 100%;
   height: 50vh;
   position: relative;
+  margin-bottom: rem(60);
   & .image {
     width: inherit;
     height: inherit;
@@ -31,6 +32,7 @@
   @media (--medium-and-up) {
     width: rem(700);
     height: rem(700);
+    margin-bottom: 0;
     & .image .inner {
       width: rem(700);
     }
@@ -85,6 +87,7 @@
       background-color: var(--muddyWaters);
       opacity: 0;
       transition: all 0.2s;
+      height: rem(1);
     }
     &:hover {
       opacity: 1;
@@ -104,15 +107,16 @@
     }
     &:after {
       width: rem(190);
-      height: rem(1);
       right: rem(-40);
       transform: translate(rem(110), rem(30)) rotate(18deg);
     }
     @media (--medium-and-down) {
       left: 10%;
+      right: auto;
       top: 0;
       &:after {
         width: rem(100);
+        transform: translate(rem(50), rem(10)) rotate(18deg);        
       }
     }
     &:hover~.before .section1 {
@@ -141,14 +145,15 @@
     }
     &:after {
       width: rem(160);
-      height: rem(1);
       left: rem(-40);
       transform: translateX(-100%);
     }
     @media (--medium-and-down) {
-      top: 60%;
+      top: 50%;
+      text-align: right;
       &:after {
-        width: rem(80);
+        width: rem(60);
+        transform: translateX(-10%);        
       }
     }
     &:hover~.before .section2 .st2 {
@@ -167,7 +172,6 @@
     }
     &:after {
       width: rem(130);
-      height: rem(1);
       left: rem(-40);
       transform: translate(rem(-100), rem(-100)) rotate(45deg);
     }
@@ -176,6 +180,7 @@
       bottom: 0;
       &:after {
         width: rem(80);
+        transform: translate(rem(-30), rem(-30)) rotate(45deg);
       }
     }
     &:hover~.before .section3 .st2 {
@@ -194,9 +199,14 @@
     }
     &:after {
       width: rem(130);
-      height: rem(1);
       right: 0;
       transform: translate(rem(20), rem(80)) rotate(45deg);
+    }
+    @media (--medium-and-down) {
+      &:after {
+        width: rem(40);
+        transform: translate(rem(-40), rem(40)) rotate(90deg);
+      }
     }
     &:hover~.before .section4 .st2 {
       stroke: black;
@@ -264,12 +274,12 @@
     display: inline-block;
     position: absolute;
     top: 50%;
-    transform: translate3d(-50%, rem(-18), 0);
+    transform: translate3d(-50%, rem(-14), 0);
     background-color: white;
     border-radius: 50%;
     cursor: pointer;
-    width: rem(40);
-    height: rem(40);
+    width: rem(30);
+    height: rem(30);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -294,7 +304,7 @@
       @apply --smallText;
       letter-spacing: rem(5);
       position: absolute;
-      top: rem(-30);
+      top: rem(-20);
       transform: translateX(-50%) scale(0.8);
       color: gray(60%);
       left: 50%;
@@ -302,6 +312,14 @@
     }
     &:focus {
       outline: 0;
+    }
+    @media (--large-and-up) {
+      width: rem(40);
+      height: rem(40);  
+      transform: translate3d(-50%, rem(-18), 0);
+      & .rangeslider__handle-label {
+        top: rem(-30);
+      }
     }
   }
 }

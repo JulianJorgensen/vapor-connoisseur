@@ -5,7 +5,7 @@
 
 :root {   
   --h1: rem(80);
-  --h1Mobile: rem(30);
+  --h1Mobile: rem(26);
   --h2: rem(38);
   --h2Mobile: rem(20);
   --h3: rem(22);
@@ -58,7 +58,7 @@
     line-height: calc(var(--h1Mobile) * var(--lineHeight));
     text-transform: uppercase;
     letter-spacing: rem(4);
-    word-spacing: rem(10);
+    word-spacing: rem(5);
     @media (--large-and-up) {
       font-size: var(--h1);
       line-height: calc(var(--h1) * var(--lineHeight));
@@ -72,7 +72,7 @@
     line-height: calc(var(--h2Mobile) * var(--lineHeight));
     text-transform: uppercase;
     letter-spacing: rem(6);
-    word-spacing: rem(10);
+    word-spacing: rem(5);
     @media (--large-and-up) {
       font-size: var(--h2);
       line-height: calc(var(--h2) * var(--lineHeight));
@@ -86,7 +86,7 @@
     line-height: calc(var(--h3Mobile) * var(--lineHeight));
     text-transform: uppercase;
     letter-spacing: rem(4);
-    word-spacing: rem(6);
+    word-spacing: rem(4);
     @media (--large-and-up) {
       font-size: var(--h3);
       line-height: calc(var(--h3) * var(--lineHeight));
@@ -100,7 +100,7 @@
     line-height: calc(var(--h4Mobile) * var(--lineHeight));
     text-transform: uppercase;
     letter-spacing: rem(4);
-    word-spacing: rem(6);
+    word-spacing: rem(4);
     @media (--large-and-up) {
       font-size: var(--h4);
       line-height: calc(var(--h4) * var(--lineHeight));

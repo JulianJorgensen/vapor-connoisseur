@@ -31,10 +31,15 @@
   background-position: left bottom;
   background-size: contain;
   background-repeat: no-repeat;
-  width: rem(1300);
-  height: rem(1300);
+  width: rem(400);
+  height: rem(400);
   position: absolute;
   top: 0;
   right: 0;
-  transform: translateX(50%) translateY(-25%);
+  transform: translateX(60%) translateY(-85%);
+  @media (--large-and-up) {    
+    width: rem(1300);
+    height: rem(1300);
+    transform: translateX(50%) translateY(-25%);
+  }
 }

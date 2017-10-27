@@ -1,5 +1,18 @@
 @import "globals.css";
 .wrapper{
+  @media (--only-small) {    
+    margin-top: rem(160);
+    position: relative;
+    &:before{
+      content: '';
+      position: absolute;
+      height: rem(1);
+      width: rem(40);
+      background-color: var(--muddyWaters);
+      top: rem(-30);
+      left: 0;
+    }
+  }
   @media (--medium-and-up) {
     position: absolute;
     top: rem(220);

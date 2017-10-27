@@ -24,12 +24,8 @@ export default (req, res) => {
     },
   };
 
-  console.log('mailOptions', mailOptions);
-
   return new Promise((resolve, reject) => {
-    console.log('mailing');
     Mailer(mailOptions).then(() => {
-      console.log('mailed!');
       resolve();
       res.status(200).send('success');
     }).catch((err) => {

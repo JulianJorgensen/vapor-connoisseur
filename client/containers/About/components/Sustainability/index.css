@@ -27,26 +27,30 @@
   background-repeat: none;
   background-size: cover;
   background-position: center center;
-  margin: rem(60) 0 0;
+  margin: rem(40) 0 0;
   position: relative;
+  & .meta {
+    display: none;
+  }
   @media (--medium-and-up) {
     margin: rem(60) 0 0;
     height: rem(500);
-  }
-  & .meta {
-    @apply --smallText;
-    position: absolute;
-    bottom: rem(60);
-    right: rem(120);
-    &:after {
-      content: '';
+    & .meta {
+      display: block;
+      @apply --smallText;
       position: absolute;
-      top: 50%;
-      right: rem(-120);
-      transform: translateX(50%) translateY(-50%);
-      width: rem(50);
-      height: rem(1);
-      background-color: var(--muddyWaters);
+      bottom: rem(60);
+      right: rem(120);
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: rem(-120);
+        transform: translateX(50%) translateY(-50%);
+        width: rem(50);
+        height: rem(1);
+        background-color: var(--muddyWaters);
+      }
     }
   }
 }

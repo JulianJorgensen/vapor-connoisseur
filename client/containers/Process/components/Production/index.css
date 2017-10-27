@@ -35,13 +35,16 @@
 
 .productImage{
   @apply --defaultBgImage;
-  width: 80%;
+  width: 100%;
   height: rem(400);
+  margin-top: rem(-30);
+  transform: translate(rem(-30), rem(-70));
   @media (--medium-and-up) {
     position: absolute;
     top: 0;
     left: 0;
     width: 50%;
+    margin-top: 0;
     height: calc(100% + rem(170));      
     transform: translateY(-19%);
   }

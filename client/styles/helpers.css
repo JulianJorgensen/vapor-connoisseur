@@ -48,10 +48,16 @@
       @media (--only-small) {
         padding-bottom: 0;
         margin-bottom: 0;
+        &:after {
+          top: rem(-30);
+        }
       }
-      &:after {
-        top: rem(-30);
-      }  
+      @media (--medium-and-up) {
+        padding-bottom: 0;
+        &:after{
+          display: none;
+        }
+      }
     }
   }
   --defaultBgImage: {

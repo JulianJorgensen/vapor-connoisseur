@@ -2,7 +2,7 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  @media (--large-and-up) {
+  @media (--medium-and-up) {
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -12,7 +12,7 @@
 .box {
   width: 100%;
   margin-bottom: rem(30);
-  @media (--large-and-up) {
+  @media (--medium-and-up) {
     width: calc(33% - rem(40));
     margin-bottom: rem(70);
   }
