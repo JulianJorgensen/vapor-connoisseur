@@ -1,7 +1,6 @@
 import Mailer from './Mailer';
 
 export default (req, res) => {
-  console.log(req.body);
   const {
     template, fromName, fromEmail, subject, ...context
   } = req.body;

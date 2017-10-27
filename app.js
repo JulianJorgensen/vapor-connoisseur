@@ -36,7 +36,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/getAllContent', contentful.getAllContent);
 
 // Send email route
-app.post('/sendEmail', sendEmail.send);
+app.post('/sendEmail', sendEmail.default);
 
 // Catch all other paths and serve the index file
 app.all('*', function(request, response) {
