@@ -1,6 +1,6 @@
 @import "globals.css";
 .wrapper {
-  margin-top: rem(120);
+  margin-top: rem(200);
   display: flex;
   justify-content: space-between;
   flex-direction: column-reverse;
@@ -18,6 +18,10 @@
 
 .title{
   color: white;
+  @media (--only-small) {
+    position: absolute;
+    top: rem(150);
+  }
 }
 
 .details {

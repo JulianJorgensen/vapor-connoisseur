@@ -13,20 +13,26 @@ export default class Products extends Component {
     this.setProducts();
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.products !== this.props.products) {
-      // trigger parent onLoaded
-      this.props.onLoaded();
-    }
+  setCategories() {
+    const { products } = this.props;
+    const categories = [{
+      label: 'All products',
+      value: '',
+    }];
+    products.map((product) => {
+      if (!categories.find(category => category.label === product.productType)) {
+        categories.push({
+          label: product.productType,
+          value: product.productType.toLowerCase(),
+        });
+      }
+      return true;
+    });
+    this.setState({ categories });
   }
 
   setProducts() {
     const { products } = this.props;
-
-    if (!products) {
-      return false;
-    }
-
     const { filter } = this.props.match.params || null;
 
     if (filter) {
@@ -36,6 +42,8 @@ export default class Products extends Component {
         products,
       });
     }
+
+    this.setCategories();
     return true;
   }
 
@@ -53,7 +61,7 @@ export default class Products extends Component {
   }
 
   render() {
-    const { products } = this.state;
+    const { products, categories } = this.state;
 
     if (!products) {
       return (
@@ -74,7 +82,7 @@ export default class Products extends Component {
 
     return (
       <div className={styles.container}>
-        <Nav />
+        <Nav categories={categories} active={this.props.match.params.filter} />
         <div className={styles.products}>
           {renderProducts}
         </div>

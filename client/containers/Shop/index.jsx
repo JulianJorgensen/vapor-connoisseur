@@ -56,6 +56,8 @@ export default class Shop extends Component {
   render() {
     const { shop } = this.props;
 
+    if (!shop.products) return false;
+
     const renderPage = () => {
       if (shop.product) {
         return (

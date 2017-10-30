@@ -10,7 +10,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: rem(140);
   @media (--medium-and-up) {
     margin-top: rem(200);
   }
