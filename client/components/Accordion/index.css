@@ -1,0 +1,42 @@
+@import "globals.css";
+.item {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  padding: rem(10) 0;
+  border-bottom: 1px solid gray(5%);
+  transition: all 0.2s;
+  &:first-child {
+    border-top: 1px solid gray(5%);
+  }
+}
+
+.active {
+  & .title {
+    margin-bottom: rem(5);
+    opacity: 0.6;
+  }
+  & .title:after {
+    transform: rotate(45deg);
+  }
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  color: var(--muddyWaters);
+  &:after {
+    content: '+';
+    font-weight: bold;
+    transition: all 0.2s;
+    font-size: rem(20);
+  }
+}
+
+.content{
+  text-align: left;
+}

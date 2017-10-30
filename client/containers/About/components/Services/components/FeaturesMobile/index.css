@@ -1,0 +1,12 @@
+@import "globals.css";
+.wrapper{
+  background-color: var(--bokara);
+  position: relative;
+  z-index: 2;
+}
+
+.container{
+  composes: globalContainer;
+  padding-top: 0;
+  padding-bottom: rem(60);
+}

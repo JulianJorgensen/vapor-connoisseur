@@ -11,8 +11,28 @@ import styles from './index.css';
   content: site.content.about || {},
 }))
 export default class AboutServices extends Component {
+  state = {};
+
+  componentWillMount() {
+    const features = [];
+    this.props.content.serviceFeatures.map(feature => features.push(feature));
+    this.setState({ features });
+  }
+
   render() {
     const { content } = this.props;
+    const { features } = this.state;
+
+    const renderFeatures = () => {
+      if (!features) return false;
+      return (
+        <div>
+          <Desktop component={<Features features={features} />} />
+          <MobileTablet component={<FeaturesMobile features={features} />} />
+        </div>
+      );
+    };
+
     return (
       <div className={styles.wrapper}>
         <div className={styles.container}>
@@ -20,10 +40,8 @@ export default class AboutServices extends Component {
             <h2 className={styles.headline}>{content.servicesHeadline}</h2>
             <div className={styles.intro}><ReactMarkdown source={content.servicesBody} /></div>
           </header>
-
-          <Desktop component={<Features />} />
-          <MobileTablet component={<FeaturesMobile />} />
         </div>
+        {renderFeatures()}
       </div>
     );
   }
