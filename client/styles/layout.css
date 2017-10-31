@@ -25,7 +25,7 @@
   z-index: 2;
   flex-direction: row;
   @media (--large-and-up) {
-    width: rem(1300);
+    width: rem(1100);
     max-width: 100%;
   }      
 }
