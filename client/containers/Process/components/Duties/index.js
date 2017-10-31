@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import ReactMarkdown from 'react-markdown';
-
 import FeatureBoxes from 'components/FeatureBoxes';
 import styles from './index.css';
 
@@ -11,7 +8,7 @@ import styles from './index.css';
 }))
 export default class ProcessDuties extends Component {
   render() {
-    let { content } = this.props;
+    const { content } = this.props;
     return (
       <div className={styles.wrapper}>
         <div className={styles.container}>
@@ -22,6 +19,6 @@ export default class ProcessDuties extends Component {
           <FeatureBoxes features={content.dutiesFeatures} />
         </div>
       </div>
-    )
+    );
   }
 }

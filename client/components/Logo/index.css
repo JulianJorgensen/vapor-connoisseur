@@ -2,6 +2,7 @@
   & path,
   & circle,
   & polyline {
+    transition: all 0.2s; 
     fill: white;
   }
 }

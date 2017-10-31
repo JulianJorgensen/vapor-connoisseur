@@ -20,14 +20,13 @@
   }    
   &:before,
   &:after {
+    @apply --smallText;
     color: white;
     position: absolute;
     z-index: 1;
     top: 50%;
     left: 0;
     transform: translate(rem(-40), -50%);
-    font-size: rem(9);
-    letter-spacing: rem(2);
     transition: transform 0.2s;
     text-align: right;
     @media (--medium-and-up) {

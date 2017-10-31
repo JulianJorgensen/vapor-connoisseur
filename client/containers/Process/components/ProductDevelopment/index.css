@@ -40,6 +40,6 @@
   @media (--large-and-up) {    
     width: rem(1300);
     height: rem(1300);
-    transform: translateX(50%) translateY(-25%);
+    transform: translateX(35%) translateY(-27%);
   }
 }

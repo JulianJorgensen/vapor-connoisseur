@@ -10,6 +10,9 @@
   width: 100%;
   & a {
     color: white;
+    &:hover{
+      color: var(--muddyWaters);
+    }
   }
   @media (--medium-and-up) {
     padding-top: rem(60);
@@ -41,8 +44,8 @@
     width: rem(40);
     height: rem(40);
     @media (--medium-and-up) {
-      width: rem(60);
-      height: rem(60);
+      width: rem(50);
+      height: rem(50);
       margin-right: rem(30);
     }
     & path,
@@ -101,8 +104,5 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  opacity: var(--defaultSmokeOpacity);
-  & img {
-    width: 100%;
-  }
+  @apply --defaultSmoke;
 }

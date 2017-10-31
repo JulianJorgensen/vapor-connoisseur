@@ -17,7 +17,7 @@ export default ({
       { preTitle ? <div className={styles.preTitle}>{preTitle}</div> : ''}
       <h1 className={styles.headline}><ReactMarkdown source={headline} /></h1>
       {intro ? <div className={styles.intro}><ReactMarkdown source={intro} /></div> : ''}
-      {seeMore ? <div className={styles.seeMore}>Scroll to see more</div> : ''}
+      {seeMore ? <div className={styles.seeMore}>Scroll to learn more</div> : ''}
     </div>
   );
 };

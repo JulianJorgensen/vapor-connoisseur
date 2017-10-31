@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { userIsAuthenticated } from 'routes/utils';
 import Logo from 'components/Logo';
 
-import bgImage from 'assets/images/VC_BGSmoke3.png';
+import SmokeBg from 'assets/icons/smoke/VC_BGSmoke3.svg';
 import styles from './index.css';
 
 @withRouter
@@ -45,7 +45,7 @@ export default class Footer extends React.Component {
           </div>
         </div>
         <div className={styles.bgImage}>
-          <img src={bgImage} alt="" />
+          <SmokeBg />
         </div>
       </footer>
     )

@@ -7,10 +7,11 @@
   text-align: center;
   padding-left: rem(60);
   padding-right: rem(10);
+  margin-top: rem(5);
   height: rem(36);
   color: white;
   text-decoration: none;
-  transition: all 0.2s;
+  transition: all 0.2s easeOutCubic;
   border: 0;
   background-color: transparent;
   user-select: none;
@@ -28,7 +29,7 @@
     height: rem(2);
     width: rem(40);
     background-color: var(--robRoy);
-    transition: all 0.2s;
+    transition: all 0.2s easeOutCubic;
   }
   &:hover {
     padding-left: rem(35);

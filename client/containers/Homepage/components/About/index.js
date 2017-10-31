@@ -2,7 +2,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { connect } from 'react-redux';
 import Button from 'components/Button';
-import bgSmoke from 'assets/images/VC_BGSmoke4.png';
+import SmokeBg from 'assets/icons/smoke/VC_BGSmoke4.svg';
 import styles from './index.css';
 
 @connect(({ site }) => ({
@@ -26,7 +26,7 @@ export default class HomepageAbout extends React.Component {
 
           <div className={styles.services}>
             <header className={styles.header}>
-              <h2 className={styles.headline}>{content.servicesHeadline}</h2>
+              <h3 className={styles.headline}>{content.servicesHeadline}</h3>
             </header>
             <div className={styles.body}>
               <ReactMarkdown source={content.servicesBody} />
@@ -36,7 +36,7 @@ export default class HomepageAbout extends React.Component {
         </div>
 
         <div className={styles.bgImage}>
-          <img src={bgSmoke} alt="" />
+          <SmokeBg />
         </div>
       </div>
     );

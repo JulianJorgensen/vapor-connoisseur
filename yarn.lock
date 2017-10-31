@@ -6128,6 +6128,12 @@ postcss-each@^0.10.0:
     postcss "^6.0.1"
     postcss-simple-vars "^4.0.0"
 
+postcss-easings@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-easings/-/postcss-easings-1.0.0.tgz#618b1f7ee289808ec30cf014115a57ae198f7ec6"
+  dependencies:
+    postcss "^6.0.1"
+
 postcss-filter-plugins@^2.0.0:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/postcss-filter-plugins/-/postcss-filter-plugins-2.0.2.tgz#6d85862534d735ac420e4a85806e1f5d4286d84c"

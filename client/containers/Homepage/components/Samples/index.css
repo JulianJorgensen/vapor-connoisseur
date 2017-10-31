@@ -41,7 +41,7 @@
   background: var(--defaultGradient);
   @media (--large-and-up) {
     padding: 0 0 rem(120) 0;
-    height: rem(700);
+    height: rem(600);
     width: 50%;
   }
   & .content {
@@ -68,10 +68,10 @@
     background-color: gray(90%);
 
     @media (--medium-and-up) {
-      top: rem(160);
+      top: rem(120);
       width: rem(80);
       height: rem(1);
-      transform: translateX(-50%);  
+      transform: translateX(-90%);
     }
   }
 }
@@ -90,7 +90,7 @@
   position: relative;
   @apply --boxShadowLeft;
   @media (--large-and-up) {
-    height: rem(800);
+    height: rem(680);
     width: 50%;
     margin-top: 0;
   }

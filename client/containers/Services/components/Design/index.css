@@ -22,8 +22,5 @@
   left: 0;
   z-index: 2;
   transform: translateY(-30%);
-  opacity: var(--defaultSmokeOpacity);
-  & img {
-    width: 100%;
-  }
+  @apply --defaultSmoke;
 }

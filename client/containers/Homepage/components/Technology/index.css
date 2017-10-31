@@ -15,7 +15,7 @@
   overflow: hidden;
   @media (--large-and-up) {
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     flex-direction: row;
   }
 }
@@ -56,6 +56,6 @@
 
 .process {
   @media (--large-and-up) {
-    width: 40%;
+    width: calc(33.33% - rem(40));
   }
 }

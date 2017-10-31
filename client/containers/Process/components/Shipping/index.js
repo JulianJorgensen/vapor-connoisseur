@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import bgSmoke from 'assets/images/VC_BGSmoke1.png';
+import BgSmoke from 'assets/icons/smoke/VC_BGSmoke1.svg';
 import FeatureBoxes from 'components/FeatureBoxes';
 import styles from './index.css';
 
@@ -20,7 +20,7 @@ export default class ProcessShipping extends Component {
           <FeatureBoxes features={content.shippingFeatures} />
         </div>
         <div className={styles.bgImage}>
-          <img src={bgSmoke} alt="" />
+          <BgSmoke />
         </div>
       </div>
     );

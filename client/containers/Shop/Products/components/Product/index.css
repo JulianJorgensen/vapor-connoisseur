@@ -16,7 +16,7 @@
   background-position: center center;
   position: relative;
   @media (--medium-and-up) {
-    height: rem(360);
+    height: rem(300);
   }
   & .loadingSpinner {
     opacity: 0;

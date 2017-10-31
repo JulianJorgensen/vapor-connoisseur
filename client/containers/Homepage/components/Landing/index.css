@@ -48,13 +48,13 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 50%;
+  width: 58%;
   height: 100vh;
   & .meta {
     @apply --smallText;
     position: absolute;
-    left: rem(60);
-    bottom: rem(60);
+    left: rem(140);
+    bottom: rem(70);
   }
   @media (--only-small) {
     width: 100%;

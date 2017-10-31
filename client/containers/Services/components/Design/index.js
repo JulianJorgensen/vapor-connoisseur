@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactMarkdown from 'react-markdown';
-import smokeBg from 'assets/images/VC_BGSmoke2.png';
+import SmokeBg from 'assets/icons/smoke/VC_BGSmoke2.svg';
 import FeatureBoxes from 'components/FeatureBoxes';
 import styles from './index.css';
 
@@ -21,7 +21,7 @@ export default class ServicesDesign extends Component {
           <FeatureBoxes features={content.designFeatures} />
         </div>
         <div className={styles.bgImage}>
-          <img src={smokeBg} alt="" />
+          <SmokeBg />
         </div>
       </div>
     );

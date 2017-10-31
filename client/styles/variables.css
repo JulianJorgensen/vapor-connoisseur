@@ -27,7 +27,6 @@
 
 :root {
   --defaultGradient: linear-gradient(to bottom right, var(--mirage), var(--blackRussion));
-  --defaultSmokeOpacity: 0.4;
 }
 
 

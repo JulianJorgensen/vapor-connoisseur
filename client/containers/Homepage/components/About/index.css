@@ -21,7 +21,7 @@
 .primaryCol {
   margin-bottom: rem(60);
   @media (--large-and-up) {
-    width: 70%;
+    width: 66.67%;
     margin-bottom: 0;
   }
   & .header{
@@ -48,6 +48,7 @@
       column-count: 2;
       column-gap: rem(60);
       column-width: 50%;
+      margin-bottom: rem(30);
     }
   }
 }
@@ -58,18 +59,12 @@
     & .header{
       @apply --homeHeader;
     }
-    & .body {
-      column-count: 2;
-      column-gap: rem(30);
-      column-width: 50%;
-      margin-bottom: rem(15);
-    }
   }
   @media (--large-and-up) {
-    margin-top: rem(30);
-    width: 15%;
+    margin-top: rem(35);
+    width: rem(180);
     & .body {
-      margin: rem(20) 0;
+      margin: rem(30) 0;
     }
     & .headline {
       font-size: rem(18);
@@ -84,11 +79,7 @@
 }
 
 .bgImage {
-  width: 100%;
   position: absolute;
   left: 0;
-  opacity: var(--defaultSmokeOpacity);
-  & img {
-    width: 100%;
-  }
+  @apply --defaultSmoke;
 }

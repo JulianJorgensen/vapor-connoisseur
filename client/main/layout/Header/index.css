@@ -6,12 +6,13 @@
   top: 0;
   pointer-events: none;
   @media (--large-and-up) {
-    top: rem(60);
+    top: rem(70);
   }
 }
 
 .container {
   composes: globalContainer;
+  padding-top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,6 +34,13 @@
   pointer-events: auto;
   width: rem(30);
   height: rem(30);
+  &:hover{
+    & path,
+    & polyline,
+    & circle {
+      fill: var(--muddyWaters);
+    }
+  }
   @media (--large-and-up) {
     width: rem(50);
     height: rem(50);

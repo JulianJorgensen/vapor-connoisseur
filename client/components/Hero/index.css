@@ -15,8 +15,8 @@
   }
   @media (--medium-and-up) {
     position: absolute;
-    top: rem(220);
-    height: calc(100vh - rem(220));
+    top: rem(300);
+    height: calc(100vh - rem(300));
   }
 }
 
@@ -32,14 +32,14 @@
   width: 100%;
   white-space: pre-wrap;
   @media (--large-and-up) {
-    width: rem(550);    
+    width: rem(450);
   }
 }
 
 .seeMore{
   @apply --smallText;
   position: absolute;
-  bottom: rem(60);
+  bottom: rem(70);
   @media (--only-small) {
     display: none;
   }

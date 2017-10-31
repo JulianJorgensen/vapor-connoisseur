@@ -60,11 +60,11 @@
   }
   @media (--medium-and-up) {
     position: relative;
-    margin-top: rem(400);
+    margin-top: rem(500);
     margin-bottom: rem(100);
     padding: rem(60) rem(80);
-    height: rem(600);
-    left: rem(-40);  
+    height: rem(500);
+    left: rem(-40);
     & .intro {
       width: rem(400);
     }      

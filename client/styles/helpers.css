@@ -4,11 +4,9 @@
     font-size: rem(8);
     text-transform: uppercase;
     letter-spacing: rem(1.8);
-    word-spacing: rem(3.5);
     @media (--large-and-up) {
-      font-size: rem(11);
-      letter-spacing: rem(2);
-      word-spacing: rem(4);
+      font-size: rem(9);
+      letter-spacing: rem(4);
     }
   }
   --defaultHeader: {
@@ -59,6 +57,17 @@
         }
       }
     }
+  }
+  --defaultSmoke: {
+    width: 100%;
+    & svg{
+      width: 100%;
+      opacity: 0.4;
+      & path{
+        stroke: black;
+        fill: none;
+      }
+    }  
   }
   --defaultBgImage: {
     background-repeat: no-repeat;

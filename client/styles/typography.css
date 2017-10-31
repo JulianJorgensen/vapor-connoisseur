@@ -4,9 +4,9 @@
 @custom-selector :--inputs input,textarea,radio,select,label;
 
 :root {   
-  --h1: rem(80);
+  --h1: rem(60);
   --h1Mobile: rem(26);
-  --h2: rem(38);
+  --h2: rem(28);
   --h2Mobile: rem(20);
   --h3: rem(22);
   --h3Mobile: rem(16);
@@ -30,7 +30,6 @@
     line-height: 200%;
   }
   & :--headings {
-    font-family: var(--primaryFont);
     font-style: normal;
     margin: 0;
     font-weight: 400;
@@ -48,36 +47,35 @@
     text-decoration: none;
     cursor: pointer;
     color: black;
+    transition: all 0.2s;
   }
   & p {
     margin-top: 0;
   }
   & h1,
   & h1 * {
+    font-family: var(--primaryFont);
     font-size: var(--h1Mobile);
     line-height: calc(var(--h1Mobile) * var(--lineHeight));
     text-transform: uppercase;
     letter-spacing: rem(4);
-    word-spacing: rem(5);
     @media (--large-and-up) {
       font-size: var(--h1);
       line-height: calc(var(--h1) * var(--lineHeight));
       letter-spacing: rem(10);
-      word-spacing: rem(15);
     }
   }
   & h2,
   & h2 * {
+    font-family: var(--primaryFont);
     font-size: var(--h2Mobile);
     line-height: calc(var(--h2Mobile) * var(--lineHeight));
     text-transform: uppercase;
-    letter-spacing: rem(6);
-    word-spacing: rem(5);
+    letter-spacing: rem(5);
     @media (--large-and-up) {
       font-size: var(--h2);
       line-height: calc(var(--h2) * var(--lineHeight));
-      letter-spacing: rem(6);
-      word-spacing: rem(10);
+      letter-spacing: rem(8);
     }
   }
   & h3,
