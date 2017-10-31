@@ -1,5 +1,6 @@
 @import "globals.css";
 .wrapper {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -40,7 +41,7 @@
   width: 50%;
   height: rem(500);
   z-index: 2;
-  top: rem(200);
+  bottom: rem(70);
   right: 0;
   & .meta{
     position: absolute;

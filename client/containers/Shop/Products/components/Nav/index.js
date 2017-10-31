@@ -19,7 +19,7 @@ export default class ProductsNav extends Component {
         <Desktop>
           <ul className={styles.wrapper}>
             {categories.map(category => (
-              <li><Link to={`/shop/${category.value}`}>{category.label}</Link></li>
+              <li key={category.value}><Link to={`/shop/${category.value}`} className={active === category.value ? styles.active : ''}>{category.label}</Link></li>
             ))}
           </ul>
         </Desktop>

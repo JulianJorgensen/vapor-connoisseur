@@ -1,6 +1,7 @@
+@import "globals.css";
 .wrapper {
   position: absolute;
-  top: rem(100);
+  top: rem(89);
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -9,10 +10,18 @@
   padding: 0;
   z-index: 10;
   & li {
-    margin-left: rem(15);
+    @apply --smallText;
+    margin-left: rem(20);
     text-transform: uppercase;
     & a{
-      color: white;
+      color: var(--muddyWaters);
+      transition: all 0.2s;
+      &:hover{
+        color: var(--husk);
+      }
+      &.active{
+        color: white;
+      }
     }
   }
 }

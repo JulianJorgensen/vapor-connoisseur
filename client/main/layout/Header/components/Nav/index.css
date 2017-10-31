@@ -43,7 +43,7 @@
   justify-content: space-between;
   @media (--large-and-up) {
     width: 50%;
-    padding: rem(60) rem(60) rem(60) rem(120);
+    padding: rem(85) rem(60) rem(70) rem(120);
   }
   &.open {
     opacity: 1;

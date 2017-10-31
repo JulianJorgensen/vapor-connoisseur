@@ -1,5 +1,6 @@
 import React from 'react';
 import DocumentMeta from 'react-document-meta';
+import cn from 'classnames';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { withCookies } from 'react-cookie';
@@ -28,7 +29,9 @@ const meta = {
 
 @withCookies
 @withRouter
-@connect()
+@connect(({ shop }) => ({
+  shop,
+}))
 export default class Main extends React.Component {
   constructor() {
     super();
@@ -73,8 +76,12 @@ export default class Main extends React.Component {
   }
 
   render() {
+    const { showCart } = this.props.shop;
+    const wrapperStyles = cn(styles.wrapper, {
+      [styles.showCart]: showCart,
+    })
     return (
-      <div className={styles.container}>
+      <div className={wrapperStyles}>
         <DocumentMeta {...meta} />
         <Header />
         <Routes />

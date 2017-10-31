@@ -36,7 +36,7 @@ export default class Product extends Component {
     const { product } = this.props;
     const defaultVariant = product.variants[0];
 
-    const imageClasses = cn(styles.image, {
+    const imageWrapper = cn(styles.imageWrapper, {
       [styles.loading]: this.state.imageLoading,
     });
 
@@ -45,12 +45,13 @@ export default class Product extends Component {
     return (
       <div className={styles.wrapper}>
         <Link to={`/shop/${product.productType.toLowerCase()}/${product.handle}`}>
-          <div className={imageClasses} style={imageStyles}>
+          <div className={imageWrapper}>
+            <div className={styles.image} style={imageStyles} />
             <LoadingSpinner className={styles.loadingSpinner} />
           </div>
         </Link>
         <div className={styles.productInfo}>
-          <h5 className={styles.title}>{product.title}</h5>
+          <h3 className={styles.title}>{product.title}</h3>
           <span className={styles.price}>${defaultVariant.price}</span>
         </div>
       </div>

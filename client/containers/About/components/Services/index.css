@@ -18,7 +18,7 @@
     background-color: var(--bokara);
     @media (--medium-and-up) {
       top: rem(-500);
-      height: 200vh;
+      height: 300vh;
     }
   }
 }

@@ -177,8 +177,8 @@
     position: relative;
     text-align: center;
     vertical-align: middle;
-    width: 25px;
-    padding-right: 15px;
+    width: rem(25);
+    padding-right: rem(20);
   }
   & .Select-arrow {
     border-color: #999 transparent transparent;

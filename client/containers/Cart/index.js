@@ -58,40 +58,43 @@ export default class Cart extends Component {
     ));
 
     return (
-      <div className={`${styles.cart} ${shop.showCart ? styles.cartOpen : ''}`}>
-        <header className={styles.cartHeader}>
-          <h3 className={styles.headline}>Your cart</h3>
-          <button
-            onClick={this.handleCartClose}
-            className={styles.cartClose}
-          >
-            ×
-          </button>
-        </header>
-        <ul className={styles.cartLineItems}>
-          {renderLineItems}
-        </ul>
-        <footer className={styles.cartFooter}>
-          <div className={styles.cartInfo}>
-            <div className={styles.cartInfoTotal}>Subtotal</div>
-            <div className={styles.cartInfoPricing}>
-              <span className={styles.pricing}>$ {shop.checkout.subtotalPrice}</span>
+      <div>
+        <div className={`${styles.cart} ${shop.showCart ? styles.cartOpen : ''}`}>
+          <header className={styles.cartHeader}>
+            <h3 className={styles.headline}>Your cart</h3>
+            <button
+              onClick={this.handleCartClose}
+              className={styles.cartClose}
+            >
+              ×
+            </button>
+          </header>
+          <ul className={styles.cartLineItems}>
+            {renderLineItems}
+          </ul>
+          <footer className={styles.cartFooter}>
+            <div className={styles.cartInfo}>
+              <div className={styles.cartInfoTotal}>Subtotal</div>
+              <div className={styles.cartInfoPricing}>
+                <span className={styles.pricing}>$ {shop.checkout.subtotalPrice}</span>
+              </div>
             </div>
-          </div>
-          <div className={styles.cartInfo}>
-            <div className={styles.cartInfoTotal}>Taxes</div>
-            <div className={styles.cartInfoPricing}>
-              <span className={styles.pricing}>$ {shop.checkout.totalTax}</span>
+            <div className={styles.cartInfo}>
+              <div className={styles.cartInfoTotal}>Taxes</div>
+              <div className={styles.cartInfoPricing}>
+                <span className={styles.pricing}>$ {shop.checkout.totalTax}</span>
+              </div>
             </div>
-          </div>
-          <div className={styles.cartInfo}>
-            <div className={styles.cartInfoTotal}>Total</div>
-            <div className={styles.cartInfoPricing}>
-              <span className={styles.pricing}>$ {shop.checkout.totalPrice}</span>
+            <div className={styles.cartInfo}>
+              <div className={styles.cartInfoTotal}>Total</div>
+              <div className={styles.cartInfoPricing}>
+                <span className={styles.pricing}>$ {shop.checkout.totalPrice}</span>
+              </div>
             </div>
-          </div>
-          <button className={styles.cartCheckout} onClick={this.openCheckout}>Checkout</button>
-        </footer>
+            <button className={styles.cartCheckout} onClick={this.openCheckout}>Checkout</button>
+          </footer>
+        </div>
+        <div className={`${styles.bgOverlay} ${shop.showCart ? styles.active : ''}`} onClick={this.handleCartClose} />
       </div>
     );
   }

@@ -6,7 +6,6 @@
   flex-direction: column;
   justify-content: center;
   background-color: var(--background);
-  position: relative;
   width: 100%;
   & a {
     color: white;

@@ -10,6 +10,7 @@ export default ({ className, ...others }) => {
   return (
     <Select
       className={wrapperStyles}
+      searchable={false}
       {...others}
     />
   );

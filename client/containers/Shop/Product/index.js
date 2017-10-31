@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Client from 'shopify-buy';
+import cn from 'classnames';
 import ReactHtmlParser from 'react-html-parser';
+import PlusIcon from 'assets/icons/FontAwesome/regular/plus.svg';
+import CheckIcon from 'assets/icons/FontAwesome/regular/check.svg';
 import VariantSelector from './components/VariantSelector';
 import styles from './index.css';
 
@@ -11,7 +14,6 @@ export default class Product extends Component {
     this.state = {};
     this.handleAllOptionsSelected = this.handleAllOptionsSelected.bind(this);
     this.handleOptionChange = this.handleOptionChange.bind(this);
-    this.handleQuantityChange = this.handleQuantityChange.bind(this);
   }
 
   componentWillMount() {
@@ -47,28 +49,30 @@ export default class Product extends Component {
     });
   }
 
-  handleQuantityChange(event) {
-    this.setState({
-      selectedVariantQuantity: event.target.value,
-    });
-  }
-
   changeActiveImage(activeImage) {
     this.setState({ activeImage });
   }
 
+  addToCart(variant) {
+    if (!this.state.allOptionsSelected) {
+      this.setState({ ctaMessage: 'Please select your product specifications above.' });
+      return false;
+    }
+    this.setState({ addedToCart: true });
+    this.props.addVariantToCart(variant.id, 1);
+    return true;
+  }
+
   render() {
     const { product } = this.props;
-    const { activeImage, selectedVariant, selectedVariantQuantity, selectedVariantImage, allOptionsSelected } = this.state;
+    const {
+      activeImage, selectedVariant, selectedVariantImage, allOptionsSelected, ctaMessage, addedToCart,
+    } = this.state;
     const image = activeImage || selectedVariantImage || product.images[0];
     const variant = selectedVariant || product.variants[0];
-    const variantQuantity = selectedVariantQuantity || 1;
 
     const productColors = () => {
-      const colorOptions = this.props.product.options.find((option) => {
-        return option.name === 'Color';
-      });
-
+      const colorOptions = this.props.product.options.find(option => option.name === 'Color');
       if (!colorOptions) return false;
 
       const colors = colorOptions.values.map(color => color.value);
@@ -80,6 +84,14 @@ export default class Product extends Component {
         <img src={productImage.src} alt={productImage.title} />
       </button>
     ));
+
+    const buyButtonStyles = cn(styles.buyButton, {
+      [styles.disabled]: !allOptionsSelected,
+    });
+
+    const iconStyles = cn(styles.icon, {
+      [styles.addedToCart]: addedToCart,
+    });
 
     return (
       <div className={styles.wrapper}>
@@ -110,12 +122,16 @@ export default class Product extends Component {
           </div>
           <div className={styles.cta}>
             <button
-              className={styles.buyButton}
-              disabled={!allOptionsSelected}
-              onClick={() => this.props.addVariantToCart(variant.id, variantQuantity)}
+              className={buyButtonStyles}
+              onClick={() => this.addToCart(variant)}
             >
               Add to cart
+              <div className={iconStyles}>
+                <PlusIcon className={styles.plus} />
+                <CheckIcon className={styles.check} />
+              </div>
             </button>
+            <div className={styles.ctaMessage}>{ctaMessage}</div>
           </div>
         </div>
         <div className={styles.rightCol}>

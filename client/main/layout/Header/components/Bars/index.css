@@ -27,7 +27,7 @@
     top: 50%;
     left: 0;
     transform: translate(rem(-40), -50%);
-    transition: transform 0.2s;
+    transition: all 0.2s easeOutCubic;
     text-align: right;
     @media (--medium-and-up) {
       transform: translate(rem(-40), -50%);
@@ -51,7 +51,7 @@
     background: var(--muddyWaters);
     opacity: 1;
     transform: rotate(0deg);
-    transition: .3s ease-in-out;
+    transition: .3s easeOutCubic;
     margin-bottom: rem(5);
     @media (--medium-and-up) {
       height: var(--barHeightLarge);
@@ -102,6 +102,20 @@
     }
     & span:nth-child(6) {
       transform: rotate(45deg) translateX(rem(-4)) translateY(rem(-1));
+    }
+  }
+  &:not(.open):hover{
+    &:before{
+      color: var(--husk);
+    }
+    & span{
+      background: var(--husk);
+    }
+    & span:nth-child(4) {
+      width: 30%;
+    }
+    & span:nth-child(6) {
+      width: 20%;
     }
   }
 }

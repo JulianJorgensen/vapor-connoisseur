@@ -12,7 +12,7 @@
 }
 
 .featuresBody {
-  width: 65%;
+  width: 63%;
   background: var(--defaultGradient);
   position: absolute;
   left: 0;
@@ -27,29 +27,78 @@
   position: absolute;
   bottom: rem(-20);
   background-color: var(--muddyWaters);
-  width: rem(230);
+  width: rem(210);
   display: flex;
   justify-content: space-between;
   padding: rem(15) rem(25);
   & .miniNavItem {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
     user-select: none;
-    width: rem(60);
+    width: rem(56);
+    color: black;
     @apply --smallText;
-    line-height: rem(11);
+    line-height: rem(14);
+    transition: all 0.2s easeOutCubic;
+    &:before{
+      content: '';
+      width: rem(8);
+      height: rem(1);
+      background-color: white;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      opacity: 0;
+      transition: all 0.2s easeOutCubic;
+    }
     & svg {
-      width: rem(13);
+      margin-top: rem(-3);
+      width: rem(7);
       height: rem(13);
+      transition: all 0.2s easeOutCubic;
       & path {
+        fill: black;
+      }
+    }
+    &.prev{
+      &:before{
+        left: 0;
+        transform: translate(rem(8), rem(-2));
+      }
+      &:hover{
+        & svg {
+          transform: translateX(-30%);
+        }
+      }  
+    }
+    &.next{
+      &:before{
+        right: 0;
+        transform: translate(rem(-8), rem(-2));
+      }
+      &:hover{
+        & svg {
+          transform: translateX(30%);
+        }
+      }  
+    }
+    &:hover{
+      color: white;
+      & svg path {
         fill: white;
+      }
+      &:before{
+        opacity: 1;
+        transform: translate(rem(0), rem(-2));
       }
     }
   }
   &:after {
     content: '|';
+    color: black;    
     position: absolute;
     left: 50%;
     top: 50%;
@@ -71,7 +120,7 @@
 .featuresNav {
   width: 45%;
   background-color: var(--rangoon);
-  padding: rem(120) rem(20) rem(120) rem(120);
+  padding: rem(100) rem(20) rem(100) rem(120);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,6 +133,10 @@
   & .featureNavItem {
     color: white;
     user-select: none;
+    transition: all 0.2s;
+    &:hover{
+      color: var(--muddyWaters);
+    }
     &,
     & button {
       @apply --smallText;

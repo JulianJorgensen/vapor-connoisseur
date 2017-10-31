@@ -30,7 +30,9 @@
   justify-content: space-between;
   width: 100%;
   margin-bottom: rem(5);
-  position: relative;
+  &:last-child{
+    margin-bottom: 0;
+  }
 }
 
 .variantTitle {
@@ -41,32 +43,27 @@
 }
 
 .title {
-  color: #4E5665;
-  font-size: rem(15);
+  color: white;
+  font-size: rem(14);
+  line-height: rem(14);
   font-weight: 400;
 }
 
 .price {
-  line-height: rem(23);
-  float: right;
   font-weight: bold;
   font-size: rem(15);
-  margin-right: rem(40);
 }
 
 .quantityContainer {
-  border: rem(1) solid #767676;
-  float: left;
-  border-radius: rem( 3);
+  border: rem(1) solid gray(40%);
+  border-radius: rem(3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .quantityUpdate {
-  color: #767676;
-  display: block;
-  float: left;
-  height: rem(21);
-  line-height: rem(16);
-  font-family: monospace;
+  color: gray(40%);
   width: rem(25);
   padding: 0;
   border: none;
@@ -74,6 +71,7 @@
   box-shadow: none;
   cursor: pointer;
   font-size: rem(18);
+  line-height: rem(10);
   text-align: center;
 }
 
@@ -82,32 +80,28 @@
 }
 
 .quantity {
-  color: black;
+  color: gray(80%);
   width: rem(38);
-  height: rem(21);
-  line-height: rem(23);
   font-size: rem(15);
+  line-height: 100%;
   border: none;
   text-align: center;
   -moz-appearance: textfield;
   background: transparent;
-  border-left: rem(1) solid #767676;
-  border-right: rem(1) solid #767676;
+  border-left: rem(1) solid gray(40%);
+  border-right: rem(1) solid gray(40%);
   display: block;
-  float: left;
   padding: 0;
   border-radius: 0;
 }
 
 .remove {
-  position: absolute;
-  right: 0;
-  top: 0;
   border: 0;
   background: 0;
   font-size: rem(20);
-  top: rem(-4);
-  opacity: 0.5;
+  line-height: 100%;
+  opacity: 0.6;
+  transition: all 0.2s;
 }
 
 .remove:hover {

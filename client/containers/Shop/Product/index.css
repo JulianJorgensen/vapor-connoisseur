@@ -56,10 +56,42 @@
     display: block;
     width: 100%;
     background-color: var(--muddyWaters);
-    padding: rem(15) rem(10);
-    &[disabled] {
+    padding: rem(15) rem(20);
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    &.disabled {
       opacity: 0.6;
     }
+    & .icon{
+      width: rem(15);
+      height: rem(15);
+      & svg{
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        & path{
+          fill: white;
+        }
+      }
+      & .check{
+        opacity: 0;
+      }
+      &.addedToCart {
+        & .check {
+          opacity: 1;
+        }
+        & .plus {
+          opacity: 0;
+        }
+      }
+    }
+  }
+  & .ctaMessage{
+    font-size: rem(11);
+    color: gray(90%);
+    margin-top: rem(20);
+    text-align: center;
   }
 }
 

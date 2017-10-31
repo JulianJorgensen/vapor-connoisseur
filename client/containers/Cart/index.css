@@ -7,10 +7,10 @@
   height: 100%;
   width: 350px;
   max-width: 100%;
-  background-color: white;
+  background-color: gray(16%);
   display: flex;
   flex-direction: column;
-  border-left: 1px solid #e5e5e5;
+  border-left: 1px solid black;
   transform: translateX(100%);
   transition: transform 0.15s ease-in-out;
 }
@@ -21,7 +21,7 @@
 
 .cartHeader {
   padding: rem(20);
-  border-bottom: rem(1) solid #e5e5e5;
+  border-bottom: rem(1) solid #1d0909;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,11 +29,14 @@
   & .cartClose {
     line-height: 100%;
     font-size: rem(35);
-    color: #999;
+    color: gray(50%);
     border: none;
     background: transparent;
-    transition: transform 100ms ease;
+    transition: all 0.2s;
     cursor: pointer;
+    &:hover{
+      color: white;
+    }
   }
 }
 
@@ -45,7 +48,7 @@
 
 .cartFooter {
   padding: rem(20);
-  border-top: rem(1) solid #e5e5e5;
+  border-top: rem(1) solid black;
   flex: 0 0 auto;
 }
 
@@ -57,27 +60,44 @@
   padding: rem(10);
   display: block;
   width: 100%;
+  transition: all 0.2s;
+  &:hover{
+    background-color: var(--husk);    
+  }
 }
 
 .cartInfo {
-  padding: rem(15) rem(20) rem(10);
-}
-
-.cartInfoTotal {
-  float: left;
-  text-transform: uppercase;
+  padding-bottom: rem(10);
+  display: flex;
+  justify-content: space-between;
 }
 
 .cartInfoSmall {
-  font-size: rem(11);
+  @apply --smallText;
 }
 
 .cartInfoPricing {
-  float: right;
 }
 
 .pricing {
   margin-left: rem(5);
   font-size: rem(16);
-  color: black;
+  color: white;
+}
+
+.bgOverlay{
+  position: fixed;
+  z-index: 8;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: color(black alpha(80%));
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s;
+  &.active{
+    opacity: 1;
+    pointer-events: auto;
+  }
 }

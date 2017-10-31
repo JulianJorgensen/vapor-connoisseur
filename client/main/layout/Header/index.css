@@ -1,7 +1,7 @@
 @import "globals.css";
 .wrapper {
   position: fixed;
-  z-index: 9;
+  z-index: 7;
   width: 100%;
   top: 0;
   pointer-events: none;
@@ -13,6 +13,7 @@
 .container {
   composes: globalContainer;
   padding-top: 0;
+  padding-bottom: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -55,9 +56,8 @@
   color: white;
   cursor: pointer;
   margin-right: rem(70);
-  word-spacing: 0;
   @media (--medium-and-up) {
-    margin-right: rem(100);
+    margin-right: rem(80);
   }    
 }
 

@@ -1,6 +1,9 @@
 @import "globals.css";
-.container {
+.wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  &.showCart{
+    overflow: hidden !important;
+  }
 }

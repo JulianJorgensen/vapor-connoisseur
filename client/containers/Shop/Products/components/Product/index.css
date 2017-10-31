@@ -8,15 +8,24 @@
   }
 }
 
-.image {
+.imageWrapper {
   width: 100%;
   height: rem(150);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
   position: relative;
+  overflow: hidden;
   @media (--medium-and-up) {
     height: rem(300);
+  }
+  & .image{
+    height: inherit;
+    width: inherit;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: all .9s easeOutQuart;
+    &:hover{
+      transform: scale(1.2);
+    }  
   }
   & .loadingSpinner {
     opacity: 0;
@@ -28,6 +37,7 @@
     height: inherit;
     min-height: auto;
     background-color: gray(70%);
+    pointer-events: none;
   }
   &.loading{
     & .loadingSpinner{
@@ -54,11 +64,8 @@
   }
   
   & .price {
+    @apply --smallText;
     display: block;
     color: var(--muddyWaters);
-    @media (--only-small) {
-      font-size: rem(8);
-      line-height: rem(8);
-    }
   }
 }

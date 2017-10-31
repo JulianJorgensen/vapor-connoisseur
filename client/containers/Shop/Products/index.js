@@ -86,6 +86,7 @@ export default class Products extends Component {
         <div className={styles.products}>
           {renderProducts}
         </div>
+        <div className={styles.scroll}>Scroll</div>
       </div>
     );
   }

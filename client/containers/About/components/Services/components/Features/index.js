@@ -45,7 +45,7 @@ export default class AboutServicesFeatures extends Component {
   handleTriggerPrev = () => {
     let prevActiveFeature;
     if (this.state.activeFeature === 0) {
-      prevActiveFeature = this.state.features.length - 1;
+      prevActiveFeature = this.props.features.length - 1;
     } else {
       prevActiveFeature = this.state.activeFeature - 1;
     }
@@ -57,7 +57,7 @@ export default class AboutServicesFeatures extends Component {
 
   handleTriggerNext = () => {
     let nextActiveFeature;
-    if (this.state.activeFeature === (this.state.features.length - 1)) {
+    if (this.state.activeFeature === (this.props.features.length - 1)) {
       nextActiveFeature = 0;
     } else {
       nextActiveFeature = this.state.activeFeature + 1;
@@ -86,6 +86,8 @@ export default class AboutServicesFeatures extends Component {
   render() {
     const { activeFeature, timeoutBarActive } = this.state;
     const { features } = this.props;
+
+    if (!features) return false;
 
     const timeoutBarStyles = cn(styles.timeoutBar, {
       [styles.active]: timeoutBarActive,
@@ -122,8 +124,8 @@ export default class AboutServicesFeatures extends Component {
             </div>
 
             <div className={styles.miniNav}>
-              <button className={styles.miniNavItem} onClick={this.handlePrevClick}><AngleLeftIcon /> Prev</button>
-              <button className={styles.miniNavItem} onClick={this.handleNextClick}>Next <AngleRightIcon /></button>
+              <button className={`${styles.miniNavItem} ${styles.prev}`} onClick={this.handlePrevClick}><AngleLeftIcon /> Prev</button>
+              <button className={`${styles.miniNavItem} ${styles.next}`} onClick={this.handleNextClick}>Next <AngleRightIcon /></button>
             </div>
           </div>
 
