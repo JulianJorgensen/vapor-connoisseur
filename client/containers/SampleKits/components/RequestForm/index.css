@@ -1,41 +1,39 @@
 @import "globals.css";
-.wrapper {
+.wrapper{
   composes: globalWrapper;
   width: 100%;
   pointer-events: none;
   @media (--medium-and-up) {
     position: absolute;
-    top: rem(160);
-    &:before {
+    top: rem(220);
+    &:before{
       content: '';
       background-color: var(--bokara);
       position: absolute;
       top: 0;
       right: 0;
-      width: calc(50% + rem(90));
+      width: calc(50% - rem(70));
       height: 100%;
+      @apply --boxShadowLeft;
     }
   }
 }
-
 .container {
   composes: globalContainer;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  & .inner {
+  & .inner{
     pointer-events: all;
     width: 100%;
-    padding: rem(30) 0;
-  }
-  @media (--medium-and-up) {
-    & .inner {
-      width: rem(650);
-      padding: rem(90) 0;
+    padding: rem(30);
+    @media (--medium-and-up) {
+      width: rem(380);
+      padding: rem(80) 0 rem(60);
     }
   }
 }
 
-.headline {
+.headline{
   margin-bottom: rem(30);
 }

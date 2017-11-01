@@ -14,6 +14,7 @@ export default class ProductsNav extends Component {
 
   render() {
     const { categories, active } = this.props;
+    console.log('active', active);
     return (
       <div>
         <Desktop>

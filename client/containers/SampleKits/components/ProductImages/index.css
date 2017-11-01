@@ -4,7 +4,8 @@
   width: 100%;
   align-items: flex-start;
   @media (--medium-and-up) {
-    margin-bottom: rem(100);
+    margin-top: rem(150);
+    padding-bottom: rem(50);
   }
 }
 
@@ -14,6 +15,6 @@
   min-height: rem(250);
   @media (--medium-and-up) {
     width: 70vw;
-    min-height: rem(400);      
+    min-height: rem(600);
   }    
 }

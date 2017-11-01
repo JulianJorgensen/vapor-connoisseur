@@ -121,16 +121,16 @@ export default class Product extends Component {
             />
           </div>
           <div className={styles.cta}>
-            <button
+            <div
               className={buyButtonStyles}
               onClick={() => this.addToCart(variant)}
             >
-              Add to cart
+              <div>Add to cart</div>
               <div className={iconStyles}>
                 <PlusIcon className={styles.plus} />
                 <CheckIcon className={styles.check} />
               </div>
-            </button>
+            </div>
             <div className={styles.ctaMessage}>{ctaMessage}</div>
           </div>
         </div>

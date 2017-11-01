@@ -14,13 +14,13 @@
     margin-left: rem(20);
     text-transform: uppercase;
     & a{
-      color: var(--muddyWaters);
+      color: white;
       transition: all 0.2s;
       &:hover{
         color: var(--husk);
       }
       &.active{
-        color: white;
+        color: var(--muddyWaters);
       }
     }
   }

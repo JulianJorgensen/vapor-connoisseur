@@ -82,7 +82,7 @@ export default class Products extends Component {
 
     return (
       <div className={styles.container}>
-        <Nav categories={categories} active={this.props.match.params.filter} />
+        <Nav categories={categories} active={this.props.match.params.filter || ''} />
         <div className={styles.products}>
           {renderProducts}
         </div>
