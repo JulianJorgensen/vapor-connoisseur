@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { withCookies } from 'react-cookie';
 import { siteActions } from 'store/actions';
-import bgSmoke from 'assets/images/VC_BGSmoke1.png';
+import BgSmoke from 'assets/icons/smoke/VC_BGSmoke1.svg';
 import styles from './index.css';
 
 @withCookies
@@ -23,9 +23,9 @@ export default class AgeVerification extends React.Component {
       <div className={styles.wrapper}>
         <h2 className={styles.headline}>Please verify your age</h2>
         <button className={styles.cta} onClick={this.verifyAge}><span>I am over 21</span></button>
-        {/* <div className={styles.bgImage}>
-          <img src={bgSmoke} alt="" />
-        </div> */}
+        <div className={styles.bgImage}>
+          <BgSmoke />
+        </div>
       </div>
     );
   }

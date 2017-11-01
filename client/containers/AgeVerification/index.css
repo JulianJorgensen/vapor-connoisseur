@@ -56,11 +56,25 @@
 
 .bgImage {
   width: 100%;
+  height: 100%;
   position: absolute;
   right: 0;
-  transform: translateX(30%) translateY(30%);
-  opacity: var(--defaultSmokeOpacity);
-  & img {
-    width: 100%;
+  bottom: 0;
+  @apply --defaultSmoke;
+  /* animation: smokeAnimation 10s infinite; */
+  transform: translate(30%, 30%);
+  opacity: 1;
+  & svg path {
+    animation: smokeAnimation 20s infinite;
+    stroke-dasharray: 1600;
+    stroke-dashoffset: 0;
+    stroke: black;
+  }
+}
+
+@keyframes smokeAnimation {
+  50% {
+    stroke-dashoffset: 800;
+    stroke: gray(5%);
   }
 }
