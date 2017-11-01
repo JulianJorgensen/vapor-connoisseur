@@ -9,9 +9,10 @@
 .products {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   @media (--medium-and-up) {
     margin-top: rem(200);
+    margin-left: rem(-15);
+    margin-right: rem(-15);
   }
 }
 

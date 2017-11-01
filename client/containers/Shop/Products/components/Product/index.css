@@ -3,8 +3,9 @@
   width: calc(50% - rem(5));
   margin-bottom: rem(10);
   @media (--medium-and-up) {
-    width: calc(25% - rem(30));
+    width: 25%;
     margin-bottom: rem(40);
+    padding: 0 rem(15);
   }
 }
 
