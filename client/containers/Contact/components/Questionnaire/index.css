@@ -5,14 +5,14 @@
   pointer-events: none;
   @media (--medium-and-up) {
     position: absolute;
-    top: rem(160);
+    top: rem(220);
     &:before{
       content: '';
       background-color: var(--bokara);
       position: absolute;
       top: 0;
       right: 0;
-      width: 50%;
+      width: calc(50% - rem(70));
       height: 100%;
       @apply --boxShadowLeft;
     }
@@ -28,8 +28,8 @@
     width: 100%;
     padding: rem(30);
     @media (--medium-and-up) {
-      width: rem(550);
-      padding: rem(90) rem(40) rem(60);
+      width: rem(380);
+      padding: rem(80) 0 rem(60);
     }
   }
 }

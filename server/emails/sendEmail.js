@@ -10,8 +10,13 @@ export default (req, res) => {
       name: fromName, address: fromEmail,
     },
     to: {
-      name: 'Julian Jorgensen', address: 'me@julianjorgensen.com',
+      name: 'Vapor Connoisseur', address: 'info@vaporconnoisseur.com',
     },
+    cc: [
+      {
+        name: 'Julian Jorgensen', address: 'me@julianjorgensen.com',
+      },
+    ],
     subject,
     template: {
       name: `./server/emails/templates/${template}.pug`,

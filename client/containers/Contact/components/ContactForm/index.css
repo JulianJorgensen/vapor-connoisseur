@@ -5,6 +5,8 @@
   width: 100%;
   position: relative;
   @media (--medium-and-up) {
+    margin-top: rem(50);
+    padding-bottom: rem(50);
     &:before{
       content: '';
       background-image: var(--defaultGradient);

@@ -10,15 +10,22 @@
 
 .inputElement {
   color: white;
+  font-size: rem(16);
+  line-height: 150%;
+  padding-bottom: rem(1);
   & ~ .label{
     @apply --smallText;
     text-transform: uppercase;  
+    top: rem(24);
   }
   &:not([disabled]):not([readonly]) ~ .label{
     color: white;
+    transition-property: all !important;
   }
-  &:focus:not([disabled]):not([readonly]) ~ .label{
-    font-size: rem(9) !important;
+  &:focus:not([disabled]):not([readonly]) ~ .label,
+  &.filled ~ .label{
+    font-size: 7px !important;
+    letter-spacing: 1px !important;
     color: var(--muddyWaters) !important;
   }
 }

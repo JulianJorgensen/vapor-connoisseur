@@ -14,18 +14,6 @@
   }
 }
 
-.hero{
-  @media (--medium-and-up) {    
-    position: absolute;
-    top: rem(220);
-    width: rem(500);
-    & .headline{
-      font-size: rem(50);
-      margin-bottom: rem(30);
-    }
-  }
-}
-
 .contactInfo{
   pointer-events: all;
   display: flex;
@@ -35,6 +23,8 @@
     color: white;
   }
   @media (--medium-and-up) {    
+    margin-top: rem(350);
+    width: rem(630);
     flex-direction: row;
     & .col{
       width: calc(50% - rem(20));
