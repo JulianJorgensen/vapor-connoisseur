@@ -30,6 +30,17 @@ export default (state = { content: {} }, action) => {
         ...state,
         ageVerified: true,
       };
+    case 'UPLOAD_SUCCESS':
+      return {
+        ...state,
+        uploadedFile: action.data,
+        uploadError: null,
+      };
+    case 'UPLOAD_FAIL':
+      return {
+        ...state,
+        uploadError: action.error,
+      };
     default:
       return state;
   }

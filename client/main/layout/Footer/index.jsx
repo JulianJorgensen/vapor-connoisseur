@@ -30,11 +30,11 @@ export default class Footer extends React.Component {
               <li><Link to="/contact">Contact</Link></li>
             </ul>
             <ul className="noBullets">
-              <li><Link to="/terms-and-conditions">Terms & Conditions</Link></li>
-              <li><Link to="/privacy">Privacy Policy</Link></li>
-              <li><Link to="/affiliate-marketing">Affiliate Marketing</Link></li>
-              <li><Link to="/refunds-and-returns">Refunds & Returns</Link></li>
-              <li><Link to="/orders-and-shipping">Orders & Shipping</Link></li>
+              <li><Link to="/legal/terms-and-conditions">Terms & Conditions</Link></li>
+              <li><Link to="/legal/privacy-policy">Privacy Policy</Link></li>
+              <li><Link to="/legal/affiliate-marketing">Affiliate Marketing</Link></li>
+              <li><Link to="/legal/refunds-and-returns">Refunds & Returns</Link></li>
+              <li><Link to="/legal/orders-and-shipping">Orders & Shipping</Link></li>
             </ul>
           </div>
         </div>

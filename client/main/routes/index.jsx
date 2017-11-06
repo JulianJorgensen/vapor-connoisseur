@@ -4,6 +4,7 @@ import { AnimatedSwitch } from 'react-router-transition';
 import { connect } from 'react-redux';
 import { siteActions } from 'store/actions';
 import cn from 'classnames';
+import ReactGA from 'react-ga';
 
 import AgeVerification from 'containers/AgeVerification';
 import Homepage from 'containers/Homepage';
@@ -14,16 +15,16 @@ import SampleKits from 'containers/SampleKits';
 import Contact from 'containers/Contact';
 import Shop from 'containers/Shop';
 import Cart from 'containers/Cart';
+import Legal from 'containers/Legal';
 
 import { userIsAuthenticated, userIsNotAuthenticated } from './utils';
 import styles from './index.css';
 
-import ReactGA from 'react-ga';
-// ReactGA.initialize('UA-6241825-9'); // initialize Google Analytics
+ReactGA.initialize('UA-6241825-10'); // initialize Google Analytics
 
 function logPageView(location) {
-  // ReactGA.set({ page: location.pathname });
-  // ReactGA.pageview(location.pathname);
+  ReactGA.set({ page: location.pathname });
+  ReactGA.pageview(location.pathname);
 }
 
 // browserHistory.listen((location) => {
@@ -72,7 +73,7 @@ export default class Routes extends React.Component {
 
   onRouteChanged() {
     // log page view to Google Analytics
-    // logPageView(location);
+    logPageView(location);
 
     // scroll to top when changing page
     window.scrollTo(0, 0);
@@ -129,6 +130,7 @@ export default class Routes extends React.Component {
           <PropsRoute path="/shop" exact component={userIsAuthenticated(Shop)} />
           <PropsRoute path="/shop/:filter" exact component={userIsAuthenticated(Shop)} />
           <PropsRoute path="/shop/:category/:productHandle" exact component={userIsAuthenticated(Shop)} showSingle />
+          <PropsRoute path="/legal/:page" component={userIsAuthenticated(Legal)} />
         </AnimatedSwitch>
         <Cart />
       </div>

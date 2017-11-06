@@ -7,7 +7,7 @@ import productImageMobile from 'assets/images/XY05_EXPLO1.jpg';
 import styles from './index.css';
 
 @connect(({ site }) => ({
-  content: site.content.homepage || {}
+  content: site.content.homepage || {},
 }))
 export default class HomepageLanding extends Component {
   render() {
@@ -19,12 +19,12 @@ export default class HomepageLanding extends Component {
         </div>
         <Desktop>
           <div className={styles.productImage} style={{ backgroundImage: `url(${productImage})` }}>
-            <div className={styles.meta}>XY-05</div>
+            <div className={styles.meta}>XY-05 Cartridge</div>
           </div>
         </Desktop>
         <MobileTablet>
           <div className={styles.productImage} style={{ backgroundImage: `url(${productImageMobile})` }}>
-            <div className={styles.meta}>XY-05</div>
+            <div className={styles.meta}>XY-05 Cartridge</div>
           </div>
         </MobileTablet>
       </div>

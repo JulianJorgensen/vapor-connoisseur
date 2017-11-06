@@ -91,18 +91,21 @@ export const updateLineItems = (lineItemsToUpdate) => {
 };
 
 // remove line item from cart
-export const removeLineItem = (lineItemId) => {
-  return (dispatch, getState, shopifyClient) => {
-    const checkoutId = getState().shop.checkout.id;
-    return shopifyClient.removeLineItems(checkoutId, [lineItemId]).then((res) => {
-      const checkout = res || {};
-      dispatch({
-        type: 'UPDATE_CHECKOUT',
-        checkout,
-      });
+export const removeLineItem = lineItemId => (dispatch, getState, shopifyClient) => {
+  const checkoutId = getState().shop.checkout.id;
+  return shopifyClient.removeLineItems(checkoutId, [lineItemId]).then((res) => {
+    const checkout = res || {};
+    dispatch({
+      type: 'UPDATE_CHECKOUT',
+      checkout,
     });
-  };
+  });
 };
+
+// clear cart
+export const clearCart = () => ({
+  type: 'CLEAR_CART',
+});
 
 // toggle cart
 export const toggleCart = () => ({

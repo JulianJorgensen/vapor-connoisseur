@@ -1,0 +1,11 @@
+@import "globals.css";
+.input{
+  margin-top: rem(30);
+  background-color: var(--muddyWaters);
+  color: white;
+  border: 0;
+  padding: rem(5) rem(20);
+  &::placeholder{
+    color: white;
+  }
+}

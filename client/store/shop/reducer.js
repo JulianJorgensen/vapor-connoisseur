@@ -25,6 +25,12 @@ export default (state = {}, action) => {
         ...state,
         checkout: action.checkout,
       };
+    case 'CLEAR_CART':
+      return {
+        ...state,
+        checkout: null,
+        showCart: false,
+      };
     case 'TOGGLE_CART':
       return {
         ...state,

@@ -13,6 +13,7 @@ export default class Cart extends Component {
 
     this.openCheckout = this.openCheckout.bind(this);
     this.handleCartClose = this.handleCartClose.bind(this);
+    this.removeLineItemInCart = this.removeLineItemInCart.bind(this);
   }
 
   updateQuantityInCart(lineItemId, quantity) {
@@ -36,6 +37,7 @@ export default class Cart extends Component {
   }
 
   openCheckout() {
+    this.props.dispatch(shopActions.clearCart());
     window.open(this.props.shop.checkout.webUrl);
   }
 

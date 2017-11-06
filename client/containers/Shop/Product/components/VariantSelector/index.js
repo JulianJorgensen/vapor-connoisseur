@@ -61,9 +61,7 @@ export default class VariantSelector extends Component {
     const { variants } = this.state;
     const { selectedVariant } = this.props;
 
-    if (!variants) {
-      return null;
-    }
+    if (!variants || !selectedVariant) return false;
 
     return (
       <div className={styles.wrapper}>

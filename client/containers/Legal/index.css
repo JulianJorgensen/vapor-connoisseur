@@ -1,0 +1,16 @@
+@import "globals.css";
+.wrapper {
+  composes: globalWrapper;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.container{
+  composes: globalContainer;  
+}
+
+.body{
+  @media(--medium-and-up) {
+    margin-top: rem(400)    
+  }
+}

@@ -19,7 +19,7 @@ export default class Homepage extends Component {
         <div className={styles.wrapper}>
           <LoadingSpinner />
         </div>
-      )
+      );
     }
     return (
       <div className={styles.wrapper}>

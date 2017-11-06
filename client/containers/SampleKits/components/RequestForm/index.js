@@ -5,38 +5,96 @@ import Form from 'components/Form';
 import styles from './index.css';
 
 const formFields = [
-{
-  label: 'Your name',
-  name: 'name',
-  required: true,
-},
-{
-  label: 'Your email',
-  name: 'email',
-  type: 'email',
-  required: true,
-},
-{
-  label: 'Business name',
-  name: 'business',
-},
-{
-  label: 'Business address',
-  name: 'businessAddress',
-},
-{
-  label: 'Phone Number',
-  name: 'phone',
-  type: 'phone',
-},
-{
-  label: 'Extraction Process',
-  name: 'extractionProcess',
-},
-{
-  label: 'Post Processing',
-  name: 'postProcessing',
-}];
+  {
+    label: 'Your name',
+    name: 'name',
+    required: true,
+  },
+  {
+    label: 'Your email',
+    name: 'email',
+    type: 'email',
+    required: true,
+  },
+  {
+    label: 'Business name',
+    name: 'business',
+  },
+  {
+    label: 'Business address',
+    name: 'businessAddress',
+  },
+  {
+    label: 'Phone Number',
+    name: 'phone',
+    type: 'phone',
+  },
+  {
+    label: 'Extraction Process',
+    name: 'extractionProcess',
+  },
+  {
+    label: 'Post Processing',
+    name: 'postProcessing',
+  },
+  {
+    label: 'Specific requests (check all that apply)',
+    type: 'group',
+    styles: styles.checkboxes,
+    fields: [
+      {
+        label: 'Glass cartridges only',
+        name: 'glassCartridgesOnly',
+        type: 'checkbox',
+      },
+      {
+        label: 'Ceramic heating element',
+        name: 'ceramicHeatingElement',
+        type: 'checkbox',
+      },
+      {
+        label: 'Preheating battery',
+        name: 'preheatingBattery',
+        type: 'checkbox',
+      },
+      {
+        label: 'Bottom airflow',
+        name: 'bottomAirflow',
+        type: 'checkbox',
+      },
+      {
+        label: 'Adjustable top airflow',
+        name: 'adjustableTopAirflow',
+        type: 'checkbox',
+      },
+      {
+        label: 'Wax/shatter products',
+        name: 'waxShatterProducts',
+        type: 'checkbox',
+      },
+      {
+        label: 'Packaging',
+        name: 'packaging',
+        type: 'checkbox',
+      },
+      {
+        label: 'Glass synringes',
+        name: 'glassSyringes',
+        type: 'checkbox',
+      },
+      {
+        label: 'Disposable Vapes',
+        name: 'disposableVapes',
+        type: 'checkbox',
+      },
+    ],
+  },
+  {
+    label: 'Upload logo',
+    name: 'logo',
+    type: 'upload',
+  },
+];
 
 @connect(({ site }) => ({
   content: site.content.sampleKits || {},

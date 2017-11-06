@@ -10,10 +10,56 @@ block content
           td.content-block Hi there, we've received a sample kit request:
         tr
           td.content-block
-            | Name: #{name}
-            | Email: #{email}
-            | Business name: #{business}
-            | Business address: #{businessAddress}
-            | Phone number: #{phone}
-            | Extraction Process: #{extractionProcess}
-            | Post Processing: #{postProcessing}
+            if name
+              | Name: #{name}
+              br
+            if email
+              | Email: #{email}
+              br
+            if business
+              | Business name: #{business}
+              br
+            if businessaddress
+              | Business address: #{businessaddress}
+              br
+            if phone
+              | Phone number: #{phone}
+              br
+            if extractionprocess
+              | Extraction Process: #{extractionprocess}
+              br
+            if postprocessing
+              | Post Processing: #{postprocessing}
+              br
+            br
+            | Special requests:
+            br
+            if glasscartridgesonly
+              | - Glass cartridges only
+              br
+            if ceramicheatingelement
+              | - Ceramic heating element
+              br
+            if preheatingbattery
+              | - Preheating battery
+              br
+            if bottomairflow
+              | - Bottom airflow
+              br
+            if adjustabletopairflow
+              | - Adjustable top airflow
+              br
+            if waxshatterproducts
+              | - Wax/shatter products
+              br
+            if packaging
+              | - Packaging
+              br
+            if glasssyringes
+              | - Glass syringes
+              br
+            if disposablevapes
+              | - Disposable Vapes
+            if logo
+              br
+              | Logo: #[a( href=`http://localhost:3000/uploads/${logo}` ) #{logo}]

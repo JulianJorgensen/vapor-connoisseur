@@ -65,16 +65,16 @@
   transform: translate(30%, 30%);
   opacity: 1;
   & svg path {
-    animation: smokeAnimation 20s infinite;
-    stroke-dasharray: 1600;
-    stroke-dashoffset: 0;
+    animation: smokeAnimation 10s ease infinite;
+    stroke-dasharray: 1800;
+    stroke-dashoffset: 1800;
     stroke: black;
   }
 }
 
 @keyframes smokeAnimation {
-  50% {
-    stroke-dashoffset: 800;
+  100% {
+    stroke-dashoffset: -1800;
     stroke: gray(5%);
   }
 }

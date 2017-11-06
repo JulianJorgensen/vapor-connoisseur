@@ -4,8 +4,11 @@
   width: 100%;
   align-items: flex-start;
   @media (--medium-and-up) {
-    margin-top: rem(150);
-    padding-bottom: rem(50);
+    margin-top: rem(120);
+    padding-bottom: rem(150);
+  }
+  @media (height < 800px) {
+    margin-top: rem(50);
   }
 }
 

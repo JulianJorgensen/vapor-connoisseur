@@ -18,6 +18,10 @@
     top: rem(300);
     height: calc(100vh - rem(300));
   }
+  @media (height < 800px) {
+    top: rem(230);
+    height: calc(100vh - rem(230));
+  }
 }
 
 .headline {

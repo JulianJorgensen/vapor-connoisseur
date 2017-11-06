@@ -9,14 +9,14 @@ export default () => (
       <div className={styles.contactInfo}>
         <div className={styles.col}>
           <p>
-            <phone>846.778.2493</phone><br />
+            <phone>877.330.0370</phone><br />
             <a href="mailto:info@vaporconnoisseur.com">info@vaporconnoisseur.com</a>
           </p>
         </div>
         <address className={styles.col}>
           <p>
-            2020 E Main St, Ventura<br />
-            California, 93001, USA
+          1755 E. Palm Canyon Dr., Suite 110-261<br />
+          Palm Springs, CA 92264
           </p>
         </address>
       </div>

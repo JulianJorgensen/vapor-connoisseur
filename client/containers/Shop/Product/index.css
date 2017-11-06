@@ -39,7 +39,7 @@
       margin-bottom: rem(10);
       & .specificationName {
         color: var(--muddyWaters);
-        width: 40%;
+        margin-right: rem(80);
       }
     }
   }

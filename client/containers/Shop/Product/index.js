@@ -23,6 +23,13 @@ export default class Product extends Component {
     });
 
     this.setState({ selectedOptions });
+
+    if (this.props.product.variants[0].title === 'Default Title') {
+      this.hasVariants = false;
+      this.handleAllOptionsSelected();
+    } else {
+      this.hasVariants = true;
+    }
   }
 
   componentDidUpdate(prevProps) {
@@ -70,14 +77,14 @@ export default class Product extends Component {
     } = this.state;
     const image = activeImage || selectedVariantImage || product.images[0];
     const variant = selectedVariant || product.variants[0];
-
+    
     const productColors = () => {
       const colorOptions = this.props.product.options.find(option => option.name === 'Color');
       if (!colorOptions) return false;
 
       const colors = colorOptions.values.map(color => color.value);
       return colors.join(', ');
-    }
+    };
 
     const renderImages = () => product.images.map(productImage => (
       <button key={productImage.id} className={styles.image} onClick={() => this.changeActiveImage(productImage)}>
@@ -93,32 +100,64 @@ export default class Product extends Component {
       [styles.addedToCart]: addedToCart,
     });
 
+    const renderWeight = () => {
+      if (selectedVariant && selectedVariant.weight <= 0) return false;
+      if (product.variants[0].weight <= 0) return false;
+      return (
+        <div className={styles.specification}>
+          <div className={styles.specificationName}>Weight</div>
+          <div className={styles.specificationValue}>{selectedVariant ? selectedVariant.weight : product.variants[0].weight} G</div>
+        </div>
+      );
+    };
+
+    const renderColors = () => {
+      if (!productColors()) return false;
+      return (
+        <div className={styles.specification}>
+          <div className={styles.specificationName}>Colors</div>
+          <div className={styles.specificationValue}>{productColors()}</div>
+        </div>
+      );
+    };
+
+    const renderSpecifications = () => {
+      if (selectedVariant) {
+        if (!productColors() && selectedVariant.weight <= 0) return false;
+      }
+      if (!productColors() && product.variants[0].weight <= 0) return false;
+      return (
+        <div className={styles.specifications}>
+          {renderWeight()}
+          {renderColors()}
+        </div>
+      );
+    };
+
+    const renderVariantSelector = () => {
+      if (!this.hasVariants) return false;
+      return (
+        <VariantSelector
+          handleOptionChange={this.handleOptionChange}
+          handleAllOptionsSelected={this.handleAllOptionsSelected}
+          selectedVariant={variant}
+          product={product}
+        />
+      );
+    };
+
     return (
       <div className={styles.wrapper}>
         <div className={styles.leftCol}>
           <h2 className={styles.title}>{product.title}</h2>
           <div className={styles.details}>
-            <div className={styles.specifications}>
-              <div className={styles.specification}>
-                <div className={styles.specificationName}>Weight</div>
-                <div className={styles.specificationValue}>{selectedVariant ? selectedVariant.weight : product.variants[0].weight} G</div>
-              </div>
-              <div className={styles.specification}>
-                <div className={styles.specificationName}>Colors</div>
-                <div className={styles.specificationValue}>{productColors()}</div>
-              </div>
-            </div>
+            {renderSpecifications()}
             <div className={styles.description}>
               { ReactHtmlParser(product.descriptionHtml) }
             </div>
           </div>
           <div className={styles.options}>
-            <VariantSelector
-              handleOptionChange={this.handleOptionChange}
-              handleAllOptionsSelected={this.handleAllOptionsSelected}
-              selectedVariant={variant}
-              product={product}
-            />
+            {renderVariantSelector()}
           </div>
           <div className={styles.cta}>
             <div

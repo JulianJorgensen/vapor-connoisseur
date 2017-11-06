@@ -37,3 +37,8 @@
 .headline{
   margin-bottom: rem(30);
 }
+
+.checkboxes{
+  column-count: 2;
+  column-gap: rem(20);
+}

@@ -11,12 +11,12 @@
 .inputElement {
   color: white;
   font-size: rem(16);
-  line-height: 150%;
-  padding-bottom: rem(1);
+  line-height: 170%;
+  padding-bottom: rem(3);
   & ~ .label{
     @apply --smallText;
-    text-transform: uppercase;  
-    top: rem(24);
+    font-size: rem(12);
+    top: rem(23);
   }
   &:not([disabled]):not([readonly]) ~ .label{
     color: white;

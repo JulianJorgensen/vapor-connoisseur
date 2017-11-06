@@ -11,6 +11,7 @@ app.use(compression());
 
 // routes
 const contentful = require('./server/routes/contentful');
+const upload = require('./server/routes/upload');
 const sendEmail = require('./server/emails/sendEmail');
 
 // Set port
@@ -37,6 +38,9 @@ app.get('/getAllContent', contentful.getAllContent);
 
 // Send email route
 app.post('/sendEmail', sendEmail.default);
+
+// Upload route
+app.use('/upload', upload.default);
 
 // Catch all other paths and serve the index file
 app.all('*', function(request, response) {
