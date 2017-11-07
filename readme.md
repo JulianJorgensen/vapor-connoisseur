@@ -39,16 +39,13 @@ _For a production build simply run `yarn build:prod`_
 
 ## Creator
 
-I developed this site to be open source. Feel free to fork or make suggestions on how to improve this code base. I'm open to collaborate with other awesome developers.
+<img align="right" src="client/assets/images/julian-jorgensen-logo.png" alt="Julian Jorgensen logo" width="100" height="100" />
 
-<img align="left" src="client/assets/images/julian-jorgensen-logo.png" alt="Julian Jorgensen logo" width="100" height="100" />
+I developed this site to be open source. Feel free to fork or make suggestions on how to improve this code base. I'm open to collaborate with other awesome developers.
 
 * <a href="mailto:me@julianjorgensen.com">me@julianjorgensen.com</a>
 * <a href="https://JulianJorgensen.com" target="new">https://JulianJorgensen.com</a>
 * [https://github.com/JulianJorgensen](https://github.com/JulianJorgensen/)
-
- 
- 
 
 ## Acknowledgements
 * <a href="http://123w.ca/" target="new">http://123w.ca/</a>
