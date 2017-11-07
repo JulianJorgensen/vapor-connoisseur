@@ -37,7 +37,7 @@ _For a production build simply run `yarn build:prod`_
 
 > _(emoticons courtesy of [https://github.com/ueno-llc/starter-kit-universally](ueno)_
 
-## Creator
+## Author
 
 <img align="right" src="client/assets/images/julian-jorgensen-logo.png" alt="Julian Jorgensen logo" width="100" height="100" />
 
