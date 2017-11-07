@@ -44,6 +44,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     padding-left: rem(20);
+    margin-bottom: 0;
     & .navItem {
       width: calc(50% - rem(10));
       margin-top: rem(10);

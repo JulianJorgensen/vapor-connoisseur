@@ -159,7 +159,7 @@ export default class Product extends Component {
           <div className={styles.options}>
             {renderVariantSelector()}
           </div>
-          <div className={styles.cta}>
+          {/* <div className={styles.cta}>
             <div
               className={buyButtonStyles}
               onClick={() => this.addToCart(variant)}
@@ -171,7 +171,7 @@ export default class Product extends Component {
               </div>
             </div>
             <div className={styles.ctaMessage}>{ctaMessage}</div>
-          </div>
+          </div> */}
         </div>
         <div className={styles.rightCol}>
           <div className={styles.image} style={{ backgroundImage: `url(${image.src})` }}>

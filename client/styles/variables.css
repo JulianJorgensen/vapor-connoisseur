@@ -59,4 +59,4 @@
 
 @custom-media --medium-and-up-smallheight (width >= 768px) and (height < 720px);
 @custom-media --medium-and-up-mediumheight (width >= 768px) and (height < 760px);
-@custom-media --medium-and-up-mediumlargeheight (width >= 768px) and (height < 800px);
+@custom-media --medium-and-up-mediumlargeheight (width >= 768px) and (height < 830px);

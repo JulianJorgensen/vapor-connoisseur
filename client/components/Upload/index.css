@@ -1,5 +1,6 @@
 @import "globals.css";
 .input{
+  display: none;
   margin-top: rem(30);
   background-color: var(--muddyWaters);
   color: white;
@@ -7,5 +8,8 @@
   padding: rem(5) rem(20);
   &::placeholder{
     color: white;
+  }
+  @media (--large-and-up) {
+    display: block;
   }
 }

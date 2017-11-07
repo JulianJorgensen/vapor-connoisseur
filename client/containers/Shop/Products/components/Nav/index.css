@@ -26,6 +26,29 @@
   }
 }
 
-.option{
-  margin: rem(100) 0;
+:global {
+  & .productsNavMobile{
+    margin: rem(70) 0;
+    width: 70%;
+    position: relative;
+    left: 50%;
+    z-index: 99;
+    transform: translateX(-50%);
+    & .Select-control{
+      background-color: transparent;
+      border-bottom: 1px solid white;
+      & .Select-value{
+        padding: 0;
+        & .Select-value-label{
+          color: var(--muddyWaters) !important;
+        }
+        & .Select-arrow-zone{
+          padding-right: 0 !important;
+        }
+        & .Select-arrow{
+          border-color: var(--muddyWaters) !important;
+        }
+      }
+    }
+  }
 }

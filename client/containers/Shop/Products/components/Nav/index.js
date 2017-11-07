@@ -26,7 +26,7 @@ export default class ProductsNav extends Component {
         </Desktop>
         <MobileTablet>
           <Select
-            className={styles.option}
+            className="productsNavMobile"
             name="productTypes"
             value={active || ''}
             options={categories}

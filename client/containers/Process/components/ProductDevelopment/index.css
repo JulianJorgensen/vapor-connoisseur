@@ -37,9 +37,14 @@
   top: 0;
   right: 0;
   transform: translateX(60%) translateY(-85%);
-  @media (--large-and-up) {    
+  @media (--medium-and-up) {    
+    width: rem(1000);
+    height: rem(1000);
+    transform: translateX(55%) translateY(0%);
+  }
+  @media (--large-and-up) {
     width: rem(1300);
     height: rem(1300);
-    transform: translateX(35%) translateY(-27%);
+    transform: translateX(45%) translateY(-25%);
   }
 }

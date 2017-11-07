@@ -10,8 +10,11 @@
     left: 0;
     top: 0;
     width: 100%;
-    height: rem(340);
+    height: rem(280);
     background-color: var(--bokara);
+    @media (--medium-and-up) {
+      height: rem(340);
+    }
   }
 }
 
