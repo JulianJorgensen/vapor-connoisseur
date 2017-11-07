@@ -41,8 +41,9 @@ _For a production build simply run `yarn build:prod`_
 
 <img align="right" src="client/assets/images/julian-jorgensen-logo.png" alt="Julian Jorgensen logo" width="100" height="100" />
 
+<div width="400">
 I developed this site to be open source. Feel free to fork or make suggestions on how to improve this code base. I'm open to collaborate with other awesome developers.
-
+</div>
 * <a href="mailto:me@julianjorgensen.com">me@julianjorgensen.com</a>
 * <a href="https://JulianJorgensen.com" target="new">https://JulianJorgensen.com</a>
 * [https://github.com/JulianJorgensen](https://github.com/JulianJorgensen/)
