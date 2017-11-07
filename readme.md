@@ -23,8 +23,6 @@ _For a production build simply run `yarn build:prod`_
 
 ## Features
 
-> _(courtesy of [https://github.com/ueno-llc/starter-kit-universally](ueno)_
-
   - 👀 `react` as the view.
   - 🔀 `react-router` v4 as the router.
   - 😎 `react-redux` for state management
@@ -36,13 +34,15 @@ _For a production build simply run `yarn build:prod`_
   - ⛑ SEO friendly
   - 🛒 `Shopify Buy SDK`
   - 📨 `nodemailer` and `mailgun` integrated using `pug` templating
-  
+
+> _(emoticons courtesy of [https://github.com/ueno-llc/starter-kit-universally](ueno)_
+
 ## Creator
 
-I developed this site to be open source. Feel free to fork or make suggestions on how to improve this code base. If you'd like to work with me email [mailto:me@julianjorgensen.com](me@julianjorgensen.com)
+I developed this site to be open source. Feel free to fork or make suggestions on how to improve this code base. If you'd like to work with me email <a href="mailto:me@julianjorgensen.com">me@julianjorgensen.com</a>.
 
-[https://JulianJorgensen.com](https://JulianJorgensen.com)
-[https://github.com/JulianJorgensen](https://github.com/JulianJorgensen/)
+* <a href="https://JulianJorgensen.com" target="new">https://JulianJorgensen.com</a>
+* [https://github.com/JulianJorgensen](https://github.com/JulianJorgensen/)
 
 ## Acknowledgements
 * [http://123w.ca/](123w.ca)
