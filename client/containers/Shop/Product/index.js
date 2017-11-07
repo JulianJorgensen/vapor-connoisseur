@@ -148,35 +148,37 @@ export default class Product extends Component {
 
     return (
       <div className={styles.wrapper}>
-        <div className={styles.leftCol}>
-          <h2 className={styles.title}>{product.title}</h2>
-          <div className={styles.details}>
-            {renderSpecifications()}
-            <div className={styles.description}>
-              { ReactHtmlParser(product.descriptionHtml) }
-            </div>
-          </div>
-          <div className={styles.options}>
-            {renderVariantSelector()}
-          </div>
-          {/* <div className={styles.cta}>
-            <div
-              className={buyButtonStyles}
-              onClick={() => this.addToCart(variant)}
-            >
-              <div>Add to cart</div>
-              <div className={iconStyles}>
-                <PlusIcon className={styles.plus} />
-                <CheckIcon className={styles.check} />
+        <div className={styles.container}>
+          <div className={styles.leftCol}>
+            <h2 className={styles.title}>{product.title}</h2>
+            <div className={styles.details}>
+              {renderSpecifications()}
+              <div className={styles.description}>
+                { ReactHtmlParser(product.descriptionHtml) }
               </div>
             </div>
-            <div className={styles.ctaMessage}>{ctaMessage}</div>
-          </div> */}
-        </div>
-        <div className={styles.rightCol}>
-          <div className={styles.image} style={{ backgroundImage: `url(${image.src})` }}>
-            <div className={styles.images}>
-              {renderImages()}
+            <div className={styles.options}>
+              {renderVariantSelector()}
+            </div>
+            {/* <div className={styles.cta}>
+              <div
+                className={buyButtonStyles}
+                onClick={() => this.addToCart(variant)}
+              >
+                <div>Add to cart</div>
+                <div className={iconStyles}>
+                  <PlusIcon className={styles.plus} />
+                  <CheckIcon className={styles.check} />
+                </div>
+              </div>
+              <div className={styles.ctaMessage}>{ctaMessage}</div>
+            </div> */}
+          </div>
+          <div className={styles.rightCol}>
+            <div className={styles.image} style={{ backgroundImage: `url(${image.src})` }}>
+              <div className={styles.images}>
+                {renderImages()}
+              </div>
             </div>
           </div>
         </div>

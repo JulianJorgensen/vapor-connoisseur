@@ -81,12 +81,14 @@ export default class Products extends Component {
     ));
 
     return (
-      <div className={styles.container}>
-        <Nav categories={categories} active={this.props.match.params.filter || ''} />
-        <div className={styles.products}>
-          {renderProducts}
+      <div className={styles.wrapper}>
+        <div className={styles.container}>
+          <Nav categories={categories} active={this.props.match.params.filter || ''} />
+          <div className={styles.products}>
+            {renderProducts}
+          </div>
+          <div className={styles.scroll}>Scroll</div>
         </div>
-        <div className={styles.scroll}>Scroll</div>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Route, withRouter } from 'react-router-dom';
-import { spring, AnimatedSwitch } from 'react-router-transition';
+import { Route, withRouter, Switch } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { connect } from 'react-redux';
 import { siteActions } from 'store/actions';
 import cn from 'classnames';
@@ -33,38 +33,6 @@ function logPageView(location) {
 //   // scroll to top when changing page
 //   window.scrollTo(0, 0);
 // });
-
-// we need to map the `scale` prop we define below
-// to the transform style property
-function mapStyles(mappedStyle) {
-  return {
-    opacity: mappedStyle.opacity,
-    transform: `translateX(${mappedStyle.translateX}%)`,
-  };
-}
-
-function bounce(val) {
-  return spring(val, {
-    stiffness: 160,
-    damping: 29,
-  });
-}
-
-// child matches will...
-const transition = {
-  atEnter: {
-    opacity: 0,
-    translateX: -100,
-  },
-  atLeave: {
-    opacity: 0,
-    translateX: 0,
-  },
-  atActive: {
-    opacity: bounce(1),
-    translateX: bounce(0),
-  },
-};
 
 
 @withRouter
@@ -102,15 +70,10 @@ export default class Routes extends React.Component {
       );
     };
 
-    const globalProps = {
-      onLoaded: () => console.log('trigger update'),
-    };
-
     const PropsRoute = ({ component, ...rest }) => (
       <Route
         {...rest}
-        onLoaded={this.updateRoutesContainer}
-        render={routeProps => renderMergedProps(component, routeProps, globalProps, rest)}
+        render={routeProps => renderMergedProps(component, routeProps, rest)}
       />
     );
 
@@ -118,27 +81,31 @@ export default class Routes extends React.Component {
       [styles.navOpen]: this.props.site.navOpen,
     });
 
+    const { location } = this.props;
+    const currentKey = location.pathname.split('/')[1] || '/';
+    const timeout = { enter: 1500, exit: 800 };
+
     return (
       <div className={wrapperStyles} onClick={this.closeNav}>
-        <AnimatedSwitch
-          atEnter={transition.atEnter}
-          atLeave={transition.atLeave}
-          atActive={transition.atActive}
-          mapStyles={mapStyles}
-          className={styles.switch}
-        >
-          <PropsRoute path="/age-verification" component={userIsNotAuthenticated(AgeVerification)} />
-          <PropsRoute path="/" exact component={userIsAuthenticated(Homepage)} />
-          <PropsRoute path="/services" component={userIsAuthenticated(Services)} />
-          <PropsRoute path="/process" component={userIsAuthenticated(Process)} />
-          <PropsRoute path="/about" component={userIsAuthenticated(About)} />
-          <PropsRoute path="/sample-kits" component={userIsAuthenticated(SampleKits)} />
-          <PropsRoute path="/contact" component={userIsAuthenticated(Contact)} />
-          <PropsRoute path="/shop" exact component={userIsAuthenticated(Shop)} />
-          <PropsRoute path="/shop/:filter" exact component={userIsAuthenticated(Shop)} />
-          <PropsRoute path="/shop/:category/:productHandle" exact component={userIsAuthenticated(Shop)} showSingle />
-          <PropsRoute path="/legal/:page" component={userIsAuthenticated(Legal)} />
-        </AnimatedSwitch>
+        <TransitionGroup component="main" className="page-main">
+          <CSSTransition key={currentKey} timeout={timeout} classNames="fade" appear>
+            <section className="page-main-inner">
+              <Switch location={location}>
+                <PropsRoute path="/age-verification" component={userIsNotAuthenticated(AgeVerification)} />
+                <PropsRoute path="/" exact component={userIsAuthenticated(Homepage)} />
+                <PropsRoute path="/services" component={userIsAuthenticated(Services)} />
+                <PropsRoute path="/process" component={userIsAuthenticated(Process)} />
+                <PropsRoute path="/about" component={userIsAuthenticated(About)} />
+                <PropsRoute path="/sample-kits" component={userIsAuthenticated(SampleKits)} />
+                <PropsRoute path="/contact" component={userIsAuthenticated(Contact)} />
+                <PropsRoute path="/shop" exact component={userIsAuthenticated(Shop)} />
+                <PropsRoute path="/shop/:filter" exact component={userIsAuthenticated(Shop)} />
+                <PropsRoute path="/shop/:category/:productHandle" exact component={userIsAuthenticated(Shop)} showSingle />
+                <PropsRoute path="/legal/:page" component={userIsAuthenticated(Legal)} />
+              </Switch>
+            </section>
+          </CSSTransition>
+        </TransitionGroup>
         <Cart />
       </div>
     );

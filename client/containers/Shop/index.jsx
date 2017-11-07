@@ -80,10 +80,10 @@ export default class Shop extends Component {
 
     return (
       <div className={styles.wrapper}>
-        <div className={styles.container}>
+        <div className="inner">
           {renderPage()}
+          <Footer />
         </div>
-        <Footer />
       </div>
     );
   }

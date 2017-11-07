@@ -22,10 +22,12 @@ export default class Contact extends React.Component {
     }
     return (
       <div className={styles.wrapper}>
-        <GetInTouch />
-        <ContactForm />
-        <Questionnaire />
-        <Footer />
+        <div className="inner">
+          <GetInTouch />
+          <ContactForm />
+          <Questionnaire />
+          <Footer />
+        </div>
       </div>
     )
   }

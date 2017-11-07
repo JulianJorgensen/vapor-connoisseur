@@ -1,11 +1,19 @@
 @import "globals.css";
 .wrapper {
+  composes: globalWrapper;
+  background-color: transparent;  
   margin-top: rem(200);
+  @media (--medium-and-up) {
+    margin-top: rem(200);
+  }
+}
+
+.container{
+  composes: globalContainer;
   display: flex;
   justify-content: space-between;
   flex-direction: column-reverse;
   @media (--medium-and-up) {
-    margin-top: rem(200);
     flex-direction: row;
     & .leftCol {
       width: calc(45% - rem(80));

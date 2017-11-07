@@ -56,15 +56,16 @@
 }
 
 .productImage {
-  height: rem(300);
-  width: 100%;
-  transform: translateX(rem(30));
   @apply --defaultBgImage;
   & .meta {
     display: none;
   }
+  @media (--only-small) {
+    transform: translateX(rem(30));
+    height: rem(300);
+    width: 100%;
+  }    
   @media (--medium-and-up) {
-    transform: translateX(0);
     position: absolute;
     top: 0;
     right: 0;

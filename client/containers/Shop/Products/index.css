@@ -1,5 +1,11 @@
 @import "globals.css";
+.wrapper{
+  composes: globalWrapper;
+  background-color: transparent;
+}
+
 .container {
+  composes: globalContainer;
   min-height: rem(600);
   & .loadingSpinner{
     min-height: inherit;

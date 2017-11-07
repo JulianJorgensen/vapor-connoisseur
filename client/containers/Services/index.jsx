@@ -24,13 +24,15 @@ export default class Services extends Component {
     }
     return (
       <div className={styles.wrapper}>
-        <Landing />
-        <Design />
-        <Manufacturing />
-        <Logistics />
-        <AutomatedFilling />
-        <PageCTAs />
-        <Footer />
+        <div className="inner">
+          <Landing />
+          <Design />
+          <Manufacturing />
+          <Logistics />
+          <AutomatedFilling />
+          <PageCTAs />
+          <Footer />
+        </div>
       </div>
     );
   }

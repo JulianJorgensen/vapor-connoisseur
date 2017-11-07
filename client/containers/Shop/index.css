@@ -1,9 +1,6 @@
 @import "globals.css";
 .wrapper{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
+  composes: globalWrapper;
   &:after{
     content: '';
     position: absolute;

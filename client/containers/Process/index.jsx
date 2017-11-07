@@ -27,16 +27,18 @@ export default class Process extends React.Component {
     }
     return (
       <div className={styles.wrapper}>
-        <Landing />
-        <Samples />
-        <ProductDevelopment />
-        <ProductCustomization />
-        <Production />
-        <Shipping />
-        <Duties />
-        <ProductDelivery />
-        <PageCTAs />
-        <Footer />
+        <div className="inner">
+          <Landing />
+          <Samples />
+          <ProductDevelopment />
+          <ProductCustomization />
+          <Production />
+          <Shipping />
+          <Duties />
+          <ProductDelivery />
+          <PageCTAs />
+          <Footer />
+        </div>
       </div>
     )
   }
