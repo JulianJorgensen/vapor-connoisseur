@@ -12,7 +12,6 @@
 .switch {
   position: relative;
   &>div {
-    transition: all 0.1s;
     position: absolute;
     width: 100%;
   }

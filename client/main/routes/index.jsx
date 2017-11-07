@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, withRouter } from 'react-router-dom';
-import { AnimatedSwitch } from 'react-router-transition';
+import { spring, AnimatedSwitch } from 'react-router-transition';
 import { connect } from 'react-redux';
 import { siteActions } from 'store/actions';
 import cn from 'classnames';
@@ -36,26 +36,33 @@ function logPageView(location) {
 
 // we need to map the `scale` prop we define below
 // to the transform style property
-function mapStyles(value) {
+function mapStyles(mappedStyle) {
   return {
-    opacity: value.opacity,
-    // transform: `scale(${styles.scale})`,
+    opacity: mappedStyle.opacity,
+    transform: `translateX(${mappedStyle.translateX}%)`,
   };
+}
+
+function bounce(val) {
+  return spring(val, {
+    stiffness: 160,
+    damping: 29,
+  });
 }
 
 // child matches will...
 const transition = {
   atEnter: {
     opacity: 0,
-    // scale: 0.9,
+    translateX: -100,
   },
   atLeave: {
     opacity: 0,
-    // scale: 0.9,
+    translateX: 0,
   },
   atActive: {
-    opacity: 1,
-    // scale: 1,
+    opacity: bounce(1),
+    translateX: bounce(0),
   },
 };
 
@@ -67,11 +74,11 @@ const transition = {
 export default class Routes extends React.Component {
   componentDidUpdate(prevProps) {
     if (this.props.location !== prevProps.location) {
-      this.onRouteChanged();
+      this.onRouteChanged(this.props.location);
     }
   }
 
-  onRouteChanged() {
+  onRouteChanged(location) {
     // log page view to Google Analytics
     logPageView(location);
 
@@ -93,11 +100,11 @@ export default class Routes extends React.Component {
       return (
         React.createElement(component, finalProps)
       );
-    }
+    };
 
     const globalProps = {
-      onLoaded: () => console.log('trigger update')
-    }
+      onLoaded: () => console.log('trigger update'),
+    };
 
     const PropsRoute = ({ component, ...rest }) => (
       <Route
