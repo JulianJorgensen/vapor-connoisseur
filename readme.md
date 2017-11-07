@@ -41,10 +41,10 @@ _For a production build simply run `yarn build:prod`_
 
 I developed this site to be open source. Feel free to fork or make suggestions on how to improve this code base. If you'd like to work with me email <a href="mailto:me@julianjorgensen.com">me@julianjorgensen.com</a>.
 
+<img align="left" src="client/assets/images/julian-jorgensen-logo.png" alt="Julian Jorgensen logo" width="100" height="100" />
+
 * <a href="https://JulianJorgensen.com" target="new">https://JulianJorgensen.com</a>
 * [https://github.com/JulianJorgensen](https://github.com/JulianJorgensen/)
-
-<img src="client/assets/images/julian-jorgensen-logo.png" alt="Julian Jorgensen logo" width="100" height="100" />
 
 ## Acknowledgements
 * <a href="http://123w.ca/" target="new">http://123w.ca/</a>
