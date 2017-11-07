@@ -10,10 +10,13 @@ import CompressionPlugin from 'compression-webpack-plugin';
 import './postcss.config';
 
 // define environment constants
+const ENV = (process.env.ENV || 'development');
 const NODE_ENV = (process.env.NODE_ENV || 'development');
+
+// Optimize for production?
 const IS_PRODUCTION = (NODE_ENV === 'production');
 
-console.log('Running webpack optimized for', NODE_ENV);
+console.log(`Running webpack optimized for ${NODE_ENV} using the ${ENV} configs.`);
 
 // Static vendor assets for which one can expect
 //  minimal and a slow rate of change:
@@ -137,6 +140,11 @@ const BASE_CONFIG = {
       },
       {
         context: 'client',
+        from: 'assets/uploads',
+        to: 'uploads',
+      },
+      {
+        context: 'client',
         from: 'assets/pdfs',
         to: 'pdfs',
       },
@@ -153,7 +161,7 @@ const BASE_CONFIG = {
     ]),
     new webpack.DefinePlugin({
       // Dynamically access local environment variables based on the environment
-      ENV_CONFIG: JSON.stringify(require('./config/' + NODE_ENV + '.config')),
+      ENV_CONFIG: JSON.stringify(require('./config/' + ENV + '.config')),
     }),
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor', 'manifest'],

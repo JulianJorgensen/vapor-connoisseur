@@ -16,12 +16,19 @@ router.route('/')
     const { file } = req.files;
     const filename = `${moment().format('DD-MM-YYYY')}-${file.name}`;
 
-    return uploadDestinations.forEach((destination, i) => file.mv(`${destination}/${filename}`, (err) => {
-      if (err) return res.status(500).send(err).end();
-      if (i === 1) {
-        return res.send(filename).end();
-      }
-    }));
+    const promise = new Promise((resolve, reject) => {
+      uploadDestinations.forEach((destination, i) => file.mv(`${destination}/${filename}`, (err) => {
+        if (err) reject();
+        if (i === (uploadDestinations.length - 1)) {
+          console.log('resolving');
+          resolve(filename);
+        }
+      }));
+    });
+
+    promise.then((filename) => {
+      res.status(200).send(filename).end();
+    });
   });
 
 export default router;
