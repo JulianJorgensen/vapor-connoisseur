@@ -1,7 +1,5 @@
-let NODE_ENV = (process.env.NODE_ENV || 'development');
-let ENV_CONFIG = JSON.stringify(require('../../config/' + NODE_ENV + '.config'));
+const NODE_ENV = (process.env.NODE_ENV || 'development');
+const ENV_CONFIG = JSON.stringify(require('../../config/' + NODE_ENV + '.config'));
 
-function getEnvConfig() {
-	return JSON.parse(ENV_CONFIG);
-}
-module.exports.getEnvConfig = getEnvConfig;
+export const envConfig = JSON.parse(ENV_CONFIG);
+export default envConfig;

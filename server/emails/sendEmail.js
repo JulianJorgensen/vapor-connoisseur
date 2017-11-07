@@ -1,4 +1,5 @@
 import Mailer from './Mailer';
+import { envConfig } from '../util/util';
 
 export default (req, res) => {
   const {
@@ -9,14 +10,8 @@ export default (req, res) => {
     from: {
       name: fromName, address: fromEmail,
     },
-    to: {
-      name: 'Vapor Connoisseur', address: 'info@vaporconnoisseur.com',
-    },
-    cc: [
-      {
-        name: 'Julian Jorgensen', address: 'me@julianjorgensen.com',
-      },
-    ],
+    to: envConfig.EMAILS.ADMIN,
+    cc: envConfig.EMAILS.CC,
     subject,
     template: {
       name: `./server/emails/templates/${template}.pug`,
@@ -25,6 +20,7 @@ export default (req, res) => {
         name: fromName,
         email: fromEmail,
         ...context,
+        ...envConfig,
       },
     },
   };

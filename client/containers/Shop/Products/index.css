@@ -19,9 +19,13 @@
 }
 
 .scroll {
+  display: none;
   @apply --smallText;
   position: absolute;
   right: rem(-60);
   top: calc(100vh - rem(109));
   transform: rotate(90deg);
+  @media (--medium-and-up) {
+    display: block;
+  }
 }

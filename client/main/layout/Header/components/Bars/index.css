@@ -4,6 +4,11 @@
   --barHeightLarge: rem(2);
 }
 
+.wrapper{
+  padding: rem(10) 0 rem(10) rem(10);
+  cursor: pointer;
+}
+
 .bars {
   position: relative;
   z-index: 9;
@@ -11,7 +16,6 @@
   height: rem(16);
   display: flex;
   flex-wrap: wrap;
-  cursor: pointer;
   align-items: center;
   pointer-events: auto;
   @media (--medium-and-up) {

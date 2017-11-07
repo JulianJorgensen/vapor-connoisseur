@@ -23,13 +23,15 @@ export default class NavBars extends Component {
     });
 
     return (
-      <div className={barsStyles} onClick={this.handleToggleNav}>
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
+      <div className={styles.wrapper} onClick={this.handleToggleNav}>
+        <div className={barsStyles}>
+          <span />
+          <span />
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
       </div>
     )
   }
