@@ -15,12 +15,23 @@
 }
 
 .socialMedia {
+  @media (--only-small) {
+    position: absolute;
+    bottom: rem(90);
+    right: rem(30);
+    display: flex;
+    flex-direction: column;
+  }
   & svg {
     height: rem(15);
     width: rem(15);
-    margin-right: rem(15);
+    margin-top: rem(10);
     & path {
       fill: white;
+    }
+    @media (--medium-and-up) {
+      margin-top: 0;
+      margin-right: rem(15);
     }
   }
 }
@@ -35,13 +46,14 @@
   padding: rem(30);
   height: 100vh;
   width: 100%;
-  background-color: color(gray(5%) alpha(70%));
+  background-color: color(gray(5%) alpha(95%));
   transition: all 0.2s;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   @media (--large-and-up) {
+    background-color: color(gray(5%) alpha(70%));
     width: 50%;
     padding: rem(85) rem(60) rem(70) rem(120);
   }
@@ -56,12 +68,16 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+  margin-top: rem(60);
+  @media (--large-and-up) {
+    margin-top: 0;
+  }
   & .navItem {
     font-size: rem(20);
     line-height: rem(30);
     letter-spacing: rem(2);
     text-transform: uppercase;
-    font-family: var(--primaryFont);
+    font-family: var(--primaryFont);      
     @media (--large-and-up) {
       font-size: rem(38);
       line-height: rem(60);

@@ -55,3 +55,8 @@
 @custom-media --medium-and-down (width < 1000px);
 @custom-media --mediumLarge-and-down (width < 1100px);
 @custom-media --large-and-down (width < 1400px);
+
+
+@custom-media --medium-and-up-smallheight (width >= 768px) and (height < 720px);
+@custom-media --medium-and-up-mediumheight (width >= 768px) and (height < 760px);
+@custom-media --medium-and-up-mediumlargeheight (width >= 768px) and (height < 800px);

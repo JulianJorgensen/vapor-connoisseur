@@ -5,7 +5,9 @@
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  overflow-x: hidden;
+  @media (--medium-and-up) {
+    overflow-x: hidden;
+  }
   &:after{
     content: '';
     width: 60%;
@@ -19,7 +21,7 @@
   @media (--only-small) {
     flex-direction: column;
     &:after{
-      top: rem(230);
+      top: rem(190);
       width: 100%;
       height: rem(400);
     }
@@ -28,10 +30,12 @@
 
 .container{
   composes: globalContainer;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media (--medium-and-up) {
+    min-height: 100vh;
+  }
 }
 
 
@@ -50,7 +54,7 @@
   }
   @media (--only-small) {
     position: relative;
-    top: auto;
+    top: rem(-10);
     left: rem(30);
     height: rem(200);
     width: calc(100% - rem(30));

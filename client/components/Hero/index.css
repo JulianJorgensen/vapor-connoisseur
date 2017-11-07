@@ -1,7 +1,7 @@
 @import "globals.css";
 .wrapper{
-  @media (--only-small) {    
-    margin-top: rem(160);
+  @media (--only-small) {
+    margin-top: rem(120);
     position: relative;
     &:before{
       content: '';
@@ -18,15 +18,24 @@
     top: rem(300);
     height: calc(100vh - rem(300));
   }
-  @media (height < 800px) {
+  @media (--medium-and-up-mediumlargeheight) {
     top: rem(230);
     height: calc(100vh - rem(230));
+  }
+  @media (--medium-and-up-mediumheight) {
+    top: rem(180);
+    height: calc(100vh - rem(180));
+  }
+  @media (--medium-and-up-smallheight) {
+    top: rem(140);
+    height: calc(100vh - rem(140));
   }
 }
 
 .headline {
   margin: 0 0 rem(20);
   white-space: pre-wrap;
+  position: relative;
   @media (--large-and-up) {
     margin: 0 0 rem(40);
   }
@@ -51,9 +60,10 @@
 
 .preTitle {
   @apply --smallText;
-  position: relative;
+  position: absolute;
+  top: rem(-30);
+  transform: translateY(-50%);
   padding-left: rem(50);
-  margin-bottom: rem(30);
   &:before {
     content: '';
     position: absolute;
@@ -64,7 +74,8 @@
     width: rem(30);
     background-color: var(--muddyWaters);
   }
-  @media (--large-and-up) {
+  @media (--medium-and-up) {
+    position: static;
     padding-left: rem(120);
     margin-bottom: rem(50);
     &:before {

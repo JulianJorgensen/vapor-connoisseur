@@ -82,4 +82,7 @@
   position: absolute;
   left: 0;
   @apply --defaultSmoke;
+  @media (--only-small) {
+    transform: translateY(rem(400));
+  }
 }

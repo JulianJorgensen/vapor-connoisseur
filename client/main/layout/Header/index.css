@@ -3,7 +3,7 @@
   position: fixed;
   z-index: 7;
   width: 100%;
-  top: 0;
+  top: rem(20);
   pointer-events: none;
   @media (--large-and-up) {
     top: rem(70);

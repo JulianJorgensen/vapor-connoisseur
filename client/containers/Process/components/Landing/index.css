@@ -55,7 +55,7 @@
   }
   @media (--only-small) {
     margin-top: rem(-40);
-    padding-top: rem(130);
+    padding-top: rem(160);
     padding-bottom: rem(110);
   }
   @media (--medium-and-up) {

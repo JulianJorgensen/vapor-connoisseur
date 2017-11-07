@@ -26,17 +26,20 @@
     z-index: 1;
     top: 50%;
     left: 0;
-    transform: translate(rem(-40), -50%);
+    transform: translate(rem(-30), -50%);
     transition: all 0.2s easeOutCubic;
     text-align: right;
     @media (--medium-and-up) {
-      transform: translate(rem(-40), -50%);
+      transform: translate(rem(-60), -50%);
       font-size: rem(9);
     }
   }
   &:before {
     content: 'MENU';
-    transform: translate(rem(-60), -50%);
+    transform: translate(rem(-40), -50%);
+    @media (--medium-and-up) {
+      transform: translate(rem(-60), -50%);
+    }
   }
   &:after {
     opacity: 0;
@@ -73,7 +76,7 @@
       opacity: 0;
     }
     &:after {
-      transform: translate(rem(-50), -50%);
+      transform: translate(rem(-40), -50%);
       opacity: 1;
       @media (--medium-and-up) {
         transform: translate(rem(-60), -50%);

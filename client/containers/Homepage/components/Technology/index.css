@@ -3,7 +3,7 @@
   composes: globalWrapper;
   flex-direction: row;
   margin-bottom: rem(30);
-  @media (--large-and-up) {
+  @media (--medium-and-up) {
     margin-bottom: rem(70);
   }
 }
@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  @media (--large-and-up) {
+  @media (--medium-and-up) {
     justify-content: space-between;
     align-items: flex-end;
     flex-direction: row;
@@ -40,7 +40,7 @@
   & .graphicDesktop {
     display: none;
   }
-  @media (--large-and-up) {
+  @media (--medium-and-up) {
     margin-bottom: 0;
     width: 60%;
   }
@@ -55,7 +55,7 @@
 }
 
 .process {
-  @media (--large-and-up) {
+  @media (--medium-and-up) {
     width: calc(33.33% - rem(40));
   }
 }

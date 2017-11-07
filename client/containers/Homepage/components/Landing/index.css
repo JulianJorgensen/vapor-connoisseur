@@ -2,7 +2,6 @@
 .wrapper {
   composes: globalWrapper;
   position: relative;
-  flex-direction: row;
   margin-bottom: rem(50);
   width: 100%;
   @media (--only-small) {
@@ -16,38 +15,33 @@
       bottom: 20%;
     }
   }
-  @media (--large-and-up) {
+  @media (--medium-and-up) {
+    flex-direction: row;
     margin-bottom: rem(150);
   }
 }
 
 .container {
   composes: globalContainer;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  @media (--only-small) {
+    padding-bottom: 0;
+  }
   @media (--medium-and-up) {
+    min-height: 100vh;
     justify-content: center;    
   }
 }
 
 .hero{
-  top: auto;
-  position: static;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: rem(80);
-  @media (--medium-and-up) {
-    margin-top: 0;
+  &:before {
+    display: none;
   }
 }
 
 .productImage {
   @apply --defaultBgImage;  
-  position: absolute;
-  top: 0;
-  right: 0;
   width: 58%;
   height: 100vh;
   & .meta {
@@ -66,5 +60,10 @@
       right: rem(30);
       bottom: rem(30);
     }  
+  }
+  @media (--medium-and-up) {    
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 }
