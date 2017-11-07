@@ -35,3 +35,14 @@
     display: block;
   }
 }
+
+.uploading{
+  position: absolute;
+  right: rem(-150);
+  top: 0;
+  @apply --smallText;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
