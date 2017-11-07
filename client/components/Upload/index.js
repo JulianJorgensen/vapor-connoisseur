@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import cn from 'classnames';
 import axios from 'axios';
 import FileInput from 'react-file-input';
 import { ThreeBounce } from 'better-react-spinkit';
@@ -25,6 +26,9 @@ export default class Upload extends Component {
   }
 
   render() {
+    const { disabled } = this.props;
+    const { uploading } = this.state;
+
     const renderUploading = () => (
       <div className={styles.uploading}>
         <div>Uploading</div>
@@ -32,15 +36,19 @@ export default class Upload extends Component {
       </div>
     );
 
+    const wrapperStyles = cn(styles.wrapper, {
+      [styles.disabled]: disabled || uploading,
+    })
+
     return (
-      <div className={styles.wrapper}>
+      <div className={wrapperStyles}>
         <FileInput
           className={styles.input}
           name="file"
           accept=".png,.gif,.jpg,.jpeg,.pdf,.ai,.psd,.svg"
           placeholder="Upload logo"
           onChange={e => this.uploadFile(e)}
-          disabled={this.props.disabled || this.state.uploading}
+          disabled={disabled || uploading}
         />
         {this.state.uploading ? renderUploading() : ''}
       </div>
