@@ -17,9 +17,9 @@ router.route('/')
     const filename = `${moment().format('DD-MM-YYYY')}-${file.name}`;
 
     return uploadDestinations.forEach((destination, i) => file.mv(`${destination}/${filename}`, (err) => {
-      if (err) return res.status(500).send(err);
+      if (err) return res.status(500).send(err).end();
       if (i === 1) {
-        res.send(filename).end();
+        return res.send(filename).end();
       }
     }));
   });
