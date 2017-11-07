@@ -59,6 +59,9 @@
     & .header{
       @apply --homeHeader;
     }
+    & .body {
+      margin: 0 0 rem(20);
+    }
   }
   @media (--large-and-up) {
     margin-top: rem(35);

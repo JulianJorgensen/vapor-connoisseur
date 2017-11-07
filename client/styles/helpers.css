@@ -10,11 +10,11 @@
     }
   }
   --defaultHeader: {
-    margin-bottom: rem(30);
+    margin-bottom: rem(40);
     & .headline {
       color: white;
-      padding-bottom: rem(15);
-      margin-bottom: rem(15);
+      padding-bottom: rem(25);
+      margin-bottom: rem(25);
       position: relative;
       @media (--medium-and-up) {
         padding-bottom: rem(30);
