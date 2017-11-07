@@ -58,9 +58,13 @@
     margin: rem(60) 0 rem(30);
     & .header{
       @apply --homeHeader;
+      & .headline {
+        font-size: rem(22);
+      }
     }
     & .body {
       margin: 0 0 rem(20);
+      column-count: 2;
     }
   }
   @media (--large-and-up) {

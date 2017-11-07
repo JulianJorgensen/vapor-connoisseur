@@ -14,7 +14,7 @@ export default class ServicesLanding extends React.Component {
     return (
       <div className={styles.wrapper}>
         <div className={styles.container}>
-          <Hero headline={content.headline} intro={content.intro} />
+          <Hero headlineClassName={styles.headline} headline={content.headline} intro={content.intro} />
           <div className={styles.nav}>
             <div className={styles.navTitle}>Jump to a section</div>
             <ol className={styles.navItems}>

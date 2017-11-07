@@ -41,9 +41,11 @@
 .rangeSlider {
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   @media (--large-and-up) {
     left: rem(140);
+    transform: none;
   }
 }
 
@@ -62,10 +64,12 @@
     @apply --smallText;
     position: absolute;
     z-index: 3;
-    opacity: 0.4;
     width: rem(100);
     transition: all 0.2s;
     cursor: default;
+    @media (--medium-and-up) {
+      opacity: 0.4;
+    }
     &:before {
       content: '';
       position: absolute;
@@ -277,9 +281,11 @@
 :global {
   & .rangeslider {
     position: relative;
-    width: 100%;
+    width: 60%;
     border-bottom: rem(1.5) dashed var(--muddyWaters);
+    margin-top: rem(50);
     @media (--large-and-up) {
+      margin-top: 0;
       width: rem(300);
     }
   }

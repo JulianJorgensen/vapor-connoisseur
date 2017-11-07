@@ -22,4 +22,8 @@
   & address {
     font-style: normal;
   }
+  & .nobr{
+    white-space: nowrap;
+    color: red !important;
+  }
 }

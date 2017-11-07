@@ -21,7 +21,7 @@
         &:before{
           content: '';
           float: right;
-          width: rem(180);
+          width: rem(150);
           height: rem(180);
           shape-outside: polygon(100% 0,0 100%,100% 100%);
         }

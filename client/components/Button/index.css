@@ -41,6 +41,7 @@
     }
   }
   @media (--medium-and-down) {
+    font-size: rem(10);    
     padding-left: rem(30);
     padding-right: rem(30);
     &:before {

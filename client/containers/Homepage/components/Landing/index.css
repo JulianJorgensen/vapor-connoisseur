@@ -12,7 +12,7 @@
       color: white;
       position: absolute;
       left: 0;
-      bottom: 20%;
+      bottom: rem(185);
     }
   }
   @media (--medium-and-up) {
@@ -25,9 +25,6 @@
   composes: globalContainer;
   display: flex;
   flex-direction: column;
-  @media (--only-small) {
-    padding-bottom: 0;
-  }
   @media (--medium-and-up) {
     min-height: 100vh;
     justify-content: center;    

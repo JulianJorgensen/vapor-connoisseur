@@ -22,23 +22,10 @@
   }
 }
 
-.hero {
-  & .company {
-    position: relative;
-    padding-left: rem(100);
-    &:before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      height: rem(2);
-      width: rem(80);
-      background-color: var(--muddyWaters);
-    }
-  }
-  & .headline {
-    margin: rem(80) 0;
+.headline{
+  max-width: rem(200);
+  @media (--medium-and-up) {
+    max-width: rem(700);    
   }
 }
 
