@@ -5,7 +5,7 @@ import axios from 'axios';
 import Form from './Form';
 
 @connect((state, props) => ({
-  form: props.formName
+  form: props.formName,
 }))
 export default class FormContainer extends Component {
   onSubmit = ({ name, email, ...others }) =>
@@ -15,7 +15,7 @@ export default class FormContainer extends Component {
         fromName: name,
         fromEmail: email,
         subject: `${this.props.subject} from ${name}`,
-        ...others
+        ...others,
       }).then(() => {
         resolve();
         this.props.dispatch(reset(this.props.form));

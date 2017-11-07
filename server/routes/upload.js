@@ -21,12 +21,12 @@ router.route('/')
         if (err) reject();
         if (i === (uploadDestinations.length - 1)) {
           console.log('resolving');
-          resolve(filename);
+          resolve();
         }
       }));
     });
 
-    promise.then((filename) => {
+    promise.then(() => {
       res.status(200).send(filename).end();
     });
   });

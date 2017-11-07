@@ -19,13 +19,16 @@ export default class Upload extends Component {
 
   render() {
     return (
-      <FileInput
-        className={styles.input}
-        name="file"
-        accept=".png,.gif,.jpg,.jpeg,.pdf"
-        placeholder="Upload logo"
-        onChange={e => this.uploadFile(e)}
-      />
+      <div className={styles.wrapper}>
+        <FileInput
+          className={styles.input}
+          name="file"
+          accept=".png,.gif,.jpg,.jpeg,.pdf,.ai,.psd,.svg"
+          placeholder="Upload logo"
+          onChange={e => this.uploadFile(e)}
+          disabled={this.props.disabled}
+        />
+      </div>
     );
   }
 }

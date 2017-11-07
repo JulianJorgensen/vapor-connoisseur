@@ -23,8 +23,8 @@ const Form = ({
   const getComponentType = (type) => {
     if (type === 'checkbox') return Checkbox;
     if (type === 'upload') return Upload;
-    return TextField;    
-  }
+    return TextField;
+  };
   
   const renderField = ({ name, type, ...others }) => (
     <Field
