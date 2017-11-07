@@ -12,6 +12,7 @@ export default class Upload extends Component {
     const data = new FormData();
     data.append('file', file);
     axios.post('/upload', data).then((response) => {
+      console.log('response', response);
       this.props.input.onChange(response.data);
     });
   }
