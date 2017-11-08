@@ -1,7 +1,10 @@
 @import "globals.css";
 .wrapper {
-  padding-top: rem(30);
-  margin-top: rem(30);
+  padding-top: rem(60);
+  @media (--medium-and-up) {
+    padding-top: rem(30);
+    margin-top: rem(30);    
+  }
   display: flex;
   flex-direction: column;
   justify-content: center;

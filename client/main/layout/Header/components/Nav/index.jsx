@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import { userIsAuthenticated } from 'routes/utils';
 import { siteActions } from 'store/actions';
-
 import FacebookIcon from 'assets/icons/FontAwesome/brands/facebook.svg';
 import TwitterIcon from 'assets/icons/FontAwesome/brands/twitter.svg';
 import PinterestIcon from 'assets/icons/FontAwesome/brands/pinterest.svg';
@@ -25,13 +24,13 @@ export default class Nav extends React.Component {
   render() {
     const { navOpen } = this.props;
 
-    const navStyles = cn(styles.nav, {
+    const wrapperStyles = cn(styles.wrapper, {
       [styles.open]: navOpen,
     });
 
     return (
-      <div className={styles.wrapper}>
-        <div className={navStyles}>
+      <div className={wrapperStyles}>
+        <div className={styles.nav}>
           <div className={styles.socialMedia}>
             <a href="https://www.facebook.com/VaporConnoisseur/" target="new"><FacebookIcon /></a>
             <a href="https://twitter.com/VapeConnoisseur" target="new"><TwitterIcon /></a>

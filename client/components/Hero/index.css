@@ -44,6 +44,9 @@
 .intro{
   width: 100%;
   white-space: pre-wrap;
+  & p:last-child{
+    margin-bottom: 0;
+  }
   @media (--large-and-up) {
     width: rem(450);
   }

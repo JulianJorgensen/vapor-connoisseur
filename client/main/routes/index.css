@@ -2,20 +2,45 @@
 .wrapper {
   min-height: 100%;
   max-width: 100%;
-  @media (--large-and-up) {
-    &.navOpen {
-      filter: blur(4px);
-    }
+  &.navOpen{
+
   }
 }
+
+.navBgImage{
+  @apply --defaultBgImage;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: scale(1);
+  transition: all .8s easeOutQuart;
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.navOpen {
+  & .navBgImage{
+    transition-duration: .4s;
+    opacity: 1;
+    animation: zoomIn 12s forwards easeOutQuart;
+    pointer-events: auto;
+  }
+}
+
+@keyframes zoomIn {
+  100% {
+    transform: scale(1.1);
+  }
+}  
 
 :global{
   & .inner{
     position: relative;
     z-index: 1;
     width: 100%;
-    transition: all 1s easeOutQuart;
-    transition-delay: 0.5s;
+    transition-property: all;
+    transition-timing-function: ease-out;
   }
 
   & .fade-appear,
@@ -24,29 +49,42 @@
     z-index: 2;
     & .inner{
       opacity: 0;
-      transform: translateX(-20%);
+      transform: translateX(-5%);
+    }
+    & .delayedFadeUp{
+      opacity: 0;
+      transform: translateY(rem(100));
     }
   }
   
   & .fade-appear-active,
   & .fade-enter-active {
-    transition: all .8s easeOutQuart;
+    transition: all .8s easeInOutCirc;
     transform: translateX(0%);
     & .inner{
+      transition-duration: 1.1s;
+      transition-delay: 0.5s;
       transform: translateX(0%);
+      opacity: 1;
+    }
+    & .delayedFadeUp{
+      transition: all .8s easeOutQuart 1s;
+      transform: translateY(0);
       opacity: 1;
     }
   }
   
   & .fade-exit {
     z-index: 1;
-    /* transform: translateX(0%); */
-    /* transition: opacity .2s linear;
-    opacity: 1; */
-  }  
+    & .inner{
+      opacity: 1;
+    }
+  }
   & .fade-exit-active {
-    /* transform: translateX(0%); */
-    /* opacity: 0; */
+    & .inner{
+      transition-duration: 1.1s;
+      opacity: 0;
+    }
   }
 
   & .page-main {

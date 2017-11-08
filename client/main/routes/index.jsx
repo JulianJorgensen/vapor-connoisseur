@@ -3,9 +3,11 @@ import { Route, withRouter, Switch } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { connect } from 'react-redux';
 import { siteActions } from 'store/actions';
+import { Desktop } from 'utils/responsive';
 import cn from 'classnames';
 import ReactGA from 'react-ga';
 
+import navBgImage from 'assets/images/navbg.jpg';
 import AgeVerification from 'containers/AgeVerification';
 import Homepage from 'containers/Homepage';
 import Services from 'containers/Services';
@@ -83,12 +85,12 @@ export default class Routes extends React.Component {
 
     const { location } = this.props;
     const currentKey = location.pathname.split('/')[1] || '/';
-    const timeout = { enter: 1500, exit: 800 };
+    const timeout = { enter: 1600, exit: 800 };
 
     return (
       <div className={wrapperStyles} onClick={this.closeNav}>
         <TransitionGroup component="main" className="page-main">
-          <CSSTransition key={currentKey} timeout={timeout} classNames="fade" appear>
+          <CSSTransition key={currentKey} timeout={timeout} classNames="fade">
             <section className="page-main-inner">
               <Switch location={location}>
                 <PropsRoute path="/age-verification" component={userIsNotAuthenticated(AgeVerification)} />
@@ -106,6 +108,9 @@ export default class Routes extends React.Component {
             </section>
           </CSSTransition>
         </TransitionGroup>
+        <Desktop>
+          <div onClick={this.closeNav} className={styles.navBgImage} style={{ backgroundImage: `url(${navBgImage})` }} />
+        </Desktop>
         <Cart />
       </div>
     );

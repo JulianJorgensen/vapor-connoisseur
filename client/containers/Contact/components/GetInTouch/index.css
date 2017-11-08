@@ -1,5 +1,8 @@
 @import "globals.css";
 .wrapper{
+  order: -2;
+  composes: globalWrapper;
+  background-color: transparent;
   position: relative;
   z-index: 3;
   pointer-events: none;

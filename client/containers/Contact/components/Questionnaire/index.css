@@ -1,5 +1,6 @@
 @import "globals.css";
 .wrapper{
+  order: -1;
   composes: globalWrapper;
   background-color: transparent;
   width: 100%;
@@ -27,7 +28,6 @@
   & .inner{
     pointer-events: all;
     width: 100%;
-    padding: rem(30);
     @media (--medium-and-up) {
       width: rem(380);
       padding: rem(80) 0 rem(60);
@@ -36,5 +36,9 @@
 }
 
 .headline{
-  margin-bottom: rem(30);
+  &,
+  & *{
+    margin-bottom: rem(30);
+    font-size: rem(22);  
+  }
 }

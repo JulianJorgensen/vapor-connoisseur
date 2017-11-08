@@ -7,7 +7,7 @@ import Hero from 'components/Hero';
 import styles from './index.css';
 
 @connect(({ site }) => ({
-  content: site.content.customerPathway || {}
+  content: site.content.customerPathway || {},
 }))
 export default class CustomerPathwayLanding extends Component {
   render() {
@@ -19,7 +19,7 @@ export default class CustomerPathwayLanding extends Component {
 
           <div className={styles.productImage} style={{ backgroundImage: `url(${productImage})` }} />
 
-          <div className={styles.introWrapper}>
+          <div className={`${styles.introWrapper} delayedFadeUp`}>
             <div className={styles.intro}>
               <h2 className={styles.introHeadline}>{content.introHeadline}</h2>
               <div><ReactMarkdown source={content.introBody} /></div>

@@ -1,14 +1,13 @@
 @import "globals.css";
 .wrapper {
   composes: globalWrapper;
+  background-color: transparent;
   width: 100%;
-  align-items: flex-start;
+  align-items: flex-end;  
   @media (--medium-and-up) {
+    align-items: flex-start;
     margin-top: rem(120);
     padding-bottom: rem(150);
-  }
-  @media (height < 800px) {
-    margin-top: rem(50);
   }
 }
 

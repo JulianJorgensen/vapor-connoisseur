@@ -2,4 +2,25 @@
 .wrapper {
   composes: globalWrapper;
   min-height: 100vh;
+  background-color: var(--bokara);
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: rem(164);
+    width: 100%;
+    background-color: var(--rangoon);
+  }
+  @media (--large-and-up){
+    background-color: var(--background);
+    &:before{
+      display: none;
+    }
+  }
+}
+
+.inner{
+  display: flex;
+  flex-direction: column;
 }

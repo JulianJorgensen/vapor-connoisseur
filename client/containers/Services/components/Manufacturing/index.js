@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Plx from 'react-plx';
+import { Parallax } from 'react-parallax';
 import ReactMarkdown from 'react-markdown';
 import productImage from 'assets/images/servicesMiddleImage.jpg';
 import FeatureBoxes from 'components/FeatureBoxes';
@@ -22,7 +24,9 @@ export default class ServicesManufacturing extends Component {
               </div>
             </header>
             <FeatureBoxes features={content.manufacturingFeatures} twoCol />
-            <div className={styles.productImage} style={{ backgroundImage: `url(${productImage})` }} />
+            <div className={styles.productImage}>
+              <Parallax className={styles.parallax} bgImage={productImage} strength={100} />
+            </div>
           </div>
 
           <div className={styles.originalDesign}>

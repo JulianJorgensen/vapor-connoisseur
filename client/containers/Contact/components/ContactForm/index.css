@@ -4,6 +4,9 @@
   composes: globalWrapper;
   width: 100%;
   position: relative;
+  @media (--only-small) {
+    background-image: var(--defaultGradient);
+  }
   @media (--medium-and-up) {
     margin-top: rem(120);
     padding-bottom: rem(50);
@@ -35,5 +38,9 @@
 }
 
 .headline{
-  margin-bottom: rem(30);
+  &,
+  & *{
+    margin-bottom: rem(30);
+    font-size: rem(22);  
+  }
 }

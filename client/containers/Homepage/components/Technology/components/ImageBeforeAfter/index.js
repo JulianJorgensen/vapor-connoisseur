@@ -7,7 +7,22 @@ export default class ImageBeforeAfter extends React.Component {
     slidePosition: 50,
   }
 
+  clearFeatureFocus() {
+    this.feature1.blur();
+    this.feature2.blur();
+    this.feature3.blur();
+    this.feature4.blur();
+  }
+
+  focusFeature(value) {
+    if (value > 75) return this.feature1.focus();
+    if (value > 50) return this.feature2.focus();
+    if (value > 25) return this.feature3.focus();
+    if (value <= 25) return this.feature4.focus();
+  }
+
   handleSlidePositionChange = (value) => {
+    this.focusFeature(value);
     this.setState({ slidePosition: value });
   }
 
@@ -18,10 +33,10 @@ export default class ImageBeforeAfter extends React.Component {
     return (
       <div className={styles.wrapper}>
         <div className={styles.images}>
-          <div className="feature feature1">Adjustable airflow</div>        
-          <div className="feature feature2">Easy Fill cartridge</div>
-          <div className="feature feature3">510 thread connection</div>
-          <div className="feature feature4">Stainless steel body</div>
+          <div tabIndex="1" className="feature feature1" ref={(ref) => { this.feature1 = ref; }}>Adjustable airflow</div>
+          <div tabIndex="2" className="feature feature2" ref={(ref) => { this.feature2 = ref; }}>Easy Fill cartridge</div>
+          <div tabIndex="3" className="feature feature3" ref={(ref) => { this.feature3 = ref; }}>Stainless steel body</div>
+          <div tabIndex="4" className="feature feature4" ref={(ref) => { this.feature4 = ref; }}>510 thread connection</div>
           
           <div
             className={`before ${styles.image} ${styles.before}`}
@@ -44,6 +59,7 @@ export default class ImageBeforeAfter extends React.Component {
           tooltip={false}
           value={slidePosition}
           onChange={this.handleSlidePositionChange}
+          onChangeComplete={() => this.clearFeatureFocus()}
           className={styles.rangeSlider}
           handleLabel="SLIDE"
         />

@@ -92,8 +92,10 @@
       transition: all 0.2s;
       height: rem(1);
     }
-    &:hover {
+    &:hover,
+    &:focus {
       opacity: 1;
+      outline: none;
       &:before {
         color: black;
       }
@@ -122,21 +124,24 @@
         transform: translate(rem(50), rem(10)) rotate(18deg);        
       }
     }
-    &:hover~.before .section1 {
-      & .st3 {
-        stroke: var(--muddyWaters);
-        stroke-width: rem(2);
+    &:hover,
+    &:focus {
+      &~.before .section1 {
+        & .st3 {
+          stroke: var(--muddyWaters);
+          stroke-width: rem(2);
+        }
+        & .st4 {
+          fill: var(--muddyWaters);
+        }  
       }
-      & .st4 {
-        fill: var(--muddyWaters);
-      }
-    }
-    &:hover~.image .section1 {
-      & .st3 {
-        stroke: var(--muddyWaters);
-      }
-      & .st4 {
-        fill: var(--muddyWaters);
+      &~.image .section1{
+        &.st3{
+          stroke: var(--muddyWaters);
+        }
+        & .st4 {
+          fill: var(--muddyWaters);
+        }
       }
     }
   }
@@ -159,64 +164,73 @@
         transform: translateX(-10%);        
       }
     }
-    &:hover~.before .section2 .st2 {
-      stroke: var(--muddyWaters);
-      stroke-width: rem(2);
-    }
-    &:hover~.image .section2 .st2 {
-      stroke: var(--muddyWaters);
+    &:hover,
+    &:focus {
+      &~.before .section2 .st2{
+        stroke: var(--muddyWaters);
+        stroke-width: rem(2);
+      }
+      &~.image .section2 .st2 {
+        stroke: var(--muddyWaters);
+      }  
     }
   }
   & .feature3 {
-    right: 30%;
-    bottom: 20%;
+    left: 0;
+    bottom: 40%;
     &:before {
       content: '03';
     }
     &:after {
-      width: rem(130);
-      left: rem(-40);
-      transform: translate(rem(-100), rem(-100)) rotate(45deg);
+      width: rem(70);
+      right: 0;
+      transform: translate(rem(60), rem(0));
     }
     @media (--medium-and-down) {
       right: 0;
       bottom: 0;
       &:after {
         width: rem(80);
-        transform: translate(rem(-30), rem(-30)) rotate(45deg);
+        transform: translate(rem(60), rem(0));
       }
     }
-    &:hover~.before .section3 .st2 {
-      stroke: var(--muddyWaters);
-      stroke-width: rem(2);
-    }
-    &:hover~.image .section3 .st2 {
-      stroke: var(--muddyWaters);
+    &:hover,
+    &:focus {
+      &~.before .section3 .st2 {
+        stroke: var(--muddyWaters);
+        stroke-width: rem(2);
+      }
+      &~.image .section3 .st2 {
+        stroke: var(--muddyWaters);
+      }
     }
   }
   & .feature4 {
-    left: 0;
-    bottom: 40%;
+    right: 30%;
+    bottom: 20%;
     &:before {
       content: '04';
     }
     &:after {
-      width: rem(130);
+      width: rem(110);
       right: 0;
-      transform: translate(rem(20), rem(80)) rotate(45deg);
+      transform: translate(rem(-110), rem(-20));
     }
     @media (--medium-and-down) {
       &:after {
         width: rem(40);
-        transform: translate(rem(-40), rem(40)) rotate(90deg);
+        transform: translate(rem(20), rem(0));
       }
     }
-    &:hover~.before .section4 .st2 {
-      stroke: var(--muddyWaters);
-      stroke-width: rem(2);
-    }
-    &:hover~.image .section4 .st2 {
-      stroke: var(--muddyWaters);
+    &:hover,
+    &:focus {
+      &~.before .section4 .st2{
+        stroke: var(--muddyWaters);
+        stroke-width: rem(2);
+      }
+      &~.image .section4 .st2{
+        stroke: var(--muddyWaters);
+      }
     }
   }
   & svg.productExploded {

@@ -86,6 +86,8 @@
     "react-html-parser": "^2.0.1",
     "react-image-diff": "https://github.com/JulianJorgensen/react-image-diff",
     "react-markdown": "^2.5.0",
+    "react-parallax": "^1.5.0",
+    "react-plx": "^0.2.0",
     "react-rangeslider": "^2.2.0",
     "react-redux": "^5.0.2",
     "react-responsive": "^3.0.0",

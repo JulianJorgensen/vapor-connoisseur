@@ -69,3 +69,7 @@
     padding: rem(60) 0;
   }
 }
+
+.parallax{
+  height: inherit;
+}
