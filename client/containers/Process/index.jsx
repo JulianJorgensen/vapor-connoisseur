@@ -27,7 +27,7 @@ export default class Process extends React.Component {
     }
     return (
       <div className={styles.wrapper}>
-        <div className="inner">
+        <div className="animatedSection">
           <Landing />
           <Samples />
           <ProductDevelopment />
@@ -37,9 +37,9 @@ export default class Process extends React.Component {
           <Duties />
           <ProductDelivery />
           <PageCTAs />
-          <Footer />
         </div>
+        <Footer />
       </div>
-    )
+    );
   }
 }

@@ -43,9 +43,9 @@
   @apply --defaultBgImage;  
   position: absolute;
   width: 50%;
-  height: rem(500);
+  height: rem(450);
   z-index: 2;
-  bottom: rem(70);
+  bottom: rem(120);
   right: 0;
   & .meta{
     position: absolute;
@@ -60,4 +60,8 @@
     width: calc(100% - rem(30));
     margin-top: rem(0);
   }
+}
+
+.parallax{
+  height: inherit;
 }

@@ -43,45 +43,55 @@
     @apply --smallText;
     line-height: rem(14);
     transition: all 0.2s easeOutCubic;
-    &:before{
-      content: '';
-      width: rem(8);
-      height: rem(1);
-      background-color: white;
-      position: absolute;
-      top: 50%;
-      right: 0;
-      opacity: 0;
-      transition: all 0.2s easeOutCubic;
-    }
-    & svg {
+    & .arrow{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: rem(6);
       margin-top: rem(-3);
-      width: rem(7);
-      height: rem(13);
       transition: all 0.2s easeOutCubic;
-      & path {
-        fill: black;
+      &:before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: rem(12);
+        height: rem(1);
+        margin-top: rem(0.8);
+        background-color: white;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: all 0.2s easeOutCubic;
+      }
+      & svg {
+        width: 100%;
+        height: 100%;
+        & path {
+          fill: black;
+        }
       }
     }
     &.prev{
-      &:before{
+      & .title{
+        transform: translateX(rem(1));
+      }
+      & .arrow:before{
         left: 0;
-        transform: translate(rem(8), rem(-2));
+        transform: translate(rem(10), -50%);
       }
       &:hover{
-        & svg {
-          transform: translateX(-30%);
+        & .arrow {
+          transform: translateX(-50%);
         }
       }  
     }
     &.next{
-      &:before{
+      & .arrow:before{
         right: 0;
-        transform: translate(rem(-8), rem(-2));
+        transform: translate(rem(-10), -50%);
       }
       &:hover{
-        & svg {
-          transform: translateX(30%);
+        & .arrow {
+          transform: translateX(50%);
         }
       }  
     }
@@ -90,9 +100,9 @@
       & svg path {
         fill: white;
       }
-      &:before{
+      & .arrow:before{
         opacity: 1;
-        transform: translate(rem(0), rem(-2));
+        transform: translate(0, -50%);
       }
     }
   }

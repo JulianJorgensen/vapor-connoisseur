@@ -20,7 +20,6 @@ export default class AboutServicesFeatures extends Component {
 
     this.autoSlideInterval = setInterval(() => {
       this.handleTriggerNext();
-      this.resetTimeoutBar();
     }, AUTO_SLIDE_INTERVAL);
   }
 
@@ -28,6 +27,7 @@ export default class AboutServicesFeatures extends Component {
     this.setState({
       timeoutBarActive: false,
     });
+
     setTimeout(() => {
       this.setState({
         timeoutBarActive: true,
@@ -53,6 +53,8 @@ export default class AboutServicesFeatures extends Component {
     this.setState({
       activeFeature: prevActiveFeature,
     });
+
+    this.resetTimeoutBar();
   }
 
   handleTriggerNext = () => {
@@ -66,6 +68,8 @@ export default class AboutServicesFeatures extends Component {
     this.setState({
       activeFeature: nextActiveFeature,
     });
+
+    this.resetTimeoutBar();
   }
 
   handlePrevClick = () => {
@@ -119,13 +123,19 @@ export default class AboutServicesFeatures extends Component {
                     <h3 className={styles.featureTitle}>{feature.fields.title}</h3>
                     <p>{feature.fields.body}</p>
                   </div>
-                )
+                );
               })}
             </div>
 
             <div className={styles.miniNav}>
-              <button className={`${styles.miniNavItem} ${styles.prev}`} onClick={this.handlePrevClick}><AngleLeftIcon /> Prev</button>
-              <button className={`${styles.miniNavItem} ${styles.next}`} onClick={this.handleNextClick}>Next <AngleRightIcon /></button>
+              <div className={`${styles.miniNavItem} ${styles.prev}`} onClick={this.handlePrevClick}>
+                <div className={styles.arrow}><AngleLeftIcon /></div>
+                <div className={styles.title}>Prev</div>
+              </div>
+              <div className={`${styles.miniNavItem} ${styles.next}`} onClick={this.handleNextClick}>
+                <div className={styles.title}>Next</div>
+                <div className={styles.arrow}><AngleRightIcon /></div>
+              </div>
             </div>
           </div>
 
@@ -140,12 +150,9 @@ export default class AboutServicesFeatures extends Component {
                       key={feature.sys.id}
                       className={featureNavItemStyles}
                     >
-                      <button
-                        onClick={() => this.handleFeatureClick(index)}
-                        onKeyDown={() => this.handleFeatureClick(index)}
-                      >
+                      <div onClick={() => this.handleFeatureClick(index)}>
                         {feature.fields.title}
-                      </button>
+                      </div>
                     </li>
                   );
               })}

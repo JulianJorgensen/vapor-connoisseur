@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Desktop, MobileTablet } from 'utils/responsive';
+import { Desktop, MobileTablet } from 'utils';
 import Hero from 'components/Hero';
 import productImage from 'assets/images/homeProduct.jpg';
 import productImageMobile from 'assets/images/XY05_EXPLO1.jpg';

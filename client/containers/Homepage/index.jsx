@@ -23,13 +23,13 @@ export default class Homepage extends Component {
     }
     return (
       <div className={styles.wrapper}>
-        <div className="inner">
+        <div className="animatedSection">
           <Landing />
           <About />
           <Technology />
           <Samples />
-          <Footer />
         </div>
+        <Footer />
       </div>
     );
   }

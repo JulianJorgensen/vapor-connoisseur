@@ -9,7 +9,7 @@ import { shopActions, siteActions } from 'store/actions';
 import homeImage from 'assets/images/homeProduct.jpg';
 import aboutImage from 'assets/images/Vapor65149.jpg';
 import servicesImage from 'assets/images/servicesBg.jpg';
-import processImage from 'assets/images/GENIECL-Angle2-24.png';
+import processImage from 'assets/images/GENIECL-Angle2-24.webp';
 
 import Header from './layout/Header';
 import Routes from './routes';

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactMarkdown from 'react-markdown';
 import Button from 'components/Button';
-import productImage from 'assets/images/GENIECL-Angle2-24.png';
+import productImage from 'assets/images/GENIECL-Angle2-24.webp';
 import Hero from 'components/Hero';
 import styles from './index.css';
 

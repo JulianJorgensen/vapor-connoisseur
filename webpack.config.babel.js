@@ -81,7 +81,7 @@ const BASE_CONFIG = {
         use: 'file-loader?name=/docs/[name].[ext]',
       },
       {
-        test: /\.(gif|png|jpg|jpe?g)$/i,
+        test: /\.(gif|png|jpg|jpe?g|webp)$/i,
         include: path.resolve(__dirname, 'client/assets/images'),
         loaders: [
           'file-loader',

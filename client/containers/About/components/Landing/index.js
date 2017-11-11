@@ -1,4 +1,5 @@
 import React from 'react';
+import { Parallax } from 'react-parallax';
 import { connect } from 'react-redux';
 import Hero from 'components/Hero';
 import productImage from 'assets/images/Vapor65149.jpg';
@@ -15,7 +16,9 @@ export default class AboutLanding extends React.Component {
         <div className={styles.container}>
           <Hero headline={content.headline} intro={content.intro} seeMore />
         </div>
-        <div className={styles.productImage} style={{ backgroundImage: `url(${productImage}` }} />
+        <div className={styles.productImage}>
+          <Parallax className={styles.parallax} bgImage={productImage} strength={150} />
+        </div>
       </div>
     );
   }

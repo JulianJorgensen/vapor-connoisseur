@@ -23,8 +23,9 @@ export default class Shop extends Component {
   }
 
   setActiveProduct() {
-    const { showSingle, dispatch } = this.props;
-    if (showSingle) {
+    const { dispatch, match } = this.props;
+
+    if (match.params && match.params.productHandle) {
       // set active product
       dispatch(shopActions.setActiveProduct());
     } else {
@@ -80,7 +81,7 @@ export default class Shop extends Component {
 
     return (
       <div className={styles.wrapper}>
-        <div className="inner">
+        <div className="animatedSection">
           {renderPage()}
           <Footer />
         </div>

@@ -57,5 +57,6 @@
 .process {
   @media (--medium-and-up) {
     width: calc(33.33% - rem(40));
+    user-select: none;
   }
 }

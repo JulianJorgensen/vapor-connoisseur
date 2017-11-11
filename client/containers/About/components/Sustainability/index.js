@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Parallax } from 'react-parallax';
 import { connect } from 'react-redux';
 import ReactMarkdown from 'react-markdown';
 import FeatureBoxes from 'components/FeatureBoxes';
@@ -24,6 +25,7 @@ export default class AboutSustainability extends Component {
           <FeatureBoxes features={content.sustainabilityFeatures} />
 
           <div className={styles.middleImage} style={{ backgroundImage: `url(${productImage})` }}>
+            <Parallax className={styles.parallax} bgImage={productImage} strength={150} />
             <div className={styles.meta}>XY-05</div>
           </div>
         </div>

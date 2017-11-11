@@ -21,12 +21,12 @@ export default class SampleKits extends React.Component {
     }
     return (
       <div className={styles.wrapper}>
-        <div className="inner">
+        <div className="animatedSection">
           <Intro content={this.props.content} />
           <ProductImages />
           <RequestForm />
-          <Footer />
         </div>
+        <Footer />
       </div>
     );
   }

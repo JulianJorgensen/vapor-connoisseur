@@ -56,3 +56,7 @@
     }
   }
 }
+
+.parallax{
+  height: inherit;
+}

@@ -53,7 +53,10 @@ export default class Routes extends React.Component {
     logPageView(location);
 
     // scroll to top when changing page
-    window.scrollTo(0, 0);
+    window.scroll({
+      top: 0,
+      behavior: 'smooth',
+    });
 
     this.closeNav();
   }
@@ -65,27 +68,13 @@ export default class Routes extends React.Component {
   }
 
   render() {
-    const renderMergedProps = (component, ...rest) => {
-      const finalProps = Object.assign({}, ...rest);
-      return (
-        React.createElement(component, finalProps)
-      );
-    };
-
-    const PropsRoute = ({ component, ...rest }) => (
-      <Route
-        {...rest}
-        render={routeProps => renderMergedProps(component, routeProps, rest)}
-      />
-    );
-
     const wrapperStyles = cn(styles.wrapper, {
       [styles.navOpen]: this.props.site.navOpen,
     });
 
     const { location } = this.props;
     const currentKey = location.pathname.split('/')[1] || '/';
-    const timeout = { enter: 1600, exit: 800 };
+    const timeout = { enter: 2300, exit: 1500 };
 
     return (
       <div className={wrapperStyles} onClick={this.closeNav}>
@@ -93,17 +82,17 @@ export default class Routes extends React.Component {
           <CSSTransition key={currentKey} timeout={timeout} classNames="fade">
             <section className="page-main-inner">
               <Switch location={location}>
-                <PropsRoute path="/age-verification" component={userIsNotAuthenticated(AgeVerification)} />
-                <PropsRoute path="/" exact component={userIsAuthenticated(Homepage)} />
-                <PropsRoute path="/services" component={userIsAuthenticated(Services)} />
-                <PropsRoute path="/process" component={userIsAuthenticated(Process)} />
-                <PropsRoute path="/about" component={userIsAuthenticated(About)} />
-                <PropsRoute path="/sample-kits" component={userIsAuthenticated(SampleKits)} />
-                <PropsRoute path="/contact" component={userIsAuthenticated(Contact)} />
-                <PropsRoute path="/shop" exact component={userIsAuthenticated(Shop)} />
-                <PropsRoute path="/shop/:filter" exact component={userIsAuthenticated(Shop)} />
-                <PropsRoute path="/shop/:category/:productHandle" exact component={userIsAuthenticated(Shop)} showSingle />
-                <PropsRoute path="/legal/:page" component={userIsAuthenticated(Legal)} />
+                <Route path="/age-verification" component={userIsNotAuthenticated(AgeVerification)} />
+                <Route path="/" exact component={userIsAuthenticated(Homepage)} />
+                <Route path="/services" component={userIsAuthenticated(Services)} />
+                <Route path="/process" component={userIsAuthenticated(Process)} />
+                <Route path="/about" component={userIsAuthenticated(About)} />
+                <Route path="/sample-kits" component={userIsAuthenticated(SampleKits)} />
+                <Route path="/contact" component={userIsAuthenticated(Contact)} />
+                <Route path="/shop" exact component={userIsAuthenticated(Shop)} />
+                <Route path="/shop/:filter" exact component={userIsAuthenticated(Shop)} />
+                <Route path="/shop/:category/:productHandle" exact component={userIsAuthenticated(Shop)} />
+                <Route path="/legal/:page" component={userIsAuthenticated(Legal)} />
               </Switch>
             </section>
           </CSSTransition>

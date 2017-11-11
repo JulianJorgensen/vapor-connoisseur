@@ -10,7 +10,9 @@
   list-style-type: none;
   padding: 0;
   transform: translateX(100%);
-  transition: all 0.8s easeInOutCirc;
+  transition-property: transform, opacity;
+  transition-duration: 0.6s;
+  transition-timing-function: easeInOutCirc;
   @media (--only-small) {
     width: 100%;    
   }

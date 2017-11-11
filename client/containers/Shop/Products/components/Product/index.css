@@ -20,6 +20,7 @@
   & .image{
     height: inherit;
     width: inherit;
+    background-color: gray(5%);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

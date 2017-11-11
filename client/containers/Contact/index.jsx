@@ -1,11 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import LoadingSpinner from 'components/LoadingSpinner';
-
+import Footer from 'layout/Footer';
 import GetInTouch from './components/GetInTouch';
 import Questionnaire from './components/Questionnaire';
 import ContactForm from './components/ContactForm';
-import Footer from 'layout/Footer';
 import styles from './index.css';
 
 @connect(({ site }) => ({
@@ -18,17 +17,17 @@ export default class Contact extends React.Component {
         <div className={styles.wrapper}>
           <LoadingSpinner />
         </div>
-      )
+      );
     }
     return (
       <div className={styles.wrapper}>
-        <div className={`${styles.inner} inner`}>
+        <div className={`${styles.inner} animatedSection`}>
           <GetInTouch />
           <ContactForm />
           <Questionnaire />
-          <Footer />
         </div>
+        <Footer />
       </div>
-    )
+    );
   }
 }

@@ -21,12 +21,12 @@ export default class About extends React.Component {
     }
     return (
       <div className={styles.wrapper}>
-        <div className="inner">
+        <div className="animatedSection">
           <Landing />
           <Sustainability />
           <Services />
-          <Footer />
         </div>
+        <Footer />
       </div>
     );
   }

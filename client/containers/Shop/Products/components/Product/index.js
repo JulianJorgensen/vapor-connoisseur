@@ -19,6 +19,9 @@ export default class Product extends Component {
 
   preloadImage = () => {
     const defaultImage = this.props.product.images[0];
+    if (!defaultImage) return false;
+
+    console.log('defaultImage', defaultImage);
     this.image = new Image();
     this.image.src = defaultImage.src;
 
@@ -29,6 +32,7 @@ export default class Product extends Component {
       });
       this.image.onload = this.handleImageLoaded;
     }
+    return true;
   }
 
   render() {
@@ -40,7 +44,7 @@ export default class Product extends Component {
       [styles.loading]: this.state.imageLoading,
     });
 
-    const imageStyles = !imageLoading ? { backgroundImage: `url(${this.image.src})` } : {};
+    const imageStyles = !imageLoading ? { backgroundImage: `url(${this.image ? this.image.src : ''})` } : {};
 
     return (
       <div className={styles.wrapper}>
