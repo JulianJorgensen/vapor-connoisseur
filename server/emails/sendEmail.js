@@ -11,7 +11,7 @@ export default (req, res) => {
       name: fromName, address: fromEmail,
     },
     to: envConfig.EMAILS.ADMIN,
-    cc: envConfig.EMAILS.CC,
+    cc: envConfig.EMAILS.CC || '',
     subject,
     template: {
       name: `./server/emails/templates/${template}.pug`,

@@ -7,13 +7,7 @@ module.exports = {
   },
   EMAILS: {
     ADMIN: {
-      // name: 'Julian Jorgensen', address: 'me@julianjorgensen.com',
       name: 'Vapor Connoisseur', address: 'info@vaporconnoisseur.com',
-    },
-    CC: [
-      {
-        name: 'Julian Jorgensen', address: 'me@julianjorgensen.com',
-      },
-    ],
+    }
   },
 };
