@@ -52,9 +52,9 @@ export default class Nav extends React.Component {
               <phone><a href="tel:+18773300370">877 330 0370</a></phone>
             </div>
             <address>
-              <a href="https://www.google.co.id/maps/place/2020+E+Main+St,+Ventura,+CA+93001,+USA/@34.2778144,-119.2720701,17z/data=!4m13!1m7!3m6!1s0x80e9ad18ff668ed1:0xf04d548ae60553ca!2s2020+E+Main+St,+Ventura,+CA+93001,+USA!3b1!8m2!3d34.2778144!4d-119.2698814!3m4!1s0x80e9ad18ff668ed1:0xf04d548ae60553ca!8m2!3d34.2778144!4d-119.2698814" target="new">
-                2020 E Main St, Ventura<br />
-                CA 93001, USA
+              <a href="https://www.google.co.in/maps?q=1755+E.+Palm+Canyon+Dr.,+Suite+110-261,+Palm+Springs,+CA+92264&um=1&ie=UTF-8&sa=X&ved=0ahUKEwiflb6j_73XAhWBv48KHYCYClYQ_AUICigB" target="new">
+                1755 E. Palm Canyon Dr., Suite 110-261<br />
+                Palm Springs, CA 92264
               </a>
             </address>
           </div>
