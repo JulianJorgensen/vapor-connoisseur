@@ -41,7 +41,7 @@
     }
   }
   @media (--large-and-up) {
-    background-color: color(gray(5%) alpha(70%));
+    background-color: color(gray(5%) alpha(90%));
     padding: rem(85) rem(60) rem(70) rem(120);
   }
 }
@@ -64,8 +64,8 @@
     transform: translateX(rem(100));
     transition: all 0.8s easeOutQuart;
     @media (--large-and-up) {
-      font-size: rem(38);
-      line-height: rem(60);
+      font-size: rem(30);
+      line-height: rem(45);
     }
     & a {
       color: var(--muddyWaters);
@@ -146,6 +146,9 @@
     width: rem(480);
     font-size: rem(16);
     margin-bottom: 0;
+    & address{
+      margin-left: rem(20);
+    }
   }
 }
 

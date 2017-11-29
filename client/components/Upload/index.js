@@ -10,24 +10,27 @@ export default class Upload extends Component {
 
   uploadFile(e) {
     e.preventDefault();
+    const file = e.target.files[0];
+    if (!file) return false;
     this.setState({
       uploading: true,
+      uploaded: false,
     });
-    const file = e.target.files[0];
     const data = new FormData();
     data.append('file', file);
     axios.post('/upload', data).then((response) => {
-      console.log('response', response);
       this.props.input.onChange(response.data);
       this.setState({
         uploading: false,
+        uploaded: true,
       });
     });
+    return true;
   }
 
   render() {
     const { disabled } = this.props;
-    const { uploading } = this.state;
+    const { uploading, uploaded } = this.state;
 
     const renderUploading = () => (
       <div className={styles.uploading}>
@@ -38,7 +41,8 @@ export default class Upload extends Component {
 
     const wrapperStyles = cn(styles.wrapper, {
       [styles.disabled]: disabled || uploading,
-    })
+      [styles.uploaded]: uploaded,
+    });
 
     return (
       <div className={wrapperStyles}>

@@ -29,8 +29,9 @@ const meta = {
 
 @withCookies
 @withRouter
-@connect(({ shop }) => ({
+@connect(({ shop, site }) => ({
   shop,
+  site,
 }))
 export default class Main extends React.Component {
   constructor() {
@@ -77,9 +78,11 @@ export default class Main extends React.Component {
 
   render() {
     const { showCart } = this.props.shop;
+    const { navOpen } = this.props.site;
     const wrapperStyles = cn(styles.wrapper, {
       [styles.showCart]: showCart,
-    })
+      [styles.navOpen]: navOpen,
+    });
     return (
       <div className={wrapperStyles}>
         <DocumentMeta {...meta} />

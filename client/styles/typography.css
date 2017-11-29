@@ -17,6 +17,7 @@
   --h6: rem(14);
   --h6Mobile: rem(11);
   --lineHeight: 1.15;
+  --lineHeightLarge: 1.45;
   --color: var(--muddyWaters);
 }
 
@@ -39,8 +40,8 @@
     font-size: rem(14);
     line-height: rem(18);
     @media (--large-and-up) {
-      font-size: rem(16);
-      line-height: rem(20);
+      font-size: rem(15);
+      line-height: rem(19);
     }
   }
   & a {
@@ -74,7 +75,7 @@
     letter-spacing: rem(6);
     @media (--large-and-up) {
       font-size: var(--h2);
-      line-height: calc(var(--h2) * var(--lineHeight));
+      line-height: calc(var(--h2) * var(--lineHeightLarge));
       letter-spacing: rem(8);
     }
   }

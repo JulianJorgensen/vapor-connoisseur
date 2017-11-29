@@ -41,7 +41,7 @@ export default class Footer extends React.Component {
         <div className={styles.container}>
           <div className={styles.copyright}>
             <div>Copyright 2017 | All rights reserved</div>
-            <div>A Sunniva company</div>
+            <div><a href="https://sunniva.com" target="new">A Sunniva company</a></div>
           </div>
         </div>
         <div className={styles.bgImage}>

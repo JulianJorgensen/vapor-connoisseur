@@ -53,8 +53,7 @@ export default class Nav extends React.Component {
             </div>
             <address>
               <a href="https://www.google.co.in/maps?q=1755+E.+Palm+Canyon+Dr.,+Suite+110-261,+Palm+Springs,+CA+92264&um=1&ie=UTF-8&sa=X&ved=0ahUKEwiflb6j_73XAhWBv48KHYCYClYQ_AUICigB" target="new">
-                1755 E. Palm Canyon Dr., Suite 110-261<br />
-                Palm Springs, CA 92264
+                1755 E. Palm Canyon Dr., <span className="nobr">Suite 110-261</span>, <span className="nobr">Palm Springs</span>, <span className="nobr">CA 92264</span>
               </a>
             </address>
           </div>
