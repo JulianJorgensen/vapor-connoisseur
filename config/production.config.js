@@ -1,6 +1,6 @@
 module.exports = {
   ENV: 'production',
-  SITE_URL: 'http://www.vaporconnoisseur.com',
+  SITE_URL: 'https://www.vaporconnoisseur.com',
   SHOPIFY: {
     DOMAIN: 'vapor-connoisseur.myshopify.com',
     STORE_FRONT_ACCESS_TOKEN: 'd16e6aa0ee8ac23734c065c9379f2692',

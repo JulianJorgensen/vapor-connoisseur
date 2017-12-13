@@ -18,7 +18,7 @@ import styles from './index.css';
 // site meta data
 const meta = {
   title: 'Vapor Connoisseur',
-  description: 'Slogan',
+  description: 'Crafted with purpose. Vapor Connoisseur leads by design, building the industry\'s finest vaporizers.',
   meta: {
     charset: 'utf-8',
   },
