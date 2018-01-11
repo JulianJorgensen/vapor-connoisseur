@@ -28,7 +28,7 @@ export default class AboutServices extends Component {
       return (
         <div>
           <Desktop component={<Features features={features} />} />
-          <MobileTablet component={<FeaturesMobile features={features} />} />
+          <MobileTablet component={<Features features={features} />} />
         </div>
       );
     };
