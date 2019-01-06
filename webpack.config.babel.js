@@ -153,11 +153,6 @@ const BASE_CONFIG = {
         from: 'assets/fonts',
         to: 'fonts',
       },
-      {
-        context: 'client',
-        from: 'assets/videos',
-        to: 'videos',
-      }
     ]),
     new webpack.DefinePlugin({
       // Dynamically access local environment variables based on the environment
