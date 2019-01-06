@@ -17,7 +17,7 @@ export default class Footer extends React.Component {
             <Logo className={styles.logo} />
             <address>877 330 0370<br />
               <a href="mailto:INFO@VAPORCONNOISSEUR.COM">INFO@VAPORCONNOISSEUR.COM</a><br />
-              VENTURA, CALIFORNIA
+              SOUTHERN CALIFORNIA
             </address>
           </div>
           <div className={styles.nav}>
@@ -33,8 +33,8 @@ export default class Footer extends React.Component {
               <li><Link to="/legal/terms-and-conditions">Terms & Conditions</Link></li>
               <li><Link to="/legal/privacy-policy">Privacy Policy</Link></li>
               <li><Link to="/legal/affiliate-marketing">Affiliate Marketing</Link></li>
-              <li><Link to="/legal/refunds-and-returns">Refunds & Returns</Link></li>
-              <li><Link to="/legal/orders-and-shipping">Orders & Shipping</Link></li>
+              {/* <li><Link to="/legal/refunds-and-returns">Refunds & Returns</Link></li>
+              <li><Link to="/legal/orders-and-shipping">Orders & Shipping</Link></li> */}
             </ul>
           </div>
         </div>

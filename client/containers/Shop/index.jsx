@@ -59,6 +59,16 @@ export default class Shop extends Component {
 
     if (!shop.products) return false;
 
+    // just show product video. Comment this out if you want to show the actual products from Shopify
+    return (
+      <div className={styles.wrapper}>
+        <div className={styles.container}>
+          <iframe src="https://player.vimeo.com/video/309723028" width="640" height="360" frameBorder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          <Footer />
+        </div>
+      </div>
+    )
+  
     const renderPage = () => {
       if (shop.product) {
         return (

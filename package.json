@@ -15,7 +15,7 @@
   "author": "Julian Jorgensen",
   "license": "MIT",
   "engines": {
-    "node": "8.1.4"
+    "node": "10.11.0"
   },
   "dependencies": {
     "animated": "^0.2.0",
